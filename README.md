@@ -7,18 +7,18 @@
 
 ## Idea Overview
 
-Based on problem statement above, we want to streamline the whole process and make the planning easy by automating it. The app will not just take care of automating the planning part of the activity but also provide relevant updates to the group as the activity is happening. More details are listed below as feautures.
+Based on problem statement above, we want to streamline the whole process and make the planning easy by automating it. The app will not just take care of automating the planning part of the activity but also provide relevant updates to the group as the activity is happening. More details are listed below as features.
 
 
 ## Feature list:
 
 #### Required
 
-* An coherent experience on activty planning where user have minimal input and the app does most of the heavy lifting
+* An coherent experience on activity planning where user have minimal input and the app does most of the heavy lifting
 * Create an activity with suggested time and place and send out request to people in group
  * Activity/place recommendation based on group’s preferences and common historical activity
 * View active and archived activities to be able to view more details on each of them
- * Sometimes it happens that you go a place with your freind and you really liked but few weeks later you can not remember the place. Well not any more, as you can go to archive and view all the details about the place. 
+ * Sometimes it happens that you go a place with your friend and you really liked but few weeks later you can not remember the place. Well not any more, as you can go to archive and view all the details about the place. 
 * Respond to an activity request with "Thumbs Up" & "Thumbs Down" interface
 * Chat conversation with the activity
 
