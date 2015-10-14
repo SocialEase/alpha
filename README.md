@@ -7,7 +7,7 @@
 
 ## Idea Overview
 
-Based on problem statement above, we want to take a stab at the problem try to streamline the whole process and make the planning easy by automating it. The app will not just take care of automating the planning part of the activity but also provide relevant updates to the group as the activity is happening. More details are listed below as feautures.
+Based on problem statement above, we want to streamline the whole process and make the planning easy by automating it. The app will not just take care of automating the planning part of the activity but also provide relevant updates to the group as the activity is happening. More details are listed below as feautures.
 
 
 ## Feature list:
