@@ -13,23 +13,23 @@ private var _currentUser: User?
 private let CURRENT_USER_KEY = "CURRENT_USER_KEY"
 
 class User : NSObject {
-    //    static var sampleDictionary = [
-    //        [ "firstName": "Yuichi", "lastName": "Kuroda", "imageBinName": "yuichi-user-profile", "imageUrlPath": "" ],
-    //        [ "firstName": "Amay", "lastName": "Singhal", "imageBinName": "amay-user-profile", "imageUrlPath": "" ],
-    //        [ "firstName": "Uday", "lastName": "Mitra", "imageBinName": "uday-user-profile", "imageUrlPath": "" ],
-    //        [ "firstName": "Yuichi", "lastName": "Kuroda", "imageBinName": "yuichi-user-profile", "imageUrlPath": "" ],
-    //        [ "firstName": "Amay", "lastName": "Singhal", "imageBinName": "amay-user-profile", "imageUrlPath": "" ],
-    //        [ "firstName": "Uday", "lastName": "Mitra", "imageBinName": "uday-user-profile", "imageUrlPath": "" ],
-    //        [ "firstName": "Yuichi", "lastName": "Kuroda", "imageBinName": "yuichi-user-profile", "imageUrlPath": "" ],
-    //        [ "firstName": "Amay", "lastName": "Singhal", "imageBinName": "amay-user-profile", "imageUrlPath": "" ],
-    //        [ "firstName": "Uday", "lastName": "Mitra", "imageBinName": "uday-user-profile", "imageUrlPath": "" ],
-    //        [ "firstName": "Yuichi", "lastName": "Kuroda", "imageBinName": "yuichi-user-profile", "imageUrlPath": "" ],
-    //        [ "firstName": "Amay", "lastName": "Singhal", "imageBinName": "amay-user-profile", "imageUrlPath": "" ],
-    //        [ "firstName": "Uday", "lastName": "Mitra", "imageBinName": "uday-user-profile", "imageUrlPath": "" ],
-    //        [ "firstName": "Yuichi", "lastName": "Kuroda", "imageBinName": "yuichi-user-profile", "imageUrlPath": "" ],
-    //        [ "firstName": "Amay", "lastName": "Singhal", "imageBinName": "amay-user-profile", "imageUrlPath": "" ],
-    //        [ "firstName": "Uday", "lastName": "Mitra", "imageBinName": "uday-user-profile", "imageUrlPath": "" ],
-    //    ]
+        static var sampleDictionary = [
+            [ "name": "Yuichi", "lastName": "Kuroda", "profileImageBinName": "yuichi-user-profile", "profileImageUrlPath": "" ],
+            [ "name": "Amay", "lastName": "Singhal", "profileImageBinName": "amay-user-profile", "profileImageUrlPath": "" ],
+            [ "name": "Uday", "lastName": "Mitra", "profileImageBinName": "uday-user-profile", "profileImageUrlPath": "" ],
+            [ "name": "Yuichi", "lastName": "Kuroda", "profileImageBinName": "yuichi-user-profile", "profileImageUrlPath": "" ],
+            [ "name": "Amay", "lastName": "Singhal", "profileImageBinName": "amay-user-profile", "profileImageUrlPath": "" ],
+            [ "name": "Uday", "lastName": "Mitra", "profileImageBinName": "uday-user-profile", "profileImageUrlPath": "" ],
+            [ "name": "Yuichi", "lastName": "Kuroda", "profileImageBinName": "yuichi-user-profile", "profileImageUrlPath": "" ],
+            [ "name": "Amay", "lastName": "Singhal", "profileImageBinName": "amay-user-profile", "profileImageUrlPath": "" ],
+            [ "name": "Uday", "lastName": "Mitra", "profileImageBinName": "uday-user-profile", "profileImageUrlPath": "" ],
+            [ "name": "Yuichi", "lastName": "Kuroda", "profileImageBinName": "yuichi-user-profile", "profileImageUrlPath": "" ],
+            [ "name": "Amay", "lastName": "Singhal", "profileImageBinName": "amay-user-profile", "profileImageUrlPath": "" ],
+            [ "name": "Uday", "lastName": "Mitra", "profileImageBinName": "uday-user-profile", "profileImageUrlPath": "" ],
+            [ "name": "Yuichi", "lastName": "Kuroda", "profileImageBinName": "yuichi-user-profile", "profileImageUrlPath": "" ],
+            [ "name": "Amay", "lastName": "Singhal", "profileImageBinName": "amay-user-profile", "profileImageUrlPath": "" ],
+            [ "name": "Uday", "lastName": "Mitra", "profileImageBinName": "uday-user-profile", "profileImageUrlPath": "" ],
+        ]
     
     var name: String?
     var phoneNumber: String?
@@ -59,6 +59,9 @@ class User : NSObject {
             self.userPreferences = UserPreferences.getUserPreferences(encodedPreferencesString)
         }
         self.pfUser = pfUser
+        if let profileImageBinName = pfUser["profileImageBinName"] as? String {
+            self.profileImageBinName = profileImageBinName
+        }
     }
     
     override init() {
@@ -117,11 +120,14 @@ class User : NSObject {
         
         var friends = [User]()
         
-        /* TODO: Write init()
         for friendDictionary in sampleDictionary {
-            let friend = User(dictionary: friendDictionary)
+            let user = PFUser()
+            user["name"] = friendDictionary["name"]
+            user["profileImageBinName"] = friendDictionary["profileImageBinName"]
+            
+            let friend = User(pfUser: user)
             friends.append(friend)
-        }*/
+        }
         
         completion(friends: friends, error: nil)
     }

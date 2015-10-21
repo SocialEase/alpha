@@ -37,7 +37,8 @@ extension UIColor {
     }
     
     class func sea_unselectedButtonColor() -> UIColor {
-        return UIColor(red: 139/255, green: 139/255, blue: 139/255, alpha: 1)
+        return sea_primaryLightTextColor()
+        //return UIColor(red: 139/255, green: 139/255, blue: 139/255, alpha: 1)
     }
     
     class func sea_selectedButtonColor() -> UIColor {

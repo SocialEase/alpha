@@ -19,7 +19,7 @@ class WelcomeViewController: UIViewController {
     
     func styleView() {
         self.view.backgroundColor = UIColor.sea_primaryColor()
-        hiThereLabel.textColor = UIColor.sea_primaryLabelColor()
+        hiThereLabel.textColor = UIColor.sea_primaryLightTextColor()
 
         registerButton.setTitleColor(UIColor.sea_unselectedButtonColor(), forState: UIControlState.Normal)
         registerButton.setTitleColor(UIColor.sea_selectedButtonColor(), forState: UIControlState.Highlighted)

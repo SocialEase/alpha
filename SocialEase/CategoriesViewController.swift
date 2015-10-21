@@ -9,6 +9,9 @@
 import UIKit
 
 class CategoriesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    static var completionCallback: (() -> ())?
+    
     var cuisines: [Cuisine]?
     @IBOutlet weak var cuisinesCollectionView: UICollectionView!
     
@@ -74,6 +77,13 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
     func openGroupsController() {
-        self.performSegueWithIdentifier("groupsViewSegue", sender: self)
+        nextAction()
+    }
+    
+    func nextAction() {
+        if let completionCallback = CategoriesViewController.completionCallback {
+            completionCallback()
+        }
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }

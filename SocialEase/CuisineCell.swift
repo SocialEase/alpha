@@ -22,7 +22,6 @@ class CuisineCell: UICollectionViewCell {
             cellSelected = cuisine.userSelected
             showTappedStateForCell()
             
-            print(cuisine.imageUrl)
             cuisineImageView.setImageWithURL(cuisine.imageUrl)
             cuisineImageView.contentMode = UIViewContentMode.ScaleToFill
         }

@@ -22,33 +22,30 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yuichi K." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxa-rW-HvG">
                         <rect key="frame" x="199" y="128" width="66" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PzI-Es-znY">
-                        <rect key="frame" x="175" y="12.5" width="115" height="115"/>
-                        <color key="backgroundColor" red="0.25490196079999999" green="0.66666666669999997" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="115" id="AwP-yN-dk5"/>
-                            <constraint firstAttribute="width" constant="115" id="EkV-mO-DO7"/>
-                        </constraints>
+                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5sp-Qa-jKe">
+                        <rect key="frame" x="182" y="20" width="100" height="100"/>
                     </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
                 <constraint firstItem="fxa-rW-HvG" firstAttribute="top" secondItem="rjI-5M-lJM" secondAttribute="bottom" constant="8" id="8X2-tF-XEP"/>
-                <constraint firstItem="PzI-Es-znY" firstAttribute="centerX" secondItem="rjI-5M-lJM" secondAttribute="centerX" id="AV4-Ip-ftR"/>
+                <constraint firstItem="5sp-Qa-jKe" firstAttribute="width" secondItem="rjI-5M-lJM" secondAttribute="width" id="Aiq-yb-CNS"/>
                 <constraint firstItem="rjI-5M-lJM" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="DCs-QD-K4m"/>
+                <constraint firstItem="5sp-Qa-jKe" firstAttribute="height" secondItem="rjI-5M-lJM" secondAttribute="height" id="MjM-wZ-2vO"/>
+                <constraint firstItem="5sp-Qa-jKe" firstAttribute="centerX" secondItem="rjI-5M-lJM" secondAttribute="centerX" id="OaV-S0-p0S"/>
                 <constraint firstItem="rjI-5M-lJM" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="Txz-bv-ko0"/>
                 <constraint firstItem="fxa-rW-HvG" firstAttribute="centerX" secondItem="rjI-5M-lJM" secondAttribute="centerX" id="VK4-ky-JJF"/>
-                <constraint firstItem="PzI-Es-znY" firstAttribute="centerY" secondItem="rjI-5M-lJM" secondAttribute="centerY" id="sU8-Ob-Ob2"/>
+                <constraint firstItem="5sp-Qa-jKe" firstAttribute="centerY" secondItem="rjI-5M-lJM" secondAttribute="centerY" id="x3W-i0-Ov9"/>
             </constraints>
             <size key="customSize" width="465" height="363"/>
             <connections>
                 <outlet property="imageView" destination="rjI-5M-lJM" id="eb2-Sd-bbB"/>
                 <outlet property="nameLabel" destination="fxa-rW-HvG" id="xTK-m4-p3x"/>
-                <outlet property="selectedCircle" destination="PzI-Es-znY" id="cwB-x7-SWj"/>
+                <outlet property="overlayView" destination="5sp-Qa-jKe" id="14T-lu-S8G"/>
             </connections>
             <point key="canvasLocation" x="346.5" y="584.5"/>
         </collectionViewCell>

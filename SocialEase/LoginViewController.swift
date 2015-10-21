@@ -10,7 +10,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    var completionCallback: (() -> ())?
+    static var completionCallback: (() -> ())?
     
     @IBOutlet weak var phoneNumberTextField: UITextField!
     @IBOutlet weak var phoneLabel: UILabel!
@@ -23,7 +23,7 @@ class LoginViewController: UIViewController {
     
     func styleView() {
         self.view.backgroundColor = UIColor.sea_primaryColor()
-        phoneLabel.textColor = UIColor.sea_primaryLabelColor()
+        phoneLabel.textColor = UIColor.sea_primaryLightTextColor()
         
         loginButton.setTitleColor(UIColor.sea_unselectedButtonColor(), forState: UIControlState.Normal)
         loginButton.setTitleColor(UIColor.sea_selectedButtonColor(), forState: UIControlState.Highlighted)
@@ -57,13 +57,14 @@ class LoginViewController: UIViewController {
     }
     
     func openGroupsController() {
-        self.performSegueWithIdentifier("groupsViewSegue", sender: self)
+        nextAction()
     }
     
     func nextAction() {
-        if let completionCallback = completionCallback {
+        if let completionCallback = LoginViewController.completionCallback {
             completionCallback()
         }
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
 }

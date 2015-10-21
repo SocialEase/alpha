@@ -10,11 +10,11 @@ import UIKit
 
 class UserCell: UICollectionViewCell {
     
-    @IBOutlet weak var selectedCircle: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var overlayView: UIView!
     
-    var isUserSelected = false
+    var cellSelected = false
     
     var user: User! {
         didSet {
@@ -39,44 +39,34 @@ class UserCell: UICollectionViewCell {
         nameLabel.textColor = UIColor.sea_secondaryHintColor()
         nameLabel.font = UIFont.boldSystemFontOfSize(17)
         
-        let imageTap = UITapGestureRecognizer(target: self, action: "onImageTap:")
-        imageTap.numberOfTapsRequired = 1
-        imageView.userInteractionEnabled = true
-        imageView.addGestureRecognizer(imageTap)
         imageView.layer.cornerRadius = imageView.layer.frame.width / 2
         imageView.layer.masksToBounds = true
         
-        // When the user image is 'selected', the circle gets displayed above the user image, and the
-        // gesture for that stops responding, so another responder is required for the circle when 'unselected'
-        let circleTap = UITapGestureRecognizer(target: self, action: "onCircleTap:")
-        circleTap.numberOfTapsRequired = 1
-        selectedCircle.userInteractionEnabled = true
-        selectedCircle.addGestureRecognizer(circleTap)
-        selectedCircle.backgroundColor = UIColor.clearColor()
-        selectedCircle.layer.borderColor = UIColor.sea_secondarySelectedColor().CGColor
-        selectedCircle.layer.borderWidth = 10.0
-        selectedCircle.layer.cornerRadius = imageView.layer.cornerRadius
-        selectedCircle.layer.masksToBounds = true
-        selectedCircle.hidden = true
+        let imageTap = UITapGestureRecognizer(target: self, action: "onImageTap:")
+        imageTap.numberOfTapsRequired = 1
+        overlayView.addGestureRecognizer(imageTap)
+        overlayView.layer.cornerRadius = imageView.layer.frame.width / 2
+        overlayView.layer.masksToBounds = true
     }
     
     func onImageTap(gestureRecognizer: UITapGestureRecognizer) {
-        switch gestureRecognizer.state {
-        case .Ended:
-            selectedCircle.hidden = false
-        default:
-            break
-        }
+        cellSelected = !cellSelected
+        showTappedStateForCell()
     }
     
-    func onCircleTap(gestureRecognizer: UITapGestureRecognizer) {
-        switch gestureRecognizer.state {
-        case .Ended:
-            selectedCircle.hidden = true
-        default:
-            break
-        }
+    func showTappedStateForCell() {
+        let endColor = cellSelected ? UIColor.sea_secondarySelectedColor() : UIColor.clearColor()
+        
+        UIView.animateWithDuration(0.15, animations: {
+            self.overlayView.backgroundColor = endColor
+            self.imageView.transform = CGAffineTransformMakeScale(0.75, 0.75)
+            self.overlayView.transform = CGAffineTransformMakeScale(0.75, 0.75)
+            }, completion: { (finished) in
+                UIView.animateWithDuration(0.15, animations: {
+                    self.imageView.transform = CGAffineTransformMakeScale(1, 1)
+                    self.overlayView.transform = CGAffineTransformMakeScale(1, 1)
+                })
+        })
     }
-
     
 }

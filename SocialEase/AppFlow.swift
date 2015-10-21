@@ -37,11 +37,12 @@ class AppFlow: NSObject {
             
             let viewController = loginStoryboard.instantiateViewControllerWithIdentifier("WelcomeViewController2")
             
-            /* DEL:
-            let viewController = LoginViewController()
-            viewController.completionCallback = { () -> () in
+            LoginViewController.completionCallback = { () -> () in
                 self.presentGroupSelection()
-            }*/
+            }
+            CategoriesViewController.completionCallback = { () -> () in
+                self.presentGroupSelection()
+            }
             
             rootViewController.pushViewController(viewController, animated: true)
         }
