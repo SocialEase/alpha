@@ -29,4 +29,5 @@ Based on problem statement above, we want to streamline the whole process and ma
 * Share content (photos/videos etc.) within the group
 
 ### Walkthrough
-![Video Walkthrough](socialease-walkthrough.gif)
+![Video Walkthrough](socialease-walkthrough-1.gif)
+![Video Walkthrough](socialease-walkthrough-2.gif)
