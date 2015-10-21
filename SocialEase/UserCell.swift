@@ -18,14 +18,15 @@ class UserCell: UICollectionViewCell {
     
     var user: User! {
         didSet {
+            /* TODO: Use this if we separate name into first + last.
             if let lastInitial = user.lastName.characters.first {
                 nameLabel.text = user.firstName + " " + String(lastInitial) + "."
-            } else {
-                nameLabel.text = user.firstName
-            }
-            if let imageBinName = user.imageBinName {
+            } else {*/
+                nameLabel.text = user.name
+            //}
+            if let imageBinName = user.profileImageBinName {
                 imageView.image = UIImage(named: imageBinName)
-            } else if let imageUrl = user.imageUrl {
+            } else if let imageUrl = user.profileImageUrl {
                 imageView.setImageWithURL(imageUrl)
             }
         }

@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04ECB7651BD73A2E00819BA4 /* Cuisine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECB7641BD73A2E00819BA4 /* Cuisine.swift */; settings = {ASSET_TAGS = (); }; };
+		04ECB7691BD73BC700819BA4 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECB7681BD73BC700819BA4 /* UserPreferences.swift */; settings = {ASSET_TAGS = (); }; };
+		04ECB76F1BD73EB300819BA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04ECB76E1BD73EB300819BA4 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
+		04ECB7711BD73F3D00819BA4 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECB7701BD73F3D00819BA4 /* RegisterViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		04ECB7761BD73F5500819BA4 /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECB7721BD73F5500819BA4 /* GroupsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		04ECB7771BD73F5500819BA4 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECB7731BD73F5500819BA4 /* WelcomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		04ECB7781BD73F5500819BA4 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECB7741BD73F5500819BA4 /* CategoriesViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		04ECB7791BD73F5500819BA4 /* PreferencesInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECB7751BD73F5500819BA4 /* PreferencesInfoViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		04ECB77B1BD73FB500819BA4 /* CuisineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECB77A1BD73FB500819BA4 /* CuisineCell.swift */; settings = {ASSET_TAGS = (); }; };
 		59F0FA011BD242980041A149 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F0FA001BD242980041A149 /* AppDelegate.swift */; };
 		59F0FA081BD242980041A149 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59F0FA071BD242980041A149 /* Assets.xcassets */; };
 		59F0FA0B1BD242980041A149 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59F0FA091BD242980041A149 /* LaunchScreen.storyboard */; };
@@ -36,6 +45,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04ECB7641BD73A2E00819BA4 /* Cuisine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cuisine.swift; sourceTree = "<group>"; };
+		04ECB7681BD73BC700819BA4 /* UserPreferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
+		04ECB76E1BD73EB300819BA4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		04ECB7701BD73F3D00819BA4 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		04ECB7721BD73F5500819BA4 /* GroupsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
+		04ECB7731BD73F5500819BA4 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		04ECB7741BD73F5500819BA4 /* CategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		04ECB7751BD73F5500819BA4 /* PreferencesInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesInfoViewController.swift; sourceTree = "<group>"; };
+		04ECB77A1BD73FB500819BA4 /* CuisineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CuisineCell.swift; sourceTree = "<group>"; };
 		0D8E4A11F2A9FD1D88A715F1 /* Pods-SocialEase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialEase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialEase/Pods-SocialEase.debug.xcconfig"; sourceTree = "<group>"; };
 		59F0F9FD1BD242980041A149 /* SocialEase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialEase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59F0FA001BD242980041A149 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +143,8 @@
 		59F3215E1BD305D8005AB36C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				04ECB7681BD73BC700819BA4 /* UserPreferences.swift */,
+				04ECB7641BD73A2E00819BA4 /* Cuisine.swift */,
 				59F321921BD4A705005AB36C /* Group.swift */,
 				59F321941BD4A710005AB36C /* User.swift */,
 			);
@@ -141,6 +161,7 @@
 		59F321671BD32F38005AB36C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				04ECB77A1BD73FB500819BA4 /* CuisineCell.swift */,
 				59F321791BD43C26005AB36C /* GroupCell.swift */,
 				59F3217A1BD43C26005AB36C /* GroupCell.xib */,
 				59F3218A1BD49A01005AB36C /* UserCell.swift */,
@@ -152,11 +173,16 @@
 		59F321681BD32F3C005AB36C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				04ECB7721BD73F5500819BA4 /* GroupsViewController.swift */,
+				04ECB7731BD73F5500819BA4 /* WelcomeViewController.swift */,
+				04ECB7741BD73F5500819BA4 /* CategoriesViewController.swift */,
+				04ECB7751BD73F5500819BA4 /* PreferencesInfoViewController.swift */,
+				04ECB7701BD73F3D00819BA4 /* RegisterViewController.swift */,
+				59F3216E1BD33224005AB36C /* LoginViewController.swift */,
 				59F3215F1BD3099C005AB36C /* ViewController.swift */,
 				59F321601BD3099C005AB36C /* ViewController.xib */,
 				59F3216A1BD33165005AB36C /* GroupSelectionViewController.swift */,
 				59F3216B1BD33165005AB36C /* GroupSelectionViewController.xib */,
-				59F3216E1BD33224005AB36C /* LoginViewController.swift */,
 				59F3216F1BD33224005AB36C /* LoginViewController.xib */,
 				59F321721BD33371005AB36C /* SuggestionsViewController.swift */,
 				59F321731BD33371005AB36C /* SuggestionsViewController.xib */,
@@ -172,6 +198,7 @@
 				59F0FA001BD242980041A149 /* AppDelegate.swift */,
 				59F321651BD32D8F005AB36C /* AppFlow.swift */,
 				59F0FA091BD242980041A149 /* LaunchScreen.storyboard */,
+				04ECB76E1BD73EB300819BA4 /* Main.storyboard */,
 			);
 			name = Application;
 			sourceTree = "<group>";
@@ -271,6 +298,7 @@
 				59F3218D1BD49A01005AB36C /* UserCell.xib in Resources */,
 				59F321851BD486DF005AB36C /* GroupCreateViewController.xib in Resources */,
 				59F321911BD4A67F005AB36C /* yuichi-user-profile.png in Resources */,
+				04ECB76F1BD73EB300819BA4 /* Main.storyboard in Resources */,
 				59F3216D1BD33165005AB36C /* GroupSelectionViewController.xib in Resources */,
 				59F3217C1BD43C26005AB36C /* GroupCell.xib in Resources */,
 				59F321901BD4A67F005AB36C /* default-user-profile.png in Resources */,
@@ -336,16 +364,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				59F321931BD4A705005AB36C /* Group.swift in Sources */,
+				04ECB7691BD73BC700819BA4 /* UserPreferences.swift in Sources */,
+				04ECB7781BD73F5500819BA4 /* CategoriesViewController.swift in Sources */,
 				59F321701BD33224005AB36C /* LoginViewController.swift in Sources */,
+				04ECB77B1BD73FB500819BA4 /* CuisineCell.swift in Sources */,
 				59F3215D1BD2FD10005AB36C /* Colors.swift in Sources */,
+				04ECB7761BD73F5500819BA4 /* GroupsViewController.swift in Sources */,
+				04ECB7771BD73F5500819BA4 /* WelcomeViewController.swift in Sources */,
 				59F321661BD32D8F005AB36C /* AppFlow.swift in Sources */,
 				59F0FA011BD242980041A149 /* AppDelegate.swift in Sources */,
+				04ECB7711BD73F3D00819BA4 /* RegisterViewController.swift in Sources */,
 				59F321611BD3099C005AB36C /* ViewController.swift in Sources */,
 				59F321841BD486DF005AB36C /* GroupCreateViewController.swift in Sources */,
 				59F3216C1BD33165005AB36C /* GroupSelectionViewController.swift in Sources */,
 				59F321951BD4A710005AB36C /* User.swift in Sources */,
+				04ECB7651BD73A2E00819BA4 /* Cuisine.swift in Sources */,
 				59F321741BD33371005AB36C /* SuggestionsViewController.swift in Sources */,
 				59F3218C1BD49A01005AB36C /* UserCell.swift in Sources */,
+				04ECB7791BD73F5500819BA4 /* PreferencesInfoViewController.swift in Sources */,
 				59F3217B1BD43C26005AB36C /* GroupCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

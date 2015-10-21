@@ -12,23 +12,52 @@ class LoginViewController: UIViewController {
     
     var completionCallback: (() -> ())?
     
+    @IBOutlet weak var phoneNumberTextField: UITextField!
+    @IBOutlet weak var phoneLabel: UILabel!
+    @IBOutlet weak var loginButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-        navigationItem.title = "Login"
-        
-        // So view doesn't hide behind navigation bar
-        self.edgesForExtendedLayout = UIRectEdge.None
+        styleView()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func styleView() {
+        self.view.backgroundColor = UIColor.sea_primaryColor()
+        phoneLabel.textColor = UIColor.sea_primaryLabelColor()
+        
+        loginButton.setTitleColor(UIColor.sea_unselectedButtonColor(), forState: UIControlState.Normal)
+        loginButton.setTitleColor(UIColor.sea_selectedButtonColor(), forState: UIControlState.Highlighted)
     }
     
-    @IBAction func onLoginTap(sender: AnyObject) {
-        nextAction()
+    override func viewDidLayoutSubviews() {
+        self.styleView()
+    }
+    
+    @IBAction func didLogin(sender: AnyObject) {
+        // TODO: add 2 step authentication
+        let phoneNumber = phoneNumberTextField.text!
+        
+        User.logInInBackground(phoneNumber) { (user, error) -> () in
+            if (error != nil) {
+                let alert = UIAlertController(title: "Error", message: "Couldnt login", preferredStyle: UIAlertControllerStyle.Alert)
+                let defaultAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,
+                    handler: { (alertAction) -> Void in })
+                alert.addAction(defaultAction)
+                self.presentViewController(alert, animated: true, completion: nil)
+            } else {
+                User.currentUser = user
+                print("Login successful. take to groups screen")
+                self.openGroupsController()
+            }
+        }
+    }
+    
+    @IBAction func backButtonTap(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func openGroupsController() {
+        self.performSegueWithIdentifier("groupsViewSegue", sender: self)
     }
     
     func nextAction() {

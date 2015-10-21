@@ -32,4 +32,17 @@ extension UIColor {
         return UIColor(red: 0.0/255.0, green: 187.0/255.0, blue: 73.0/255.0, alpha: 1.0)
     }
     
+    class func sea_primaryLabelColor() -> UIColor {
+        return UIColor.darkGrayColor()
+    }
+    
+    class func sea_unselectedButtonColor() -> UIColor {
+        return UIColor(red: 139/255, green: 139/255, blue: 139/255, alpha: 1)
+    }
+    
+    class func sea_selectedButtonColor() -> UIColor {
+        return UIColor.darkGrayColor()
+    }
+
+    
 }

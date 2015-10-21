@@ -33,10 +33,15 @@ class AppFlow: NSObject {
     
     func presentLogin() {
         if let rootViewController = self.window.rootViewController as? UINavigationController {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let viewController = storyboard.instantiateViewControllerWithIdentifier("WelcomeViewController2")
+            
+            /* DEL:
             let viewController = LoginViewController()
             viewController.completionCallback = { () -> () in
                 self.presentGroupSelection()
-            }
+            }*/
             
             rootViewController.pushViewController(viewController, animated: true)
         }
