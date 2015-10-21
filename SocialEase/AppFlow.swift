@@ -33,9 +33,9 @@ class AppFlow: NSObject {
     
     func presentLogin() {
         if let rootViewController = self.window.rootViewController as? UINavigationController {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let loginStoryboard = UIStoryboard(name: "Login", bundle: nil)
             
-            let viewController = storyboard.instantiateViewControllerWithIdentifier("WelcomeViewController2")
+            let viewController = loginStoryboard.instantiateViewControllerWithIdentifier("WelcomeViewController2")
             
             /* DEL:
             let viewController = LoginViewController()

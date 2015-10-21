@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		04ECB7651BD73A2E00819BA4 /* Cuisine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECB7641BD73A2E00819BA4 /* Cuisine.swift */; settings = {ASSET_TAGS = (); }; };
 		04ECB7691BD73BC700819BA4 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECB7681BD73BC700819BA4 /* UserPreferences.swift */; settings = {ASSET_TAGS = (); }; };
-		04ECB76F1BD73EB300819BA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04ECB76E1BD73EB300819BA4 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
+		04ECB76F1BD73EB300819BA4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04ECB76E1BD73EB300819BA4 /* Login.storyboard */; settings = {ASSET_TAGS = (); }; };
 		04ECB7711BD73F3D00819BA4 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECB7701BD73F3D00819BA4 /* RegisterViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		04ECB7761BD73F5500819BA4 /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECB7721BD73F5500819BA4 /* GroupsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		04ECB7771BD73F5500819BA4 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECB7731BD73F5500819BA4 /* WelcomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -47,7 +47,7 @@
 /* Begin PBXFileReference section */
 		04ECB7641BD73A2E00819BA4 /* Cuisine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cuisine.swift; sourceTree = "<group>"; };
 		04ECB7681BD73BC700819BA4 /* UserPreferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
-		04ECB76E1BD73EB300819BA4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		04ECB76E1BD73EB300819BA4 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		04ECB7701BD73F3D00819BA4 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		04ECB7721BD73F5500819BA4 /* GroupsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
 		04ECB7731BD73F5500819BA4 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -198,7 +198,7 @@
 				59F0FA001BD242980041A149 /* AppDelegate.swift */,
 				59F321651BD32D8F005AB36C /* AppFlow.swift */,
 				59F0FA091BD242980041A149 /* LaunchScreen.storyboard */,
-				04ECB76E1BD73EB300819BA4 /* Main.storyboard */,
+				04ECB76E1BD73EB300819BA4 /* Login.storyboard */,
 			);
 			name = Application;
 			sourceTree = "<group>";
@@ -298,7 +298,7 @@
 				59F3218D1BD49A01005AB36C /* UserCell.xib in Resources */,
 				59F321851BD486DF005AB36C /* GroupCreateViewController.xib in Resources */,
 				59F321911BD4A67F005AB36C /* yuichi-user-profile.png in Resources */,
-				04ECB76F1BD73EB300819BA4 /* Main.storyboard in Resources */,
+				04ECB76F1BD73EB300819BA4 /* Login.storyboard in Resources */,
 				59F3216D1BD33165005AB36C /* GroupSelectionViewController.xib in Resources */,
 				59F3217C1BD43C26005AB36C /* GroupCell.xib in Resources */,
 				59F321901BD4A67F005AB36C /* default-user-profile.png in Resources */,
