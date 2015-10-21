@@ -27,3 +27,6 @@ Based on problem statement above, we want to streamline the whole process and ma
 * Provide relevant status updates to the group about other members
 * Recommendation on suggested time to start an activity based on current traffic data and each individual’s current location
 * Share content (photos/videos etc.) within the group
+
+### Walkthrough
+![Video Walkthrough](socialease-walkthrough.gif)
