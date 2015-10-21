@@ -45,7 +45,7 @@ class AppFlow: NSObject {
     func presentGroupSelection() {
         if let rootViewControler = self.window.rootViewController as? UINavigationController {
             let viewController = GroupSelectionViewController()
-            viewController.completionCallback = { () -> () in
+            viewController.completionCallback = { (group: Group) -> () in
                 self.presentSuggestions()
             }
             

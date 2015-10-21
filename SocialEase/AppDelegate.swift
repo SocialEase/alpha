@@ -18,9 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
         // Set default theme for navigation bar
-        UINavigationBar.appearance().barTintColor = UIColor.sea_primaryBackgroundColor()
-        UINavigationBar.appearance().tintColor = UIColor.sea_primaryTextColor()
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.sea_primaryTextColor()]
+        UINavigationBar.appearance().barTintColor = UIColor.sea_primaryColor()
+        UINavigationBar.appearance().tintColor = UIColor.sea_primaryLightTextColor()
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.sea_primaryLightTextColor()]
         
         let appFlow = AppFlow()
         appFlow.presentRoot()

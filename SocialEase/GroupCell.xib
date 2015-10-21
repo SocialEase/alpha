@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="110" id="KGk-i7-Jjw" customClass="GroupCell" customModule="SocialEase" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="627" height="110"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="627" height="109.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Codepath Friends" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="285-jb-9n2">
+                        <rect key="frame" x="8" y="8" width="136.5" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(8)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bbh-FB-WPb">
+                        <rect key="frame" x="156.5" y="7" width="22" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fvw-mk-SMG">
+                        <rect key="frame" x="8" y="33" width="607" height="65"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 others..." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53l-Vf-rg1">
+                                <rect key="frame" x="521" y="23" width="70" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="65" id="9jm-1O-KkN"/>
+                            <constraint firstAttribute="trailing" secondItem="53l-Vf-rg1" secondAttribute="trailing" constant="16" id="M5u-KJ-sP5"/>
+                            <constraint firstItem="53l-Vf-rg1" firstAttribute="centerY" secondItem="fvw-mk-SMG" secondAttribute="centerY" id="kIS-g5-1pJ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fvw-mk-SMG" secondAttribute="bottom" constant="12" id="2yY-rK-cbI"/>
+                    <constraint firstItem="285-jb-9n2" firstAttribute="centerY" secondItem="Bbh-FB-WPb" secondAttribute="centerY" id="73w-2F-cB3"/>
+                    <constraint firstItem="fvw-mk-SMG" firstAttribute="leading" secondItem="285-jb-9n2" secondAttribute="leading" id="B6v-D7-iBq"/>
+                    <constraint firstItem="285-jb-9n2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="M9G-Vn-S1a"/>
+                    <constraint firstItem="fvw-mk-SMG" firstAttribute="top" secondItem="285-jb-9n2" secondAttribute="bottom" constant="8" id="VCG-6t-8Gt"/>
+                    <constraint firstItem="285-jb-9n2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="ZbC-in-ULv"/>
+                    <constraint firstItem="Bbh-FB-WPb" firstAttribute="leading" secondItem="285-jb-9n2" secondAttribute="trailing" constant="12" id="hR5-u0-QW0"/>
+                    <constraint firstAttribute="trailing" secondItem="fvw-mk-SMG" secondAttribute="trailing" constant="12" id="kgA-Aw-MPw"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="friendsContainerView" destination="fvw-mk-SMG" id="Zpd-fA-HcX"/>
+                <outlet property="groupCountLabel" destination="Bbh-FB-WPb" id="kCD-w6-al4"/>
+                <outlet property="nameLabel" destination="285-jb-9n2" id="3V2-HN-MgO"/>
+                <outlet property="othersCountLabel" destination="53l-Vf-rg1" id="6vo-rd-GQC"/>
+            </connections>
+            <point key="canvasLocation" x="532.5" y="480"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GroupSelectionViewController" customModule="SocialEase" customModuleProvider="target">
             <connections>
+                <outlet property="groupsTableView" destination="wCA-qt-KeR" id="jI9-Yn-7h3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,18 +15,19 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nA9-dH-TUO">
-                    <rect key="frame" x="285" y="285" width="30" height="30"/>
-                    <state key="normal" title="next"/>
-                    <connections>
-                        <action selector="onNextTap:" destination="-1" eventType="touchUpInside" id="h1E-b5-Nuf"/>
-                    </connections>
-                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wCA-qt-KeR">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="nA9-dH-TUO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="WFF-q4-ECg"/>
-                <constraint firstItem="nA9-dH-TUO" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="xyZ-LO-Xmm"/>
+                <constraint firstAttribute="trailing" secondItem="wCA-qt-KeR" secondAttribute="trailing" id="2eY-sU-qY8"/>
+                <constraint firstAttribute="bottom" secondItem="wCA-qt-KeR" secondAttribute="bottom" id="Qpq-rm-Y4H"/>
+                <constraint firstItem="wCA-qt-KeR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Rc1-rk-Fsc"/>
+                <constraint firstItem="wCA-qt-KeR" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="ccM-8J-V2Z"/>
+                <constraint firstItem="wCA-qt-KeR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="fFh-Fa-hxG"/>
+                <constraint firstItem="wCA-qt-KeR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="yG5-1L-Efi"/>
             </constraints>
         </view>
     </objects>

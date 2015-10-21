@@ -20,6 +20,18 @@
 		59F321711BD33224005AB36C /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59F3216F1BD33224005AB36C /* LoginViewController.xib */; };
 		59F321741BD33371005AB36C /* SuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F321721BD33371005AB36C /* SuggestionsViewController.swift */; };
 		59F321751BD33371005AB36C /* SuggestionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59F321731BD33371005AB36C /* SuggestionsViewController.xib */; };
+		59F3217B1BD43C26005AB36C /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F321791BD43C26005AB36C /* GroupCell.swift */; settings = {ASSET_TAGS = (); }; };
+		59F3217C1BD43C26005AB36C /* GroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59F3217A1BD43C26005AB36C /* GroupCell.xib */; settings = {ASSET_TAGS = (); }; };
+		59F321841BD486DF005AB36C /* GroupCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F321821BD486DF005AB36C /* GroupCreateViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		59F321851BD486DF005AB36C /* GroupCreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59F321831BD486DF005AB36C /* GroupCreateViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		59F3218C1BD49A01005AB36C /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F3218A1BD49A01005AB36C /* UserCell.swift */; settings = {ASSET_TAGS = (); }; };
+		59F3218D1BD49A01005AB36C /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59F3218B1BD49A01005AB36C /* UserCell.xib */; settings = {ASSET_TAGS = (); }; };
+		59F321901BD4A67F005AB36C /* default-user-profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 59F3218E1BD4A67F005AB36C /* default-user-profile.png */; settings = {ASSET_TAGS = (); }; };
+		59F321911BD4A67F005AB36C /* yuichi-user-profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 59F3218F1BD4A67F005AB36C /* yuichi-user-profile.png */; settings = {ASSET_TAGS = (); }; };
+		59F321931BD4A705005AB36C /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F321921BD4A705005AB36C /* Group.swift */; settings = {ASSET_TAGS = (); }; };
+		59F321951BD4A710005AB36C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F321941BD4A710005AB36C /* User.swift */; settings = {ASSET_TAGS = (); }; };
+		59F321981BD4B817005AB36C /* amay-user-profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 59F321961BD4B817005AB36C /* amay-user-profile.png */; settings = {ASSET_TAGS = (); }; };
+		59F321991BD4B817005AB36C /* uday-user-profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 59F321971BD4B817005AB36C /* uday-user-profile.png */; settings = {ASSET_TAGS = (); }; };
 		DB60B389636A8D1DFCB85A92 /* Pods_SocialEase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBBB717F537F177AEEECFB4 /* Pods_SocialEase.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -40,6 +52,18 @@
 		59F3216F1BD33224005AB36C /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		59F321721BD33371005AB36C /* SuggestionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionsViewController.swift; sourceTree = "<group>"; };
 		59F321731BD33371005AB36C /* SuggestionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SuggestionsViewController.xib; sourceTree = "<group>"; };
+		59F321791BD43C26005AB36C /* GroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
+		59F3217A1BD43C26005AB36C /* GroupCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupCell.xib; sourceTree = "<group>"; };
+		59F321821BD486DF005AB36C /* GroupCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCreateViewController.swift; sourceTree = "<group>"; };
+		59F321831BD486DF005AB36C /* GroupCreateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupCreateViewController.xib; sourceTree = "<group>"; };
+		59F3218A1BD49A01005AB36C /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		59F3218B1BD49A01005AB36C /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
+		59F3218E1BD4A67F005AB36C /* default-user-profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "default-user-profile.png"; path = "Images/default-user-profile.png"; sourceTree = "<group>"; };
+		59F3218F1BD4A67F005AB36C /* yuichi-user-profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "yuichi-user-profile.png"; path = "Images/yuichi-user-profile.png"; sourceTree = "<group>"; };
+		59F321921BD4A705005AB36C /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		59F321941BD4A710005AB36C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		59F321961BD4B817005AB36C /* amay-user-profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "amay-user-profile.png"; path = "Images/amay-user-profile.png"; sourceTree = "<group>"; };
+		59F321971BD4B817005AB36C /* uday-user-profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "uday-user-profile.png"; path = "Images/uday-user-profile.png"; sourceTree = "<group>"; };
 		990E3D9A56F0F354ACAE3A3C /* Pods-SocialEase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialEase.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialEase/Pods-SocialEase.release.xcconfig"; sourceTree = "<group>"; };
 		CEBBB717F537F177AEEECFB4 /* Pods_SocialEase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialEase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -77,6 +101,7 @@
 		59F0F9FF1BD242980041A149 /* SocialEase */ = {
 			isa = PBXGroup;
 			children = (
+				59F3217F1BD45682005AB36C /* Images */,
 				59F321691BD32F4A005AB36C /* Application */,
 				59F321681BD32F3C005AB36C /* Controllers */,
 				59F321671BD32F38005AB36C /* Views */,
@@ -100,6 +125,8 @@
 		59F3215E1BD305D8005AB36C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				59F321921BD4A705005AB36C /* Group.swift */,
+				59F321941BD4A710005AB36C /* User.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -114,6 +141,10 @@
 		59F321671BD32F38005AB36C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				59F321791BD43C26005AB36C /* GroupCell.swift */,
+				59F3217A1BD43C26005AB36C /* GroupCell.xib */,
+				59F3218A1BD49A01005AB36C /* UserCell.swift */,
+				59F3218B1BD49A01005AB36C /* UserCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -129,6 +160,8 @@
 				59F3216F1BD33224005AB36C /* LoginViewController.xib */,
 				59F321721BD33371005AB36C /* SuggestionsViewController.swift */,
 				59F321731BD33371005AB36C /* SuggestionsViewController.xib */,
+				59F321821BD486DF005AB36C /* GroupCreateViewController.swift */,
+				59F321831BD486DF005AB36C /* GroupCreateViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -141,6 +174,17 @@
 				59F0FA091BD242980041A149 /* LaunchScreen.storyboard */,
 			);
 			name = Application;
+			sourceTree = "<group>";
+		};
+		59F3217F1BD45682005AB36C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				59F3218E1BD4A67F005AB36C /* default-user-profile.png */,
+				59F3218F1BD4A67F005AB36C /* yuichi-user-profile.png */,
+				59F321961BD4B817005AB36C /* amay-user-profile.png */,
+				59F321971BD4B817005AB36C /* uday-user-profile.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		B66D4D1FD970DB97EAD96AA7 /* Pods */ = {
@@ -224,7 +268,14 @@
 				59F321711BD33224005AB36C /* LoginViewController.xib in Resources */,
 				59F0FA0B1BD242980041A149 /* LaunchScreen.storyboard in Resources */,
 				59F321621BD3099C005AB36C /* ViewController.xib in Resources */,
+				59F3218D1BD49A01005AB36C /* UserCell.xib in Resources */,
+				59F321851BD486DF005AB36C /* GroupCreateViewController.xib in Resources */,
+				59F321911BD4A67F005AB36C /* yuichi-user-profile.png in Resources */,
 				59F3216D1BD33165005AB36C /* GroupSelectionViewController.xib in Resources */,
+				59F3217C1BD43C26005AB36C /* GroupCell.xib in Resources */,
+				59F321901BD4A67F005AB36C /* default-user-profile.png in Resources */,
+				59F321981BD4B817005AB36C /* amay-user-profile.png in Resources */,
+				59F321991BD4B817005AB36C /* uday-user-profile.png in Resources */,
 				59F0FA081BD242980041A149 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,13 +335,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59F321931BD4A705005AB36C /* Group.swift in Sources */,
 				59F321701BD33224005AB36C /* LoginViewController.swift in Sources */,
 				59F3215D1BD2FD10005AB36C /* Colors.swift in Sources */,
 				59F321661BD32D8F005AB36C /* AppFlow.swift in Sources */,
 				59F0FA011BD242980041A149 /* AppDelegate.swift in Sources */,
 				59F321611BD3099C005AB36C /* ViewController.swift in Sources */,
+				59F321841BD486DF005AB36C /* GroupCreateViewController.swift in Sources */,
 				59F3216C1BD33165005AB36C /* GroupSelectionViewController.swift in Sources */,
+				59F321951BD4A710005AB36C /* User.swift in Sources */,
 				59F321741BD33371005AB36C /* SuggestionsViewController.swift in Sources */,
+				59F3218C1BD49A01005AB36C /* UserCell.swift in Sources */,
+				59F3217B1BD43C26005AB36C /* GroupCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
