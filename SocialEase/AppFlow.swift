@@ -63,10 +63,7 @@ class AppFlow: NSObject {
     func presentSuggestions() {
         if let rootViewControler = self.window.rootViewController as? UINavigationController {
             let viewController = SuggestionsViewController()
-            viewController.completionCallback = { () -> () in
-                // TODO: Next view
-            }
-            
+
             rootViewControler.pushViewController(viewController, animated: true)
         }
     }

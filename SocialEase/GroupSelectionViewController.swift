@@ -55,9 +55,10 @@ class GroupSelectionViewController: UIViewController {
     }
     
     func nextAction(group: Group) {
-        if let completionCallback = completionCallback {
-            completionCallback(group: group)
-        }
+
+        let suggestionsStoryboard = UIStoryboard(name: "Suggestions", bundle: nil)
+        let svc = suggestionsStoryboard.instantiateViewControllerWithIdentifier("SuggestionsNavController")
+        presentViewController(svc, animated: true, completion: nil)
     }
     
 }

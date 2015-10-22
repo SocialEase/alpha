@@ -24,18 +24,21 @@ PODS:
     - AFNetworking/NSURLConnection (~> 2.6.0)
     - AFNetworking/NSURLSession (~> 2.6.0)
   - Bolts/Tasks (1.3.0)
+  - JTProgressHUD (1.0.3)
   - Parse (1.9.0):
     - Bolts/Tasks (>= 1.3.0)
 
 DEPENDENCIES:
   - AFNetworking
   - BDBOAuth1Manager
+  - JTProgressHUD
   - Parse
 
 SPEC CHECKSUMS:
   AFNetworking: 8e4e60500beb8bec644cf575beee72990a76d399
   BDBOAuth1Manager: cd5a5872f355ca38180d52ca2dd844f0b0c84797
   Bolts: 805a4a87413e49d4a0c2b7d469084cbc46b09342
+  JTProgressHUD: d2519c41e664acb554932aac12f5a94b47d88a69
   Parse: 712efbc476d4f47b0f96b70db7e53101575753aa
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0

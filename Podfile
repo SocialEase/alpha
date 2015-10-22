@@ -5,6 +5,7 @@ target 'SocialEase' do
   pod 'AFNetworking'
   pod 'BDBOAuth1Manager'
   pod 'Parse'
+  pod 'JTProgressHUD'
 end
 
 post_install do |installer|
