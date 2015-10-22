@@ -8,6 +8,10 @@
 
 import UIKit
 
+struct AppConstants {
+    static let AppName = "SocialEase"
+}
+
 struct Storyboard {
 
     // Story board instances
@@ -16,6 +20,7 @@ struct Storyboard {
     static let Suggestions = UIStoryboard(name: "Suggestions", bundle: nil)
 
     // View controller identifiers
+    static let LoginInitialVCIdentifier = "WelcomeViewController2"
     static let SuggestionsNavVCIdentifier = "SuggestionsNavController"
 
     // segue identifier

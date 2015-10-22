@@ -24,7 +24,7 @@ extension UIView {
         case .Left:
             border.frame = CGRectMake(0, 0, thickness, self.frame.size.height)
         }
-        
+
         border.backgroundColor = color.CGColor
         self.layer.addSublayer(border)
     }

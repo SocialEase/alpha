@@ -24,26 +24,24 @@ extension UIColor {
     static func sea_primaryShadeColor() -> UIColor { // #e2f4ff
         return UIColor(red: 226.0/255.0, green: 244.0/255.0, blue: 255.0/255.0, alpha: 1.0)
     }
-    
+
     static func sea_secondaryHintColor() -> UIColor {
         return UIColor(red: 169.0/255.0, green: 169.0/255.0, blue: 174.0/255.0, alpha: 1.0)
     }
     static func sea_secondarySelectedColor() -> UIColor {
         return UIColor(red: 0.0/255.0, green: 187.0/255.0, blue: 73.0/255.0, alpha: 1.0)
     }
-    
+
     class func sea_primaryLabelColor() -> UIColor {
         return UIColor.darkGrayColor()
     }
-    
+
     class func sea_unselectedButtonColor() -> UIColor {
         return sea_primaryLightTextColor()
         //return UIColor(red: 139/255, green: 139/255, blue: 139/255, alpha: 1)
     }
-    
+
     class func sea_selectedButtonColor() -> UIColor {
         return UIColor.darkGrayColor()
     }
-
-    
 }

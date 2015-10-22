@@ -46,7 +46,6 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
 
     private var showTimeDateFilter = false {
         didSet {
-            
             filterOptionsTableView.reloadData()
             UIView.animateWithDuration(0.5) { () -> Void in
                 self.filterOptionsTableView.alpha = self.showTimeDateFilter ? 1 : 0
@@ -131,7 +130,6 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
             cell.filter = filterTableViewData[indexPath.row]
             return cell
         }
-        
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -176,7 +174,7 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
                     self.updateSendButtonActiveState()
             }
         } else {
-            
+            //@todo: Add logic to create a new activity and send PUSH notification to users
         }
     }
 
@@ -222,6 +220,7 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
     }
 
     private func setupTableViews() {
+        // setup suggestions table
         suggestedPlaceTableView.delegate = self
         suggestedPlaceTableView.dataSource = self
         suggestedPlaceTableView.rowHeight = UITableViewAutomaticDimension
@@ -229,7 +228,8 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
         let footerView = UIView(frame: CGRect(x: 0, y: 0, width: suggestedPlaceTableView.bounds.width, height: 30))
         footerView.backgroundColor = UIColor.clearColor()
         suggestedPlaceTableView.tableFooterView = footerView
-        
+
+        // setup filter table
         filterOptionsTableView.delegate = self
         filterOptionsTableView.dataSource = self
         filterOptionsTableView.rowHeight = UITableViewAutomaticDimension

@@ -16,7 +16,6 @@ protocol SuggestionsFilter: class {
 
 class DisplayDateFilter: SuggestionsFilter {
 
-
     var date: NSDate
     var selected: Bool
 

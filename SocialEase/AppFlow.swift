@@ -24,7 +24,7 @@ class AppFlow: NSObject {
         }
         
         let navController: UINavigationController = UINavigationController(rootViewController: viewController)
-        navController.navigationItem.title = "Social Ease"
+        navController.navigationItem.title = AppConstants.AppName
         
         self.window!.rootViewController = navController
         self.window!.makeKeyAndVisible()
@@ -33,9 +33,9 @@ class AppFlow: NSObject {
     
     func presentLogin() {
         if let rootViewController = self.window.rootViewController as? UINavigationController {
-            let loginStoryboard = UIStoryboard(name: "Login", bundle: nil)
+            let loginStoryboard = Storyboard.Login
             
-            let viewController = loginStoryboard.instantiateViewControllerWithIdentifier("WelcomeViewController2")
+            let viewController = loginStoryboard.instantiateViewControllerWithIdentifier(Storyboard.LoginInitialVCIdentifier)
             
             LoginViewController.completionCallback = { () -> () in
                 self.presentGroupSelection()

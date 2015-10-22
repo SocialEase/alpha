@@ -30,7 +30,7 @@ class User : NSObject {
             [ "name": "Amay", "lastName": "Singhal", "profileImageBinName": "amay-user-profile", "profileImageUrlPath": "" ],
             [ "name": "Uday", "lastName": "Mitra", "profileImageBinName": "uday-user-profile", "profileImageUrlPath": "" ],
         ]
-    
+
     var name: String?
     var phoneNumber: String?
     var profileImageUrl: NSURL?
@@ -41,17 +41,17 @@ class User : NSObject {
             pfUser!.saveInBackground()
         }
     }
-    
+
     func getEmailAddress() -> String {
         return "\(phoneNumber!)@socialease.com"
     }
-    
+
     func getDummyPassword() -> String {
         return phoneNumber!
     }
-    
+
     private(set) var pfUser: PFUser?
-    
+
     init(pfUser: PFUser) {
         self.name = pfUser["name"] as? String
         self.phoneNumber = pfUser["phone"] as? String
@@ -63,10 +63,10 @@ class User : NSObject {
             self.profileImageBinName = profileImageBinName
         }
     }
-    
+
     override init() {
     }
-    
+
     class var currentUser: User? {
         get {
         if _currentUser == nil {
@@ -78,12 +78,12 @@ class User : NSObject {
         }
         return _currentUser
         }
-        
+
         set(user) {
             _currentUser = user
         }
     }
-    
+
     func signUpInBackground(completion: (user: User?, error: NSError?) -> ()) {
         let pfUser = PFUser()
         pfUser.email = getEmailAddress()
@@ -91,7 +91,7 @@ class User : NSObject {
         pfUser.username = phoneNumber
         pfUser["phone"] = phoneNumber
         pfUser["name"] = name
-        
+
         pfUser.signUpInBackgroundWithBlock {
             (succeeded: Bool, error: NSError?) -> Void in
             if let error = error {
@@ -102,7 +102,7 @@ class User : NSObject {
             }
         }
     }
-    
+
     class func logInInBackground(phoneNumber: String, completion: (user: User?, error: NSError?) -> ()) {
         PFUser.logInWithUsernameInBackground(phoneNumber, password: phoneNumber) { (pfUser, error) -> Void in
             if pfUser != nil {
@@ -113,23 +113,20 @@ class User : NSObject {
             }
         }
     }
-    
-    
+
     class func friendsForCurrentUser(completion: (friends: [User]?, error: NSError?) -> Void) {
         // TODO: Retrieve all friends for current logged in user.
-        
+
         var friends = [User]()
-        
+
         for friendDictionary in sampleDictionary {
             let user = PFUser()
             user["name"] = friendDictionary["name"]
             user["profileImageBinName"] = friendDictionary["profileImageBinName"]
-            
             let friend = User(pfUser: user)
             friends.append(friend)
         }
-        
+
         completion(friends: friends, error: nil)
     }
-    
 }
