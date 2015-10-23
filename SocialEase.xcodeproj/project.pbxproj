@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04A578DA1BDB56870088858A /* OtherPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A578D91BDB56870088858A /* OtherPreference.swift */; settings = {ASSET_TAGS = (); }; };
+		04C0DEBF1BD9FF8500CE1ABF /* OtherPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C0DEBE1BD9FF8500CE1ABF /* OtherPreferencesViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		04C0DEC11BDA0C1F00CE1ABF /* PreferencesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C0DEC01BDA0C1F00CE1ABF /* PreferencesCell.swift */; settings = {ASSET_TAGS = (); }; };
 		04ECB7651BD73A2E00819BA4 /* Cuisine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECB7641BD73A2E00819BA4 /* Cuisine.swift */; settings = {ASSET_TAGS = (); }; };
 		04ECB7691BD73BC700819BA4 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECB7681BD73BC700819BA4 /* UserPreferences.swift */; settings = {ASSET_TAGS = (); }; };
 		04ECB76F1BD73EB300819BA4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04ECB76E1BD73EB300819BA4 /* Login.storyboard */; settings = {ASSET_TAGS = (); }; };
@@ -59,8 +62,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		04ECB7641BD73A2E00819BA4 /* Cuisine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cuisine.swift; path = Models/Cuisine.swift; sourceTree = "<group>"; };
-		04ECB7681BD73BC700819BA4 /* UserPreferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserPreferences.swift; path = Models/UserPreferences.swift; sourceTree = "<group>"; };
+		04A578D91BDB56870088858A /* OtherPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherPreference.swift; sourceTree = "<group>"; };
+		04C0DEBE1BD9FF8500CE1ABF /* OtherPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherPreferencesViewController.swift; sourceTree = "<group>"; };
+		04C0DEC01BDA0C1F00CE1ABF /* PreferencesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesCell.swift; sourceTree = "<group>"; };
+		04ECB7641BD73A2E00819BA4 /* Cuisine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cuisine.swift; sourceTree = "<group>"; };
+		04ECB7681BD73BC700819BA4 /* UserPreferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
 		04ECB76E1BD73EB300819BA4 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		04ECB7701BD73F3D00819BA4 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		04ECB7721BD73F5500819BA4 /* GroupsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
@@ -179,6 +185,7 @@
 				59F321941BD4A710005AB36C /* User.swift */,
 				AC3114B61BD8985E00ED6E80 /* SEAActivity.swift */,
 				AC59DB831BDBF1CA001281F5 /* UserPlans.swift */,
+				04A578D91BDB56870088858A /* OtherPreference.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -200,6 +207,7 @@
 				59F3217A1BD43C26005AB36C /* GroupCell.xib */,
 				59F3218A1BD49A01005AB36C /* UserCell.swift */,
 				59F3218B1BD49A01005AB36C /* UserCell.xib */,
+				04C0DEC01BDA0C1F00CE1ABF /* PreferencesCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -222,6 +230,7 @@
 				59F321831BD486DF005AB36C /* GroupCreateViewController.xib */,
 				ACD0E42B1BDB436400CE0558 /* HomeViewController.swift */,
 				ACD0E42D1BDB463000CE0558 /* PlanDisplayViewController.swift */,
+				04C0DEBE1BD9FF8500CE1ABF /* OtherPreferencesViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -423,6 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04C0DEC11BDA0C1F00CE1ABF /* PreferencesCell.swift in Sources */,
 				59F321931BD4A705005AB36C /* Group.swift in Sources */,
 				AC3114B51BD8983300ED6E80 /* SuggestionsViewFilters.swift in Sources */,
 				04ECB7691BD73BC700819BA4 /* UserPreferences.swift in Sources */,
@@ -444,6 +454,7 @@
 				ACD0E42C1BDB436400CE0558 /* HomeViewController.swift in Sources */,
 				59F0FA011BD242980041A149 /* AppDelegate.swift in Sources */,
 				04ECB7711BD73F3D00819BA4 /* RegisterViewController.swift in Sources */,
+				04A578DA1BDB56870088858A /* OtherPreference.swift in Sources */,
 				AC3114B91BD8988700ED6E80 /* AppExtensions.swift in Sources */,
 				59F321611BD3099C005AB36C /* ViewController.swift in Sources */,
 				59F321841BD486DF005AB36C /* GroupCreateViewController.swift in Sources */,
@@ -454,6 +465,7 @@
 				59F3218C1BD49A01005AB36C /* UserCell.swift in Sources */,
 				04ECB7791BD73F5500819BA4 /* PreferencesInfoViewController.swift in Sources */,
 				AC3114BD1BD8989C00ED6E80 /* SuggestedPlaceViewCell.swift in Sources */,
+				04C0DEBF1BD9FF8500CE1ABF /* OtherPreferencesViewController.swift in Sources */,
 				59F3217B1BD43C26005AB36C /* GroupCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -77,7 +77,8 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
     func openGroupsController() {
-        nextAction()
+        performSegueWithIdentifier("otherPreferencesViewSegue", sender: self)
+//        nextAction()
     }
     
     func nextAction() {
