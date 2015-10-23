@@ -17,10 +17,26 @@ class AppFlow: NSObject {
         }
     }
     
-    func presentRoot() {
-        let viewController = ViewController()
-        viewController.completionCallback = { () -> () in
-            self.presentLogin()
+    func presentLogin() {
+        let loginStoryboard = Storyboard.Login
+        
+        let viewController = loginStoryboard.instantiateViewControllerWithIdentifier(Storyboard.LoginInitialVCIdentifier)
+        
+        LoginViewController.completionCallback = { () -> () in
+            self.presentGroupSelection()
+        }
+        CategoriesViewController.completionCallback = { () -> () in
+            self.presentGroupSelection()
+        }
+        
+        self.window!.rootViewController = viewController
+        self.window!.makeKeyAndVisible()
+    }
+    
+    func presentGroupSelection() {
+        let viewController = GroupSelectionViewController()
+        viewController.completionCallback = { (group: Group) -> () in
+            self.presentSuggestions(group)
         }
         
         let navController: UINavigationController = UINavigationController(rootViewController: viewController)
@@ -28,41 +44,12 @@ class AppFlow: NSObject {
         
         self.window!.rootViewController = navController
         self.window!.makeKeyAndVisible()
-        
     }
     
-    func presentLogin() {
-        if let rootViewController = self.window.rootViewController as? UINavigationController {
-            let loginStoryboard = Storyboard.Login
-            
-            let viewController = loginStoryboard.instantiateViewControllerWithIdentifier(Storyboard.LoginInitialVCIdentifier)
-            
-            LoginViewController.completionCallback = { () -> () in
-                self.presentGroupSelection()
-            }
-            CategoriesViewController.completionCallback = { () -> () in
-                self.presentGroupSelection()
-            }
-            
-            rootViewController.pushViewController(viewController, animated: true)
-        }
-    }
-    
-    func presentGroupSelection() {
+    func presentSuggestions(group: Group) {
         if let rootViewControler = self.window.rootViewController as? UINavigationController {
-            let viewController = GroupSelectionViewController()
-            viewController.completionCallback = { (group: Group) -> () in
-                self.presentSuggestions()
-            }
-            
-            rootViewControler.pushViewController(viewController, animated: true)
-            
-        }
-    }
-    
-    func presentSuggestions() {
-        if let rootViewControler = self.window.rootViewController as? UINavigationController {
-            let viewController = SuggestionsViewController()
+            let suggestionsStoryboard = UIStoryboard(name: "Suggestions", bundle: nil)
+            let viewController = suggestionsStoryboard.instantiateViewControllerWithIdentifier("SuggestionsViewController")
 
             rootViewControler.pushViewController(viewController, animated: true)
         }

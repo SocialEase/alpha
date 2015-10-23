@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.sea_primaryLightTextColor()]
         
         let appFlow = AppFlow()
-        appFlow.presentRoot()
+        appFlow.presentLogin()
         
         return true
     }
