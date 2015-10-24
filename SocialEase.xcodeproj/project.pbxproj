@@ -50,6 +50,7 @@
 		AC3114C21BD8997F00ED6E80 /* Suggestions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC3114C11BD8997F00ED6E80 /* Suggestions.storyboard */; settings = {ASSET_TAGS = (); }; };
 		AC3114C41BD8B05D00ED6E80 /* AppUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3114C31BD8B05D00ED6E80 /* AppUtilities.swift */; settings = {ASSET_TAGS = (); }; };
 		AC3114C61BD8B07800ED6E80 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3114C51BD8B07800ED6E80 /* AppConstants.swift */; settings = {ASSET_TAGS = (); }; };
+		AC59DB841BDBF1CA001281F5 /* UserPlans.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC59DB831BDBF1CA001281F5 /* UserPlans.swift */; settings = {ASSET_TAGS = (); }; };
 		ACD0E42C1BDB436400CE0558 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD0E42B1BDB436400CE0558 /* HomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		ACD0E42E1BDB463000CE0558 /* PlanDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD0E42D1BDB463000CE0558 /* PlanDisplayViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		ACD342741BDB4E1B006ACA0C /* DisplayPlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD342731BDB4E1B006ACA0C /* DisplayPlanVC.swift */; settings = {ASSET_TAGS = (); }; };
@@ -58,8 +59,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		04ECB7641BD73A2E00819BA4 /* Cuisine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cuisine.swift; sourceTree = "<group>"; };
-		04ECB7681BD73BC700819BA4 /* UserPreferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
+		04ECB7641BD73A2E00819BA4 /* Cuisine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cuisine.swift; path = Models/Cuisine.swift; sourceTree = "<group>"; };
+		04ECB7681BD73BC700819BA4 /* UserPreferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserPreferences.swift; path = Models/UserPreferences.swift; sourceTree = "<group>"; };
 		04ECB76E1BD73EB300819BA4 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		04ECB7701BD73F3D00819BA4 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		04ECB7721BD73F5500819BA4 /* GroupsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
@@ -89,8 +90,8 @@
 		59F3218B1BD49A01005AB36C /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
 		59F3218E1BD4A67F005AB36C /* default-user-profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "default-user-profile.png"; path = "Images/default-user-profile.png"; sourceTree = "<group>"; };
 		59F3218F1BD4A67F005AB36C /* yuichi-user-profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "yuichi-user-profile.png"; path = "Images/yuichi-user-profile.png"; sourceTree = "<group>"; };
-		59F321921BD4A705005AB36C /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
-		59F321941BD4A710005AB36C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		59F321921BD4A705005AB36C /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Group.swift; path = Models/Group.swift; sourceTree = "<group>"; };
+		59F321941BD4A710005AB36C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
 		59F321961BD4B817005AB36C /* amay-user-profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "amay-user-profile.png"; path = "Images/amay-user-profile.png"; sourceTree = "<group>"; };
 		59F321971BD4B817005AB36C /* uday-user-profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "uday-user-profile.png"; path = "Images/uday-user-profile.png"; sourceTree = "<group>"; };
 		990E3D9A56F0F354ACAE3A3C /* Pods-SocialEase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialEase.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialEase/Pods-SocialEase.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,13 +99,14 @@
 		AC3114AF1BD8981400ED6E80 /* SuggestionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionsViewController.swift; sourceTree = "<group>"; };
 		AC3114B21BD8983300ED6E80 /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateUtils.swift; path = Utilities/DateUtils.swift; sourceTree = "<group>"; };
 		AC3114B31BD8983300ED6E80 /* SuggestionsViewFilters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionsViewFilters.swift; sourceTree = "<group>"; };
-		AC3114B61BD8985E00ED6E80 /* SEAActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SEAActivity.swift; sourceTree = "<group>"; };
+		AC3114B61BD8985E00ED6E80 /* SEAActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SEAActivity.swift; path = Models/SEAActivity.swift; sourceTree = "<group>"; };
 		AC3114B81BD8988700ED6E80 /* AppExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppExtensions.swift; path = Utilities/AppExtensions.swift; sourceTree = "<group>"; };
 		AC3114BA1BD8989C00ED6E80 /* FilterOptionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterOptionViewCell.swift; sourceTree = "<group>"; };
 		AC3114BB1BD8989C00ED6E80 /* SuggestedPlaceViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestedPlaceViewCell.swift; sourceTree = "<group>"; };
 		AC3114C11BD8997F00ED6E80 /* Suggestions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Suggestions.storyboard; sourceTree = "<group>"; };
 		AC3114C31BD8B05D00ED6E80 /* AppUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppUtilities.swift; path = Utilities/AppUtilities.swift; sourceTree = "<group>"; };
 		AC3114C51BD8B07800ED6E80 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppConstants.swift; path = Utilities/AppConstants.swift; sourceTree = "<group>"; };
+		AC59DB831BDBF1CA001281F5 /* UserPlans.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserPlans.swift; path = Models/UserPlans.swift; sourceTree = "<group>"; };
 		ACD0E42B1BDB436400CE0558 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ViewControllers/HomeViewController.swift; sourceTree = "<group>"; };
 		ACD0E42D1BDB463000CE0558 /* PlanDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlanDisplayViewController.swift; path = ViewControllers/PlanDisplayViewController.swift; sourceTree = "<group>"; };
 		ACD342731BDB4E1B006ACA0C /* DisplayPlanVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DisplayPlanVC.swift; path = Utilities/DisplayPlanVC.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				59F321921BD4A705005AB36C /* Group.swift */,
 				59F321941BD4A710005AB36C /* User.swift */,
 				AC3114B61BD8985E00ED6E80 /* SEAActivity.swift */,
+				AC59DB831BDBF1CA001281F5 /* UserPlans.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				04ECB7781BD73F5500819BA4 /* CategoriesViewController.swift in Sources */,
 				59F321701BD33224005AB36C /* LoginViewController.swift in Sources */,
 				AC3114B41BD8983300ED6E80 /* DateUtils.swift in Sources */,
+				AC59DB841BDBF1CA001281F5 /* UserPlans.swift in Sources */,
 				04ECB77B1BD73FB500819BA4 /* CuisineCell.swift in Sources */,
 				ACD0E42E1BDB463000CE0558 /* PlanDisplayViewController.swift in Sources */,
 				59F3215D1BD2FD10005AB36C /* Colors.swift in Sources */,
