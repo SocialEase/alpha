@@ -25,9 +25,11 @@ class PlanDisplayViewController: UIViewController {
 
     var userPlanList: [Plan]? {
         didSet {
-            // @todo: Connect with a view implementation
-            sampleDisplayLabel?.text = userPlanList?[0].name
-            userPlanList?[0].setImageOnUIImageView(sampleImageView)
+            if userPlanList?.count > 0 {
+                // @todo: Connect with a view implementation
+                sampleDisplayLabel?.text = userPlanList?[0].name
+                userPlanList?[0].setImageOnUIImageView(sampleImageView)
+            }
         }
     }
     var viewActive = false
@@ -57,7 +59,6 @@ class PlanDisplayViewController: UIViewController {
         JTProgressHUD.showWithStyle(JTProgressHUDStyle.Gradient)
         UserPlans.getUserPlanForStatus(planStatus!, usingCache: cached) { (userPlans: [Plan]?, error: NSError?) -> () in
             if let plans = userPlans {
-                print(plans[0].occuranceDateTime)
                 self.userPlanList = plans
                 JTProgressHUD.hide()
             }

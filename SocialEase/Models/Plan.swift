@@ -47,7 +47,6 @@ class Plan: NSObject {
     // MARK: - Initializers
     init(planObject: PFObject) {
         object = planObject
-        print(object)
     }
 
     // MARK: - Methods
