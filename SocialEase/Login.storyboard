@@ -13,7 +13,7 @@
         <!--Register-->
         <scene sceneID="kq6-uM-vtK">
             <objects>
-                <viewController id="nWk-tC-rkQ" customClass="RegisterViewController" customModule="SocialEase" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterViewController" id="nWk-tC-rkQ" customClass="RegisterViewController" customModule="SocialEase" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KU5-2Z-GvY"/>
                         <viewControllerLayoutGuide type="bottom" id="l69-Ca-lhv"/>
@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Ml-JY-sJc">
-                                <rect key="frame" x="120" y="111" width="150" height="30"/>
+                                <rect key="frame" x="120" y="199" width="150" height="30"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="Bmj-fH-pW4"/>
@@ -33,21 +33,21 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqj-Hz-hL5">
-                                <rect key="frame" x="40" y="114" width="57" height="24"/>
+                                <rect key="frame" x="40" y="202" width="57" height="24"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rD-cR-HoJ">
-                                <rect key="frame" x="40" y="168" width="50" height="24"/>
+                                <rect key="frame" x="40" y="256" width="50" height="24"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2hw-6p-SgD">
-                                <rect key="frame" x="119" y="165" width="250" height="30"/>
+                                <rect key="frame" x="119" y="253" width="250" height="30"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="n6d-sj-yPp"/>
@@ -56,7 +56,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yK1-LE-7FD">
-                                <rect key="frame" x="263" y="225" width="74" height="36"/>
+                                <rect key="frame" x="263" y="313" width="74" height="36"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Register">
@@ -66,6 +66,13 @@
                                     <action selector="didRegister:" destination="nWk-tC-rkQ" eventType="touchUpInside" id="7IX-qt-xaE"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="socialease-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="y21-zy-dqU">
+                                <rect key="frame" x="100" y="20" width="400" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="6Zo-CV-fTO"/>
+                                    <constraint firstAttribute="width" constant="400" id="KuE-vs-WOU"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.27450980390000002" green="0.60392156860000001" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -73,11 +80,13 @@
                             <constraint firstItem="9rD-cR-HoJ" firstAttribute="top" secondItem="aqj-Hz-hL5" secondAttribute="bottom" constant="30" id="2bU-nI-epO"/>
                             <constraint firstItem="8Ml-JY-sJc" firstAttribute="centerY" secondItem="aqj-Hz-hL5" secondAttribute="centerY" id="5eb-cR-p4k"/>
                             <constraint firstItem="2hw-6p-SgD" firstAttribute="leading" secondItem="9rD-cR-HoJ" secondAttribute="trailing" constant="29.5" id="7wP-Zc-a5j"/>
+                            <constraint firstItem="y21-zy-dqU" firstAttribute="centerX" secondItem="vpH-VU-sgG" secondAttribute="centerX" id="8B6-uo-Ab6"/>
+                            <constraint firstItem="aqj-Hz-hL5" firstAttribute="top" secondItem="y21-zy-dqU" secondAttribute="bottom" constant="32" id="DTa-Cu-NFq"/>
                             <constraint firstItem="9rD-cR-HoJ" firstAttribute="leading" secondItem="vpH-VU-sgG" secondAttribute="leadingMargin" constant="20" id="Gqp-qz-g9i"/>
                             <constraint firstItem="aqj-Hz-hL5" firstAttribute="leading" secondItem="vpH-VU-sgG" secondAttribute="leadingMargin" constant="20" id="JcG-JA-4jJ"/>
+                            <constraint firstItem="y21-zy-dqU" firstAttribute="top" secondItem="KU5-2Z-GvY" secondAttribute="bottom" id="Q30-Gq-Hfi"/>
                             <constraint firstItem="9rD-cR-HoJ" firstAttribute="centerY" secondItem="vpH-VU-sgG" secondAttribute="centerY" id="Ufg-OT-5fE"/>
                             <constraint firstItem="yK1-LE-7FD" firstAttribute="centerX" secondItem="vpH-VU-sgG" secondAttribute="centerX" id="Zz9-2r-R5m"/>
-                            <constraint firstItem="aqj-Hz-hL5" firstAttribute="top" secondItem="KU5-2Z-GvY" secondAttribute="bottom" constant="50" id="dGo-Gq-4jx"/>
                             <constraint firstItem="2hw-6p-SgD" firstAttribute="centerY" secondItem="9rD-cR-HoJ" secondAttribute="centerY" id="fq6-4d-8pB"/>
                             <constraint firstItem="8Ml-JY-sJc" firstAttribute="leading" secondItem="aqj-Hz-hL5" secondAttribute="trailing" constant="23.5" id="gSm-tj-k91"/>
                             <constraint firstItem="yK1-LE-7FD" firstAttribute="top" secondItem="2hw-6p-SgD" secondAttribute="bottom" constant="30" id="kVs-UN-DkZ"/>
@@ -95,17 +104,17 @@
                         <outlet property="phoneLabel" destination="aqj-Hz-hL5" id="9Dw-VX-Up1"/>
                         <outlet property="phoneNumberTextField" destination="8Ml-JY-sJc" id="O3X-uF-oSm"/>
                         <outlet property="registerButton" destination="yK1-LE-7FD" id="RTx-la-9Tc"/>
-                        <segue destination="vbk-fn-MWo" kind="show" identifier="categoriesViewSegue" id="T8A-dQ-t9l"/>
+                        <segue destination="WZ1-d9-NTv" kind="show" identifier="categoriesViewSegue" id="T8A-dQ-t9l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TVn-Wp-aMZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2311" y="1257"/>
+            <point key="canvasLocation" x="2173" y="1076"/>
         </scene>
         <!--Pick your favorite cuisines-->
         <scene sceneID="Kf7-L5-gUN">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="vbk-fn-MWo" customClass="CuisinesViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CategoriesViewController" automaticallyAdjustsScrollViewInsets="NO" id="vbk-fn-MWo" customClass="CategoriesViewController" customModule="SocialEase" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pR3-Ez-cx2"/>
                         <viewControllerLayoutGuide type="bottom" id="X5I-fO-QFj"/>
@@ -150,7 +159,7 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meditteranean" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Aqh-hI-5bN">
-                                                    <rect key="frame" x="4" y="33.5" width="82" height="23"/>
+                                                    <rect key="frame" x="4" y="34" width="82" height="23"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -212,7 +221,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="quU-kz-fDE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3243" y="1265"/>
+            <point key="canvasLocation" x="4055" y="1265"/>
         </scene>
         <!--Preferences Info View Controller-->
         <scene sceneID="hS8-Ih-lVl">
@@ -376,7 +385,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt; 50 miles" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eH-UT-b11">
-                                                    <rect key="frame" x="18" y="13" width="80" height="17.5"/>
+                                                    <rect key="frame" x="18" y="13" width="80" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -423,27 +432,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cSf-lD-0bs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4635" y="1265"/>
+            <point key="canvasLocation" x="5447" y="1265"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="gFw-Cu-njN">
+        <scene sceneID="ILf-mM-Y8a">
             <objects>
-                <navigationController storyboardIdentifier="RegisterViewNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="mzL-PQ-Tch" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CategoriesViewNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="WZ1-d9-NTv" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="soj-LY-hMi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="j9N-iX-qPe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="nWk-tC-rkQ" kind="relationship" relationship="rootViewController" id="8gh-Tz-fE5"/>
+                        <segue destination="vbk-fn-MWo" kind="relationship" relationship="rootViewController" id="csJ-0P-cXO"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wKR-cY-u1L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R7r-aW-1Tu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1149" y="1265"/>
+            <point key="canvasLocation" x="3243" y="1265"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="socialease-logo.png" width="720" height="370"/>
+    </resources>
     <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
 </document>
