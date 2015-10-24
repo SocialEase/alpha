@@ -11,6 +11,14 @@ import Parse
 
 private var _currentUser: User?
 
+struct ParseUser {
+    static let ObjectName = "User"
+
+    // object fields
+    static let Id = "objectId"
+}
+
+
 class User : NSObject {
         static var sampleDictionary = [
             [ "name": "Yuichi", "lastName": "Kuroda", "profileImageBinName": "yuichi-user-profile", "profileImageUrlPath": "" ],
@@ -75,7 +83,7 @@ class User : NSObject {
                     _currentUser = User(pfUser: pfUser!)
                 }
             }
-        return _currentUser
+            return _currentUser
         }
 
         set(user) {

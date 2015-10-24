@@ -13,6 +13,7 @@ protocol DisplayPlanVC: class {
 
     var title: String { get }
     var index: Int { get }
+    var planStatus: PlanStatus { get }
     var planDisplayVC: PlanDisplayViewController { get set }
 }
 
@@ -29,6 +30,11 @@ class DisplayActivePlansVC: DisplayPlanVC {
         return _index
     }
 
+    private let _status = PlanStatus.Active
+    var planStatus: PlanStatus {
+        return _status
+    }
+
     private var _viewController: PlanDisplayViewController!
     var planDisplayVC: PlanDisplayViewController {
         get {
@@ -37,6 +43,7 @@ class DisplayActivePlansVC: DisplayPlanVC {
         set(newValue) {
             newValue.pageIndex = _index
             newValue.pageTitle = _title
+            newValue.planStatus = _status
             _viewController = newValue
         }
     }
@@ -54,6 +61,11 @@ class DisplayPendingPlansVC: DisplayPlanVC {
         return _index
     }
 
+    private let _status = PlanStatus.Pending
+    var planStatus: PlanStatus {
+        return _status
+    }
+
     private var _viewController: PlanDisplayViewController!
     var planDisplayVC: PlanDisplayViewController {
         get {
@@ -62,6 +74,7 @@ class DisplayPendingPlansVC: DisplayPlanVC {
         set(newValue) {
             newValue.pageIndex = _index
             newValue.pageTitle = _title
+            newValue.planStatus = _status
             _viewController = newValue
         }
     }

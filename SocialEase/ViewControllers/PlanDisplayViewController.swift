@@ -19,11 +19,22 @@ class PlanDisplayViewController: UIViewController {
         }
     }
 
+    var planStatus: PlanStatus?
+
+    var userPlanList: [Plan]? {
+        didSet {
+            // @todo: Connect with a view implementation
+            sampleDisplayLabel?.text = userPlanList?[0].name
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         setupUI()
+
+        fetchUserPlans()
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,6 +46,14 @@ class PlanDisplayViewController: UIViewController {
         sampleDisplayLabel?.text = pageTitle
     }
 
+    private func fetchUserPlans() {
+        UserPlans.getUserPlanForStatus(planStatus!) { (userPlans: [Plan]?, error: NSError?) -> () in
+            if let plans = userPlans {
+                print(plans)
+                self.userPlanList = plans
+            }
+        }
+    }
     /*
     // MARK: - Navigation
 
