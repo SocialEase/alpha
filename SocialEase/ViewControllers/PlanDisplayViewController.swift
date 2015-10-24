@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JTProgressHUD
 
 class PlanDisplayViewController: UIViewController {
 
@@ -27,6 +28,7 @@ class PlanDisplayViewController: UIViewController {
             sampleDisplayLabel?.text = userPlanList?[0].name
         }
     }
+    var viewActive = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,23 +36,28 @@ class PlanDisplayViewController: UIViewController {
         // Do any additional setup after loading the view.
         setupUI()
 
-        fetchUserPlans()
+        fetchUserPlans(true)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewDidAppear(animated: Bool) {
+        viewActive = true
+    }
+    override func viewDidDisappear(animated: Bool) {
+        viewActive = false
     }
 
+    
     private func setupUI() {
         sampleDisplayLabel?.text = pageTitle
     }
 
-    private func fetchUserPlans() {
-        UserPlans.getUserPlanForStatus(planStatus!) { (userPlans: [Plan]?, error: NSError?) -> () in
+    private func fetchUserPlans(cached: Bool) {
+        JTProgressHUD.showWithStyle(JTProgressHUDStyle.Gradient)
+        UserPlans.getUserPlanForStatus(planStatus!, usingCache: cached) { (userPlans: [Plan]?, error: NSError?) -> () in
             if let plans = userPlans {
                 print(plans)
                 self.userPlanList = plans
+                JTProgressHUD.hide()
             }
         }
     }

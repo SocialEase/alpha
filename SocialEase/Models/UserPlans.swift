@@ -18,19 +18,13 @@ class UserPlans: NSObject {
     static let PlanObject = "plan"
 
 
-    class func getUsersActivePlan(completion: (([Plan]?, NSError?) -> ())) {
-        getUserPlanForStatus(.Active, withCompletion: completion)
-    }
-
-    class func getUsersPendingPlan(completion: (([Plan]?, NSError?) -> ())) {
-        getUserPlanForStatus(.Pending, withCompletion: completion)
-    }
-
-
-    class func getUserPlanForStatus(status: PlanStatus, withCompletion completion: (([Plan]?, NSError?) -> ())) {
+    class func getUserPlanForStatus(status: PlanStatus, usingCache cache: Bool, withCompletion completion: (([Plan]?, NSError?) -> ())) {
         if let currentUser = PFUser.currentUser() {
-            let predicate = NSPredicate(format:"userId = '\(currentUser.objectId!)'")
+            let predicate = NSPredicate(format: "userId = '\(currentUser.objectId!)'")
+
+            // prepare query
             let userPlanQuery = PFQuery(className: ObjectName, predicate: predicate)
+            userPlanQuery.cachePolicy = cache ? .CacheElseNetwork : .NetworkElseCache
             userPlanQuery.includeKey(PlanObject) // really important; required to fetch pointer object
 
             userPlanQuery.findObjectsInBackgroundWithBlock { (userPlans: [PFObject]?, error: NSError?) -> Void in
