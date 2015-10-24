@@ -79,7 +79,6 @@ class DisplayActivityTypeFilter: SuggestionsFilter {
         activityTypeFilterList.append(DisplayActivityTypeFilter(name: "Dinner", isSelected: false))
         activityTypeFilterList.append(DisplayActivityTypeFilter(name: "Coffee", isSelected: false))
         activityTypeFilterList.append(DisplayActivityTypeFilter(name: "Happy Hour", isSelected: false))
-        activityTypeFilterList.append(DisplayActivityTypeFilter(name: "Hiking", isSelected: false))
         return activityTypeFilterList
     }
 }

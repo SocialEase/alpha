@@ -18,10 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // set prase api keys
         Parse.setApplicationId("ZoRlR0MyiOwJcLH420YfdSZX4KkgM7m8BqhC7j2x", clientKey: "PTHMqglJowgpo9uy45chEBBbmiSzUuln3YDn3Vso")
 
-        // check user session here, if the session exists then send user directly to landing page else to register page
-        
-        
-
         // Override point for customization after application launch.
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
@@ -29,10 +25,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = UIColor.sea_primaryColor()
         UINavigationBar.appearance().tintColor = UIColor.sea_primaryLightTextColor()
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.sea_primaryLightTextColor()]
-        
+
+        // check user session here, if the session exists then send user directly to landing page else to register page
         let appFlow = AppFlow()
-        appFlow.presentLogin()
-        
+        if let _ = User.currentUser {
+            appFlow.presentHomePageViewController()
+        } else {
+            appFlow.presentLogin()
+        }
+
         return true
     }
     

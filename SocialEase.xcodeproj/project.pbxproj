@@ -39,6 +39,7 @@
 		59F321951BD4A710005AB36C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F321941BD4A710005AB36C /* User.swift */; settings = {ASSET_TAGS = (); }; };
 		59F321981BD4B817005AB36C /* amay-user-profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 59F321961BD4B817005AB36C /* amay-user-profile.png */; settings = {ASSET_TAGS = (); }; };
 		59F321991BD4B817005AB36C /* uday-user-profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 59F321971BD4B817005AB36C /* uday-user-profile.png */; settings = {ASSET_TAGS = (); }; };
+		AC30AF9A1BDA903C002A1A67 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC30AF991BDA903C002A1A67 /* Home.storyboard */; settings = {ASSET_TAGS = (); }; };
 		AC3114B01BD8981400ED6E80 /* SuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3114AF1BD8981400ED6E80 /* SuggestionsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		AC3114B41BD8983300ED6E80 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3114B21BD8983300ED6E80 /* DateUtils.swift */; settings = {ASSET_TAGS = (); }; };
 		AC3114B51BD8983300ED6E80 /* SuggestionsViewFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3114B31BD8983300ED6E80 /* SuggestionsViewFilters.swift */; settings = {ASSET_TAGS = (); }; };
@@ -46,10 +47,13 @@
 		AC3114B91BD8988700ED6E80 /* AppExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3114B81BD8988700ED6E80 /* AppExtensions.swift */; settings = {ASSET_TAGS = (); }; };
 		AC3114BC1BD8989C00ED6E80 /* FilterOptionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3114BA1BD8989C00ED6E80 /* FilterOptionViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		AC3114BD1BD8989C00ED6E80 /* SuggestedPlaceViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3114BB1BD8989C00ED6E80 /* SuggestedPlaceViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		AC3114C01BD898E100ED6E80 /* socialease.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC3114BF1BD898E100ED6E80 /* socialease.ttf */; settings = {ASSET_TAGS = (); }; };
 		AC3114C21BD8997F00ED6E80 /* Suggestions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC3114C11BD8997F00ED6E80 /* Suggestions.storyboard */; settings = {ASSET_TAGS = (); }; };
 		AC3114C41BD8B05D00ED6E80 /* AppUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3114C31BD8B05D00ED6E80 /* AppUtilities.swift */; settings = {ASSET_TAGS = (); }; };
 		AC3114C61BD8B07800ED6E80 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3114C51BD8B07800ED6E80 /* AppConstants.swift */; settings = {ASSET_TAGS = (); }; };
+		ACD0E42C1BDB436400CE0558 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD0E42B1BDB436400CE0558 /* HomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		ACD0E42E1BDB463000CE0558 /* PlanDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD0E42D1BDB463000CE0558 /* PlanDisplayViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		ACD342741BDB4E1B006ACA0C /* DisplayPlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD342731BDB4E1B006ACA0C /* DisplayPlanVC.swift */; settings = {ASSET_TAGS = (); }; };
+		ACEB7CBA1BDB365600B1A482 /* socialease.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACEB7CB91BDB365600B1A482 /* socialease.ttf */; settings = {ASSET_TAGS = (); }; };
 		DB60B389636A8D1DFCB85A92 /* Pods_SocialEase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBBB717F537F177AEEECFB4 /* Pods_SocialEase.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,17 +94,21 @@
 		59F321961BD4B817005AB36C /* amay-user-profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "amay-user-profile.png"; path = "Images/amay-user-profile.png"; sourceTree = "<group>"; };
 		59F321971BD4B817005AB36C /* uday-user-profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "uday-user-profile.png"; path = "Images/uday-user-profile.png"; sourceTree = "<group>"; };
 		990E3D9A56F0F354ACAE3A3C /* Pods-SocialEase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialEase.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialEase/Pods-SocialEase.release.xcconfig"; sourceTree = "<group>"; };
+		AC30AF991BDA903C002A1A67 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Home.storyboard; path = Storyboards/Home.storyboard; sourceTree = "<group>"; };
 		AC3114AF1BD8981400ED6E80 /* SuggestionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionsViewController.swift; sourceTree = "<group>"; };
-		AC3114B21BD8983300ED6E80 /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		AC3114B21BD8983300ED6E80 /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateUtils.swift; path = Utilities/DateUtils.swift; sourceTree = "<group>"; };
 		AC3114B31BD8983300ED6E80 /* SuggestionsViewFilters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionsViewFilters.swift; sourceTree = "<group>"; };
 		AC3114B61BD8985E00ED6E80 /* SEAActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SEAActivity.swift; sourceTree = "<group>"; };
-		AC3114B81BD8988700ED6E80 /* AppExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppExtensions.swift; sourceTree = "<group>"; };
+		AC3114B81BD8988700ED6E80 /* AppExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppExtensions.swift; path = Utilities/AppExtensions.swift; sourceTree = "<group>"; };
 		AC3114BA1BD8989C00ED6E80 /* FilterOptionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterOptionViewCell.swift; sourceTree = "<group>"; };
 		AC3114BB1BD8989C00ED6E80 /* SuggestedPlaceViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestedPlaceViewCell.swift; sourceTree = "<group>"; };
-		AC3114BF1BD898E100ED6E80 /* socialease.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = socialease.ttf; sourceTree = "<group>"; };
 		AC3114C11BD8997F00ED6E80 /* Suggestions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Suggestions.storyboard; sourceTree = "<group>"; };
-		AC3114C31BD8B05D00ED6E80 /* AppUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUtilities.swift; sourceTree = "<group>"; };
-		AC3114C51BD8B07800ED6E80 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		AC3114C31BD8B05D00ED6E80 /* AppUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppUtilities.swift; path = Utilities/AppUtilities.swift; sourceTree = "<group>"; };
+		AC3114C51BD8B07800ED6E80 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppConstants.swift; path = Utilities/AppConstants.swift; sourceTree = "<group>"; };
+		ACD0E42B1BDB436400CE0558 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ViewControllers/HomeViewController.swift; sourceTree = "<group>"; };
+		ACD0E42D1BDB463000CE0558 /* PlanDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlanDisplayViewController.swift; path = ViewControllers/PlanDisplayViewController.swift; sourceTree = "<group>"; };
+		ACD342731BDB4E1B006ACA0C /* DisplayPlanVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DisplayPlanVC.swift; path = Utilities/DisplayPlanVC.swift; sourceTree = "<group>"; };
+		ACEB7CB91BDB365600B1A482 /* socialease.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = socialease.ttf; sourceTree = "<group>"; };
 		CEBBB717F537F177AEEECFB4 /* Pods_SocialEase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialEase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -209,6 +217,8 @@
 				59F3216B1BD33165005AB36C /* GroupSelectionViewController.xib */,
 				59F321821BD486DF005AB36C /* GroupCreateViewController.swift */,
 				59F321831BD486DF005AB36C /* GroupCreateViewController.xib */,
+				ACD0E42B1BDB436400CE0558 /* HomeViewController.swift */,
+				ACD0E42D1BDB463000CE0558 /* PlanDisplayViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -221,6 +231,7 @@
 				AC3114C11BD8997F00ED6E80 /* Suggestions.storyboard */,
 				59F0FA091BD242980041A149 /* LaunchScreen.storyboard */,
 				04ECB76E1BD73EB300819BA4 /* Login.storyboard */,
+				AC30AF991BDA903C002A1A67 /* Home.storyboard */,
 			);
 			name = Application;
 			sourceTree = "<group>";
@@ -245,6 +256,7 @@
 				AC3114B31BD8983300ED6E80 /* SuggestionsViewFilters.swift */,
 				AC3114C31BD8B05D00ED6E80 /* AppUtilities.swift */,
 				AC3114C51BD8B07800ED6E80 /* AppConstants.swift */,
+				ACD342731BDB4E1B006ACA0C /* DisplayPlanVC.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -252,7 +264,7 @@
 		AC3114BE1BD898CE00ED6E80 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				AC3114BF1BD898E100ED6E80 /* socialease.ttf */,
+				ACEB7CB91BDB365600B1A482 /* socialease.ttf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -335,9 +347,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				59F0FA0B1BD242980041A149 /* LaunchScreen.storyboard in Resources */,
-				AC3114C01BD898E100ED6E80 /* socialease.ttf in Resources */,
 				59F321621BD3099C005AB36C /* ViewController.xib in Resources */,
 				59F3218D1BD49A01005AB36C /* UserCell.xib in Resources */,
+				ACEB7CBA1BDB365600B1A482 /* socialease.ttf in Resources */,
 				59F321851BD486DF005AB36C /* GroupCreateViewController.xib in Resources */,
 				AC3114C21BD8997F00ED6E80 /* Suggestions.storyboard in Resources */,
 				59EBD3691BD76966002CB63B /* socialease-logo.png in Resources */,
@@ -349,6 +361,7 @@
 				59F321981BD4B817005AB36C /* amay-user-profile.png in Resources */,
 				59F321991BD4B817005AB36C /* uday-user-profile.png in Resources */,
 				59F0FA081BD242980041A149 /* Assets.xcassets in Resources */,
+				AC30AF9A1BDA903C002A1A67 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +428,7 @@
 				59F321701BD33224005AB36C /* LoginViewController.swift in Sources */,
 				AC3114B41BD8983300ED6E80 /* DateUtils.swift in Sources */,
 				04ECB77B1BD73FB500819BA4 /* CuisineCell.swift in Sources */,
+				ACD0E42E1BDB463000CE0558 /* PlanDisplayViewController.swift in Sources */,
 				59F3215D1BD2FD10005AB36C /* Colors.swift in Sources */,
 				04ECB7761BD73F5500819BA4 /* GroupsViewController.swift in Sources */,
 				AC3114C41BD8B05D00ED6E80 /* AppUtilities.swift in Sources */,
@@ -423,12 +437,14 @@
 				AC3114BC1BD8989C00ED6E80 /* FilterOptionViewCell.swift in Sources */,
 				AC3114B01BD8981400ED6E80 /* SuggestionsViewController.swift in Sources */,
 				59F321661BD32D8F005AB36C /* AppFlow.swift in Sources */,
+				ACD0E42C1BDB436400CE0558 /* HomeViewController.swift in Sources */,
 				59F0FA011BD242980041A149 /* AppDelegate.swift in Sources */,
 				04ECB7711BD73F3D00819BA4 /* RegisterViewController.swift in Sources */,
 				AC3114B91BD8988700ED6E80 /* AppExtensions.swift in Sources */,
 				59F321611BD3099C005AB36C /* ViewController.swift in Sources */,
 				59F321841BD486DF005AB36C /* GroupCreateViewController.swift in Sources */,
 				59F3216C1BD33165005AB36C /* GroupSelectionViewController.swift in Sources */,
+				ACD342741BDB4E1B006ACA0C /* DisplayPlanVC.swift in Sources */,
 				59F321951BD4A710005AB36C /* User.swift in Sources */,
 				04ECB7651BD73A2E00819BA4 /* Cuisine.swift in Sources */,
 				59F3218C1BD49A01005AB36C /* UserCell.swift in Sources */,

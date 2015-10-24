@@ -54,4 +54,11 @@ class AppFlow: NSObject {
             rootViewControler.pushViewController(viewController, animated: true)
         }
     }
+
+    func presentHomePageViewController() {
+        if let homePageNavVC = Storyboard.Home.instantiateViewControllerWithIdentifier(Storyboard.HomePageNavVCIdentifier) as? UINavigationController {
+            window!.rootViewController = homePageNavVC
+            window!.makeKeyAndVisible()
+        }
+    }
 }

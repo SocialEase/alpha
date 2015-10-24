@@ -10,7 +10,6 @@ import UIKit
 import Parse
 
 private var _currentUser: User?
-private let CURRENT_USER_KEY = "CURRENT_USER_KEY"
 
 class User : NSObject {
         static var sampleDictionary = [
@@ -69,13 +68,13 @@ class User : NSObject {
 
     class var currentUser: User? {
         get {
-        if _currentUser == nil {
-        // read last logged in user from PFUser
-        let pfUser = PFUser.currentUser()
-        if pfUser != nil {
-        _currentUser = User(pfUser: pfUser!)
-        }
-        }
+            if _currentUser == nil {
+                // read last logged in user from PFUser
+                let pfUser = PFUser.currentUser()
+                if pfUser != nil {
+                    _currentUser = User(pfUser: pfUser!)
+                }
+            }
         return _currentUser
         }
 
