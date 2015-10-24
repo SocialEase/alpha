@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eiP-4B-tzR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -10,83 +10,6 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--SocialEase-->
-        <scene sceneID="Czk-5e-bmc">
-            <objects>
-                <viewController storyboardIdentifier="WelcomeViewController2" id="eiP-4B-tzR" customClass="WelcomeViewController" customModule="SocialEase" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="n2X-Sv-76E"/>
-                        <viewControllerLayoutGuide type="bottom" id="Aiv-7a-D6l"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="YzV-Wp-Q37">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi there! Let's get you set up quickly..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQW-dN-8Ru">
-                                <rect key="frame" x="130" y="224" width="341" height="24"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L1M-LH-7o6" userLabel="CenterView">
-                                <rect key="frame" x="240" y="278" width="121" height="44"/>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="121" id="Doh-z0-qXY"/>
-                                    <constraint firstAttribute="height" constant="44" id="up2-v4-xui"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lz-Cd-JTh">
-                                <rect key="frame" x="130" y="352" width="161" height="36"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Register new user">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onRegisterTap:" destination="eiP-4B-tzR" eventType="touchUpInside" id="Skw-qi-R2a"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xVX-fs-QEY">
-                                <rect key="frame" x="420" y="352" width="50" height="36"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Login">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onLoginTap:" destination="eiP-4B-tzR" eventType="touchUpInside" id="CJI-k6-Y4c"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <animations/>
-                        <color key="backgroundColor" red="0.27450980390000002" green="0.60392156860000001" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="xVX-fs-QEY" firstAttribute="centerY" secondItem="6lz-Cd-JTh" secondAttribute="centerY" id="CRa-Pe-iZT"/>
-                            <constraint firstItem="L1M-LH-7o6" firstAttribute="leading" secondItem="6lz-Cd-JTh" secondAttribute="trailing" constant="-51" id="JWH-EX-NMO"/>
-                            <constraint firstItem="6lz-Cd-JTh" firstAttribute="top" secondItem="L1M-LH-7o6" secondAttribute="bottom" constant="30" id="MYg-Yv-hZ9"/>
-                            <constraint firstItem="L1M-LH-7o6" firstAttribute="top" secondItem="bQW-dN-8Ru" secondAttribute="bottom" constant="30" id="O7f-hh-Ups"/>
-                            <constraint firstItem="xVX-fs-QEY" firstAttribute="leading" secondItem="6lz-Cd-JTh" secondAttribute="trailing" constant="129" id="Ojo-MD-Nl2"/>
-                            <constraint firstItem="L1M-LH-7o6" firstAttribute="centerY" secondItem="YzV-Wp-Q37" secondAttribute="centerY" id="XOV-8c-1FO"/>
-                            <constraint firstItem="bQW-dN-8Ru" firstAttribute="centerX" secondItem="YzV-Wp-Q37" secondAttribute="centerX" id="YPC-cv-NIF"/>
-                            <constraint firstItem="L1M-LH-7o6" firstAttribute="centerX" secondItem="YzV-Wp-Q37" secondAttribute="centerX" id="cZ9-jg-KT5"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="SocialEase" id="e9I-ZL-c1g"/>
-                    <connections>
-                        <outlet property="hiThereLabel" destination="bQW-dN-8Ru" id="vCY-yY-6lT"/>
-                        <outlet property="loginButton" destination="xVX-fs-QEY" id="qRo-74-9fZ"/>
-                        <outlet property="registerButton" destination="6lz-Cd-JTh" id="Mci-42-9gh"/>
-                        <segue destination="mzL-PQ-Tch" kind="show" identifier="registerSegue" id="ygG-YQ-axn"/>
-                        <segue destination="PO1-ac-Ww2" kind="show" identifier="loginSegue" id="WUr-UQ-ofv"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0OS-Xx-krk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="399" y="348"/>
-        </scene>
         <!--Register-->
         <scene sceneID="kq6-uM-vtK">
             <objects>
@@ -113,14 +36,14 @@
                                 <rect key="frame" x="40" y="114" width="57" height="24"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rD-cR-HoJ">
                                 <rect key="frame" x="40" y="168" width="50" height="24"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2hw-6p-SgD">
@@ -137,7 +60,7 @@
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Register">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="didRegister:" destination="nWk-tC-rkQ" eventType="touchUpInside" id="7IX-qt-xaE"/>
@@ -165,13 +88,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Register" id="TP9-mb-gwm">
-                        <barButtonItem key="leftBarButtonItem" title="&lt;" id="QiM-Bt-voZ">
-                            <connections>
-                                <action selector="onBackTap:" destination="nWk-tC-rkQ" id="V3l-31-sfX"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Register" id="TP9-mb-gwm"/>
                     <connections>
                         <outlet property="nameLebel" destination="9rD-cR-HoJ" id="UL5-sZ-Wwq"/>
                         <outlet property="nameTextField" destination="2hw-6p-SgD" id="8w0-24-JdQ"/>
@@ -188,7 +105,7 @@
         <!--Pick your favorite cuisines-->
         <scene sceneID="Kf7-L5-gUN">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="vbk-fn-MWo" customClass="CategoriesViewController" customModule="SocialEase" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="vbk-fn-MWo" customClass="CuisinesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pR3-Ez-cx2"/>
                         <viewControllerLayoutGuide type="bottom" id="X5I-fO-QFj"/>
@@ -314,7 +231,7 @@
                                 <animations/>
                                 <string key="text">In order to provide you with relevant recommendations, we ask you for a one time setup to let us know what you like. You can also change it later by going to app settings.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -347,7 +264,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ieO-xS-QTL">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ieO-xS-QTL">
                                 <rect key="frame" x="127" y="161" width="140" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -357,14 +274,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyc-df-CK1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyc-df-CK1">
                                 <rect key="frame" x="40" y="164" width="58" height="24"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Od4-5J-8np">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Od4-5J-8np">
                                 <rect key="frame" x="172" y="221" width="50" height="36"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -511,7 +428,7 @@
         <!--Navigation Controller-->
         <scene sceneID="gFw-Cu-njN">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mzL-PQ-Tch" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="RegisterViewNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="mzL-PQ-Tch" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="soj-LY-hMi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -526,25 +443,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wKR-cY-u1L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1149" y="1265"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="wQi-61-1Nk">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PO1-ac-Ww2" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xPa-2o-a8g">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="tHm-ZA-IeL"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fhP-MD-v37" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1209" y="-474"/>
         </scene>
     </scenes>
     <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>

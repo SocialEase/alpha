@@ -25,8 +25,8 @@ class RegisterViewController: UIViewController {
     
     func styleView() {
         self.view.backgroundColor = UIColor.sea_primaryColor()
-        phoneLabel.textColor = UIColor.sea_primaryLabelColor()
-        nameLebel.textColor = UIColor.sea_primaryLabelColor()
+        phoneLabel.textColor = UIColor.sea_lightLabelColor()
+        nameLebel.textColor = UIColor.sea_lightLabelColor()
         
         registerButton.setTitleColor(UIColor.sea_unselectedButtonColor(), forState: UIControlState.Normal)
         registerButton.setTitleColor(UIColor.sea_selectedButtonColor(), forState: UIControlState.Highlighted)        

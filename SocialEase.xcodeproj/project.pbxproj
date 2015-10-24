@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		04A578DA1BDB56870088858A /* OtherPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A578D91BDB56870088858A /* OtherPreference.swift */; settings = {ASSET_TAGS = (); }; };
+		04A578DE1BDBFAEE0088858A /* Cuisine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A578DD1BDBFAEE0088858A /* Cuisine.swift */; settings = {ASSET_TAGS = (); }; };
+		04A578E01BDBFB050088858A /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A578DF1BDBFB050088858A /* UserPreferences.swift */; settings = {ASSET_TAGS = (); }; };
 		04C0DEBF1BD9FF8500CE1ABF /* OtherPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C0DEBE1BD9FF8500CE1ABF /* OtherPreferencesViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		04C0DEC11BDA0C1F00CE1ABF /* PreferencesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C0DEC01BDA0C1F00CE1ABF /* PreferencesCell.swift */; settings = {ASSET_TAGS = (); }; };
-		04ECB7651BD73A2E00819BA4 /* Cuisine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECB7641BD73A2E00819BA4 /* Cuisine.swift */; settings = {ASSET_TAGS = (); }; };
-		04ECB7691BD73BC700819BA4 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECB7681BD73BC700819BA4 /* UserPreferences.swift */; settings = {ASSET_TAGS = (); }; };
 		04ECB76F1BD73EB300819BA4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04ECB76E1BD73EB300819BA4 /* Login.storyboard */; settings = {ASSET_TAGS = (); }; };
 		04ECB7711BD73F3D00819BA4 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECB7701BD73F3D00819BA4 /* RegisterViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		04ECB7761BD73F5500819BA4 /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECB7721BD73F5500819BA4 /* GroupsViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -63,10 +63,10 @@
 
 /* Begin PBXFileReference section */
 		04A578D91BDB56870088858A /* OtherPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherPreference.swift; sourceTree = "<group>"; };
+		04A578DD1BDBFAEE0088858A /* Cuisine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cuisine.swift; path = Models/Cuisine.swift; sourceTree = "<group>"; };
+		04A578DF1BDBFB050088858A /* UserPreferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserPreferences.swift; path = Models/UserPreferences.swift; sourceTree = "<group>"; };
 		04C0DEBE1BD9FF8500CE1ABF /* OtherPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherPreferencesViewController.swift; sourceTree = "<group>"; };
 		04C0DEC01BDA0C1F00CE1ABF /* PreferencesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesCell.swift; sourceTree = "<group>"; };
-		04ECB7641BD73A2E00819BA4 /* Cuisine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cuisine.swift; sourceTree = "<group>"; };
-		04ECB7681BD73BC700819BA4 /* UserPreferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
 		04ECB76E1BD73EB300819BA4 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		04ECB7701BD73F3D00819BA4 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		04ECB7721BD73F5500819BA4 /* GroupsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
@@ -179,8 +179,8 @@
 		59F3215E1BD305D8005AB36C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				04ECB7681BD73BC700819BA4 /* UserPreferences.swift */,
-				04ECB7641BD73A2E00819BA4 /* Cuisine.swift */,
+				04A578DD1BDBFAEE0088858A /* Cuisine.swift */,
+				04A578DF1BDBFB050088858A /* UserPreferences.swift */,
 				59F321921BD4A705005AB36C /* Group.swift */,
 				59F321941BD4A710005AB36C /* User.swift */,
 				AC3114B61BD8985E00ED6E80 /* SEAActivity.swift */,
@@ -432,10 +432,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04A578DE1BDBFAEE0088858A /* Cuisine.swift in Sources */,
 				04C0DEC11BDA0C1F00CE1ABF /* PreferencesCell.swift in Sources */,
 				59F321931BD4A705005AB36C /* Group.swift in Sources */,
 				AC3114B51BD8983300ED6E80 /* SuggestionsViewFilters.swift in Sources */,
-				04ECB7691BD73BC700819BA4 /* UserPreferences.swift in Sources */,
 				AC3114B71BD8985E00ED6E80 /* SEAActivity.swift in Sources */,
 				04ECB7781BD73F5500819BA4 /* CategoriesViewController.swift in Sources */,
 				59F321701BD33224005AB36C /* LoginViewController.swift in Sources */,
@@ -444,6 +444,7 @@
 				04ECB77B1BD73FB500819BA4 /* CuisineCell.swift in Sources */,
 				ACD0E42E1BDB463000CE0558 /* PlanDisplayViewController.swift in Sources */,
 				59F3215D1BD2FD10005AB36C /* Colors.swift in Sources */,
+				04A578E01BDBFB050088858A /* UserPreferences.swift in Sources */,
 				04ECB7761BD73F5500819BA4 /* GroupsViewController.swift in Sources */,
 				AC3114C41BD8B05D00ED6E80 /* AppUtilities.swift in Sources */,
 				AC3114C61BD8B07800ED6E80 /* AppConstants.swift in Sources */,
@@ -461,7 +462,6 @@
 				59F3216C1BD33165005AB36C /* GroupSelectionViewController.swift in Sources */,
 				ACD342741BDB4E1B006ACA0C /* DisplayPlanVC.swift in Sources */,
 				59F321951BD4A710005AB36C /* User.swift in Sources */,
-				04ECB7651BD73A2E00819BA4 /* Cuisine.swift in Sources */,
 				59F3218C1BD49A01005AB36C /* UserCell.swift in Sources */,
 				04ECB7791BD73F5500819BA4 /* PreferencesInfoViewController.swift in Sources */,
 				AC3114BD1BD8989C00ED6E80 /* SuggestedPlaceViewCell.swift in Sources */,

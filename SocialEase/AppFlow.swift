@@ -20,7 +20,7 @@ class AppFlow: NSObject {
     func presentLogin() {
         let loginStoryboard = Storyboard.Login
         
-        let viewController = loginStoryboard.instantiateViewControllerWithIdentifier(Storyboard.LoginInitialVCIdentifier)
+        let viewController = loginStoryboard.instantiateViewControllerWithIdentifier(Storyboard.LoginRegisterVCIdentifier)
         
         LoginViewController.completionCallback = { () -> () in
             self.presentGroupSelection()

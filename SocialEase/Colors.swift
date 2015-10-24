@@ -35,6 +35,10 @@ extension UIColor {
     class func sea_primaryLabelColor() -> UIColor {
         return UIColor.darkGrayColor()
     }
+    
+    class func sea_lightLabelColor() -> UIColor {
+        return UIColor.darkGrayColor()
+    }
 
     class func sea_unselectedButtonColor() -> UIColor {
         return sea_primaryLightTextColor()

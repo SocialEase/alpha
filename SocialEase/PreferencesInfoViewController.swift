@@ -20,7 +20,7 @@ class PreferencesInfoViewController: UIViewController {
 
     func styleView() {
         self.view.backgroundColor = UIColor.sea_primaryColor()
-        infoLabel.textColor = UIColor.sea_primaryLabelColor()
+        infoLabel.textColor = UIColor.sea_lightLabelColor()
     }
     
     override func viewDidLayoutSubviews() {
