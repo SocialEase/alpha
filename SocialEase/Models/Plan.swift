@@ -20,6 +20,8 @@ class Plan: NSObject {
     struct Fields {
         static let PlanStatus = "planStatus"
         static let Name = "name"
+        static let OccurrenceDate = "occurrenceDate"
+        static let Image = "image"
     }
 
     // MARK: Stored
@@ -38,9 +40,25 @@ class Plan: NSObject {
         return object[Fields.PlanStatus] as? Int
     }
 
+    var occuranceDateTime: NSDate? {
+        return object[Fields.OccurrenceDate] as? NSDate
+    }
+
     // MARK: - Initializers
     init(planObject: PFObject) {
         object = planObject
+        print(object)
+    }
+
+    // MARK: - Methods
+    func setImageOnUIImageView(view: UIImageView) {
+        if let imageFile = object[Fields.Image] as? PFFile {
+            imageFile.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
+                if let imageData = imageData {
+                    view.image = UIImage(data: imageData)
+                }
+            }
+        }
     }
 
     // MARK: - Class methods

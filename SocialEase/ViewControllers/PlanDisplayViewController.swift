@@ -12,6 +12,7 @@ import JTProgressHUD
 class PlanDisplayViewController: UIViewController {
 
     @IBOutlet weak var sampleDisplayLabel: UILabel!
+    @IBOutlet weak var sampleImageView: UIImageView!
 
     var pageIndex: Int!
     var pageTitle: String! {
@@ -26,6 +27,7 @@ class PlanDisplayViewController: UIViewController {
         didSet {
             // @todo: Connect with a view implementation
             sampleDisplayLabel?.text = userPlanList?[0].name
+            userPlanList?[0].setImageOnUIImageView(sampleImageView)
         }
     }
     var viewActive = false
@@ -36,7 +38,7 @@ class PlanDisplayViewController: UIViewController {
         // Do any additional setup after loading the view.
         setupUI()
 
-        fetchUserPlans(true)
+        fetchUserPlans(false)
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -55,7 +57,7 @@ class PlanDisplayViewController: UIViewController {
         JTProgressHUD.showWithStyle(JTProgressHUDStyle.Gradient)
         UserPlans.getUserPlanForStatus(planStatus!, usingCache: cached) { (userPlans: [Plan]?, error: NSError?) -> () in
             if let plans = userPlans {
-                print(plans)
+                print(plans[0].occuranceDateTime)
                 self.userPlanList = plans
                 JTProgressHUD.hide()
             }

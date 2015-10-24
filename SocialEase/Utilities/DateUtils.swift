@@ -13,6 +13,7 @@ class DateUtils {
 
     private static let DateFormatter = NSDateFormatter()
     private static let CurrentCalendar = NSCalendar.currentCalendar()
+    static let PraseDateStringFormat = "yyyy-MM-dd HH:mm:ss Z"
 
     class func getNextNDatesWithCount(numberofDays: Int, fromStartDate date: NSDate) -> [NSDate] {
 
@@ -38,4 +39,8 @@ class DateUtils {
         return DateUtils.DateFormatter.stringFromDate(date)
     }
 
+    class func getDateFromParseString(parseDateString: String) -> NSDate? {
+        DateUtils.DateFormatter.dateFormat = DateUtils.PraseDateStringFormat
+        return DateUtils.DateFormatter.dateFromString(parseDateString)
+    }
 }

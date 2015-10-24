@@ -23,22 +23,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sample Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SY2-zk-gy1">
-                                <rect key="frame" x="249" y="290" width="102" height="20"/>
+                                <rect key="frame" x="249" y="93" width="102" height="20"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bch-XN-SVj">
+                                <rect key="frame" x="100" y="150" width="400" height="300"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="HFE-p0-9Qu"/>
+                                    <constraint firstAttribute="height" constant="300" id="OtE-g0-hss"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="SY2-zk-gy1" firstAttribute="centerX" secondItem="BrH-nH-XCk" secondAttribute="centerX" id="6Iw-uh-eq7"/>
+                            <constraint firstItem="Bch-XN-SVj" firstAttribute="centerX" secondItem="BrH-nH-XCk" secondAttribute="centerX" id="81b-Mm-5qP"/>
+                            <constraint firstItem="SY2-zk-gy1" firstAttribute="top" secondItem="tgP-RR-2wf" secondAttribute="bottom" constant="73" id="9ob-Dl-tQ8"/>
                             <constraint firstItem="SY2-zk-gy1" firstAttribute="centerY" secondItem="BrH-nH-XCk" secondAttribute="centerY" id="Ldc-Ta-HLX"/>
-                            <constraint firstItem="SY2-zk-gy1" firstAttribute="centerX" secondItem="BrH-nH-XCk" secondAttribute="centerX" id="PJw-Ln-H7v"/>
+                            <constraint firstItem="Bch-XN-SVj" firstAttribute="centerY" secondItem="BrH-nH-XCk" secondAttribute="centerY" id="rS7-Bl-VuA"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Ldc-Ta-HLX"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="sampleDisplayLabel" destination="SY2-zk-gy1" id="5Zx-ig-ztH"/>
+                        <outlet property="sampleImageView" destination="Bch-XN-SVj" id="KfF-nj-0D6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dQM-c8-qtE" userLabel="First Responder" sceneMemberID="firstResponder"/>
