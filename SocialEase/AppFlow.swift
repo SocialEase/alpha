@@ -48,8 +48,7 @@ class AppFlow: NSObject {
     
     func presentSuggestions(group: Group) {
         if let rootViewControler = self.window.rootViewController as? UINavigationController {
-            let suggestionsStoryboard = UIStoryboard(name: "Suggestions", bundle: nil)
-            let viewController = suggestionsStoryboard.instantiateViewControllerWithIdentifier("SuggestionsViewController")
+            let viewController = Storyboard.Suggestions.instantiateViewControllerWithIdentifier("SuggestionsViewController")
 
             rootViewControler.pushViewController(viewController, animated: true)
         }

@@ -86,11 +86,14 @@ class HomeViewController: UIViewController, UIPageViewControllerDataSource, UIPa
 
     // MARK: - View Actions
     @IBAction func preferenceButtonTapped(sender: UIButton) {
-
+        // @todo: umitra to create a cuisines vc func in AppFlow and call that here
+        let cuisinesVC = Storyboard.Login.instantiateViewControllerWithIdentifier(Storyboard.CuisinesVCIndentifier)
+        presentViewController(cuisinesVC, animated: true, completion: nil)
     }
 
     @IBAction func addNewPlanButtonTapped(sender: UIButton) {
-
+        let appFlow = AppFlow()
+        appFlow.presentGroupSelection()
     }
 
     // MARK: - Helper methods

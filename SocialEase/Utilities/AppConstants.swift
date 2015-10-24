@@ -21,6 +21,7 @@ struct Storyboard {
     static let Home = UIStoryboard(name: "Home", bundle: nil)
 
     // View controller identifiers
+    static let CuisinesVCIndentifier = "CuisinesViewController"
     static let LoginInitialVCIdentifier = "WelcomeViewController2"
     static let SuggestionsNavVCIdentifier = "SuggestionsNavController"
     static let HomePageNavVCIdentifier = "HomePageNavViewController"
