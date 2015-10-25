@@ -18,16 +18,17 @@ class UserCell: UICollectionViewCell {
     
     var user: User! {
         didSet {
-            /* TODO: Use this if we separate name into first + last.
-            if let lastInitial = user.lastName.characters.first {
-                nameLabel.text = user.firstName + " " + String(lastInitial) + "."
-            } else {*/
-                nameLabel.text = user.name
-            //}
-            if let imageBinName = user.profileImageBinName {
-                imageView.image = UIImage(named: imageBinName)
-            } else if let imageUrl = user.profileImageUrl {
+            // TODO: Use this if we separate name into first + last.
+            if let firstName = user.name, lastInitial = user.lastName?.characters.first {
+                nameLabel.text = firstName + " " + String(lastInitial) + "."
+            } else if let firstName = user.name {
+                nameLabel.text = firstName
+            }
+            
+            if let imageUrl = user.profileImageUrl {
                 imageView.setImageWithURL(imageUrl)
+            } else if let imageBinName = user.profileImageBinName {
+                imageView.image = UIImage(named: imageBinName)
             }
         }
     }
@@ -39,6 +40,7 @@ class UserCell: UICollectionViewCell {
         nameLabel.textColor = UIColor.sea_secondaryHintColor()
         nameLabel.font = UIFont.boldSystemFontOfSize(17)
         
+        imageView.contentMode = UIViewContentMode.ScaleAspectFill
         imageView.layer.cornerRadius = imageView.layer.frame.width / 2
         imageView.layer.masksToBounds = true
         

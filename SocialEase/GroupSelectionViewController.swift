@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JTProgressHUD
 
 class GroupSelectionViewController: UIViewController {
     
@@ -34,7 +35,9 @@ class GroupSelectionViewController: UIViewController {
         groupsTableView.rowHeight = UITableViewAutomaticDimension
         groupsTableView.estimatedRowHeight = 140
         
+        JTProgressHUD.show()
         Group.groupsForCurrentUser() { (groups: [Group]?, error: NSError?) -> Void in
+            JTProgressHUD.hide()
             if let groups = groups where error == nil {
                 self.groups = groups
             }

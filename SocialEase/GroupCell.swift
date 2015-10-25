@@ -23,7 +23,9 @@ class GroupCell: UITableViewCell {
     
     var group: Group! {
         didSet {
-            nameLabel.text = group.name
+            if let name = group.name{
+                nameLabel.text = name
+            }
             groupCountLabel.text = "(\(group.users.count))"
             if group.users.count > userImageMaxShown {
                 othersCountLabel.text = "\(group.users.count - userImageMaxShown) others..."
@@ -35,7 +37,16 @@ class GroupCell: UITableViewCell {
             userImageViews = [UIImageView]()
             for user in group.users {
                 // Create user image views with placeholder images
-                let imageView = UIImageView(image: UIImage(named: "default-user-profile"))
+                let imageView = UIImageView()
+                let defaultImage = UIImage(named: "default-user-profile")
+                
+                if let profileImageUrl = user.profileImageUrl {
+                    imageView.setImageWithURL(profileImageUrl, placeholderImage: defaultImage)
+                } else {
+                    imageView.image = defaultImage
+                }
+                
+                imageView.contentMode = UIViewContentMode.ScaleAspectFill
                 imageView.layer.cornerRadius = CGFloat(userImageDiameter) / 2
                 imageView.layer.masksToBounds = true
                 userImageViews.append(imageView)
@@ -74,8 +85,6 @@ class GroupCell: UITableViewCell {
             friendsContainerView.addSubview(imageView)
             
             imageView.translatesAutoresizingMaskIntoConstraints = false
-            // TODO: Retrieve image dynamically
-            //imageView.setImageWithURL(url: NSURL)
             
             if i != 0 {
                 friendsContainerView.addConstraint(NSLayoutConstraint(item: userImageViews[i], attribute: .Height, relatedBy: .Equal, toItem: userImageViews[i-1], attribute: .Height, multiplier: 1, constant: 0))

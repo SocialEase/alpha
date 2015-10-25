@@ -38,10 +38,14 @@ class User : NSObject {
             [ "name": "Uday", "lastName": "Mitra", "profileImageBinName": "uday-user-profile", "profileImageUrlPath": "" ],
         ]
 
+    var id: String?
     var name: String?
+    var lastName: String?
     var phoneNumber: String?
+    var profileImage: UIImage?
     var profileImageUrl: NSURL?
     var profileImageBinName: String?
+    var groups: String?
     var userPreferences: UserPreferences? {
         didSet {
             pfUser!["userPreferences"] = userPreferences?.encodedString()
@@ -60,7 +64,9 @@ class User : NSObject {
     private(set) var pfUser: PFUser?
 
     init(pfUser: PFUser) {
+        self.id = pfUser.objectId
         self.name = pfUser["name"] as? String
+        self.lastName = pfUser["lastName"] as? String
         self.phoneNumber = pfUser["phone"] as? String
         if let encodedPreferencesString = pfUser["userPreferences"] as? String {
             self.userPreferences = UserPreferences.getUserPreferences(encodedPreferencesString)
@@ -68,6 +74,12 @@ class User : NSObject {
         self.pfUser = pfUser
         if let profileImageBinName = pfUser["profileImageBinName"] as? String {
             self.profileImageBinName = profileImageBinName
+        }
+        if let profileImageUrlString = pfUser["profileImageUrl"] as? String {
+            self.profileImageUrl = NSURL(string: profileImageUrlString)
+        }
+        if let groups = pfUser["groups"] as? String {
+            self.groups = groups
         }
     }
 
