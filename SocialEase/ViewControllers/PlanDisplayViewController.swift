@@ -17,7 +17,12 @@ class PlanDisplayViewController: UIViewController, UITableViewDelegate, UITableV
     var pageTitle: String!
     var planStatus: UserPlanStatus?
     
-    var userPlanList: [Plan]?
+    var userPlanList: [Plan]? {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+
     var viewActive = false
     var selectedPlanIndex: Int?
 
@@ -51,7 +56,6 @@ class PlanDisplayViewController: UIViewController, UITableViewDelegate, UITableV
         UserPlans.getUserPlanForStatus(planStatus!, usingCache: cached) { (userPlans: [Plan]?, error: NSError?) -> () in
             if let plans = userPlans {
                 self.userPlanList = plans
-                self.tableView.reloadData()
                 JTProgressHUD.hide()
             }
         }
@@ -64,14 +68,9 @@ class PlanDisplayViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     
-    // table view delegates
+    // MARK: - table view delegates
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let numRows = userPlanList != nil
-            ? userPlanList!.count
-            : 0
-        print("Number of user plans = \(numRows)")
-        return numRows
-        
+        return userPlanList?.count ?? 0
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -83,6 +82,7 @@ class PlanDisplayViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("planDetailsTapped")
 
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         selectedPlanIndex = indexPath.row
         presentPlanTabbarControllerForSelectedPlan()
     }
