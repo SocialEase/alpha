@@ -34,22 +34,39 @@ class AppFlow: NSObject {
     }
     
     func presentGroupSelection() {
-        let viewController = GroupSelectionViewController()
-        viewController.completionCallback = { (group: Group) -> () in
-            self.presentSuggestions(group)
+        // TODO: kevin - uncomment
+        //let viewController = GroupSelectionViewController()
+        //viewController.completionCallback = { (group: Group) -> () in
+            self.presentSuggestions()
+        //}
+        
+//        let navController: UINavigationController = UINavigationController(rootViewController: viewController)
+//        navController.navigationItem.title = AppConstants.AppName
+//        
+//        self.window!.rootViewController = navController
+//        self.window!.makeKeyAndVisible()
+    }
+    
+    func presentBusinessDetail() {
+        if let rootViewControler = self.window.rootViewController as? UINavigationController {
+            let viewController = Storyboard.BusinessDetail.instantiateViewControllerWithIdentifier("BusinessDetailViewController")
+            
+            rootViewControler.pushViewController(viewController, animated: true)
         }
-        
-        let navController: UINavigationController = UINavigationController(rootViewController: viewController)
-        navController.navigationItem.title = AppConstants.AppName
-        
-        self.window!.rootViewController = navController
-        self.window!.makeKeyAndVisible()
     }
     
     func presentSuggestions(group: Group) {
         if let rootViewControler = self.window.rootViewController as? UINavigationController {
             let viewController = Storyboard.Suggestions.instantiateViewControllerWithIdentifier("SuggestionsViewController")
 
+            rootViewControler.pushViewController(viewController, animated: true)
+        }
+    }
+    
+    func presentSuggestions() {
+        if let rootViewControler = self.window.rootViewController as? UINavigationController {
+            let viewController = Storyboard.Suggestions.instantiateViewControllerWithIdentifier("SuggestionsViewController")
+            
             rootViewControler.pushViewController(viewController, animated: true)
         }
     }

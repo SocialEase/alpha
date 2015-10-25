@@ -65,6 +65,8 @@
 		ACD0E42E1BDB463000CE0558 /* PlanDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD0E42D1BDB463000CE0558 /* PlanDisplayViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		ACD342741BDB4E1B006ACA0C /* DisplayPlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD342731BDB4E1B006ACA0C /* DisplayPlanVC.swift */; settings = {ASSET_TAGS = (); }; };
 		ACEB7CBA1BDB365600B1A482 /* socialease.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACEB7CB91BDB365600B1A482 /* socialease.ttf */; settings = {ASSET_TAGS = (); }; };
+		BD9AF5DF1BDD828F00105AEF /* BusinessDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD9AF5DE1BDD828F00105AEF /* BusinessDetail.storyboard */; settings = {ASSET_TAGS = (); }; };
+		BD9AF5E11BDD832700105AEF /* BusinessDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9AF5E01BDD832700105AEF /* BusinessDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		DB60B389636A8D1DFCB85A92 /* Pods_SocialEase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBBB717F537F177AEEECFB4 /* Pods_SocialEase.framework */; };
 /* End PBXBuildFile section */
 
@@ -131,6 +133,8 @@
 		ACD0E42D1BDB463000CE0558 /* PlanDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlanDisplayViewController.swift; path = ViewControllers/PlanDisplayViewController.swift; sourceTree = "<group>"; };
 		ACD342731BDB4E1B006ACA0C /* DisplayPlanVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DisplayPlanVC.swift; path = Utilities/DisplayPlanVC.swift; sourceTree = "<group>"; };
 		ACEB7CB91BDB365600B1A482 /* socialease.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = socialease.ttf; sourceTree = "<group>"; };
+		BD9AF5DE1BDD828F00105AEF /* BusinessDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BusinessDetail.storyboard; sourceTree = "<group>"; };
+		BD9AF5E01BDD832700105AEF /* BusinessDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessDetailViewController.swift; sourceTree = "<group>"; };
 		CEBBB717F537F177AEEECFB4 /* Pods_SocialEase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialEase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -249,6 +253,7 @@
 				04C0DEBE1BD9FF8500CE1ABF /* OtherPreferencesViewController.swift */,
 				AC976B511BDD329B00FBEC06 /* PlanInformationViewController.swift */,
 				AC976B531BDD32B100FBEC06 /* PlanChatViewController.swift */,
+				BD9AF5E01BDD832700105AEF /* BusinessDetailViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -258,6 +263,7 @@
 			children = (
 				59F0FA001BD242980041A149 /* AppDelegate.swift */,
 				59F321651BD32D8F005AB36C /* AppFlow.swift */,
+				BD9AF5DE1BDD828F00105AEF /* BusinessDetail.storyboard */,
 				AC3114C11BD8997F00ED6E80 /* Suggestions.storyboard */,
 				59F0FA091BD242980041A149 /* LaunchScreen.storyboard */,
 				04ECB76E1BD73EB300819BA4 /* Login.storyboard */,
@@ -394,6 +400,7 @@
 				59F321901BD4A67F005AB36C /* default-user-profile.png in Resources */,
 				59F321981BD4B817005AB36C /* amay-user-profile.png in Resources */,
 				59F321991BD4B817005AB36C /* uday-user-profile.png in Resources */,
+				BD9AF5DF1BDD828F00105AEF /* BusinessDetail.storyboard in Resources */,
 				59F0FA081BD242980041A149 /* Assets.xcassets in Resources */,
 				AC30AF9A1BDA903C002A1A67 /* Home.storyboard in Resources */,
 			);
@@ -487,6 +494,7 @@
 				59F321841BD486DF005AB36C /* GroupCreateViewController.swift in Sources */,
 				59F3216C1BD33165005AB36C /* GroupSelectionViewController.swift in Sources */,
 				ACD342741BDB4E1B006ACA0C /* DisplayPlanVC.swift in Sources */,
+				BD9AF5E11BDD832700105AEF /* BusinessDetailViewController.swift in Sources */,
 				AC59DB861BDBF3E6001281F5 /* Plan.swift in Sources */,
 				59F321951BD4A710005AB36C /* User.swift in Sources */,
 				59F3218C1BD49A01005AB36C /* UserCell.swift in Sources */,

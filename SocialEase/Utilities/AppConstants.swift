@@ -20,6 +20,7 @@ struct Storyboard {
     static let Suggestions = UIStoryboard(name: "Suggestions", bundle: nil)
     static let Home = UIStoryboard(name: "Home", bundle: nil)
     static let Plan = UIStoryboard(name: "Plan", bundle: nil)
+    static let BusinessDetail = UIStoryboard(name: "BusinessDetail", bundle: nil)
 
     // View controller identifiers
     static let CuisinesVCIndentifier = "CategoriesViewNavigationController"
@@ -32,6 +33,7 @@ struct Storyboard {
     static let PlanTabedVCIdentifier = "PlanTabBarController"
     static let PlanInformationVCIdentifier = "PlanInformationViewController"
     static let PlanChatVCIdentifier = "PlanChatViewController"
+    static let BusinessDetailVCIdentifier = "BusinessDetailViewController"
 
     // segue identifier
 

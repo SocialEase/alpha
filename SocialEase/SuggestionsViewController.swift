@@ -143,8 +143,12 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
 
             showActivityTypeFilter ? activityTypeViewTapped(nil) : timeViewTapped(nil)
         } else {
-            suggestedActivities?[indexPath.row].selected = !(suggestedActivities?[indexPath.row].selected)!
-            tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .None)
+            // TODO: kevin go to detail view
+            let appFlow = AppFlow()
+            appFlow.presentBusinessDetail()
+            // kevin done
+            //suggestedActivities?[indexPath.row].selected = !(suggestedActivities?[indexPath.row].selected)!
+            //tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .None)
         }
 
     }
