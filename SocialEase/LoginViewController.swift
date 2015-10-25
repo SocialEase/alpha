@@ -2,8 +2,8 @@
 //  LoginViewController.swift
 //  SocialEase
 //
-//  Created by Yuichi Kuroda on 10/17/15.
-//  Copyright © 2015 Yuichi Kuroda. All rights reserved.
+//  Created by Uday on 10/17/15.
+//  Copyright © 2015 udaymitra. All rights reserved.
 //
 
 import UIKit
@@ -15,6 +15,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var phoneNumberTextField: UITextField!
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var registerNewUserButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,11 +46,14 @@ class LoginViewController: UIViewController {
                 alert.addAction(defaultAction)
                 self.presentViewController(alert, animated: true, completion: nil)
             } else {
-                User.currentUser = user
-                print("Login successful. take to groups screen")
-                self.openGroupsController()
+                User.currentUser = user                
+                AppFlow.presentHomePageViewControllerUsingWindow(self.view.window!)
             }
         }
+    }
+        
+    @IBAction func didRegisterNewUser(sender: AnyObject) {
+        performSegueWithIdentifier("loginToRegisterSegue", sender: self)
     }
     
     @IBAction func backButtonTap(sender: AnyObject) {

@@ -23,7 +23,7 @@ struct Storyboard {
 
     // View controller identifiers
     static let CuisinesVCIndentifier = "CategoriesViewNavigationController"
-    static let LoginInitialVCIdentifier = "WelcomeViewController2"
+    static let LoginVCIdentifier = "LoginViewController"
     static let LoginRegisterVCIdentifier = "RegisterViewController"
     static let SuggestionsNavVCIdentifier = "SuggestionsNavController"
     static let HomePageNavVCIdentifier = "HomePageNavViewController"

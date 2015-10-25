@@ -20,7 +20,7 @@ class AppFlow: NSObject {
     func presentLogin() {
         let loginStoryboard = Storyboard.Login
         
-        let viewController = loginStoryboard.instantiateViewControllerWithIdentifier(Storyboard.LoginRegisterVCIdentifier)
+        let viewController = loginStoryboard.instantiateViewControllerWithIdentifier(Storyboard.LoginVCIdentifier)
         
         LoginViewController.completionCallback = { () -> () in
             self.presentGroupSelection()
@@ -55,9 +55,13 @@ class AppFlow: NSObject {
     }
 
     func presentHomePageViewController() {
+        AppFlow.presentHomePageViewControllerUsingWindow(self.window!)
+    }
+    
+    class func presentHomePageViewControllerUsingWindow(window : UIWindow) {
         if let homePageNavVC = Storyboard.Home.instantiateViewControllerWithIdentifier(Storyboard.HomePageNavVCIdentifier) as? UINavigationController {
-            window!.rootViewController = homePageNavVC
-            window!.makeKeyAndVisible()
+            window.rootViewController = homePageNavVC
+            window.makeKeyAndVisible()
         }
     }
 

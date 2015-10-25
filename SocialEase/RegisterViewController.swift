@@ -48,16 +48,11 @@ class RegisterViewController: UIViewController {
                 self.presentViewController(alert, animated: true, completion: nil)
             } else {
                 User.currentUser = user
-                print("Register successful. take to groups screen")
                 self.openCategoriesViewController()
             }
         }
     }
 
-    @IBAction func onBackTap(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
     func openCategoriesViewController() {
         self.performSegueWithIdentifier("categoriesViewSegue", sender: self)
     }
