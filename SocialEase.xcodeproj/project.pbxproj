@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		043570041BDCCBE100B22D1B /* PlanPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043570031BDCCBE100B22D1B /* PlanPreviewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		04A578DA1BDB56870088858A /* OtherPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A578D91BDB56870088858A /* OtherPreference.swift */; settings = {ASSET_TAGS = (); }; };
 		04A578DE1BDBFAEE0088858A /* Cuisine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A578DD1BDBFAEE0088858A /* Cuisine.swift */; settings = {ASSET_TAGS = (); }; };
 		04A578E01BDBFB050088858A /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A578DF1BDBFB050088858A /* UserPreferences.swift */; settings = {ASSET_TAGS = (); }; };
@@ -67,6 +68,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		043570031BDCCBE100B22D1B /* PlanPreviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanPreviewCell.swift; sourceTree = "<group>"; };
 		04A578D91BDB56870088858A /* OtherPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherPreference.swift; sourceTree = "<group>"; };
 		04A578DD1BDBFAEE0088858A /* Cuisine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cuisine.swift; path = Models/Cuisine.swift; sourceTree = "<group>"; };
 		04A578DF1BDBFB050088858A /* UserPreferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserPreferences.swift; path = Models/UserPreferences.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				59F3218A1BD49A01005AB36C /* UserCell.swift */,
 				59F3218B1BD49A01005AB36C /* UserCell.xib */,
 				04C0DEC01BDA0C1F00CE1ABF /* PreferencesCell.swift */,
+				043570031BDCCBE100B22D1B /* PlanPreviewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				AC59DB841BDBF1CA001281F5 /* UserPlans.swift in Sources */,
 				04ECB77B1BD73FB500819BA4 /* CuisineCell.swift in Sources */,
 				ACD0E42E1BDB463000CE0558 /* PlanDisplayViewController.swift in Sources */,
+				043570041BDCCBE100B22D1B /* PlanPreviewCell.swift in Sources */,
 				59F3215D1BD2FD10005AB36C /* Colors.swift in Sources */,
 				04A578E01BDBFB050088858A /* UserPreferences.swift in Sources */,
 				04ECB7761BD73F5500819BA4 /* GroupsViewController.swift in Sources */,

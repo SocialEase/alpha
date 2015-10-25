@@ -9,15 +9,14 @@
 import UIKit
 import JTProgressHUD
 
-class PlanDisplayViewController: UIViewController {
+class PlanDisplayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var sampleDisplayLabel: UILabel!
-    @IBOutlet weak var sampleImageView: UIImageView!
-
+    @IBOutlet weak var tableView: UITableView!
+    
     var pageIndex: Int!
     var pageTitle: String! {
         didSet {
-            sampleDisplayLabel?.text = pageTitle
+//            sampleDisplayLabel?.text = pageTitle
         }
     }
 
@@ -54,6 +53,11 @@ class PlanDisplayViewController: UIViewController {
         setupUI()
 
         fetchUserPlans(false)
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.estimatedRowHeight = 190
+//        tableView.rowHeight = UITableViewAutomaticDimension
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -64,12 +68,13 @@ class PlanDisplayViewController: UIViewController {
     }
 
     @IBAction func planDetailsTapped(sender: UIButton) {
+        print("planDetailsTapped")
         selectedPlanIndex = 0
         presentPlanTabbarControllerForSelectedPlan()
     }
     
     private func setupUI() {
-        sampleDisplayLabel?.text = pageTitle
+//        sampleDisplayLabel?.text = pageTitle
     }
 
     private func fetchUserPlans(cached: Bool) {
@@ -77,6 +82,7 @@ class PlanDisplayViewController: UIViewController {
         UserPlans.getUserPlanForStatus(planStatus!, usingCache: cached) { (userPlans: [Plan]?, error: NSError?) -> () in
             if let plans = userPlans {
                 self.userPlanList = plans
+                self.tableView.reloadData()
                 JTProgressHUD.hide()
             }
         }
@@ -88,6 +94,23 @@ class PlanDisplayViewController: UIViewController {
             appFlow.presentPlanViewController(userPlanList![selectedPlanIndex!])
         }
     }
+    
+    // table view delegates
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let numRows = userPlanList != nil
+            ? userPlanList!.count
+            : 0
+        print("Number of user plans = \(numRows)")
+        return numRows
+        
+    }
+
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("PlanPreviewCell", forIndexPath: indexPath) as! PlanPreviewCell
+        cell.plan = userPlanList![indexPath.row]
+        return cell
+    }
+    
     /*
     // MARK: - Navigation
 

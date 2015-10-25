@@ -53,6 +53,7 @@ class Plan: NSObject {
             imageFile.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
                 if let imageData = imageData {
                     view.image = UIImage(data: imageData)
+                    view.contentMode = UIViewContentMode.ScaleAspectFill;
                 }
             }
         }
