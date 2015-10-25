@@ -21,11 +21,13 @@ class PlanDisplayViewController: UIViewController {
         }
     }
 
-    var planStatus: PlanStatus?
+    var planStatus: UserPlanStatus?
 
     var userPlanList: [Plan]? {
         didSet {
-            if userPlanList?.count > 0 {
+            if (userPlanList?.count ?? 0) > 0 {
+                print(userPlanList?[0].name)
+                print(userPlanList?[0].planDescription)
                 // @todo: Connect with a view implementation
                 sampleDisplayLabel?.text = userPlanList?[0].name
                 userPlanList?[0].setImageOnUIImageView(sampleImageView)

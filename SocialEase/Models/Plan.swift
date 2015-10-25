@@ -9,19 +9,15 @@
 import UIKit
 import Parse
 
-enum PlanStatus: Int {
-    case Active = 1, Pending
-}
-
 class Plan: NSObject {
 
     // MARK: - Properties
     static let ObjectName = "Plan"
     struct Fields {
-        static let PlanStatus = "planStatus"
         static let Name = "name"
         static let OccurrenceDate = "occurrenceDate"
         static let Image = "image"
+        static let Comment = "comment"
     }
 
     // MARK: Stored
@@ -36,12 +32,12 @@ class Plan: NSObject {
         return object[Fields.Name] as? String
     }
 
-    var status: Int? {
-        return object[Fields.PlanStatus] as? Int
-    }
-
     var occuranceDateTime: NSDate? {
         return object[Fields.OccurrenceDate] as? NSDate
+    }
+
+    var comment: String? {
+        return object[Fields.Comment] as? String
     }
 
     // MARK: - Initializers

@@ -10,6 +10,11 @@ import UIKit
 import Parse
 
 
+enum UserPlanStatus: Int {
+    case Active = 1, Pending
+}
+
+
 class UserPlans: NSObject {
     static let ObjectName = "UserPlans"
 
@@ -18,24 +23,23 @@ class UserPlans: NSObject {
     static let PlanObject = "plan"
 
 
-    class func getUserPlanForStatus(status: PlanStatus, usingCache cache: Bool, withCompletion completion: (([Plan]?, NSError?) -> ())) {
+    class func getUserPlanForStatus(status: UserPlanStatus, usingCache cache: Bool, withCompletion completion: (([Plan]?, NSError?) -> ())) {
         if let currentUser = PFUser.currentUser() {
-            let predicate = NSPredicate(format: "userId = '\(currentUser.objectId!)'")
+            let predicate = NSPredicate(format: "userId = '\(currentUser.objectId!)' AND planStatus = \(status.rawValue)")
 
+            print(predicate)
             // prepare query
             let userPlanQuery = PFQuery(className: ObjectName, predicate: predicate)
             userPlanQuery.cachePolicy = cache ? .CacheElseNetwork : .NetworkElseCache
             userPlanQuery.includeKey(PlanObject) // really important; required to fetch pointer object
 
             userPlanQuery.findObjectsInBackgroundWithBlock { (userPlans: [PFObject]?, error: NSError?) -> Void in
-                var userPlanWithStatus = [Plan]()
+                var userPlanWithStatus: [Plan]?
                 if let userPlans = userPlans {
-                    for userPlan in userPlans {
-                        if let planPFObject = userPlan.objectForKey(PlanObject) as? PFObject {
-                            let plan = Plan(planObject: planPFObject)
-                            plan.status! == status.rawValue ? userPlanWithStatus.append(plan) : ()
-                        }
+                    for plan in userPlans {
+                        print(plan)
                     }
+                    userPlanWithStatus = userPlans.map { Plan(planObject: $0.objectForKey(PlanObject) as! PFObject) }
                 }
 
                 completion(userPlanWithStatus , error)
