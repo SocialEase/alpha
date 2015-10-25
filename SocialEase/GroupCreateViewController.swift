@@ -34,11 +34,15 @@ class GroupCreateViewController: UIViewController {
         friendsCollectionView.dataSource = self
         friendsCollectionView.registerNib(UINib(nibName: "UserCell", bundle: nil), forCellWithReuseIdentifier: "UserCell")
         
-        User.friendsForCurrentUser() { (friends: [User]?, error: NSError?) -> Void in
-            if let friends = friends where error == nil {
-                self.friends = friends
+        if let currentUser = User.currentUser {
+            if let userId = currentUser.id {
+                User.friendsForUser(userId) { (friends: [User]?, error: NSError?) -> Void in
+                    if let friends = friends where error == nil {
+                        self.friends = friends
+                    }
+                }
             }
-        }   
+        }
     }
     
     func onCancel() {

@@ -18,7 +18,6 @@ class UserCell: UICollectionViewCell {
     
     var user: User! {
         didSet {
-            // TODO: Use this if we separate name into first + last.
             if let firstName = user.name, lastInitial = user.lastName?.characters.first {
                 nameLabel.text = firstName + " " + String(lastInitial) + "."
             } else if let firstName = user.name {
@@ -40,9 +39,9 @@ class UserCell: UICollectionViewCell {
         nameLabel.textColor = UIColor.sea_secondaryHintColor()
         nameLabel.font = UIFont.boldSystemFontOfSize(17)
         
+        ViewTransformationUtils.convertViewToCircle(imageView, borderColor: UIColor.sea_primaryLabelColor(), borderWidth: 1)
+        
         imageView.contentMode = UIViewContentMode.ScaleAspectFill
-        imageView.layer.cornerRadius = imageView.layer.frame.width / 2
-        imageView.layer.masksToBounds = true
         
         let imageTap = UITapGestureRecognizer(target: self, action: "onImageTap:")
         imageTap.numberOfTapsRequired = 1

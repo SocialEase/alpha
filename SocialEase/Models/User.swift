@@ -20,23 +20,6 @@ struct ParseUser {
 
 
 class User : NSObject {
-        static var sampleDictionary = [
-            [ "name": "Yuichi", "lastName": "Kuroda", "profileImageBinName": "yuichi-user-profile", "profileImageUrlPath": "" ],
-            [ "name": "Amay", "lastName": "Singhal", "profileImageBinName": "amay-user-profile", "profileImageUrlPath": "" ],
-            [ "name": "Uday", "lastName": "Mitra", "profileImageBinName": "uday-user-profile", "profileImageUrlPath": "" ],
-            [ "name": "Yuichi", "lastName": "Kuroda", "profileImageBinName": "yuichi-user-profile", "profileImageUrlPath": "" ],
-            [ "name": "Amay", "lastName": "Singhal", "profileImageBinName": "amay-user-profile", "profileImageUrlPath": "" ],
-            [ "name": "Uday", "lastName": "Mitra", "profileImageBinName": "uday-user-profile", "profileImageUrlPath": "" ],
-            [ "name": "Yuichi", "lastName": "Kuroda", "profileImageBinName": "yuichi-user-profile", "profileImageUrlPath": "" ],
-            [ "name": "Amay", "lastName": "Singhal", "profileImageBinName": "amay-user-profile", "profileImageUrlPath": "" ],
-            [ "name": "Uday", "lastName": "Mitra", "profileImageBinName": "uday-user-profile", "profileImageUrlPath": "" ],
-            [ "name": "Yuichi", "lastName": "Kuroda", "profileImageBinName": "yuichi-user-profile", "profileImageUrlPath": "" ],
-            [ "name": "Amay", "lastName": "Singhal", "profileImageBinName": "amay-user-profile", "profileImageUrlPath": "" ],
-            [ "name": "Uday", "lastName": "Mitra", "profileImageBinName": "uday-user-profile", "profileImageUrlPath": "" ],
-            [ "name": "Yuichi", "lastName": "Kuroda", "profileImageBinName": "yuichi-user-profile", "profileImageUrlPath": "" ],
-            [ "name": "Amay", "lastName": "Singhal", "profileImageBinName": "amay-user-profile", "profileImageUrlPath": "" ],
-            [ "name": "Uday", "lastName": "Mitra", "profileImageBinName": "uday-user-profile", "profileImageUrlPath": "" ],
-        ]
 
     var id: String?
     var name: String?
@@ -132,19 +115,20 @@ class User : NSObject {
         }
     }
 
-    class func friendsForCurrentUser(completion: (friends: [User]?, error: NSError?) -> Void) {
-        // TODO: Retrieve all friends for current logged in user.
-
+    class func friendsForUser(userId: String, completion: (friends: [User]?, error: NSError?) -> Void) {
         var friends = [User]()
-
-        for friendDictionary in sampleDictionary {
-            let user = PFUser()
-            user["name"] = friendDictionary["name"]
-            user["profileImageBinName"] = friendDictionary["profileImageBinName"]
-            let friend = User(pfUser: user)
-            friends.append(friend)
+        
+        // Retrieve all friends for current logged in user.
+        PFCloud.callFunctionInBackground("user__get_user_friends", withParameters: ["userid":userId]) { (response: AnyObject?, error: NSError?) -> Void in
+            
+            if let results = response as? NSArray {
+                for result in results {
+                    friends.append(User(pfUser: result as! PFUser))
+                }
+            }
+            
+            completion(friends: friends, error: error)
         }
-
-        completion(friends: friends, error: nil)
     }
+    
 }

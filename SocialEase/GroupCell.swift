@@ -37,7 +37,7 @@ class GroupCell: UITableViewCell {
             userImageViews = [UIImageView]()
             for user in group.users {
                 // Create user image views with placeholder images
-                let imageView = UIImageView()
+                let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: userImageDiameter, height: userImageDiameter))
                 let defaultImage = UIImage(named: "default-user-profile")
                 
                 if let profileImageUrl = user.profileImageUrl {
@@ -46,9 +46,9 @@ class GroupCell: UITableViewCell {
                     imageView.image = defaultImage
                 }
                 
+                ViewTransformationUtils.convertViewToCircle(imageView, borderColor: UIColor.sea_primaryLabelColor(), borderWidth: 1)
+                
                 imageView.contentMode = UIViewContentMode.ScaleAspectFill
-                imageView.layer.cornerRadius = CGFloat(userImageDiameter) / 2
-                imageView.layer.masksToBounds = true
                 userImageViews.append(imageView)
                 
                 if userImageViews.count >= 5 {
