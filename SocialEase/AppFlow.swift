@@ -67,6 +67,13 @@ class AppFlow: NSObject {
 
     func presentPlanViewController(plan: Plan) {
         if let rootViewControler = self.window.rootViewController as? UINavigationController, let planTabBarVC = Storyboard.Plan.instantiateViewControllerWithIdentifier(Storyboard.PlanTabedVCIdentifier) as? UITabBarController {
+            if let tabViewControllers = planTabBarVC.viewControllers {
+                for vc in tabViewControllers {
+                    if let planVCContext = vc as? PlanViewControllerContext  {
+                        planVCContext.plan = plan
+                    }
+                }
+            }
             rootViewControler.pushViewController(planTabBarVC, animated: true)
         }
     }

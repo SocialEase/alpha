@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Chat-->
         <scene sceneID="F51-A6-ws3">
             <objects>
-                <viewController id="iqR-4P-D9Y" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlanChatViewController" id="iqR-4P-D9Y" customClass="PlanChatViewController" customModule="SocialEase" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KLD-d8-i9d"/>
                         <viewControllerLayoutGuide type="bottom" id="C5k-kB-4V7"/>
@@ -15,32 +15,20 @@
                     <view key="view" contentMode="scaleToFill" id="QZw-rD-XEq">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Chat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEs-am-wBO">
-                                <rect key="frame" x="284" y="290" width="37" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="tEs-am-wBO" firstAttribute="centerX" secondItem="QZw-rD-XEq" secondAttribute="centerX" id="4vU-a8-sav"/>
-                            <constraint firstItem="tEs-am-wBO" firstAttribute="centerY" secondItem="QZw-rD-XEq" secondAttribute="centerY" id="gjS-Rl-sZm"/>
-                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Chat" image="Chat Filled-25" id="6Ce-tR-qV2"/>
                     <navigationItem key="navigationItem" id="byS-Ob-ded"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="whs-xg-s2J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="674" y="-70"/>
+            <point key="canvasLocation" x="-50" y="-61"/>
         </scene>
-        <!--View Controller-->
+        <!--Plan-->
         <scene sceneID="IE9-el-e1l">
             <objects>
-                <viewController id="Hxu-jn-6zR" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlanInformationViewController" id="Hxu-jn-6zR" customClass="PlanInformationViewController" customModule="SocialEase" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fe3-EP-fgg"/>
                         <viewControllerLayoutGuide type="bottom" id="GiL-Rx-bwf"/>
@@ -49,26 +37,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Plan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICr-Oe-1dE">
-                                <rect key="frame" x="288" y="290" width="33" height="21"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DT1-Jd-IJl">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DNq-6U-Cuy">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                        <animations/>
+                                    </imageView>
+                                </subviews>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="DNq-6U-Cuy" secondAttribute="trailing" id="XTj-oZ-N6v"/>
+                                    <constraint firstItem="DNq-6U-Cuy" firstAttribute="leading" secondItem="DT1-Jd-IJl" secondAttribute="leading" id="YTf-vy-R6J"/>
+                                    <constraint firstAttribute="bottom" secondItem="DNq-6U-Cuy" secondAttribute="bottom" id="d2W-J0-YeT"/>
+                                    <constraint firstItem="DNq-6U-Cuy" firstAttribute="top" secondItem="DT1-Jd-IJl" secondAttribute="top" id="rb7-Ry-RvQ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ICr-Oe-1dE" firstAttribute="centerX" secondItem="a7K-Wj-qXQ" secondAttribute="centerX" id="9fU-4u-lsB"/>
-                            <constraint firstItem="ICr-Oe-1dE" firstAttribute="centerY" secondItem="a7K-Wj-qXQ" secondAttribute="centerY" id="u2h-j2-b8A"/>
+                            <constraint firstAttribute="trailing" secondItem="DT1-Jd-IJl" secondAttribute="trailing" id="1D7-EX-0vt"/>
+                            <constraint firstItem="DT1-Jd-IJl" firstAttribute="bottom" secondItem="GiL-Rx-bwf" secondAttribute="top" id="E7S-5B-7WZ"/>
+                            <constraint firstItem="DT1-Jd-IJl" firstAttribute="leading" secondItem="a7K-Wj-qXQ" secondAttribute="leading" id="Kib-a7-YBb"/>
+                            <constraint firstItem="DT1-Jd-IJl" firstAttribute="top" secondItem="a7K-Wj-qXQ" secondAttribute="top" id="MLP-ym-B7O"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="8Lg-D3-MRa"/>
+                    <tabBarItem key="tabBarItem" title="Plan" image="Mind Map-25" id="uMj-YB-Sp3"/>
+                    <connections>
+                        <outlet property="pendingPlanView" destination="DT1-Jd-IJl" id="Dc3-Gl-yCt"/>
+                        <outlet property="planImageView" destination="DNq-6U-Cuy" id="wEt-fK-rmf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F8l-zd-Jl4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="674" y="-731"/>
+            <point key="canvasLocation" x="-33" y="-801"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="aSE-iB-X7F">
@@ -81,53 +85,13 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Ly2-uW-USc" kind="relationship" relationship="viewControllers" id="wWa-Ts-0LD"/>
-                        <segue destination="eqb-S9-hYk" kind="relationship" relationship="viewControllers" id="Abk-EC-ntI"/>
+                        <segue destination="Hxu-jn-6zR" kind="relationship" relationship="viewControllers" id="OQ8-RO-l9R"/>
+                        <segue destination="iqR-4P-D9Y" kind="relationship" relationship="viewControllers" id="ENM-Yk-8Ts"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1lf-Im-Fqr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-958" y="-400"/>
-        </scene>
-        <!--Plan-->
-        <scene sceneID="tln-So-yux">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ly2-uW-USc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Plan" image="Mind Map-25" id="hyM-fL-zPw"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="B7N-A1-2bG">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Hxu-jn-6zR" kind="relationship" relationship="rootViewController" id="oaQ-Pn-4dJ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VoY-cc-bET" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-138" y="-731"/>
-        </scene>
-        <!--Chat-->
-        <scene sceneID="5rl-cX-kKq">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eqb-S9-hYk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Chat" image="Chat Filled-25" id="K3s-v8-Ccg"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UTy-B6-rzt">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="iqR-4P-D9Y" kind="relationship" relationship="rootViewController" id="k9j-uW-pdk"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="g5A-uq-h1O" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-138" y="-70"/>
         </scene>
     </scenes>
     <resources>

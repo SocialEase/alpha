@@ -20,14 +20,16 @@ class UserPlans: NSObject {
 
     // fields names
     static let UserId = "userId"
+    static let PlanId = "planId"
     static let PlanObject = "plan"
+    static let UserObject = "user"
+    static let PlanStatus = "planStatus"
 
 
     class func getUserPlanForStatus(status: UserPlanStatus, usingCache cache: Bool, withCompletion completion: (([Plan]?, NSError?) -> ())) {
         if let currentUser = PFUser.currentUser() {
-            let predicate = NSPredicate(format: "userId = '\(currentUser.objectId!)' AND planStatus = \(status.rawValue)")
+            let predicate = NSPredicate(format: "\(UserId) = '\(currentUser.objectId!)' AND \(PlanStatus) = \(status.rawValue)")
 
-            print(predicate)
             // prepare query
             let userPlanQuery = PFQuery(className: ObjectName, predicate: predicate)
             userPlanQuery.cachePolicy = cache ? .CacheElseNetwork : .NetworkElseCache
@@ -46,6 +48,30 @@ class UserPlans: NSObject {
             }
         } else {
             print("Oops! No active user found")
+        }
+    }
+
+    class func getUsersForPlan(plan: Plan, usingCache cache: Bool, withCompletion completion: (([User]?, NSError?) -> ())) {
+
+        let predicate = NSPredicate(format: "\(PlanId) = '\(plan.id!)'")
+
+        print(predicate)
+        // prepare query
+        let userPlanQuery = PFQuery(className: ObjectName, predicate: predicate)
+        userPlanQuery.cachePolicy = cache ? .CacheElseNetwork : .NetworkElseCache
+        userPlanQuery.includeKey(UserObject) // really important; required to fetch pointer object
+
+        userPlanQuery.findObjectsInBackgroundWithBlock { (userPlans: [PFObject]?, error: NSError?) -> Void in
+            var planUsers = [User]()
+            if let userPlans = userPlans {
+                for plan in userPlans {
+                    if let pfuser = plan.objectForKey(UserObject) as? PFUser {
+                        planUsers.append(User(pfUser: pfuser))
+                    }
+                }
+            }
+
+            completion(planUsers , error)
         }
     }
 

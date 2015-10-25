@@ -40,6 +40,8 @@ class Plan: NSObject {
         return object[Fields.Comment] as? String
     }
 
+    private var users: [User]?
+
     // MARK: - Initializers
     init(planObject: PFObject) {
         object = planObject
@@ -52,6 +54,16 @@ class Plan: NSObject {
                 if let imageData = imageData {
                     view.image = UIImage(data: imageData)
                 }
+            }
+        }
+    }
+
+    func getPlanUsersWithCompletion(completion: (([User]?, NSError?) -> ())) {
+        if let users = users {
+            completion(users, nil)
+        } else {
+            UserPlans.getUsersForPlan(self, usingCache: false) { (users: [User]?, error: NSError?) -> () in
+                completion(users, error)
             }
         }
     }

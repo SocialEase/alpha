@@ -30,6 +30,8 @@ struct Storyboard {
     static let HomePageVCIdentifier = "HomePageViewController" // This is identifier for page view controller that will be contained in HomeViewController
     static let PlanDisplayVCIdentifier = "PlanDisplayViewController"
     static let PlanTabedVCIdentifier = "PlanTabBarController"
+    static let PlanInformationVCIdentifier = "PlanInformationViewController"
+    static let PlanChatVCIdentifier = "PlanChatViewController"
 
     // segue identifier
 

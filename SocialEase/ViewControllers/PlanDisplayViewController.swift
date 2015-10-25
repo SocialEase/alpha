@@ -27,10 +27,18 @@ class PlanDisplayViewController: UIViewController {
         didSet {
             if (userPlanList?.count ?? 0) > 0 {
                 print(userPlanList?[0].name)
-//                print(userPlanList?[0].planDescription)
                 // @todo: Connect with a view implementation
                 sampleDisplayLabel?.text = userPlanList?[0].name
                 userPlanList?[0].setImageOnUIImageView(sampleImageView)
+
+                // getting plan users
+                userPlanList?[0].getPlanUsersWithCompletion { (users: [User]?, error: NSError?) -> () in
+                    if let users = users {
+                        for user in users {
+                            print(user.name)
+                        }
+                    }
+                }
             }
         }
     }
