@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		043570041BDCCBE100B22D1B /* PlanPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043570031BDCCBE100B22D1B /* PlanPreviewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		043570061BDD613700B22D1B /* ViewTransformationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043570051BDD613700B22D1B /* ViewTransformationUtils.swift */; settings = {ASSET_TAGS = (); }; };
 		04A578DA1BDB56870088858A /* OtherPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A578D91BDB56870088858A /* OtherPreference.swift */; settings = {ASSET_TAGS = (); }; };
 		04A578DE1BDBFAEE0088858A /* Cuisine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A578DD1BDBFAEE0088858A /* Cuisine.swift */; settings = {ASSET_TAGS = (); }; };
 		04A578E01BDBFB050088858A /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A578DF1BDBFB050088858A /* UserPreferences.swift */; settings = {ASSET_TAGS = (); }; };
@@ -69,6 +70,7 @@
 
 /* Begin PBXFileReference section */
 		043570031BDCCBE100B22D1B /* PlanPreviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanPreviewCell.swift; sourceTree = "<group>"; };
+		043570051BDD613700B22D1B /* ViewTransformationUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewTransformationUtils.swift; sourceTree = "<group>"; };
 		04A578D91BDB56870088858A /* OtherPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherPreference.swift; sourceTree = "<group>"; };
 		04A578DD1BDBFAEE0088858A /* Cuisine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cuisine.swift; path = Models/Cuisine.swift; sourceTree = "<group>"; };
 		04A578DF1BDBFB050088858A /* UserPreferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserPreferences.swift; path = Models/UserPreferences.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 				AC3114C51BD8B07800ED6E80 /* AppConstants.swift */,
 				ACD342731BDB4E1B006ACA0C /* DisplayPlanVC.swift */,
 				ACCD19EF1BDD2FFD009F215D /* PlanViewControllerContext.swift */,
+				043570051BDD613700B22D1B /* ViewTransformationUtils.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 				59F3218C1BD49A01005AB36C /* UserCell.swift in Sources */,
 				04ECB7791BD73F5500819BA4 /* PreferencesInfoViewController.swift in Sources */,
 				AC3114BD1BD8989C00ED6E80 /* SuggestedPlaceViewCell.swift in Sources */,
+				043570061BDD613700B22D1B /* ViewTransformationUtils.swift in Sources */,
 				04C0DEBF1BD9FF8500CE1ABF /* OtherPreferencesViewController.swift in Sources */,
 				59F3217B1BD43C26005AB36C /* GroupCell.swift in Sources */,
 			);

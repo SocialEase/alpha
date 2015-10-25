@@ -42,7 +42,6 @@ class User : NSObject {
     var name: String?
     var lastName: String?
     var phoneNumber: String?
-    var profileImage: UIImage?
     var profileImageUrl: NSURL?
     var profileImageBinName: String?
     var groups: String?

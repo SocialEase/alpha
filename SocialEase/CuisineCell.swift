@@ -42,20 +42,10 @@ class CuisineCell: UICollectionViewCell {
         cuisineNameLabel.minimumScaleFactor = 11;
         cuisineNameLabel.adjustsFontSizeToFitWidth = true;
         
-        convertViewToCircle(cuisineImageView, borderColor: UIColor.sea_primaryLabelColor(), borderWidth: 1)
-        convertViewToCircle(overlayView, borderColor: UIColor.sea_primaryLabelColor(), borderWidth: 1)
+        ViewTransformationUtils.convertViewToCircle(cuisineImageView, borderColor: UIColor.sea_primaryLabelColor(), borderWidth: 1)
+        ViewTransformationUtils.convertViewToCircle(overlayView, borderColor: UIColor.sea_primaryLabelColor(), borderWidth: 1)
         
         showTappedStateForCell()
-
-    }
-
-    func convertViewToCircle(myView: UIView, borderColor: UIColor, borderWidth: Int) {
-        myView.layer.masksToBounds = false
-        myView.layer.cornerRadius = myView.frame.size.height/2
-        myView.clipsToBounds = true
-
-        myView.layer.borderWidth = 1.0
-        myView.layer.borderColor = borderColor.CGColor
     }
     
     func cellTapped(sender: UITapGestureRecognizer) {
