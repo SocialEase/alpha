@@ -26,8 +26,6 @@ class PlanDisplayViewController: UIViewController {
     var userPlanList: [Plan]? {
         didSet {
             if (userPlanList?.count ?? 0) > 0 {
-                print(userPlanList?[0].name)
-                print(userPlanList?[0].planDescription)
                 // @todo: Connect with a view implementation
                 sampleDisplayLabel?.text = userPlanList?[0].name
                 userPlanList?[0].setImageOnUIImageView(sampleImageView)
@@ -36,6 +34,9 @@ class PlanDisplayViewController: UIViewController {
     }
     var viewActive = false
 
+    var selectedPlanIndex: Int?
+
+    // MARK: - Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -52,6 +53,10 @@ class PlanDisplayViewController: UIViewController {
         viewActive = false
     }
 
+    @IBAction func planDetailsTapped(sender: UIButton) {
+        selectedPlanIndex = 0
+        presentPlanTabbarControllerForSelectedPlan()
+    }
     
     private func setupUI() {
         sampleDisplayLabel?.text = pageTitle
@@ -64,6 +69,13 @@ class PlanDisplayViewController: UIViewController {
                 self.userPlanList = plans
                 JTProgressHUD.hide()
             }
+        }
+    }
+
+    private func presentPlanTabbarControllerForSelectedPlan() {
+        if selectedPlanIndex != nil && selectedPlanIndex! < userPlanList?.count {
+            let appFlow = AppFlow()
+            appFlow.presentPlanViewController(userPlanList![selectedPlanIndex!])
         }
     }
     /*

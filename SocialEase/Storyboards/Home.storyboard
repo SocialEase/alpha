@@ -37,6 +37,14 @@
                                     <constraint firstAttribute="height" constant="300" id="OtE-g0-hss"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nh7-eI-Seu">
+                                <rect key="frame" x="239" y="550" width="122" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Go to Plan Details"/>
+                                <connections>
+                                    <action selector="planDetailsTapped:" destination="cI6-em-ELy" eventType="touchUpInside" id="cUO-am-8gg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -44,7 +52,9 @@
                             <constraint firstItem="SY2-zk-gy1" firstAttribute="centerX" secondItem="BrH-nH-XCk" secondAttribute="centerX" id="6Iw-uh-eq7"/>
                             <constraint firstItem="Bch-XN-SVj" firstAttribute="centerX" secondItem="BrH-nH-XCk" secondAttribute="centerX" id="81b-Mm-5qP"/>
                             <constraint firstItem="SY2-zk-gy1" firstAttribute="top" secondItem="tgP-RR-2wf" secondAttribute="bottom" constant="73" id="9ob-Dl-tQ8"/>
+                            <constraint firstItem="iKq-uY-bOt" firstAttribute="top" secondItem="Nh7-eI-Seu" secondAttribute="bottom" constant="20" id="Dn8-Cq-StI"/>
                             <constraint firstItem="SY2-zk-gy1" firstAttribute="centerY" secondItem="BrH-nH-XCk" secondAttribute="centerY" id="Ldc-Ta-HLX"/>
+                            <constraint firstItem="Nh7-eI-Seu" firstAttribute="centerX" secondItem="BrH-nH-XCk" secondAttribute="centerX" id="l8R-tU-ZLS"/>
                             <constraint firstItem="Bch-XN-SVj" firstAttribute="centerY" secondItem="BrH-nH-XCk" secondAttribute="centerY" id="rS7-Bl-VuA"/>
                         </constraints>
                         <variation key="default">

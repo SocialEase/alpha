@@ -19,6 +19,7 @@ struct Storyboard {
     static let Login = UIStoryboard(name: "Login", bundle: nil)
     static let Suggestions = UIStoryboard(name: "Suggestions", bundle: nil)
     static let Home = UIStoryboard(name: "Home", bundle: nil)
+    static let Plan = UIStoryboard(name: "Plan", bundle: nil)
 
     // View controller identifiers
     static let CuisinesVCIndentifier = "CategoriesViewNavigationController"
@@ -28,6 +29,7 @@ struct Storyboard {
     static let HomePageNavVCIdentifier = "HomePageNavViewController"
     static let HomePageVCIdentifier = "HomePageViewController" // This is identifier for page view controller that will be contained in HomeViewController
     static let PlanDisplayVCIdentifier = "PlanDisplayViewController"
+    static let PlanTabedVCIdentifier = "PlanTabBarController"
 
     // segue identifier
 

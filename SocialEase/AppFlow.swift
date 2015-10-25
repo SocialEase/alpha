@@ -60,4 +60,10 @@ class AppFlow: NSObject {
             window!.makeKeyAndVisible()
         }
     }
+
+    func presentPlanViewController(plan: Plan) {
+        if let rootViewControler = self.window.rootViewController as? UINavigationController, let planTabBarVC = Storyboard.Plan.instantiateViewControllerWithIdentifier(Storyboard.PlanTabedVCIdentifier) as? UITabBarController {
+            rootViewControler.pushViewController(planTabBarVC, animated: true)
+        }
+    }
 }

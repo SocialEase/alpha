@@ -55,6 +55,7 @@
 		AC3114C61BD8B07800ED6E80 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3114C51BD8B07800ED6E80 /* AppConstants.swift */; settings = {ASSET_TAGS = (); }; };
 		AC59DB841BDBF1CA001281F5 /* UserPlans.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC59DB831BDBF1CA001281F5 /* UserPlans.swift */; settings = {ASSET_TAGS = (); }; };
 		AC59DB861BDBF3E6001281F5 /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC59DB851BDBF3E6001281F5 /* Plan.swift */; settings = {ASSET_TAGS = (); }; };
+		AC59DB881BDC6301001281F5 /* Plan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC59DB871BDC6301001281F5 /* Plan.storyboard */; settings = {ASSET_TAGS = (); }; };
 		ACD0E42C1BDB436400CE0558 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD0E42B1BDB436400CE0558 /* HomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		ACD0E42E1BDB463000CE0558 /* PlanDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD0E42D1BDB463000CE0558 /* PlanDisplayViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		ACD342741BDB4E1B006ACA0C /* DisplayPlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD342731BDB4E1B006ACA0C /* DisplayPlanVC.swift */; settings = {ASSET_TAGS = (); }; };
@@ -115,6 +116,7 @@
 		AC3114C51BD8B07800ED6E80 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppConstants.swift; path = Utilities/AppConstants.swift; sourceTree = "<group>"; };
 		AC59DB831BDBF1CA001281F5 /* UserPlans.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserPlans.swift; path = Models/UserPlans.swift; sourceTree = "<group>"; };
 		AC59DB851BDBF3E6001281F5 /* Plan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Plan.swift; path = Models/Plan.swift; sourceTree = "<group>"; };
+		AC59DB871BDC6301001281F5 /* Plan.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Plan.storyboard; path = Storyboards/Plan.storyboard; sourceTree = "<group>"; };
 		ACD0E42B1BDB436400CE0558 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ViewControllers/HomeViewController.swift; sourceTree = "<group>"; };
 		ACD0E42D1BDB463000CE0558 /* PlanDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlanDisplayViewController.swift; path = ViewControllers/PlanDisplayViewController.swift; sourceTree = "<group>"; };
 		ACD342731BDB4E1B006ACA0C /* DisplayPlanVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DisplayPlanVC.swift; path = Utilities/DisplayPlanVC.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				59F0FA091BD242980041A149 /* LaunchScreen.storyboard */,
 				04ECB76E1BD73EB300819BA4 /* Login.storyboard */,
 				AC30AF991BDA903C002A1A67 /* Home.storyboard */,
+				AC59DB871BDC6301001281F5 /* Plan.storyboard */,
 			);
 			name = Application;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				AC3114C21BD8997F00ED6E80 /* Suggestions.storyboard in Resources */,
 				59EBD3691BD76966002CB63B /* socialease-logo.png in Resources */,
 				59F321911BD4A67F005AB36C /* yuichi-user-profile.png in Resources */,
+				AC59DB881BDC6301001281F5 /* Plan.storyboard in Resources */,
 				04ECB76F1BD73EB300819BA4 /* Login.storyboard in Resources */,
 				59F3216D1BD33165005AB36C /* GroupSelectionViewController.xib in Resources */,
 				59F3217C1BD43C26005AB36C /* GroupCell.xib in Resources */,
