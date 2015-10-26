@@ -17,6 +17,8 @@ class PlanPreviewCell: UITableViewCell {
     @IBOutlet weak var userImageView2: UIImageView!
     @IBOutlet weak var userImageView3: UIImageView!
     
+    @IBOutlet weak var maskOverPhotoView: UIView!
+    
     var plan : Plan! {
         didSet {
             planNameLabel.text = plan.name!
@@ -62,6 +64,7 @@ class PlanPreviewCell: UITableViewCell {
     func styleCell() {
         planNameLabel.textColor = UIColor.sea_primaryLabelColor()
         planTimeLabel.textColor = UIColor.sea_primaryLabelColor()
+        ViewTransformationUtils.addBlurToView(planImageView, frame: planImageView.frame, style: UIBlurEffectStyle.Dark)
     }
     
     override func awakeFromNib() {
