@@ -22,8 +22,8 @@ class BusinessMapTableViewCell: UITableViewCell {
 //    }
     
     var location = CLLocation(
-        latitude: 16.40,
-        longitude: -86.34
+        latitude: 37.3894,
+        longitude: 122.0819
     )
     
         var businessLocation: String! {

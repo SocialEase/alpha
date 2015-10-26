@@ -35,8 +35,9 @@ class BusinessDetailViewCell: UITableViewCell {
     
     func updateBusinessDetailsInCell() {
         businessImageView.contentMode = .ScaleToFill
-        businessImageView.setImageWithURL(activity.posterImageUrl!)
-        businessNameLabel.text = activity.name
+        businessNameLabel.text = "Testing"
+        //businessImageView.setImageWithURL(activity.posterImageUrl!)
+        //businessNameLabel.text = activity.name
         //categoryLabel.text = activity.categories
         //reviewLabel.text = "\(activity.reviewCount!) Reviews"
         

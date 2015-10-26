@@ -42,11 +42,11 @@ class BusinessDetailViewController: UIViewController, UITableViewDelegate, UITab
             return cell
         case .BusinessMapTableViewCell:
             let cell = businessInfoTableView.dequeueReusableCellWithIdentifier(BusinessDetailVCCellIdentifiers.BusinessMapTableViewCell.rawValue, forIndexPath: indexPath) as! BusinessMapTableViewCell
-            cell.businessLocation = activity.location
+            cell.businessLocation = "Sunnyvale, CA"
             return cell
         case .BusinessAddressTableViewCell:
             let cell = businessInfoTableView.dequeueReusableCellWithIdentifier(BusinessDetailVCCellIdentifiers.BusinessAddressTableViewCell.rawValue, forIndexPath: indexPath) as! BusinessAddressTableViewCell
-            cell.businessAddress = activity.location
+            cell.businessAddress = "Chaat Bhavan"
             return cell
         case .BusinessPhoneTableViewCell:
             let cell = businessInfoTableView.dequeueReusableCellWithIdentifier(BusinessDetailVCCellIdentifiers.BusinessPhoneTableViewCell.rawValue, forIndexPath: indexPath) as! BusinessPhoneTableViewCell
