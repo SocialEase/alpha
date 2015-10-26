@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JTProgressHUD
 
 class GroupCreateViewController: UIViewController {
     
@@ -36,13 +37,17 @@ class GroupCreateViewController: UIViewController {
         
         if let currentUser = User.currentUser {
             if let userId = currentUser.id {
+                JTProgressHUD.show()
                 User.friendsForUser(userId) { (friends: [User]?, error: NSError?) -> Void in
+                    JTProgressHUD.hide()
+                    
                     if let friends = friends where error == nil {
                         self.friends = friends
                     }
                 }
             }
         }
+    
     }
     
     func onCancel() {

@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import Contacts
 
 private var _currentUser: User?
 
@@ -115,6 +116,57 @@ class User : NSObject {
         }
     }
 
+    // Description: Retrieves a list of account users that have not been added as account friends yet, but exist in the address book.
+    class func searchContactsNotBefriendedYet(accountFriends: [User], completion: (response: [PFObject]?, error: NSError?) -> Void) {
+        CNContactStore().requestAccessForEntityType(.Contacts) { (success, errorOrNil) -> Void in
+            guard success else {
+                return
+            }
+            
+            let fetchRequest = CNContactFetchRequest(keysToFetch: [CNContactPhoneNumbersKey])
+            var numbers = [String]()
+            try! CNContactStore().enumerateContactsWithFetchRequest(fetchRequest) { (contact, stopPointer) -> Void in
+                for number in contact.phoneNumbers {
+                    if let number = number.value as? CNPhoneNumber {
+                        var numberString = number.stringValue
+                        var alreadyBefriended = false
+                        
+                        numberString = numberString.stringByReplacingOccurrencesOfString("(", withString: "")
+                        numberString = numberString.stringByReplacingOccurrencesOfString(")", withString: "")
+                        numberString = numberString.stringByReplacingOccurrencesOfString(" ", withString: "")
+                        numberString = numberString.stringByReplacingOccurrencesOfString("-", withString: "")
+                        
+                        //print("Found phone number: \(numberString)")
+                        
+                        for accountFriend in accountFriends {
+                            if accountFriend.phoneNumber == numberString {
+                                alreadyBefriended = true
+                                break
+                            }
+                        }
+                        
+                        // If this friend in Contacts is not a account friend yet, then add number.
+                        if !alreadyBefriended {
+                            numbers.append(numberString)
+                        }
+                    }
+                }
+            }
+            
+            if numbers.count > 0 {
+                // Based on all numbers found in Contacts (that we haven't befriended yet), search those numbers that own an account.
+                let queryUsersWhoHaveAccounts = PFQuery(className: "_User")
+                queryUsersWhoHaveAccounts.whereKey("phone", containedIn: numbers)
+                queryUsersWhoHaveAccounts.findObjectsInBackgroundWithBlock() { (pfObjects: [PFObject]?, error: NSError?) -> Void in
+                    completion(response: pfObjects, error: error)
+                }
+            } else {
+                completion(response: nil, error: nil)
+            }
+
+        }
+    }
+    
     class func friendsForUser(userId: String, completion: (friends: [User]?, error: NSError?) -> Void) {
         var friends = [User]()
         
@@ -127,8 +179,19 @@ class User : NSObject {
                 }
             }
             
-            completion(friends: friends, error: error)
+            // Get friends from address book (who aren't account friends yet but also have accounts) and add them to friends list
+            searchContactsNotBefriendedYet(friends) { (response: [PFObject]?, error: NSError?) -> Void in
+                
+                if let pfObjects = response {
+                    for pfObject in pfObjects {
+                        friends.append(User(pfUser: pfObject as! PFUser))
+                    }
+                }
+                
+                completion(friends: friends, error: error)
+            }
         }
+        
     }
     
 }
