@@ -67,6 +67,11 @@
 		ACEB7CBA1BDB365600B1A482 /* socialease.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACEB7CB91BDB365600B1A482 /* socialease.ttf */; settings = {ASSET_TAGS = (); }; };
 		BD9AF5DF1BDD828F00105AEF /* BusinessDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD9AF5DE1BDD828F00105AEF /* BusinessDetail.storyboard */; settings = {ASSET_TAGS = (); }; };
 		BD9AF5E11BDD832700105AEF /* BusinessDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9AF5E01BDD832700105AEF /* BusinessDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		BD9AF5EB1BDD945300105AEF /* BusinessTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9AF5EA1BDD945300105AEF /* BusinessTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		BD9AF5ED1BDD951C00105AEF /* BusinessMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9AF5EC1BDD951C00105AEF /* BusinessMapTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		BD9AF5EF1BDD953A00105AEF /* BusinessAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9AF5EE1BDD953A00105AEF /* BusinessAddressTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		BD9AF5F11BDD958700105AEF /* BusinessPhoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9AF5F01BDD958700105AEF /* BusinessPhoneTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		BD9AF5F31BDD95B000105AEF /* BusinessDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9AF5F21BDD95B000105AEF /* BusinessDetailViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		DB60B389636A8D1DFCB85A92 /* Pods_SocialEase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBBB717F537F177AEEECFB4 /* Pods_SocialEase.framework */; };
 /* End PBXBuildFile section */
 
@@ -135,6 +140,11 @@
 		ACEB7CB91BDB365600B1A482 /* socialease.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = socialease.ttf; sourceTree = "<group>"; };
 		BD9AF5DE1BDD828F00105AEF /* BusinessDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BusinessDetail.storyboard; sourceTree = "<group>"; };
 		BD9AF5E01BDD832700105AEF /* BusinessDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessDetailViewController.swift; sourceTree = "<group>"; };
+		BD9AF5EA1BDD945300105AEF /* BusinessTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessTableViewCell.swift; sourceTree = "<group>"; };
+		BD9AF5EC1BDD951C00105AEF /* BusinessMapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessMapTableViewCell.swift; sourceTree = "<group>"; };
+		BD9AF5EE1BDD953A00105AEF /* BusinessAddressTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessAddressTableViewCell.swift; sourceTree = "<group>"; };
+		BD9AF5F01BDD958700105AEF /* BusinessPhoneTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessPhoneTableViewCell.swift; sourceTree = "<group>"; };
+		BD9AF5F21BDD95B000105AEF /* BusinessDetailViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessDetailViewCell.swift; sourceTree = "<group>"; };
 		CEBBB717F537F177AEEECFB4 /* Pods_SocialEase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialEase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -228,6 +238,11 @@
 				59F3218B1BD49A01005AB36C /* UserCell.xib */,
 				04C0DEC01BDA0C1F00CE1ABF /* PreferencesCell.swift */,
 				043570031BDCCBE100B22D1B /* PlanPreviewCell.swift */,
+				BD9AF5EA1BDD945300105AEF /* BusinessTableViewCell.swift */,
+				BD9AF5EC1BDD951C00105AEF /* BusinessMapTableViewCell.swift */,
+				BD9AF5EE1BDD953A00105AEF /* BusinessAddressTableViewCell.swift */,
+				BD9AF5F01BDD958700105AEF /* BusinessPhoneTableViewCell.swift */,
+				BD9AF5F21BDD95B000105AEF /* BusinessDetailViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -461,6 +476,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD9AF5EF1BDD953A00105AEF /* BusinessAddressTableViewCell.swift in Sources */,
 				04A578DE1BDBFAEE0088858A /* Cuisine.swift in Sources */,
 				04C0DEC11BDA0C1F00CE1ABF /* PreferencesCell.swift in Sources */,
 				59F321931BD4A705005AB36C /* Group.swift in Sources */,
@@ -470,18 +486,22 @@
 				04ECB7781BD73F5500819BA4 /* CategoriesViewController.swift in Sources */,
 				59F321701BD33224005AB36C /* LoginViewController.swift in Sources */,
 				AC3114B41BD8983300ED6E80 /* DateUtils.swift in Sources */,
+				BD9AF5F11BDD958700105AEF /* BusinessPhoneTableViewCell.swift in Sources */,
 				AC59DB841BDBF1CA001281F5 /* UserPlans.swift in Sources */,
+				BD9AF5EB1BDD945300105AEF /* BusinessTableViewCell.swift in Sources */,
 				04ECB77B1BD73FB500819BA4 /* CuisineCell.swift in Sources */,
 				ACD0E42E1BDB463000CE0558 /* PlanDisplayViewController.swift in Sources */,
 				043570041BDCCBE100B22D1B /* PlanPreviewCell.swift in Sources */,
 				59F3215D1BD2FD10005AB36C /* Colors.swift in Sources */,
 				04A578E01BDBFB050088858A /* UserPreferences.swift in Sources */,
 				04ECB7761BD73F5500819BA4 /* GroupsViewController.swift in Sources */,
+				BD9AF5F31BDD95B000105AEF /* BusinessDetailViewCell.swift in Sources */,
 				AC3114C41BD8B05D00ED6E80 /* AppUtilities.swift in Sources */,
 				AC3114C61BD8B07800ED6E80 /* AppConstants.swift in Sources */,
 				04ECB7771BD73F5500819BA4 /* WelcomeViewController.swift in Sources */,
 				AC3114BC1BD8989C00ED6E80 /* FilterOptionViewCell.swift in Sources */,
 				AC3114B01BD8981400ED6E80 /* SuggestionsViewController.swift in Sources */,
+				BD9AF5ED1BDD951C00105AEF /* BusinessMapTableViewCell.swift in Sources */,
 				59F321661BD32D8F005AB36C /* AppFlow.swift in Sources */,
 				ACD0E42C1BDB436400CE0558 /* HomeViewController.swift in Sources */,
 				59F0FA011BD242980041A149 /* AppDelegate.swift in Sources */,

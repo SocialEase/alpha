@@ -145,7 +145,9 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
         } else {
             // TODO: kevin go to detail view
             let appFlow = AppFlow()
+            
             appFlow.presentBusinessDetail()
+            
             // kevin done
             //suggestedActivities?[indexPath.row].selected = !(suggestedActivities?[indexPath.row].selected)!
             //tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .None)
@@ -244,6 +246,11 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
         activityTypeView.addBorderToViewAtPosition(.Bottom)
         timeInformationView.addBorderToViewAtPosition(.Bottom)
         timeInformationView.addBorderToViewAtPosition(.Left)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        print ("Hello")
     }
 }
 

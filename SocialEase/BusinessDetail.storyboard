@@ -112,13 +112,13 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="businessImageView" destination="HsX-LY-Yrm" id="eHa-LX-Cqk"/>
-                                            <outlet property="businessNameLabel" destination="yiz-qe-fwZ" id="CBo-I7-Ae2"/>
-                                            <outlet property="categoryLabel" destination="2JT-oT-QfW" id="fjm-Gv-JuV"/>
-                                            <outlet property="distanceLabel" destination="TCO-7X-qcT" id="5zC-TH-e3H"/>
-                                            <outlet property="openLabel" destination="4rn-t6-uDT" id="Q2d-jl-7Of"/>
-                                            <outlet property="ratingsImageView" destination="j7V-9a-XZx" id="AbF-WQ-1K6"/>
-                                            <outlet property="reviewLabel" destination="kAs-vz-Y8Y" id="R8H-YM-FEh"/>
+                                            <outlet property="businessImageView" destination="HsX-LY-Yrm" id="eYp-UZ-s73"/>
+                                            <outlet property="businessNameLabel" destination="yiz-qe-fwZ" id="d3A-Rg-NOW"/>
+                                            <outlet property="categoryLabel" destination="2JT-oT-QfW" id="HfM-ZN-Muo"/>
+                                            <outlet property="distanceLabel" destination="TCO-7X-qcT" id="Pka-vI-M9h"/>
+                                            <outlet property="openLabel" destination="4rn-t6-uDT" id="BDS-rt-EqT"/>
+                                            <outlet property="ratingsImageView" destination="j7V-9a-XZx" id="A9P-Wy-Hw1"/>
+                                            <outlet property="reviewLabel" destination="kAs-vz-Y8Y" id="Owr-NE-qOD"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BusinessMapTableViewCell" rowHeight="157" id="wIu-yh-cP9" customClass="BusinessMapTableViewCell" customModule="SocialEase" customModuleProvider="target">
@@ -143,7 +143,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="businessLocationMapView" destination="PT2-UI-aYI" id="Zki-wv-c1h"/>
+                                            <outlet property="businessLocationMapView" destination="PT2-UI-aYI" id="1Ib-vh-vMp"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BusinessAddressTableViewCell" rowHeight="50" id="Hao-Q5-dsR" customClass="BusinessAddressTableViewCell" customModule="SocialEase" customModuleProvider="target">
@@ -167,7 +167,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="addressLabel" destination="aQw-yW-2yb" id="Nph-da-Wuu"/>
+                                            <outlet property="addressLabel" destination="aQw-yW-2yb" id="Dgq-rM-eos"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BusinessPhoneTableViewCell" rowHeight="49" id="0ol-H8-HLI" customClass="BusinessPhoneTableViewCell" customModule="SocialEase" customModuleProvider="target">
@@ -218,7 +218,7 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="businessPhoneLabel" destination="yEQ-FJ-1Nc" id="1d0-R8-a6a"/>
+                                            <outlet property="businessPhoneLabel" destination="yEQ-FJ-1Nc" id="0jt-do-JbL"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -38,3 +38,7 @@ struct Storyboard {
     // segue identifier
 
 }
+
+enum BusinessDetailVCCellIdentifiers: String {
+    case BusinessDetailViewCell, BusinessMapTableViewCell, BusinessAddressTableViewCell, BusinessPhoneTableViewCell
+}
