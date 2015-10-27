@@ -47,10 +47,10 @@ class AppFlow: NSObject {
 //        self.window!.makeKeyAndVisible()
     }
     
-    func presentBusinessDetail() {
+    func presentBusinessDetail(activity :SEAActivity) {
         if let rootViewControler = self.window.rootViewController as? UINavigationController {
-            let viewController = Storyboard.BusinessDetail.instantiateViewControllerWithIdentifier("BusinessDetailViewController")
-            
+            let viewController = Storyboard.BusinessDetail.instantiateViewControllerWithIdentifier("BusinessDetailViewController") as! BusinessDetailViewController
+            viewController.activity = activity
             rootViewControler.pushViewController(viewController, animated: true)
         }
     }
