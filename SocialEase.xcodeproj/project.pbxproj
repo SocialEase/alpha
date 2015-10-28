@@ -58,6 +58,8 @@
 		59F321951BD4A710005AB36C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F321941BD4A710005AB36C /* User.swift */; settings = {ASSET_TAGS = (); }; };
 		59F321981BD4B817005AB36C /* amay-user-profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 59F321961BD4B817005AB36C /* amay-user-profile.png */; settings = {ASSET_TAGS = (); }; };
 		59F321991BD4B817005AB36C /* uday-user-profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 59F321971BD4B817005AB36C /* uday-user-profile.png */; settings = {ASSET_TAGS = (); }; };
+		AC03A72D1BE0906B00924488 /* UserGroupUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC03A72C1BE0906B00924488 /* UserGroupUser.swift */; settings = {ASSET_TAGS = (); }; };
+		AC03A72F1BE091D200924488 /* UserGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC03A72E1BE091D200924488 /* UserGroup.swift */; settings = {ASSET_TAGS = (); }; };
 		AC30AF9A1BDA903C002A1A67 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC30AF991BDA903C002A1A67 /* Home.storyboard */; settings = {ASSET_TAGS = (); }; };
 		AC3114B01BD8981400ED6E80 /* SuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3114AF1BD8981400ED6E80 /* SuggestionsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		AC3114B41BD8983300ED6E80 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3114B21BD8983300ED6E80 /* DateUtils.swift */; settings = {ASSET_TAGS = (); }; };
@@ -142,6 +144,8 @@
 		59F321961BD4B817005AB36C /* amay-user-profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "amay-user-profile.png"; path = "Images/amay-user-profile.png"; sourceTree = "<group>"; };
 		59F321971BD4B817005AB36C /* uday-user-profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "uday-user-profile.png"; path = "Images/uday-user-profile.png"; sourceTree = "<group>"; };
 		990E3D9A56F0F354ACAE3A3C /* Pods-SocialEase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialEase.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialEase/Pods-SocialEase.release.xcconfig"; sourceTree = "<group>"; };
+		AC03A72C1BE0906B00924488 /* UserGroupUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserGroupUser.swift; path = Models/UserGroupUser.swift; sourceTree = "<group>"; };
+		AC03A72E1BE091D200924488 /* UserGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserGroup.swift; path = Models/UserGroup.swift; sourceTree = "<group>"; };
 		AC30AF991BDA903C002A1A67 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Home.storyboard; path = Storyboards/Home.storyboard; sourceTree = "<group>"; };
 		AC3114AF1BD8981400ED6E80 /* SuggestionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionsViewController.swift; sourceTree = "<group>"; };
 		AC3114B21BD8983300ED6E80 /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateUtils.swift; path = Utilities/DateUtils.swift; sourceTree = "<group>"; };
@@ -254,6 +258,8 @@
 				04A578D91BDB56870088858A /* OtherPreference.swift */,
 				AC59DB851BDBF3E6001281F5 /* Plan.swift */,
 				ACAB2B211BDE755A005EC804 /* UserActivity.swift */,
+				AC03A72C1BE0906B00924488 /* UserGroupUser.swift */,
+				AC03A72E1BE091D200924488 /* UserGroup.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -422,6 +428,7 @@
 				TargetAttributes = {
 					59F0F9FC1BD242980041A149 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = U4SX4BRLM6;
 					};
 				};
 			};
@@ -548,6 +555,7 @@
 				59F321661BD32D8F005AB36C /* AppFlow.swift in Sources */,
 				ACD0E42C1BDB436400CE0558 /* HomeViewController.swift in Sources */,
 				59F0FA011BD242980041A149 /* AppDelegate.swift in Sources */,
+				AC03A72D1BE0906B00924488 /* UserGroupUser.swift in Sources */,
 				04ECB7711BD73F3D00819BA4 /* RegisterViewController.swift in Sources */,
 				04A578DA1BDB56870088858A /* OtherPreference.swift in Sources */,
 				AC3114B91BD8988700ED6E80 /* AppExtensions.swift in Sources */,
@@ -560,6 +568,7 @@
 				59F3216C1BD33165005AB36C /* GroupSelectionViewController.swift in Sources */,
 				ACD342741BDB4E1B006ACA0C /* DisplayPlanVC.swift in Sources */,
 				AC59DB861BDBF3E6001281F5 /* Plan.swift in Sources */,
+				AC03A72F1BE091D200924488 /* UserGroup.swift in Sources */,
 				59F321951BD4A710005AB36C /* User.swift in Sources */,
 				59F3218C1BD49A01005AB36C /* UserCell.swift in Sources */,
 				04ECB7791BD73F5500819BA4 /* PreferencesInfoViewController.swift in Sources */,

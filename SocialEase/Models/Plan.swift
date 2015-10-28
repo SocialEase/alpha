@@ -29,6 +29,10 @@ class Plan: NSObject {
         return object.objectId
     }
 
+    var pfObject: PFObject {
+        return object
+    }
+
     var name: String? {
         return object[Fields.Name] as? String
     }

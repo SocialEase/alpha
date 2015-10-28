@@ -8,6 +8,7 @@
 
 import UIKit
 import JTProgressHUD
+import Parse
 
 class PlanDisplayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 

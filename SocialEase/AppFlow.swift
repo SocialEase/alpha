@@ -10,13 +10,13 @@ import UIKit
 
 class AppFlow: NSObject {
     var window: UIWindow!
-    
+
     override init() {
         if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
             window = appDelegate.window!
         }
     }
-    
+
     func presentLogin() {
         let loginStoryboard = Storyboard.Login
         
@@ -32,10 +32,10 @@ class AppFlow: NSObject {
         self.window!.rootViewController = viewController
         self.window!.makeKeyAndVisible()
     }
-    
+
     func presentGroupSelection() {
         let viewController = GroupSelectionViewController()
-        viewController.completionCallback = { (group: Group) -> () in
+        viewController.completionCallback = { (group: UserGroup) -> () in
             self.presentSuggestions(group)
         }
         
@@ -45,8 +45,8 @@ class AppFlow: NSObject {
         self.window!.rootViewController = navController
         self.window!.makeKeyAndVisible()
     }
-    
-    func presentSuggestions(group: Group) {
+
+    func presentSuggestions(group: UserGroup) {
         if let rootViewControler = self.window.rootViewController as? UINavigationController {
             let viewController = Storyboard.Suggestions.instantiateViewControllerWithIdentifier("SuggestionsViewController")
 

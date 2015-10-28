@@ -21,41 +21,44 @@ class GroupCell: UITableViewCell {
     
     var userImageViews: [UIImageView]!
     
-    var group: Group! {
+    var group: UserGroup! {
         didSet {
-            if let name = group.name{
+            if let name = group.name {
                 nameLabel.text = name
             }
-            groupCountLabel.text = "(\(group.users.count))"
-            if group.users.count > userImageMaxShown {
-                othersCountLabel.text = "\(group.users.count - userImageMaxShown) others..."
+            groupCountLabel.text = "(\(group.pfUsers.count))"
+            if group.pfUsers.count > userImageMaxShown {
+                othersCountLabel.text = "\(group.pfUsers.count - userImageMaxShown) others..."
             } else {
                 othersCountLabel.text = ""
             }
             
             // Reset when cell is reused.
             userImageViews = [UIImageView]()
-            for user in group.users {
-                // Create user image views with placeholder images
-                let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: userImageDiameter, height: userImageDiameter))
-                let defaultImage = UIImage(named: "default-user-profile")
-                
-                if let profileImageUrl = user.profileImageUrl {
-                    imageView.setImageWithURL(profileImageUrl, placeholderImage: defaultImage)
-                } else {
-                    imageView.image = defaultImage
+            if let users  = group.users {
+                for user in users {
+                    // Create user image views with placeholder images
+                    let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: userImageDiameter, height: userImageDiameter))
+                    let defaultImage = UIImage(named: "default-user-profile")
+
+                    if let profileImageUrl = user.profileImageUrl {
+                        imageView.setImageWithURL(profileImageUrl, placeholderImage: defaultImage)
+                    } else {
+                        imageView.image = defaultImage
+                    }
+
+                    ViewTransformationUtils.convertViewToCircle(imageView, borderColor: UIColor.sea_primaryLabelColor(), borderWidth: 1)
+
+                    imageView.contentMode = UIViewContentMode.ScaleAspectFill
+                    userImageViews.append(imageView)
+
+                    if userImageViews.count >= 5 {
+                        break
+                    }
                 }
-                
-                ViewTransformationUtils.convertViewToCircle(imageView, borderColor: UIColor.sea_primaryLabelColor(), borderWidth: 1)
-                
-                imageView.contentMode = UIViewContentMode.ScaleAspectFill
-                userImageViews.append(imageView)
-                
-                if userImageViews.count >= 5 {
-                    break
-                }
+                loadImages()
             }
-            loadImages()
+
         }
     }
     

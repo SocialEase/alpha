@@ -8,14 +8,15 @@
 
 import UIKit
 import JTProgressHUD
+import Parse
 
 class GroupSelectionViewController: UIViewController {
     
     @IBOutlet weak var groupsTableView: UITableView!
     
-    var completionCallback: ((group: Group) -> ())?
+    var completionCallback: ((group: UserGroup) -> ())?
     
-    var groups = [Group]() {
+    var groups = [UserGroup]() {
         didSet {
             groupsTableView.reloadData()
         }
@@ -36,13 +37,12 @@ class GroupSelectionViewController: UIViewController {
         groupsTableView.estimatedRowHeight = 140
         
         JTProgressHUD.show()
-        Group.groupsForCurrentUser() { (groups: [Group]?, error: NSError?) -> Void in
+        UserGroupUser.fetchGroupAndGroupUsersForUser(PFUser.currentUser()!) { (usergroups: [UserGroup]?, error: NSError?) -> () in
             JTProgressHUD.hide()
-            if let groups = groups where error == nil {
-                self.groups = groups
+            if let usergroups = usergroups {
+                self.groups = usergroups
             }
         }
-        
         // So view doesn't hide behind navigation bar
         self.edgesForExtendedLayout = UIRectEdge.None
     }
@@ -57,7 +57,7 @@ class GroupSelectionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func nextAction(group: Group) {
+    func nextAction(group: UserGroup) {
         if let completionCallback = self.completionCallback {
             completionCallback(group: group)
         }
