@@ -24,7 +24,7 @@ class UserPlans: NSObject {
     static let PlanObject = "plan"
     static let UserObject = "user"
     static let PlanStatus = "planStatus"
-
+    static let IsOrganizer = "isOrganizer"
 
     class func getUserPlanForStatus(status: UserPlanStatus, usingCache cache: Bool, withCompletion completion: (([Plan]?, NSError?) -> ())) {
         if let currentUser = PFUser.currentUser() {
@@ -41,7 +41,11 @@ class UserPlans: NSObject {
                     for plan in userPlans {
                         print(plan)
                     }
-                    userPlanWithStatus = userPlans.map { Plan(planObject: $0.objectForKey(PlanObject) as! PFObject) }
+                    userPlanWithStatus = userPlans.map { (userPlanObject) -> Plan in
+                        let plan = Plan(planObject: userPlanObject.objectForKey(PlanObject) as! PFObject)
+                        plan.currentUserStatus = status
+                        return plan
+                    }
                 }
 
                 completion(userPlanWithStatus , error)
@@ -55,7 +59,6 @@ class UserPlans: NSObject {
 
         let predicate = NSPredicate(format: "\(PlanId) = '\(plan.id!)'")
 
-        print(predicate)
         // prepare query
         let userPlanQuery = PFQuery(className: ObjectName, predicate: predicate)
         userPlanQuery.cachePolicy = cache ? .CacheElseNetwork : .NetworkElseCache
@@ -75,11 +78,54 @@ class UserPlans: NSObject {
         }
     }
 
+    class func getOrganizerForPlan(plan: Plan, usingCache cache: Bool, withCompletion completion: ((User?, NSError?) -> ())) {
+
+        let predicate = NSPredicate(format: "\(PlanId) = '\(plan.id!)' AND \(IsOrganizer) = 1")
+
+        // prepare query
+        let userPlanQuery = PFQuery(className: ObjectName, predicate: predicate)
+        userPlanQuery.cachePolicy = cache ? .CacheElseNetwork : .NetworkElseCache
+        userPlanQuery.includeKey(UserObject) // really important; required to fetch pointer object
+
+        userPlanQuery.findObjectsInBackgroundWithBlock { (userPlans: [PFObject]?, error: NSError?) -> Void in
+            var planOrganizer: User?
+            if let userPlans = userPlans {
+                for plan in userPlans {
+                    if let pfuser = plan.objectForKey(UserObject) as? PFUser {
+                        planOrganizer = User(pfUser: pfuser)
+                        break
+                    }
+                }
+            }
+
+            completion(planOrganizer , error)
+        }
+    }
+
+    class func updateUserPlanStatusForPlan(plan: Plan, withStatus status: UserPlanStatus, withCompletion completion: ((Bool, NSError?) -> ())?) {
+        if let currentUser = PFUser.currentUser() {
+            let predicate = NSPredicate(format: "\(PlanId) = '\(plan.id!)' AND \(UserId) = '\(currentUser.objectId!)'")
+
+            // prepare query
+            let userPlanQuery = PFQuery(className: ObjectName, predicate: predicate)
+            userPlanQuery.getFirstObjectInBackgroundWithBlock { (userPlanObject: PFObject?, error: NSError?) -> Void in
+                if let userPlanObject = userPlanObject {
+                    userPlanObject[PlanStatus] = status.rawValue
+                    userPlanObject.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
+                        completion?(success, error)
+                    })
+                }
+            }
+        } else {
+            print("Oops! No active user found")
+        }
+    }
+
     class func saveUserPlan(planObject: PFObject, withCompletion completion: (() -> ())?) {
 
         if let currentUser = PFUser.currentUser() {
             let userPlan = PFObject(className: ObjectName)
-            print(currentUser)
+
             userPlan[UserId] = currentUser.objectId
             userPlan[PlanObject] = planObject
 

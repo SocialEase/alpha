@@ -33,6 +33,13 @@ class DateUtils {
         return datesList.map { DateUtils.getDisplayDate($0) }
     }
 
+    class func getSystemStyleDisplayDate(date: NSDate, timezone: NSTimeZone? = nil) -> String {
+        DateUtils.DateFormatter.dateStyle = NSDateFormatterStyle.LongStyle
+        DateUtils.DateFormatter.timeStyle = .ShortStyle
+        DateUtils.DateFormatter.timeZone = timezone ?? NSTimeZone(abbreviation: NSTimeZone.localTimeZone().abbreviation!)
+        return DateUtils.DateFormatter.stringFromDate(date)
+    }
+
     class func getDisplayDate(date: NSDate) -> String {
         DateUtils.DateFormatter.dateStyle = .MediumStyle
         DateUtils.DateFormatter.doesRelativeDateFormatting = true

@@ -69,11 +69,15 @@
 		AC3114C21BD8997F00ED6E80 /* Suggestions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC3114C11BD8997F00ED6E80 /* Suggestions.storyboard */; settings = {ASSET_TAGS = (); }; };
 		AC3114C41BD8B05D00ED6E80 /* AppUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3114C31BD8B05D00ED6E80 /* AppUtilities.swift */; settings = {ASSET_TAGS = (); }; };
 		AC3114C61BD8B07800ED6E80 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3114C51BD8B07800ED6E80 /* AppConstants.swift */; settings = {ASSET_TAGS = (); }; };
+		AC35F3081BDDD95500CB98A9 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC35F3071BDDD95500CB98A9 /* Activity.swift */; settings = {ASSET_TAGS = (); }; };
 		AC59DB841BDBF1CA001281F5 /* UserPlans.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC59DB831BDBF1CA001281F5 /* UserPlans.swift */; settings = {ASSET_TAGS = (); }; };
 		AC59DB861BDBF3E6001281F5 /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC59DB851BDBF3E6001281F5 /* Plan.swift */; settings = {ASSET_TAGS = (); }; };
 		AC59DB881BDC6301001281F5 /* Plan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC59DB871BDC6301001281F5 /* Plan.storyboard */; settings = {ASSET_TAGS = (); }; };
 		AC976B521BDD329B00FBEC06 /* PlanInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC976B511BDD329B00FBEC06 /* PlanInformationViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		AC976B541BDD32B100FBEC06 /* PlanChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC976B531BDD32B100FBEC06 /* PlanChatViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		AC976B5C1BDDD7CE00FBEC06 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC976B5B1BDDD7CE00FBEC06 /* MapKit.framework */; };
+		ACAB2B221BDE755A005EC804 /* UserActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB2B211BDE755A005EC804 /* UserActivity.swift */; settings = {ASSET_TAGS = (); }; };
+		ACAB2B241BDF1696005EC804 /* ActivityViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB2B231BDF1696005EC804 /* ActivityViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		ACCD19F01BDD2FFD009F215D /* PlanViewControllerContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCD19EF1BDD2FFD009F215D /* PlanViewControllerContext.swift */; settings = {ASSET_TAGS = (); }; };
 		ACD0E42C1BDB436400CE0558 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD0E42B1BDB436400CE0558 /* HomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		ACD0E42E1BDB463000CE0558 /* PlanDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD0E42D1BDB463000CE0558 /* PlanDisplayViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -149,11 +153,15 @@
 		AC3114C11BD8997F00ED6E80 /* Suggestions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Suggestions.storyboard; sourceTree = "<group>"; };
 		AC3114C31BD8B05D00ED6E80 /* AppUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppUtilities.swift; path = Utilities/AppUtilities.swift; sourceTree = "<group>"; };
 		AC3114C51BD8B07800ED6E80 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppConstants.swift; path = Utilities/AppConstants.swift; sourceTree = "<group>"; };
+		AC35F3071BDDD95500CB98A9 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Activity.swift; path = Models/Activity.swift; sourceTree = "<group>"; };
 		AC59DB831BDBF1CA001281F5 /* UserPlans.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserPlans.swift; path = Models/UserPlans.swift; sourceTree = "<group>"; };
 		AC59DB851BDBF3E6001281F5 /* Plan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Plan.swift; path = Models/Plan.swift; sourceTree = "<group>"; };
 		AC59DB871BDC6301001281F5 /* Plan.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Plan.storyboard; path = Storyboards/Plan.storyboard; sourceTree = "<group>"; };
 		AC976B511BDD329B00FBEC06 /* PlanInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlanInformationViewController.swift; path = ViewControllers/PlanInformationViewController.swift; sourceTree = "<group>"; };
 		AC976B531BDD32B100FBEC06 /* PlanChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlanChatViewController.swift; path = ViewControllers/PlanChatViewController.swift; sourceTree = "<group>"; };
+		AC976B5B1BDDD7CE00FBEC06 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		ACAB2B211BDE755A005EC804 /* UserActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserActivity.swift; path = Models/UserActivity.swift; sourceTree = "<group>"; };
+		ACAB2B231BDF1696005EC804 /* ActivityViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityViewCell.swift; path = Views/ActivityViewCell.swift; sourceTree = "<group>"; };
 		ACCD19EF1BDD2FFD009F215D /* PlanViewControllerContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlanViewControllerContext.swift; path = Utilities/PlanViewControllerContext.swift; sourceTree = "<group>"; };
 		ACD0E42B1BDB436400CE0558 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ViewControllers/HomeViewController.swift; sourceTree = "<group>"; };
 		ACD0E42D1BDB463000CE0558 /* PlanDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlanDisplayViewController.swift; path = ViewControllers/PlanDisplayViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +175,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC976B5C1BDDD7CE00FBEC06 /* MapKit.framework in Frameworks */,
 				043570221BDDBA8900B22D1B /* Social.framework in Frameworks */,
 				043570201BDDBA8000B22D1B /* Accounts.framework in Frameworks */,
 				0435701E1BDDBA6C00B22D1B /* libsqlite3.tbd in Frameworks */,
@@ -235,6 +244,7 @@
 		59F3215E1BD305D8005AB36C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AC35F3071BDDD95500CB98A9 /* Activity.swift */,
 				04A578DD1BDBFAEE0088858A /* Cuisine.swift */,
 				04A578DF1BDBFB050088858A /* UserPreferences.swift */,
 				59F321921BD4A705005AB36C /* Group.swift */,
@@ -243,6 +253,7 @@
 				AC59DB831BDBF1CA001281F5 /* UserPlans.swift */,
 				04A578D91BDB56870088858A /* OtherPreference.swift */,
 				AC59DB851BDBF3E6001281F5 /* Plan.swift */,
+				ACAB2B211BDE755A005EC804 /* UserActivity.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -266,6 +277,7 @@
 				59F3218B1BD49A01005AB36C /* UserCell.xib */,
 				04C0DEC01BDA0C1F00CE1ABF /* PreferencesCell.swift */,
 				043570031BDCCBE100B22D1B /* PlanPreviewCell.swift */,
+				ACAB2B231BDF1696005EC804 /* ActivityViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -356,6 +368,7 @@
 		DAA04B9908FFA00113E4F3DB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AC976B5B1BDDD7CE00FBEC06 /* MapKit.framework */,
 				043570211BDDBA8900B22D1B /* Social.framework */,
 				0435701F1BDDBA8000B22D1B /* Accounts.framework */,
 				0435701D1BDDBA6C00B22D1B /* libsqlite3.tbd */,
@@ -528,6 +541,7 @@
 				04ECB7761BD73F5500819BA4 /* GroupsViewController.swift in Sources */,
 				AC3114C41BD8B05D00ED6E80 /* AppUtilities.swift in Sources */,
 				AC3114C61BD8B07800ED6E80 /* AppConstants.swift in Sources */,
+				ACAB2B221BDE755A005EC804 /* UserActivity.swift in Sources */,
 				04ECB7771BD73F5500819BA4 /* WelcomeViewController.swift in Sources */,
 				AC3114BC1BD8989C00ED6E80 /* FilterOptionViewCell.swift in Sources */,
 				AC3114B01BD8981400ED6E80 /* SuggestionsViewController.swift in Sources */,
@@ -538,8 +552,10 @@
 				04A578DA1BDB56870088858A /* OtherPreference.swift in Sources */,
 				AC3114B91BD8988700ED6E80 /* AppExtensions.swift in Sources */,
 				59F321611BD3099C005AB36C /* ViewController.swift in Sources */,
+				ACAB2B241BDF1696005EC804 /* ActivityViewCell.swift in Sources */,
 				AC976B521BDD329B00FBEC06 /* PlanInformationViewController.swift in Sources */,
 				ACCD19F01BDD2FFD009F215D /* PlanViewControllerContext.swift in Sources */,
+				AC35F3081BDDD95500CB98A9 /* Activity.swift in Sources */,
 				59F321841BD486DF005AB36C /* GroupCreateViewController.swift in Sources */,
 				59F3216C1BD33165005AB36C /* GroupSelectionViewController.swift in Sources */,
 				ACD342741BDB4E1B006ACA0C /* DisplayPlanVC.swift in Sources */,

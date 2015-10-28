@@ -36,3 +36,27 @@ struct Storyboard {
     // segue identifier
 
 }
+
+
+struct SocialEaseIcons {
+    static let FontName = "socialease"
+    enum Map: Character {
+        case FilledSquare = "a"
+        case CheckedSquare = "b"
+        case EmptySquare = "c"
+        case FilledCircle = "d"
+        case EmptyCircle = "e"
+        case DownArrowThick = "f"
+        case Plus = "g"
+        case DownArrowThin = "h"
+        case EmptyStar = "i"
+        case HalfFilledStar = "j"
+        case FilledStar = "k"
+        case FilledCircleRightArrow = "l"
+        case Preferences = "m"
+        case Phone = "n"
+        case ThumDown = "o"
+        case ThumbUp = "p"
+    }
+}
+typealias SocialEaseIconsType = SocialEaseIcons.Map
