@@ -33,8 +33,6 @@ class UserGroupUser: NSObject {
                 userGroups = [UserGroup]()
                 for object in queryObjects {
                     if let group = object[Fields.Group] as? PFObject, let userList = object[Fields.GroupUsers] as? [PFUser] {
-                        print(group)
-                        print(userList)
                         userGroups.append(UserGroup(groupObject: group, usersObject: userList))
                     }
                 }
