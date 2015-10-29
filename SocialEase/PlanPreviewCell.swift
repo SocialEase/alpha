@@ -62,13 +62,14 @@ class PlanPreviewCell: UITableViewCell {
     }
     
     func styleCell() {
-        planNameLabel.textColor = UIColor.sea_primaryLabelColor()
-        planTimeLabel.textColor = UIColor.sea_primaryLabelColor()
-        ViewTransformationUtils.addBlurToView(planImageView, frame: planImageView.frame, style: UIBlurEffectStyle.Dark)
+        planNameLabel.textColor = UIColor.sea_lightLabelColor()
+        planTimeLabel.textColor = UIColor.sea_lightLabelColor()
+        ViewTransformationUtils.addBlurToView(maskOverPhotoView, frame: contentView.frame, style: UIBlurEffectStyle.Light)
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        styleCell()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
