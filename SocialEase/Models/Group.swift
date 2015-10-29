@@ -63,4 +63,46 @@ class Group: NSObject {
             }
         }
     }
+    
+    class func createNewGroup(name: String, users: [User], completion: (error: NSError?) -> Void) {
+        var pfUsers = [PFUser]()
+        var usersString = ""
+        
+        for user in users {
+            if let pfUser = user.pfUser {
+                pfUsers.append(pfUser)
+                if usersString != "" {
+                    usersString += ","
+                }
+                usersString += user.id ?? ""
+            }
+        }
+        
+        // First, create a Group in the db, so a groupId is automatically generated
+        let pfGroup = PFObject(className: "Group")
+        pfGroup["users"] = usersString
+        pfGroup["groupName"] = name
+        pfGroup.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            
+            if success && error == nil {
+                
+                if let newGroupObjectId = pfGroup.objectId {
+            
+                    // Next, push to the UserGroupUsers table where everything is linked
+                    let pfUserGroupUsers = PFObject(className: "UserGroupUsers")
+                    pfUserGroupUsers["groupId"] = newGroupObjectId
+                    pfUserGroupUsers["groupUsers"] = pfUsers
+                    pfUserGroupUsers["userId"] = User.currentUser?.id!
+                    pfUserGroupUsers["group"] = pfGroup
+                    pfUserGroupUsers.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+                        completion(error: error)
+                    }
+                } else {
+                    // TODO: Handle error
+                }
+            } else {
+                // TODO: Handle error
+            }
+        }
+    }
 }

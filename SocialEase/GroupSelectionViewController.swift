@@ -35,7 +35,12 @@ class GroupSelectionViewController: UIViewController {
         groupsTableView.registerNib(UINib(nibName: "GroupCell", bundle: nil), forCellReuseIdentifier: "GroupCell")
         groupsTableView.rowHeight = UITableViewAutomaticDimension
         groupsTableView.estimatedRowHeight = 140
-        
+
+        // So view doesn't hide behind navigation bar
+        self.edgesForExtendedLayout = UIRectEdge.None
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         JTProgressHUD.show()
         UserGroupUser.fetchGroupAndGroupUsersForUser(PFUser.currentUser()!) { (usergroups: [UserGroup]?, error: NSError?) -> () in
             JTProgressHUD.hide()
@@ -43,8 +48,6 @@ class GroupSelectionViewController: UIViewController {
                 self.groups = usergroups
             }
         }
-        // So view doesn't hide behind navigation bar
-        self.edgesForExtendedLayout = UIRectEdge.None
     }
     
     func onNewGroupTap() {

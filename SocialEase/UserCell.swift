@@ -8,11 +8,18 @@
 
 import UIKit
 
+protocol UserCellDelegate: class {
+    func userSelected(user: User)
+    func userDeselected(user: User)
+}
+
 class UserCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var overlayView: UIView!
+    
+    weak var delegate: UserCellDelegate?
     
     var cellSelected = false
     
@@ -57,6 +64,14 @@ class UserCell: UICollectionViewCell {
     
     func showTappedStateForCell() {
         let endColor = cellSelected ? UIColor.sea_secondarySelectedColor() : UIColor.clearColor()
+
+        if let delegate = delegate {
+            if cellSelected {
+                delegate.userSelected(user)
+            } else {
+                delegate.userDeselected(user)
+            }
+        }
         
         UIView.animateWithDuration(0.15, animations: {
             self.overlayView.backgroundColor = endColor
