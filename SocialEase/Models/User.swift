@@ -135,6 +135,7 @@ class User : NSObject {
                         numberString = numberString.stringByReplacingOccurrencesOfString(")", withString: "")
                         numberString = numberString.stringByReplacingOccurrencesOfString(" ", withString: "")
                         numberString = numberString.stringByReplacingOccurrencesOfString("-", withString: "")
+                        numberString = numberString.stringByReplacingOccurrencesOfString(" ", withString: "")
                         
                         //print("Found phone number: \(numberString)")
                         
