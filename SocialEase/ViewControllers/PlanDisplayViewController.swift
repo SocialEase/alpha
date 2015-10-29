@@ -26,6 +26,7 @@ class PlanDisplayViewController: UIViewController, UITableViewDelegate, UITableV
 
     var viewActive = false
     var selectedPlanIndex: Int?
+    var refreshControl: UIRefreshControl!
 
     // MARK: - Lifecycle methods
     override func viewDidLoad() {
@@ -37,6 +38,10 @@ class PlanDisplayViewController: UIViewController, UITableViewDelegate, UITableV
         tableView.dataSource = self
         tableView.estimatedRowHeight = 130
         tableView.rowHeight = UITableViewAutomaticDimension
+        
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: "refreshPlanTable:", forControlEvents: UIControlEvents.ValueChanged)
+        tableView.addSubview(refreshControl)
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -87,4 +92,10 @@ class PlanDisplayViewController: UIViewController, UITableViewDelegate, UITableV
         selectedPlanIndex = indexPath.row
         presentPlanTabbarControllerForSelectedPlan()
     }
+    
+    // table view refresh
+    func refreshPlanTable(refreshControl: UIRefreshControl) {
+        fetchUserPlans(false)
+        refreshControl.endRefreshing()
+    }    
 }
