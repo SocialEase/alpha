@@ -77,4 +77,8 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
         }
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    @IBAction func didCancel(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -207,6 +207,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Pick your favorite cuisines" id="Um9-zN-PCJ">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="3gQ-bW-18k">
+                            <connections>
+                                <action selector="didCancel:" destination="vbk-fn-MWo" id="tbu-s4-P2z"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="SzM-JX-lkq">
                             <connections>
                                 <action selector="didNextScreenTap:" destination="vbk-fn-MWo" id="lAr-EA-rSU"/>
