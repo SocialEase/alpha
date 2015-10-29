@@ -32,6 +32,15 @@ class AppFlow: NSObject {
         self.window!.rootViewController = viewController
         self.window!.makeKeyAndVisible()
     }
+    
+    
+    func presentBusinessDetail(activity :SEAActivity) {
+        if let rootViewControler = self.window.rootViewController as? UINavigationController {
+            let viewController = Storyboard.BusinessDetail.instantiateViewControllerWithIdentifier("BusinessDetailViewController") as! BusinessDetailViewController
+            viewController.activity = activity
+            rootViewControler.pushViewController(viewController, animated: true)
+        }
+    }
 
     func presentGroupSelection() {
         let viewController = GroupSelectionViewController()
