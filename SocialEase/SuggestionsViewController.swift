@@ -58,6 +58,12 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
 
     private var dateFilterList = [SuggestionsFilter]()
     private var activityTypeFilterList = [SuggestionsFilter]()
+    
+    var activity : SEAActivity? {
+        didSet {
+            
+        }
+    }
 
     var suggestedActivities: [(activity: SEAActivity, selected: Bool)]? {
         didSet {
@@ -146,6 +152,15 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
         } else {
             suggestedActivities?[indexPath.row].selected = !(suggestedActivities?[indexPath.row].selected)!
             tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .None)
+            
+            // TODO: kevin go to detail view
+            let appFlow = AppFlow()
+            
+            let activity = suggestedActivities?[indexPath.row].activity
+            
+            appFlow.presentBusinessDetail(activity!)
+            
+            // kevin done
         }
 
     }
