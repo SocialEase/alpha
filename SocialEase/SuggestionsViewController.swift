@@ -32,6 +32,7 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
 
     // MARK: - Properties
     var groupId: Int!
+    var group: UserGroup!
 
     private var showActivityTypeFilter = false {
         didSet {

@@ -46,11 +46,15 @@ class AppFlow: NSObject {
         self.window!.makeKeyAndVisible()
     }
 
-    func presentSuggestions(group: UserGroup) {
+    func presentSuggestions(group: UserGroup?) {
         if let rootViewControler = self.window.rootViewController as? UINavigationController {
-            let viewController = Storyboard.Suggestions.instantiateViewControllerWithIdentifier("SuggestionsViewController")
+            let suggestionsViewController = Storyboard.Suggestions.instantiateViewControllerWithIdentifier("SuggestionsViewController") as! SuggestionsViewController
 
-            rootViewControler.pushViewController(viewController, animated: true)
+            // We should assume that we have a group selected here
+            // Not sure why the signature of this method accepts a optional
+            suggestionsViewController.group = group!
+
+            rootViewControler.pushViewController(suggestionsViewController, animated: true)
         }
     }
 
