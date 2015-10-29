@@ -28,33 +28,18 @@ class BusinessDetailViewCell: UITableViewCell {
         }
     }
     
-//    var name: String?
-//    var location: String?
-//    var rating: Float?
-//    var posterImageUrl: NSURL?
-    
     func updateBusinessDetailsInCell() {
         businessImageView.contentMode = .ScaleToFill
-        businessNameLabel.text = "Testing"
-        //businessImageView.setImageWithURL(activity.posterImageUrl!)
-        //businessNameLabel.text = activity.name
-        //categoryLabel.text = activity.categories
-        //reviewLabel.text = "\(activity.reviewCount!) Reviews"
-        
-        //openLabel.text = business.open! ? "Open" : "Closed"
-        //openLabel.textColor = activity.open! ? UIColor(red: 34/255, green: 139/255, blue: 34/255, alpha: 1) : UIColor.redColor()
-        //distanceLabel.text = activity.distance
+        businessNameLabel.text = activity.name
+        businessImageView.setImageWithURL(activity.posterImageUrl!)
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }
