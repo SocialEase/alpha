@@ -205,7 +205,8 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
                             // 3. Create/Save UserPlans and UserActivities objects
                             UsersPlanActivity.createPlanAndActivitiesForGroup(self.group, withPlan: plan, andActivities: activities, byOrganizer: PFUser.currentUser()!) { (success: Bool, error: NSError?) -> () in
                                 if success {
-                                    print("All objects saved properly")
+                                    // 4. @todo: Uday to add implementation for push notifications here
+                                    print("Saved all the data on Parse... Ready for PUSH notifications")
                                 } else {
                                     print(error?.localizedDescription)
                                 }
