@@ -18,7 +18,7 @@ class UserGroup: NSObject {
     }
 
     var groupId: String? {
-        return _groupObject[Fields.OjbectId] as? String
+        return _groupObject.objectId
     }
 
     var name: String? {

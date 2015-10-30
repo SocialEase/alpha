@@ -27,6 +27,7 @@ class Activity: NSObject, MKAnnotation {
         static let Name = "name"
         static let Description = "description"
         static let Image = "image"
+        static let PosterImageUrl = "posterImageUrl"
         static let Location = "location"
         static let Rating = "rating"
         static let AddressLine1 = "addressLine1"
@@ -65,6 +66,13 @@ class Activity: NSObject, MKAnnotation {
 
     var addressLine: String? {
         return object[Fields.AddressLine1] as? String
+    }
+
+    var posterImageUrl: NSURL? {
+        if let url = object[Fields.PosterImageUrl] as? String {
+            return NSURL(string: url)
+        }
+        return nil
     }
 
     var city: String? {
@@ -109,6 +117,12 @@ class Activity: NSObject, MKAnnotation {
         }
     }
 
+    func getStateAndCityString(delimiter: String = ", ") -> String {
+        let displayCity = city ?? ""
+        let displayState = state ?? ""
+        return "\(displayCity)\(delimiter)\(displayState)"
+    }
+
     // MARK: - Class methods
     class func getActivitiesForObjectIdList(activityObjectList: [String], withCompletion completion: (([Activity]?, NSError?) -> ())) {
         let idListForPredicate = activityObjectList.joinWithSeparator("', '")
@@ -127,6 +141,31 @@ class Activity: NSObject, MKAnnotation {
                 print(error?.localizedDescription)
             }
             completion(planActivities, error)
+        }
+    }
+
+    class func saveActivities(activities: [Activity]?, withCompletion completion: (([Activity]?, NSError?) -> ())) {
+
+        var saveActivities: [PFObject]
+        if let activities = activities {
+            saveActivities = activities.map { $0.pfObject }
+            PFObject.saveAllInBackground(saveActivities) { (success: Bool, error: NSError?) -> Void in
+                let planActivities = saveActivities.map { Activity(activityObject: $0) }
+                completion(planActivities, error)
+            }
+        } else {
+            completion(nil, nil)
+        }
+    }
+
+    class func getSuggestedActivitiesForGroup(group: UserGroup, withCompletion completion: (([Activity]?, NSError?) -> ())?) {
+        PFCloud.callFunctionInBackground("user_group__get_activity_recommendations", withParameters: ["groupId": 123, "activityType": 2] ) { (response: AnyObject?, error: NSError?) -> Void in
+            var activityObjects: [Activity]?
+            if let response = response as? [[String : AnyObject]] {
+                activityObjects = response.map { Activity(activityObject: PFObject(className: ObjectName, dictionary: $0)) }
+            }
+
+            completion?(activityObjects, error)
         }
     }
 }

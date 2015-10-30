@@ -21,7 +21,7 @@ class SuggestedPlaceViewCell: UITableViewCell {
     static let EstimateRowHeight: CGFloat = 180
 
     
-    var activity: SEAActivity! {
+    var activity: Activity! {
         didSet {
             setupUIViewCell()
         }
@@ -46,9 +46,13 @@ class SuggestedPlaceViewCell: UITableViewCell {
 
     private func setupUIViewCell() {
         nameLabel.text = activity.name
-        locationLabel.text = activity.location
+        locationLabel.text = activity.getStateAndCityString()
         if let imageUrl = activity.posterImageUrl {
             posterImage.setImageWithURL(imageUrl)
+        }
+
+        if let rating = activity?.rating {
+            ratingLabel.text = AppUtilities.getRatingsTextFromRating(rating)
         }
     }
 }

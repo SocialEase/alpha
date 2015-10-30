@@ -151,7 +151,7 @@ class PlanInformationViewController: UIViewController, PlanViewControllerContext
                     }
                 }
             } else {
-                UserActivity.fetchUserActivities(PFUser.currentUser()!) { (userActivities: [UserActivity]?, error: NSError?) -> Void in
+                UserActivity.fetchActivitiesForUser(PFUser.currentUser()!, inPlan: plan) { (userActivities: [UserActivity]?, error: NSError?) -> Void in
                     if let userActivities = userActivities {
                         self.userActivities = userActivities
                     }

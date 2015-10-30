@@ -60,6 +60,7 @@
 		59F321991BD4B817005AB36C /* uday-user-profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 59F321971BD4B817005AB36C /* uday-user-profile.png */; settings = {ASSET_TAGS = (); }; };
 		AC03A72D1BE0906B00924488 /* UserGroupUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC03A72C1BE0906B00924488 /* UserGroupUser.swift */; settings = {ASSET_TAGS = (); }; };
 		AC03A72F1BE091D200924488 /* UserGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC03A72E1BE091D200924488 /* UserGroup.swift */; settings = {ASSET_TAGS = (); }; };
+		AC230E361BE26FBE00629C9A /* UsersPlanActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC230E351BE26FBE00629C9A /* UsersPlanActivity.swift */; settings = {ASSET_TAGS = (); }; };
 		AC30AF9A1BDA903C002A1A67 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC30AF991BDA903C002A1A67 /* Home.storyboard */; settings = {ASSET_TAGS = (); }; };
 		AC3114B01BD8981400ED6E80 /* SuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3114AF1BD8981400ED6E80 /* SuggestionsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		AC3114B41BD8983300ED6E80 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3114B21BD8983300ED6E80 /* DateUtils.swift */; settings = {ASSET_TAGS = (); }; };
@@ -92,7 +93,7 @@
 		BDEF382A1BE1B98300CA6A56 /* BusinessAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF38251BE1B98300CA6A56 /* BusinessAddressTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		BDEF382B1BE1B98300CA6A56 /* BusinessPhoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF38261BE1B98300CA6A56 /* BusinessPhoneTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		BDEF382C1BE1B98300CA6A56 /* BusinessDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF38271BE1B98300CA6A56 /* BusinessDetailViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		DB60B389636A8D1DFCB85A92 /* Pods_SocialEase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBBB717F537F177AEEECFB4 /* Pods_SocialEase.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		DB60B389636A8D1DFCB85A92 /* Pods_SocialEase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBBB717F537F177AEEECFB4 /* Pods_SocialEase.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -153,6 +154,7 @@
 		990E3D9A56F0F354ACAE3A3C /* Pods-SocialEase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialEase.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialEase/Pods-SocialEase.release.xcconfig"; sourceTree = "<group>"; };
 		AC03A72C1BE0906B00924488 /* UserGroupUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserGroupUser.swift; path = Models/UserGroupUser.swift; sourceTree = "<group>"; };
 		AC03A72E1BE091D200924488 /* UserGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserGroup.swift; path = Models/UserGroup.swift; sourceTree = "<group>"; };
+		AC230E351BE26FBE00629C9A /* UsersPlanActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UsersPlanActivity.swift; path = Models/UsersPlanActivity.swift; sourceTree = "<group>"; };
 		AC30AF991BDA903C002A1A67 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Home.storyboard; path = Storyboards/Home.storyboard; sourceTree = "<group>"; };
 		AC3114AF1BD8981400ED6E80 /* SuggestionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionsViewController.swift; sourceTree = "<group>"; };
 		AC3114B21BD8983300ED6E80 /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateUtils.swift; path = Utilities/DateUtils.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 				ACAB2B211BDE755A005EC804 /* UserActivity.swift */,
 				AC03A72C1BE0906B00924488 /* UserGroupUser.swift */,
 				AC03A72E1BE091D200924488 /* UserGroup.swift */,
+				AC230E351BE26FBE00629C9A /* UsersPlanActivity.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -588,6 +591,7 @@
 				AC3114B91BD8988700ED6E80 /* AppExtensions.swift in Sources */,
 				59F321611BD3099C005AB36C /* ViewController.swift in Sources */,
 				ACAB2B241BDF1696005EC804 /* ActivityViewCell.swift in Sources */,
+				AC230E361BE26FBE00629C9A /* UsersPlanActivity.swift in Sources */,
 				AC976B521BDD329B00FBEC06 /* PlanInformationViewController.swift in Sources */,
 				ACCD19F01BDD2FFD009F215D /* PlanViewControllerContext.swift in Sources */,
 				AC35F3081BDDD95500CB98A9 /* Activity.swift in Sources */,

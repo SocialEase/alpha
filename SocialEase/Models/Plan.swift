@@ -17,7 +17,9 @@ class Plan: NSObject {
         static let Name = "name"
         static let OccurrenceDate = "occurrenceDate"
         static let Image = "image"
+        static let ImageUrl = "imageUrl"
         static let Comment = "comment"
+        static let GroupObjectId = "groupObjectId"
         static let ActivityObjectIdList = "activityObjectIdList"
     }
 
@@ -49,6 +51,13 @@ class Plan: NSObject {
         return object[Fields.ActivityObjectIdList] as? [String]
     }
 
+    var imageUrl: NSURL? {
+        if let url = object[Fields.ImageUrl] as? String {
+            return NSURL(string: url)
+        }
+        return nil
+    }
+
     var currentUserStatus: UserPlanStatus?
 
     private var users: [User]?
@@ -61,13 +70,10 @@ class Plan: NSObject {
 
     // MARK: - Methods
     func setImageOnUIImageView(view: UIImageView) {
-        if let imageFile = object[Fields.Image] as? PFFile {
-            imageFile.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
-                if let imageData = imageData {
-                    view.image = UIImage(data: imageData)
-                    view.contentMode = UIViewContentMode.ScaleToFill;
-                }
-            }
+        if let imageUrl = imageUrl {
+            view.contentMode = .ScaleAspectFill
+            view.clipsToBounds = true
+            view.setImageWithURL(imageUrl)
         }
     }
 
@@ -93,12 +99,32 @@ class Plan: NSObject {
         }
     }
 
-
     // MARK: - Class methods
     class func fetchPlanId(id: String, withCompletion completion: ((PFObject?, NSError?) -> ())?) {
         let query = PFQuery(className: ObjectName)
         query.getObjectInBackgroundWithId(id) { (planObject: PFObject?, error: NSError?) -> Void in
             completion?(planObject, error)
+        }
+    }
+
+    class func createPlanWithName(name: String, atOccuranceTime time: NSDate, forGroup group: UserGroup, withActivities activities: [Activity], withCompletion completion: ((Plan?, NSError?) -> ())) {
+        let planObject = PFObject(className: ObjectName)
+        planObject[Fields.Name] = name
+        planObject[Fields.OccurrenceDate] = time
+        planObject[Fields.GroupObjectId] = group.groupId!
+        planObject[Fields.ActivityObjectIdList] = activities.map { $0.id! }
+
+        if let url = activities.first?.posterImageUrl?.absoluteString {
+            planObject[Fields.ImageUrl] = url
+        }
+
+        planObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            if success {
+                completion(Plan(planObject: planObject), error)
+            } else {
+                print(error?.localizedDescription)
+                completion(nil, error)
+            }
         }
     }
 }

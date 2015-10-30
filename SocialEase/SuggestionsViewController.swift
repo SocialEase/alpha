@@ -26,6 +26,8 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var dateTimeArrowIndicator: UILabel!
     @IBOutlet weak var filterOptionsTableView: UITableView!
     @IBOutlet weak var suggestedPlaceTableView: UITableView!
+    @IBOutlet weak var actvitiyDatePicker: UIDatePicker!
+    @IBOutlet weak var activtyDatePickerView: UIView!
 
     @IBOutlet weak var sendButtonFooterView: UIView!
     @IBOutlet weak var sendButton: UILabel!
@@ -49,8 +51,10 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
         didSet {
             filterOptionsTableView.reloadData()
             UIView.animateWithDuration(0.5) { () -> Void in
-                self.filterOptionsTableView.alpha = self.showTimeDateFilter ? 1 : 0
+                self.dateTimeTextLabel.text = DateUtils.getSystemStyleDisplayDate(self.actvitiyDatePicker.date, dateStyle: .MediumStyle)
+                self.activtyDatePickerView.alpha = self.showTimeDateFilter ? 1 : 0
                 self.updateFilterDisplay(self.dateTimeTextLabel, arrowLabel: self.dateTimeArrowIndicator, filterState: self.showTimeDateFilter)
+                print(self.actvitiyDatePicker.date)
                 self.view.layoutIfNeeded()
             }
         }
@@ -65,7 +69,7 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
         }
     }
 
-    var suggestedActivities: [(activity: SEAActivity, selected: Bool)]? {
+    var suggestedActivities: [(activity: Activity, selected: Bool)]? {
         didSet {
             suggestedPlaceTableView?.reloadData()
             updateSendButtonActiveState()
@@ -115,6 +119,8 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
         initActivityTypeFilter()
         setupFilterViews()
         fetchSuggestions()
+
+        dateTimeTextLabel.text = DateUtils.getSystemStyleDisplayDate(actvitiyDatePicker.date, dateStyle: .MediumStyle)
     }
 
     // MARK: - Table view ds and delegate methods
@@ -154,11 +160,11 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
             tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .None)
             
             // TODO: kevin go to detail view
-            let appFlow = AppFlow()
+            //let appFlow = AppFlow()
             
-            let activity = suggestedActivities?[indexPath.row].activity
+            //let activity = suggestedActivities?[indexPath.row].activity
             
-            appFlow.presentBusinessDetail(activity!)
+            //appFlow.presentBusinessDetail(activity!)
             
             // kevin done
         }
@@ -169,7 +175,7 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
     @IBAction func timeViewTapped(sender: UITapGestureRecognizer?) {
         showActivityTypeFilter = false
         showTimeDateFilter = !showTimeDateFilter
-        !showActivityTypeFilter && !showTimeDateFilter ? fetchSuggestions() : ()
+
     }
 
     @IBAction func activityTypeViewTapped(sender: UITapGestureRecognizer?) {
@@ -190,11 +196,29 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
                     self.updateSendButtonActiveState()
             }
         } else {
-            //@todo: Add logic to create a new activity and send PUSH notification to users
+            // 1. Save activity objects
+            Activity.saveActivities(suggestedActivities?.filter( { $0.selected }).map({ $0.activity })) { (activities: [Activity]?, error: NSError?) -> () in
+                if let activities = activities {
+                    // 2. Create/Save plan objects with associated activities object ids
+                    Plan.createPlanWithName(self.activityTypeTextLabel.text!, atOccuranceTime: self.actvitiyDatePicker.date, forGroup: self.group, withActivities: activities) { (plan: Plan?, error: NSError?) -> () in
+                        if let plan = plan {
+                            // 3. Create/Save UserPlans and UserActivities objects
+                            UsersPlanActivity.createPlanAndActivitiesForGroup(self.group, withPlan: plan, andActivities: activities, byOrganizer: PFUser.currentUser()!) { (success: Bool, error: NSError?) -> () in
+                                if success {
+                                    print("All objects saved properly")
+                                } else {
+                                    print(error?.localizedDescription)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            AppFlow().presentHomePageViewController()
         }
     }
 
-    // MARK: - Internal helpe methods
+    // MARK: - Internal helper methods
     private func updateFilterDisplay(filterTextLabel: UILabel, arrowLabel: UILabel, filterState: Bool) {
         if filterState {
             filterTextLabel.textColor = UIColor(red: 255/255, green: 153/255, blue: 90/255, alpha: 1)
@@ -217,7 +241,8 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
 
     private func fetchSuggestions() {
         JTProgressHUD.showWithStyle(JTProgressHUDStyle.Gradient)
-        SEAActivity.getSuggestedActivitiesForGroupId(groupId) { (suggestedActivities: [SEAActivity]?, error: NSError?) -> () in
+
+        Activity.getSuggestedActivitiesForGroup(group) { (suggestedActivities: [Activity]?, error: NSError?) -> () in
             JTProgressHUD.hide()
             if let suggestedActivities = suggestedActivities {
                 self.suggestedActivities = suggestedActivities.map { ($0, false) }

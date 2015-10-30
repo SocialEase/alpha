@@ -34,7 +34,7 @@ class FilterOptionViewCell: UITableViewCell {
     }
 
     private func updateCellView() {
-        filterSelectedStateLabel.text = filter.isSelected ? "d" : "e"
+        filterSelectedStateLabel.text = filter.isSelected ? String(SocialEaseIconsType.FilledCircle.rawValue) : String(SocialEaseIconsType.EmptyCircle.rawValue)
         filterSelectedStateLabel.textColor = filter.isSelected ? UIColor(red: 255/255, green: 153/255, blue: 90/255, alpha: 1) : UIColor.darkGrayColor()
         filterOptionNameLabel.text = filter.displayName
     }

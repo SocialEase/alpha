@@ -9,6 +9,11 @@
 import UIKit
 import MapKit
 
+enum ActivityCellPageViews: Int {
+    case Details = 0, Map
+}
+
+
 protocol ActivityViewCellDelegate: class {
     func activityViewCell(activityViewCell: UITableViewCell, didUpdateActivityVoteToVote vote: UserActivityVote, atIndexPath indexpath: NSIndexPath)
 }
@@ -48,6 +53,7 @@ class ActivityViewCell: UITableViewCell {
         static let UnselectedLikeButtonBgkColor = UIColor(red: 0, green: 128/255, blue: 0, alpha: 0.5)
         static let SelectedDislikeButtonBgkColor = UIColor(red: 1, green: 102/255, blue: 102/255, alpha: 0.9)
         static let UnselectedDislikeButtonBgkColor = UIColor(red: 1, green: 102/255, blue: 102/255, alpha: 0.5)
+        static let CenterConstraintDeltaScale: CGFloat = 0.5
     }
 
     var mapViewShowing = false
@@ -65,7 +71,7 @@ class ActivityViewCell: UITableViewCell {
         activityLocationMapView.scrollEnabled = false
 
         // set initial offset
-        activityMapViewCenterConstraint.constant = 0.5 * self.bounds.width + 0.5 * self.activityLocationMapView.bounds.width
+        activityMapViewCenterConstraint.constant = CellConstants.CenterConstraintDeltaScale * self.bounds.width + CellConstants.CenterConstraintDeltaScale * self.activityLocationMapView.bounds.width
 
         // add ui gesture
         let detailsPanGesture = UIPanGestureRecognizer(target: self, action: "snippentViewPanned:")
@@ -95,9 +101,9 @@ class ActivityViewCell: UITableViewCell {
             activityMapViewCenterConstraint.constant = originalMapCenterConstraint + translation.x
         } else if sender.state == UIGestureRecognizerState.Ended {
             UIView.animateWithDuration(0.2) {
-                self.activityDetailsViewCenterConstraint.constant = velocity.x > 0 ? 0 : -0.5 * self.bounds.width - 0.5 * self.activityInfoContainerView.bounds.width
-                self.activityMapViewCenterConstraint.constant = velocity.x > 0 ? 0.5 * self.bounds.width + 0.5 * self.activityLocationMapView.bounds.width : 0
-                self.pageControl.currentPage = velocity.x > 0 ? 0 : 1
+                self.activityDetailsViewCenterConstraint.constant = velocity.x > 0 ? 0 : -1 * CellConstants.CenterConstraintDeltaScale * self.bounds.width - CellConstants.CenterConstraintDeltaScale * self.activityInfoContainerView.bounds.width
+                self.activityMapViewCenterConstraint.constant = velocity.x > 0 ? CellConstants.CenterConstraintDeltaScale * self.bounds.width + CellConstants.CenterConstraintDeltaScale * self.activityLocationMapView.bounds.width : 0
+                self.pageControl.currentPage = velocity.x > 0 ? ActivityCellPageViews.Details.rawValue : ActivityCellPageViews.Map.rawValue
                 self.layoutIfNeeded()
             }
         }
@@ -116,7 +122,7 @@ class ActivityViewCell: UITableViewCell {
     // MARK: - Helper methods
     private func updateCellView() {
         activityNameLabel?.text = usrActivity.activity?.name!
-        activityLocationLabel?.text = "\((usrActivity.activity?.city!)!), \((usrActivity.activity?.state!)!)"
+        activityLocationLabel?.text = usrActivity.activity?.getStateAndCityString()
         usrActivity.activity?.setImageOnUIImageView(activityImageView)
         if let rating = usrActivity.activity?.rating {
             activityRatingsLabel.text = AppUtilities.getRatingsTextFromRating(rating)

@@ -15,6 +15,7 @@ class UserActivity: NSObject {
     struct Fields {
         static let OjbectId = "objectId"
         static let UserId = "userId"
+        static let PlanId = "planId"
         static let ActivityId = "activityId"
         static let Activity = "activity"
         static let Vote = "vote"
@@ -91,10 +92,10 @@ class UserActivity: NSObject {
     }
 
     // MARK: - Class method
-    class func fetchUserActivities(user: PFUser, withCompletion completion: (([UserActivity]?, NSError?) -> Void)) {
+    class func fetchActivitiesForUser(user: PFUser, inPlan plan: Plan, withCompletion completion: (([UserActivity]?, NSError?) -> Void)) {
 
         // predicate
-        let predicate = NSPredicate(format: "\(Fields.UserId) = '\(user.objectId!)'")
+        let predicate = NSPredicate(format: "\(Fields.UserId) = '\(user.objectId!)' AND \(Fields.PlanId) = '\(plan.id!)'")
         print(predicate)
         // prepare query
         let userActivityQuery = PFQuery(className: ObjectName, predicate: predicate)
@@ -111,4 +112,5 @@ class UserActivity: NSObject {
             completion(usrActivities, error)
         }
     }
+
 }

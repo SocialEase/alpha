@@ -68,7 +68,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dYc-30-OOC">
                                         <rect key="frame" x="161" y="64" width="214" height="50"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="251" horizontalCompressionResistancePriority="740" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mij-lu-Tnw">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="251" horizontalCompressionResistancePriority="740" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Mij-lu-Tnw">
                                                 <rect key="frame" x="8" y="14" width="168" height="21"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -225,13 +225,13 @@
                                     <tableView clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="51" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="24u-bm-gB7">
                                         <rect key="frame" x="0.0" y="114" width="375" height="553"/>
                                         <animations/>
-                                        <color key="backgroundColor" white="1" alpha="0.94644742398648651" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FilterOptionViewCell" rowHeight="51" id="1xR-WL-6b1" customClass="FilterOptionViewCell" customModule="SocialEase" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="51"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1xR-WL-6b1" id="C8P-Td-idQ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lunch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOO-9j-EjJ">
@@ -272,6 +272,27 @@
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
+                                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PVo-D5-TD5">
+                                        <rect key="frame" x="0.0" y="114" width="375" height="216"/>
+                                        <subviews>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="G8J-9j-SbB">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
+                                                <animations/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.94644742398648651" colorSpace="calibratedRGB"/>
+                                                <date key="date" timeIntervalSinceReferenceDate="467740437.703255">
+                                                    <!--2015-10-28 15:53:57 +0000-->
+                                                </date>
+                                            </datePicker>
+                                        </subviews>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="G8J-9j-SbB" firstAttribute="leading" secondItem="PVo-D5-TD5" secondAttribute="leading" id="0Mq-CQ-fXI"/>
+                                            <constraint firstAttribute="bottom" secondItem="G8J-9j-SbB" secondAttribute="bottom" id="ZRN-9q-kv9"/>
+                                            <constraint firstItem="G8J-9j-SbB" firstAttribute="top" secondItem="PVo-D5-TD5" secondAttribute="top" id="teJ-ix-ZLh"/>
+                                            <constraint firstAttribute="trailing" secondItem="G8J-9j-SbB" secondAttribute="trailing" id="xaK-2G-pQ3"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="0.74949852195945943" colorSpace="calibratedWhite"/>
@@ -290,7 +311,10 @@
                                     <constraint firstItem="fyY-aV-xhp" firstAttribute="top" secondItem="MRV-CY-v3j" secondAttribute="bottom" id="XGV-Zu-Cor"/>
                                     <constraint firstItem="MRV-CY-v3j" firstAttribute="width" secondItem="dYc-30-OOC" secondAttribute="width" multiplier="3:4" id="aGl-Ub-ikC"/>
                                     <constraint firstItem="MRV-CY-v3j" firstAttribute="height" secondItem="dYc-30-OOC" secondAttribute="height" id="bqK-zk-NP7"/>
+                                    <constraint firstItem="PVo-D5-TD5" firstAttribute="top" secondItem="MRV-CY-v3j" secondAttribute="bottom" id="d5k-Kr-hIH"/>
+                                    <constraint firstItem="PVo-D5-TD5" firstAttribute="leading" secondItem="fV4-Ex-kbg" secondAttribute="leading" id="dWw-I2-eS8"/>
                                     <constraint firstItem="24u-bm-gB7" firstAttribute="top" secondItem="MRV-CY-v3j" secondAttribute="bottom" id="ePm-cE-S8c"/>
+                                    <constraint firstAttribute="trailing" secondItem="PVo-D5-TD5" secondAttribute="trailing" id="kgl-Qm-Hk3"/>
                                     <constraint firstAttribute="bottom" secondItem="2eP-ed-cIg" secondAttribute="bottom" id="rer-Nf-rv5"/>
                                     <constraint firstAttribute="trailing" secondItem="dYc-30-OOC" secondAttribute="trailing" id="va0-kg-bBE"/>
                                     <constraint firstAttribute="trailing" secondItem="fyY-aV-xhp" secondAttribute="trailing" id="ycE-YO-lAY"/>
@@ -312,6 +336,8 @@
                         <outlet property="activityTypeArrowIndicator" destination="Vv3-3a-Bh1" id="9FB-Vn-gg7"/>
                         <outlet property="activityTypeTextLabel" destination="DoK-lw-a6d" id="avY-tg-fnh"/>
                         <outlet property="activityTypeView" destination="MRV-CY-v3j" id="OMH-9c-UWi"/>
+                        <outlet property="activtyDatePickerView" destination="PVo-D5-TD5" id="n2u-Sb-Xd3"/>
+                        <outlet property="actvitiyDatePicker" destination="G8J-9j-SbB" id="Y2e-Px-oCz"/>
                         <outlet property="dateTimeArrowIndicator" destination="qH0-Z4-AdL" id="jp3-Uh-4rr"/>
                         <outlet property="dateTimeTextLabel" destination="Mij-lu-Tnw" id="xVW-ed-FGq"/>
                         <outlet property="filterOptionsTableView" destination="24u-bm-gB7" id="Tdf-d3-5Ng"/>
