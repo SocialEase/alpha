@@ -51,7 +51,7 @@ class AppFlow: NSObject {
         let navController: UINavigationController = UINavigationController(rootViewController: viewController)
         navController.navigationItem.title = AppConstants.AppName
         
-        self.window!.rootViewController = navController
+        self.window!.rootViewController?.presentViewController(navController, animated: true, completion: nil)
         self.window!.makeKeyAndVisible()
     }
 

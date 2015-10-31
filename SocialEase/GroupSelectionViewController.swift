@@ -29,6 +29,7 @@ class GroupSelectionViewController: UIViewController {
         navigationItem.title = "Select Group"
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "New Group", style: UIBarButtonItemStyle.Plain, target: self, action: "onNewGroupTap")
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .Plain, target: self, action: "onCancel")
         
         groupsTableView.delegate = self
         groupsTableView.dataSource = self
@@ -53,6 +54,10 @@ class GroupSelectionViewController: UIViewController {
     func onNewGroupTap() {
         let viewController = GroupCreateViewController()
         navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    func onCancel() {
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
