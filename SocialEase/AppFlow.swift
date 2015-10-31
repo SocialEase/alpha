@@ -45,7 +45,7 @@ class AppFlow: NSObject {
     func presentGroupSelection() {
         let viewController = GroupSelectionViewController()
         viewController.completionCallback = { (group: UserGroup) -> () in
-            self.presentSuggestions(group)
+            self.pushSuggestions(group)
         }
         
         let navController: UINavigationController = UINavigationController(rootViewController: viewController)
@@ -55,15 +55,15 @@ class AppFlow: NSObject {
         self.window!.makeKeyAndVisible()
     }
 
-    func presentSuggestions(group: UserGroup?) {
-        if let rootViewControler = self.window.rootViewController as? UINavigationController {
+    func pushSuggestions(group: UserGroup?) {
+        if let navController = self.window.rootViewController?.presentedViewController as? UINavigationController {
             let suggestionsViewController = Storyboard.Suggestions.instantiateViewControllerWithIdentifier("SuggestionsViewController") as! SuggestionsViewController
 
             // We should assume that we have a group selected here
             // Not sure why the signature of this method accepts a optional
             suggestionsViewController.group = group!
 
-            rootViewControler.pushViewController(suggestionsViewController, animated: true)
+            navController.pushViewController(suggestionsViewController, animated: true)
         }
     }
 
