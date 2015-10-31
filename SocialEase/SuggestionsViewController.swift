@@ -212,7 +212,7 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
                     }
                 }
             }
-            AppFlow().presentHomePageViewController()
+            AppFlow().presentHomePageViewController(nil)
         }
     }
 

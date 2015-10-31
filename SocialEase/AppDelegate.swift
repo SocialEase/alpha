@@ -45,17 +45,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         if let planId = planId {
-            Plan.fetchPlanId(planId, withCompletion: { (planPfObject, error) -> () in
-                if let pfObject = planPfObject {
-                    print("Getting plan object")
-                    appFlow.presentPlanViewController(Plan(planObject: pfObject))
-                }
-            })
+            presentPlanViewUsingPlanId(planId)
         } else {
-            appFlow.presentHomePageViewController()
+            appFlow.presentHomePageViewController(nil)
         }
         
         return true
+    }
+    
+    func presentPlanViewUsingPlanId(planId: String) {
+        Plan.fetchPlanId(planId, withCompletion: { (planPfObject, error) -> () in
+            if let pfObject = planPfObject {
+                let plan = Plan(planObject: pfObject)
+                // TODO: amay to clean this up
+                plan.currentUserStatus = .Pending
+                AppFlow().presentHomePageViewController(plan)
+            }
+        })
     }
     
     func getPlanIdFromNotificationPayload(notificationPayload : NSDictionary) -> String? {
@@ -148,6 +154,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PFPush.handlePush(userInfo)
         if application.applicationState == UIApplicationState.Inactive {
             PFAnalytics.trackAppOpenedWithRemoteNotificationPayload(userInfo)
+        }
+        if let planId = getPlanIdFromNotificationPayload(userInfo) {
+            presentPlanViewUsingPlanId(planId)
         }
     }
     

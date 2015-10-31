@@ -64,6 +64,7 @@ class OtherPreferencesViewController: UIViewController, UITableViewDelegate, UIT
     
     
     @IBAction func onNextTap(sender: AnyObject) {
-         AppFlow.presentHomePageViewControllerUsingWindow(self.view.window!)
+        let appFlow = AppFlow()
+        appFlow.presentHomePageViewController(nil)
     }
 }

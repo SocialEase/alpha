@@ -44,8 +44,9 @@ class LoginViewController: UIViewController {
                 alert.addAction(defaultAction)
                 self.presentViewController(alert, animated: true, completion: nil)
             } else {
-                User.currentUser = user                
-                AppFlow.presentHomePageViewControllerUsingWindow(self.view.window!)
+                User.currentUser = user
+                let appFlow = AppFlow()
+                appFlow.presentHomePageViewController(nil)
             }
         }
     }

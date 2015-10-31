@@ -67,17 +67,16 @@ class AppFlow: NSObject {
         }
     }
 
-    func presentHomePageViewController() {
-        AppFlow.presentHomePageViewControllerUsingWindow(self.window!)
-    }
-    
-    class func presentHomePageViewControllerUsingWindow(window : UIWindow) {
+    func presentHomePageViewController(plan: Plan?) {
         if let homePageNavVC = Storyboard.Home.instantiateViewControllerWithIdentifier(Storyboard.HomePageNavVCIdentifier) as? UINavigationController {
             window.rootViewController = homePageNavVC
+            if let plan = plan {
+                self.presentPlanViewController(plan)
+            }
             window.makeKeyAndVisible()
         }
     }
-
+    
     func presentPlanViewController(plan: Plan) {
         if let rootViewControler = self.window.rootViewController as? UINavigationController, let planTabBarVC = Storyboard.Plan.instantiateViewControllerWithIdentifier(Storyboard.PlanTabedVCIdentifier) as? UITabBarController {
             if let tabViewControllers = planTabBarVC.viewControllers {
