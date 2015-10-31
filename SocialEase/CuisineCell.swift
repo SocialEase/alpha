@@ -39,7 +39,7 @@ class CuisineCell: UICollectionViewCell {
     func styleView() {
         cuisineNameLabel.textColor = UIColor.sea_primaryLabelColor()
         cuisineNameLabel.numberOfLines = 1;
-        cuisineNameLabel.minimumScaleFactor = 11;
+        cuisineNameLabel.minimumScaleFactor = 0.2;
         cuisineNameLabel.adjustsFontSizeToFitWidth = true;
         
         ViewTransformationUtils.convertViewToCircle(cuisineImageView, borderColor: UIColor.sea_primaryLabelColor(), borderWidth: 1)

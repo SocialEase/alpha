@@ -13,6 +13,7 @@ import Parse
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    var deviceTokenForPush: NSData? = nil
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // set prase api keys
@@ -40,8 +41,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         return true
     }
-    
-
     
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -95,9 +94,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-        let installation = PFInstallation.currentInstallation()
-        installation.setDeviceTokenFromData(deviceToken)
-        installation.saveInBackground()
+        deviceTokenForPush = deviceToken
+        
+        let currentInstallation = PFInstallation.currentInstallation()
+        currentInstallation.setDeviceTokenFromData(deviceToken)
+        currentInstallation.saveInBackground()
+    }
+    
+    func addUserToPushInstallation(user: PFUser?) {
+        if (deviceTokenForPush != nil && user != nil) {
+            let currentInstallation = PFInstallation.currentInstallation()
+            currentInstallation.setDeviceTokenFromData(deviceTokenForPush)
+            currentInstallation["user"] = user
+            currentInstallation.saveInBackground()
+        }        
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
@@ -113,6 +123,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if application.applicationState == UIApplicationState.Inactive {
             PFAnalytics.trackAppOpenedWithRemoteNotificationPayload(userInfo)
         }
+    }
+    
+    func logout() {
+        PFInstallation.currentInstallation().removeObjectForKey("user")
+        PFInstallation.currentInstallation().saveInBackground()
     }
 }
 

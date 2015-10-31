@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		043570041BDCCBE100B22D1B /* PlanPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043570031BDCCBE100B22D1B /* PlanPreviewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		043570061BDD613700B22D1B /* ViewTransformationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043570051BDD613700B22D1B /* ViewTransformationUtils.swift */; settings = {ASSET_TAGS = (); }; };
-		043570081BDDB99900B22D1B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 043570071BDDB99900B22D1B /* Parse.framework */; settings = {ASSET_TAGS = (); }; };
-		0435700A1BDDB9A200B22D1B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 043570091BDDB9A200B22D1B /* Bolts.framework */; settings = {ASSET_TAGS = (); }; };
+		043570041BDCCBE100B22D1B /* PlanPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043570031BDCCBE100B22D1B /* PlanPreviewCell.swift */; };
+		043570061BDD613700B22D1B /* ViewTransformationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043570051BDD613700B22D1B /* ViewTransformationUtils.swift */; };
+		043570081BDDB99900B22D1B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 043570071BDDB99900B22D1B /* Parse.framework */; };
+		0435700A1BDDB9A200B22D1B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 043570091BDDB9A200B22D1B /* Bolts.framework */; };
 		0435700C1BDDBA0000B22D1B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0435700B1BDDBA0000B22D1B /* AudioToolbox.framework */; };
 		0435700E1BDDBA1100B22D1B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0435700D1BDDBA1100B22D1B /* CoreGraphics.framework */; };
 		043570101BDDBA2400B22D1B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0435700F1BDDBA2400B22D1B /* CFNetwork.framework */; };
@@ -23,19 +23,19 @@
 		0435701E1BDDBA6C00B22D1B /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0435701D1BDDBA6C00B22D1B /* libsqlite3.tbd */; };
 		043570201BDDBA8000B22D1B /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0435701F1BDDBA8000B22D1B /* Accounts.framework */; };
 		043570221BDDBA8900B22D1B /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 043570211BDDBA8900B22D1B /* Social.framework */; };
-		04A578DA1BDB56870088858A /* OtherPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A578D91BDB56870088858A /* OtherPreference.swift */; settings = {ASSET_TAGS = (); }; };
-		04A578DE1BDBFAEE0088858A /* Cuisine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A578DD1BDBFAEE0088858A /* Cuisine.swift */; settings = {ASSET_TAGS = (); }; };
-		04A578E01BDBFB050088858A /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A578DF1BDBFB050088858A /* UserPreferences.swift */; settings = {ASSET_TAGS = (); }; };
-		04C0DEBF1BD9FF8500CE1ABF /* OtherPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C0DEBE1BD9FF8500CE1ABF /* OtherPreferencesViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		04C0DEC11BDA0C1F00CE1ABF /* PreferencesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C0DEC01BDA0C1F00CE1ABF /* PreferencesCell.swift */; settings = {ASSET_TAGS = (); }; };
-		04ECB76F1BD73EB300819BA4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04ECB76E1BD73EB300819BA4 /* Login.storyboard */; settings = {ASSET_TAGS = (); }; };
-		04ECB7711BD73F3D00819BA4 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECB7701BD73F3D00819BA4 /* RegisterViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		04ECB7761BD73F5500819BA4 /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECB7721BD73F5500819BA4 /* GroupsViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		04ECB7771BD73F5500819BA4 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECB7731BD73F5500819BA4 /* WelcomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		04ECB7781BD73F5500819BA4 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECB7741BD73F5500819BA4 /* CategoriesViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		04ECB7791BD73F5500819BA4 /* PreferencesInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECB7751BD73F5500819BA4 /* PreferencesInfoViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		04ECB77B1BD73FB500819BA4 /* CuisineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECB77A1BD73FB500819BA4 /* CuisineCell.swift */; settings = {ASSET_TAGS = (); }; };
-		59EBD3691BD76966002CB63B /* socialease-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 59EBD3681BD76966002CB63B /* socialease-logo.png */; settings = {ASSET_TAGS = (); }; };
+		04A578DA1BDB56870088858A /* OtherPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A578D91BDB56870088858A /* OtherPreference.swift */; };
+		04A578DE1BDBFAEE0088858A /* Cuisine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A578DD1BDBFAEE0088858A /* Cuisine.swift */; };
+		04A578E01BDBFB050088858A /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A578DF1BDBFB050088858A /* UserPreferences.swift */; };
+		04C0DEBF1BD9FF8500CE1ABF /* OtherPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C0DEBE1BD9FF8500CE1ABF /* OtherPreferencesViewController.swift */; };
+		04C0DEC11BDA0C1F00CE1ABF /* PreferencesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C0DEC01BDA0C1F00CE1ABF /* PreferencesCell.swift */; };
+		04ECB76F1BD73EB300819BA4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04ECB76E1BD73EB300819BA4 /* Login.storyboard */; };
+		04ECB7711BD73F3D00819BA4 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECB7701BD73F3D00819BA4 /* RegisterViewController.swift */; };
+		04ECB7761BD73F5500819BA4 /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECB7721BD73F5500819BA4 /* GroupsViewController.swift */; };
+		04ECB7771BD73F5500819BA4 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECB7731BD73F5500819BA4 /* WelcomeViewController.swift */; };
+		04ECB7781BD73F5500819BA4 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECB7741BD73F5500819BA4 /* CategoriesViewController.swift */; };
+		04ECB7791BD73F5500819BA4 /* PreferencesInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECB7751BD73F5500819BA4 /* PreferencesInfoViewController.swift */; };
+		04ECB77B1BD73FB500819BA4 /* CuisineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECB77A1BD73FB500819BA4 /* CuisineCell.swift */; };
+		59EBD3691BD76966002CB63B /* socialease-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 59EBD3681BD76966002CB63B /* socialease-logo.png */; };
 		59F0FA011BD242980041A149 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F0FA001BD242980041A149 /* AppDelegate.swift */; };
 		59F0FA081BD242980041A149 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59F0FA071BD242980041A149 /* Assets.xcassets */; };
 		59F0FA0B1BD242980041A149 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59F0FA091BD242980041A149 /* LaunchScreen.storyboard */; };
@@ -716,7 +716,7 @@
 			baseConfigurationReference = 0D8E4A11F2A9FD1D88A715F1 /* Pods-SocialEase.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: umantripragada@me.com (35PZ6NSLL4)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Uday Mantripragada (FZFYCLC8ZT)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -734,7 +734,7 @@
 			baseConfigurationReference = 990E3D9A56F0F354ACAE3A3C /* Pods-SocialEase.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: umantripragada@me.com (35PZ6NSLL4)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Uday Mantripragada (FZFYCLC8ZT)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
