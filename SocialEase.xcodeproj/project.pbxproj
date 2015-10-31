@@ -61,6 +61,7 @@
 		AC03A72D1BE0906B00924488 /* UserGroupUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC03A72C1BE0906B00924488 /* UserGroupUser.swift */; settings = {ASSET_TAGS = (); }; };
 		AC03A72F1BE091D200924488 /* UserGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC03A72E1BE091D200924488 /* UserGroup.swift */; settings = {ASSET_TAGS = (); }; };
 		AC230E361BE26FBE00629C9A /* UsersPlanActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC230E351BE26FBE00629C9A /* UsersPlanActivity.swift */; settings = {ASSET_TAGS = (); }; };
+		AC230E381BE5217600629C9A /* enso.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC230E371BE5217600629C9A /* enso.ttf */; settings = {ASSET_TAGS = (); }; };
 		AC30AF9A1BDA903C002A1A67 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC30AF991BDA903C002A1A67 /* Home.storyboard */; settings = {ASSET_TAGS = (); }; };
 		AC3114B01BD8981400ED6E80 /* SuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3114AF1BD8981400ED6E80 /* SuggestionsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		AC3114B41BD8983300ED6E80 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3114B21BD8983300ED6E80 /* DateUtils.swift */; settings = {ASSET_TAGS = (); }; };
@@ -155,6 +156,7 @@
 		AC03A72C1BE0906B00924488 /* UserGroupUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserGroupUser.swift; path = Models/UserGroupUser.swift; sourceTree = "<group>"; };
 		AC03A72E1BE091D200924488 /* UserGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserGroup.swift; path = Models/UserGroup.swift; sourceTree = "<group>"; };
 		AC230E351BE26FBE00629C9A /* UsersPlanActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UsersPlanActivity.swift; path = Models/UsersPlanActivity.swift; sourceTree = "<group>"; };
+		AC230E371BE5217600629C9A /* enso.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = enso.ttf; sourceTree = "<group>"; };
 		AC30AF991BDA903C002A1A67 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Home.storyboard; path = Storyboards/Home.storyboard; sourceTree = "<group>"; };
 		AC3114AF1BD8981400ED6E80 /* SuggestionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionsViewController.swift; sourceTree = "<group>"; };
 		AC3114B21BD8983300ED6E80 /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateUtils.swift; path = Utilities/DateUtils.swift; sourceTree = "<group>"; };
@@ -381,6 +383,7 @@
 		AC3114BE1BD898CE00ED6E80 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AC230E371BE5217600629C9A /* enso.ttf */,
 				ACEB7CB91BDB365600B1A482 /* socialease.ttf */,
 			);
 			name = "Supporting Files";
@@ -483,6 +486,7 @@
 				59F321621BD3099C005AB36C /* ViewController.xib in Resources */,
 				59F3218D1BD49A01005AB36C /* UserCell.xib in Resources */,
 				ACEB7CBA1BDB365600B1A482 /* socialease.ttf in Resources */,
+				AC230E381BE5217600629C9A /* enso.ttf in Resources */,
 				59F321851BD486DF005AB36C /* GroupCreateViewController.xib in Resources */,
 				BDEF38201BE1B96600CA6A56 /* BusinessDetail.storyboard in Resources */,
 				AC3114C21BD8997F00ED6E80 /* Suggestions.storyboard in Resources */,

@@ -231,7 +231,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="375" height="51"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1xR-WL-6b1" id="C8P-Td-idQ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lunch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOO-9j-EjJ">

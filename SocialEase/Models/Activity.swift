@@ -17,7 +17,6 @@ enum UserActivityVote: Int {
     case Like = 1
 }
 
-
 class Activity: NSObject, MKAnnotation {
 
     // MARK: - Properties
@@ -158,8 +157,22 @@ class Activity: NSObject, MKAnnotation {
         }
     }
 
-    class func getSuggestedActivitiesForGroup(group: UserGroup, withCompletion completion: (([Activity]?, NSError?) -> ())?) {
-        PFCloud.callFunctionInBackground("user_group__get_activity_recommendations", withParameters: ["groupId": 123, "activityType": 2] ) { (response: AnyObject?, error: NSError?) -> Void in
+    class func getSuggestedActivitiesForGroup(group: UserGroup, andActivityType type: String?, onDateTime dateTime: NSDate?, withCompletion completion: (([Activity]?, NSError?) -> ())?) {
+
+        var searchParameters = [String: AnyObject]()
+        searchParameters["groupId"] = group.groupId!
+
+        // add activity type parameter
+        if let type = type {
+            searchParameters["activityType"] = type
+        }
+
+        // add activity date time parameter
+        if let dateTime = dateTime {
+            searchParameters["dateTime"] = dateTime
+        }
+
+        PFCloud.callFunctionInBackground("user_group__get_activity_recommendations", withParameters: searchParameters) { (response: AnyObject?, error: NSError?) -> Void in
             var activityObjects: [Activity]?
             if let response = response as? [[String : AnyObject]] {
                 activityObjects = response.map { Activity(activityObject: PFObject(className: ObjectName, dictionary: $0)) }

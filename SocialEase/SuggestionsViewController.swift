@@ -54,7 +54,6 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
                 self.dateTimeTextLabel.text = DateUtils.getSystemStyleDisplayDate(self.actvitiyDatePicker.date, dateStyle: .MediumStyle)
                 self.activtyDatePickerView.alpha = self.showTimeDateFilter ? 1 : 0
                 self.updateFilterDisplay(self.dateTimeTextLabel, arrowLabel: self.dateTimeArrowIndicator, filterState: self.showTimeDateFilter)
-                print(self.actvitiyDatePicker.date)
                 self.view.layoutIfNeeded()
             }
         }
@@ -62,12 +61,6 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
 
     private var dateFilterList = [SuggestionsFilter]()
     private var activityTypeFilterList = [SuggestionsFilter]()
-    
-    var activity : SEAActivity? {
-        didSet {
-            
-        }
-    }
 
     var suggestedActivities: [(activity: Activity, selected: Bool)]? {
         didSet {
@@ -105,12 +98,12 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
         static let NothingSelectedText = "Nothing selected!"
     }
 
+    private var activityTypeSetByUser: String?
+    private var activityDateTimeSetByUser: NSDate?
+
     // MARK: - Lifecyle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // hard coded for now
-        groupId = 12345
 
         // Do any additional setup after loading the view, typically from a nib.
         setupTableViews()
@@ -118,8 +111,9 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
         initDateFilter()
         initActivityTypeFilter()
         setupFilterViews()
-        fetchSuggestions()
+        fetchSuggestionsWithActivityType(nil, forDateTime: nil)
 
+        actvitiyDatePicker.minimumDate = NSDate()
         dateTimeTextLabel.text = DateUtils.getSystemStyleDisplayDate(actvitiyDatePicker.date, dateStyle: .MediumStyle)
     }
 
@@ -147,15 +141,17 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        if tableView == filterOptionsTableView {
+        if tableView == filterOptionsTableView { // select action on cell for filter table
             for i in 0 ..< filterTableViewData.count {
                 filterTableViewData[i].isSelected = false
             }
+
             filterTableViewData[indexPath.row].isSelected = true
             filterTextLabel.text = filterTableViewData[indexPath.row].displayName
+            activityTypeSetByUser = filterTableViewData[indexPath.row].displayName
 
             showActivityTypeFilter ? activityTypeViewTapped(nil) : timeViewTapped(nil)
-        } else {
+        } else {  // select action on cell for suggestions table (as that is the only other table on this view)
             suggestedActivities?[indexPath.row].selected = !(suggestedActivities?[indexPath.row].selected)!
             tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .None)
             
@@ -181,7 +177,7 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
     @IBAction func activityTypeViewTapped(sender: UITapGestureRecognizer?) {
         showTimeDateFilter = false
         showActivityTypeFilter = !showActivityTypeFilter
-        !showActivityTypeFilter && !showTimeDateFilter ? fetchSuggestions() : ()
+        !showActivityTypeFilter && !showTimeDateFilter ? fetchSuggestionsWithActivityType(activityTypeTextLabel.text, forDateTime: actvitiyDatePicker.date) : ()
     }
 
     @IBAction func sendBottonTapped(sender: UITapGestureRecognizer) {
@@ -240,10 +236,10 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
         activityTypeFilterList = DisplayActivityTypeFilter.getActivityTypeFilterList()
     }
 
-    private func fetchSuggestions() {
+    private func fetchSuggestionsWithActivityType(activityType: String?, forDateTime dateTime: NSDate?) {
         JTProgressHUD.showWithStyle(JTProgressHUDStyle.Gradient)
 
-        Activity.getSuggestedActivitiesForGroup(group) { (suggestedActivities: [Activity]?, error: NSError?) -> () in
+        Activity.getSuggestedActivitiesForGroup(group, andActivityType: activityType, onDateTime: dateTime) { (suggestedActivities: [Activity]?, error: NSError?) -> () in
             JTProgressHUD.hide()
             if let suggestedActivities = suggestedActivities {
                 self.suggestedActivities = suggestedActivities.map { ($0, false) }

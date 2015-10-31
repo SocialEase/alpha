@@ -13,7 +13,6 @@ class LoginViewController: UIViewController {
     static var completionCallback: (() -> ())?
     
     @IBOutlet weak var phoneNumberTextField: UITextField!
-    @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var registerNewUserButton: UIButton!
     
@@ -24,7 +23,6 @@ class LoginViewController: UIViewController {
     
     func styleView() {
         self.view.backgroundColor = UIColor.sea_primaryColor()
-        phoneLabel.textColor = UIColor.sea_primaryLightTextColor()
         
         loginButton.setTitleColor(UIColor.sea_unselectedButtonColor(), forState: UIControlState.Normal)
         loginButton.setTitleColor(UIColor.sea_selectedButtonColor(), forState: UIControlState.Highlighted)
@@ -60,6 +58,9 @@ class LoginViewController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func viewTapped(sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
     func openGroupsController() {
         nextAction()
     }

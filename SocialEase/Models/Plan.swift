@@ -9,6 +9,25 @@
 import UIKit
 import Parse
 
+enum PlanType: Int {
+    case Brunch = 1, Lunch, Dinner, Coffee, HappyHour
+
+    func getTypeString() -> String {
+        switch self {
+        case .Brunch:
+            return "Brunch"
+        case .Lunch:
+            return "Lunch"
+        case .Dinner:
+            return "Dinner"
+        case .Coffee:
+            return "Coffee"
+        case .HappyHour:
+            return "Happy Hour"
+        }
+    }
+}
+
 class Plan: NSObject {
 
     // MARK: - Properties
