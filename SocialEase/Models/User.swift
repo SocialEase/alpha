@@ -84,7 +84,7 @@ class User : NSObject {
         set(user) {
             _currentUser = user
             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-            appDelegate.addUserToPushInstallation(user?.pfUser)
+            appDelegate.addUserToPushInstallation(user?.pfUser)            
         }
     }
 

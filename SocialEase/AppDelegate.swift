@@ -108,7 +108,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if (deviceTokenForPush != nil && user != nil) {
             let currentInstallation = PFInstallation.currentInstallation()
             currentInstallation.setDeviceTokenFromData(deviceTokenForPush)
-            currentInstallation["user"] = user
+            currentInstallation["userId"] = user!.objectId!
             currentInstallation.saveInBackground()
         }
     }

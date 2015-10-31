@@ -202,6 +202,7 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
                             UsersPlanActivity.createPlanAndActivitiesForGroup(self.group, withPlan: plan, andActivities: activities, byOrganizer: PFUser.currentUser()!) { (success: Bool, error: NSError?) -> () in
                                 if success {
                                     // 4. @todo: Uday to add implementation for push notifications here
+                                    self.sendPushNotifications(plan, users: self.group.users!)
                                     print("Saved all the data on Parse... Ready for PUSH notifications")
                                 } else {
                                     print(error?.localizedDescription)
@@ -215,6 +216,21 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
         }
     }
 
+    private func sendPushNotifications(plan: Plan?, users: [User]) {
+        let pfUserIds = users.map{ $0.pfUser!.objectId! }
+            .map{"'\($0)'"}
+            .joinWithSeparator(",")
+        let predicate = NSPredicate(format: "userId in {\(pfUserIds)}")
+        let query = PFQuery(className: "_Installation", predicate: predicate)
+        
+        var data = [NSObject : AnyObject]()
+        data["alert"] = "Hey guys"
+        PFPush.sendPushDataToQueryInBackground(query, withData: data) { (success, error) -> Void in
+            print(error?.localizedDescription)
+            print(success)
+        }
+    }
+    
     // MARK: - Internal helper methods
     private func updateFilterDisplay(filterTextLabel: UILabel, arrowLabel: UILabel, filterState: Bool) {
         if filterState {
