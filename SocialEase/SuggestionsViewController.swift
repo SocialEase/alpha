@@ -222,9 +222,14 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
             .joinWithSeparator(",")
         let predicate = NSPredicate(format: "userId in {\(pfUserIds)}")
         let query = PFQuery(className: "_Installation", predicate: predicate)
+     
+        let currentUserName = User.currentUser!.name!
+        let planName = plan!.name!
         
         var data = [NSObject : AnyObject]()
-        data["alert"] = "Hey guys"
+        data["alert"] = "Hey, \(currentUserName) invited you for \(planName)"
+        data["planId"] = plan!.pfObject.objectId!
+        
         PFPush.sendPushDataToQueryInBackground(query, withData: data) { (success, error) -> Void in
             print(error?.localizedDescription)
             print(success)

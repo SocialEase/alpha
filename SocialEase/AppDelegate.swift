@@ -30,16 +30,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = UIColor.sea_primaryColor()
         UINavigationBar.appearance().tintColor = UIColor.sea_primaryLightTextColor()
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.sea_primaryLightTextColor()]
-
+        
         // check user session here, if the session exists then send user directly to landing page else to register page
         let appFlow = AppFlow()
-        if let _ = User.currentUser {
-            appFlow.presentHomePageViewController()
-        } else {
+        if (User.currentUser == nil) {
             appFlow.presentLogin()
+            return true
+        }
+        
+        // Extract the notification data
+        var planId : String?
+        if let notificationPayload = launchOptions?[UIApplicationLaunchOptionsRemoteNotificationKey] as? NSDictionary {
+            planId = getPlanIdFromNotificationPayload(notificationPayload)
         }
 
+        if let planId = planId {
+            Plan.fetchPlanId(planId, withCompletion: { (planPfObject, error) -> () in
+                if let pfObject = planPfObject {
+                    print("Getting plan object")
+                    appFlow.presentPlanViewController(Plan(planObject: pfObject))
+                }
+            })
+        } else {
+            appFlow.presentHomePageViewController()
+        }
+        
         return true
+    }
+    
+    func getPlanIdFromNotificationPayload(notificationPayload : NSDictionary) -> String? {
+        let planId = notificationPayload["planId"] as? NSString
+        return (planId != nil)
+            ? String(planId!)
+            : nil
     }
     
     func applicationWillResignActive(application: UIApplication) {
