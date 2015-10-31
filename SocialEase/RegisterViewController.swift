@@ -10,24 +10,19 @@ import UIKit
 import Parse
 
 class RegisterViewController: UIViewController {
-    
+
     @IBOutlet weak var phoneNumberTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
-    
-    @IBOutlet weak var phoneLabel: UILabel!
-    @IBOutlet weak var nameLebel: UILabel!
     @IBOutlet weak var registerButton: UIButton!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         styleView()
     }
-    
+
     func styleView() {
         self.view.backgroundColor = UIColor.sea_primaryColor()
-        phoneLabel.textColor = UIColor.sea_lightLabelColor()
-        nameLebel.textColor = UIColor.sea_lightLabelColor()
-        
+
         registerButton.setTitleColor(UIColor.sea_unselectedButtonColor(), forState: UIControlState.Normal)
         registerButton.setTitleColor(UIColor.sea_selectedButtonColor(), forState: UIControlState.Highlighted)        
     }
@@ -51,6 +46,14 @@ class RegisterViewController: UIViewController {
                 self.openCategoriesViewController()
             }
         }
+    }
+
+    @IBAction func goBackButtonTapped(sender: UIButton) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    @IBAction func viewTapped(sender: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
 
     func openCategoriesViewController() {
