@@ -66,9 +66,10 @@ class UserActivity: NSObject {
         object = userActivityObject
     }
 
-    convenience init(userId: String, activity: Activity) {
+    convenience init(userId: String, planId: String, activity: Activity) {
         let pfObject = PFObject(className: UserActivity.ObjectName)
         pfObject[Fields.UserId] = userId
+        pfObject[Fields.PlanId] = planId
         pfObject[Fields.ActivityId] = activity.id
         pfObject[Fields.Activity] = activity.pfObject
         pfObject[Fields.Vote] = UserActivityVote.None.rawValue

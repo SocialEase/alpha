@@ -129,6 +129,7 @@ class PlanInformationViewController: UIViewController, PlanViewControllerContext
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
     }
+
     // MARK: - Helper functions
     private func updateUI() {
         if plan.currentUserStatus == .Pending {
@@ -157,7 +158,7 @@ class PlanInformationViewController: UIViewController, PlanViewControllerContext
             if createUserActitivities {
                 Activity.getActivitiesForObjectIdList(plan.activityIds!) { (activities: [Activity]?, error: NSError?) -> () in
                     if let activities = activities {
-                        self.userActivities = activities.map { UserActivity(userId: (PFUser.currentUser()?.objectId!)!, activity: $0) }
+                        self.userActivities = activities.map { UserActivity(userId: (PFUser.currentUser()?.objectId!)!, planId: self.plan.id!, activity: $0) }
                     }
                 }
             } else {
