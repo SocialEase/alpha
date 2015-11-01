@@ -81,9 +81,7 @@ class UserActivity: NSObject {
         if let userActivities = userActivities {
             // save parse objects
             PFObject.saveAllInBackground(userActivities.map { $0.pfObject } ) { (success: Bool, error: NSError?) -> Void in
-                if success {
-                    print("Check Prase now!")
-                } else {
+                if let _ = error {
                     print(error?.localizedDescription)
                 }
             }
@@ -96,7 +94,7 @@ class UserActivity: NSObject {
 
         // predicate
         let predicate = NSPredicate(format: "\(Fields.UserId) = '\(user.objectId!)' AND \(Fields.PlanId) = '\(plan.id!)'")
-        print(predicate)
+
         // prepare query
         let userActivityQuery = PFQuery(className: ObjectName, predicate: predicate)
         userActivityQuery.cachePolicy = .NetworkElseCache // @todo: uncomment the line when all the fields have been finalized

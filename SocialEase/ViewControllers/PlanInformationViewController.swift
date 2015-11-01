@@ -77,12 +77,10 @@ class PlanInformationViewController: UIViewController, PlanViewControllerContext
         // Do any additional setup after loading the view.
         updateUI()
 
-        // get plan users
-        plan.getPlanUsersWithCompletion { (users: [User]?, error: NSError?) -> () in
-            if let users = users {
-                self.planOrganizer = users[0]
-            }
-        }
+        // @todo: Get plan users and show them in view
+        // plan.getPlanUsersWithCompletion { (users: [User]?, error: NSError?) -> () in
+        //
+        // }
 
         // setup organizers information
         plan.getPlanOganizerWithCompletion{ (user: User?, error: NSError?) -> () in
@@ -91,7 +89,6 @@ class PlanInformationViewController: UIViewController, PlanViewControllerContext
     }
 
     override func viewWillDisappear(animated: Bool) {
-        print("Time to save stuff")
         UserActivity.saveObjectsInBackground(userActivities, withCompletion: nil)
     }
 

@@ -67,17 +67,23 @@ class AppFlow: NSObject {
         }
     }
 
-    func presentHomePageViewController(plan: Plan?) {
+    func presentPlanViewControllerByFetchingPlanId(planId: String) {
+        UserPlans.fetchCurrentUserPlanForPlanId(planId, usingCache: false) { (plan: Plan?, error: NSError?) -> () in
+            self.presentHomePageViewController()
+            if let plan = plan {
+                self.pushPlanViewController(plan)
+            }
+        }
+    }
+
+    func presentHomePageViewController() {
         if let homePageNavVC = Storyboard.Home.instantiateViewControllerWithIdentifier(Storyboard.HomePageNavVCIdentifier) as? UINavigationController {
             window.rootViewController = homePageNavVC
-            if let plan = plan {
-                self.presentPlanViewController(plan)
-            }
             window.makeKeyAndVisible()
         }
     }
     
-    func presentPlanViewController(plan: Plan) {
+    func pushPlanViewController(plan: Plan) {
         if let rootViewControler = self.window.rootViewController as? UINavigationController, let planTabBarVC = Storyboard.Plan.instantiateViewControllerWithIdentifier(Storyboard.PlanTabedVCIdentifier) as? UITabBarController {
             if let tabViewControllers = planTabBarVC.viewControllers {
                 for vc in tabViewControllers {

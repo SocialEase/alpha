@@ -212,7 +212,8 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
                     }
                 }
             }
-            AppFlow().presentHomePageViewController(nil)
+
+            dismissViewControllerAnimated(true, completion: nil)
         }
     }
 
@@ -231,8 +232,7 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
         data["planId"] = plan!.pfObject.objectId!
         
         PFPush.sendPushDataToQueryInBackground(query, withData: data) { (success, error) -> Void in
-            print(error?.localizedDescription)
-            print(success)
+
         }
     }
     

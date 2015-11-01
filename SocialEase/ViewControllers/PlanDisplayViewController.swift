@@ -52,7 +52,6 @@ class PlanDisplayViewController: UIViewController, UITableViewDelegate, UITableV
     }
 
     @IBAction func planDetailsTapped(sender: UIButton) {
-        print("planDetailsTapped")
         selectedPlanIndex = 0
         presentPlanTabbarControllerForSelectedPlan()
     }
@@ -70,10 +69,10 @@ class PlanDisplayViewController: UIViewController, UITableViewDelegate, UITableV
     private func presentPlanTabbarControllerForSelectedPlan() {
         if selectedPlanIndex != nil && selectedPlanIndex! < userPlanList?.count {
             let appFlow = AppFlow()
-            appFlow.presentPlanViewController(userPlanList![selectedPlanIndex!])
+            appFlow.pushPlanViewController(userPlanList![selectedPlanIndex!])
         }
     }
-    
+
     // MARK: - table view delegates
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return userPlanList?.count ?? 0

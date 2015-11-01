@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             appFlow.presentLogin()
             return true
         }
-        
+
         // Extract the notification data
         var planId : String?
         if let notificationPayload = launchOptions?[UIApplicationLaunchOptionsRemoteNotificationKey] as? NSDictionary {
@@ -47,23 +47,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         if let planId = planId {
-            presentPlanViewUsingPlanId(planId)
+            appFlow.presentPlanViewControllerByFetchingPlanId(planId)
         } else {
-            appFlow.presentHomePageViewController(nil)
+            appFlow.presentHomePageViewController()
         }
         
         return true
-    }
-    
-    func presentPlanViewUsingPlanId(planId: String) {
-        Plan.fetchPlanId(planId, withCompletion: { (planPfObject, error) -> () in
-            if let pfObject = planPfObject {
-                let plan = Plan(planObject: pfObject)
-                // TODO: amay to clean this up
-                plan.currentUserStatus = .Pending
-                AppFlow().presentHomePageViewController(plan)
-            }
-        })
     }
     
     func getPlanIdFromNotificationPayload(notificationPayload : NSDictionary) -> String? {
@@ -158,7 +147,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             PFAnalytics.trackAppOpenedWithRemoteNotificationPayload(userInfo)
         }
         if let planId = getPlanIdFromNotificationPayload(userInfo) {
-            presentPlanViewUsingPlanId(planId)
+            let appFlow = AppFlow()
+            appFlow.presentPlanViewControllerByFetchingPlanId(planId)
         }
     }
     

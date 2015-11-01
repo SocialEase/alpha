@@ -46,7 +46,7 @@ class LoginViewController: UIViewController {
             } else {
                 User.currentUser = user
                 let appFlow = AppFlow()
-                appFlow.presentHomePageViewController(nil)
+                appFlow.presentHomePageViewController()
             }
         }
     }
