@@ -13,7 +13,7 @@ class UserGroup: NSObject {
     // MARK: - Properties
     static let ObjectName = "Group"
     struct Fields {
-        static let OjbectId = "objectId"
+        static let ObjectId = "objectId"
         static let Name = "groupName"
     }
 

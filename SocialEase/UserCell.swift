@@ -21,6 +21,11 @@ class UserCell: UICollectionViewCell {
     
     weak var delegate: UserCellDelegate?
     
+    let (unselectedBorderColor, selectedBorderColor) = (UIColor.sea_primaryLabelColor(), UIColor.sea_primaryColor())
+    let (unselectedOverlayColor, selectedOverlayColor) = (UIColor.sea_primaryLightTextColor(), UIColor.clearColor())
+    let (unselectedLabelColor, selectedLabelColor) = (UIColor.sea_secondaryHintColor(), UIColor.sea_primaryColor())
+    let (unselectedBorderWidth, selectedBorderWidth) = (1, 10)
+    
     var cellSelected = false
     
     var user: User! {
@@ -43,18 +48,20 @@ class UserCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        nameLabel.textColor = UIColor.sea_secondaryHintColor()
+        nameLabel.textColor = unselectedLabelColor
         nameLabel.font = UIFont.boldSystemFontOfSize(17)
         
-        ViewTransformationUtils.convertViewToCircle(imageView, borderColor: UIColor.sea_primaryLabelColor(), borderWidth: 1)
+        ViewTransformationUtils.convertViewToCircle(imageView, borderColor: unselectedBorderColor, borderWidth: unselectedBorderWidth)
         
         imageView.contentMode = UIViewContentMode.ScaleAspectFill
         
         let imageTap = UITapGestureRecognizer(target: self, action: "onImageTap:")
         imageTap.numberOfTapsRequired = 1
         overlayView.addGestureRecognizer(imageTap)
+        overlayView.alpha = 0.25
         overlayView.layer.cornerRadius = imageView.layer.frame.width / 2
         overlayView.layer.masksToBounds = true
+        overlayView.backgroundColor = unselectedOverlayColor
     }
     
     func onImageTap(gestureRecognizer: UITapGestureRecognizer) {
@@ -63,7 +70,10 @@ class UserCell: UICollectionViewCell {
     }
     
     func showTappedStateForCell() {
-        let endColor = cellSelected ? UIColor.sea_secondarySelectedColor() : UIColor.clearColor()
+        let endOverlayColor = cellSelected ? selectedOverlayColor : unselectedOverlayColor
+        let endBorderColor = cellSelected ? selectedBorderColor : unselectedBorderColor
+        let endBorderWidth = cellSelected ? selectedBorderWidth : unselectedBorderWidth
+        let endLabelColor = cellSelected ? selectedLabelColor : unselectedLabelColor
 
         if let delegate = delegate {
             if cellSelected {
@@ -74,7 +84,10 @@ class UserCell: UICollectionViewCell {
         }
         
         UIView.animateWithDuration(0.15, animations: {
-            self.overlayView.backgroundColor = endColor
+            self.overlayView.backgroundColor = endOverlayColor
+            self.nameLabel.textColor = endLabelColor
+            self.imageView.layer.borderColor = endBorderColor.CGColor
+            self.imageView.layer.borderWidth = CGFloat(endBorderWidth)
             self.imageView.transform = CGAffineTransformMakeScale(0.75, 0.75)
             self.overlayView.transform = CGAffineTransformMakeScale(0.75, 0.75)
             }, completion: { (finished) in

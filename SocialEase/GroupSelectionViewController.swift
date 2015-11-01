@@ -91,4 +91,30 @@ extension GroupSelectionViewController: UITableViewDelegate, UITableViewDataSour
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         nextAction(groups[indexPath.row])
     }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        let modifyAction = UITableViewRowAction(style: .Default, title: "Delete") { (rowAction: UITableViewRowAction, indexPath: NSIndexPath) -> Void in
+            
+            let groupToDelete = self.groups[indexPath.row]
+            
+            JTProgressHUD.show()
+            UserGroupUser.deleteGroupForUser(User.currentUser!.pfUser!, groupId: groupToDelete.groupId!, completion: { (error) -> Void in
+                JTProgressHUD.hide()
+            })
+            
+            self.groups.removeAtIndex(indexPath.row)
+        }
+        modifyAction.backgroundColor = UIColor.sea_primaryHighlightColor()
+        return [modifyAction]
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        }
+    }
 }
