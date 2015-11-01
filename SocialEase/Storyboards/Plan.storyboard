@@ -27,7 +27,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k4u-vp-jDh">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k4u-vp-jDh" userLabel="Enter Chat View">
                                 <rect key="frame" x="0.0" y="501" width="600" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dug-cB-2mT">
@@ -63,7 +63,7 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatFriendCell" rowHeight="135" id="igc-p6-NNO" customClass="ChatFriendCell" customModule="SocialEase" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChatFriendCell" rowHeight="135" id="igc-p6-NNO" customClass="ChatFriendCell" customModule="SocialEase" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="135"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="igc-p6-NNO" id="tql-RI-6AX">
@@ -126,7 +126,7 @@
                                             <outlet property="userName" destination="oH6-Yd-NtS" id="8vl-dM-oXe"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatCurrentUserCell" rowHeight="106" id="u2Z-o1-y4O" customClass="ChatCurrentUserCell" customModule="SocialEase" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChatCurrentUserCell" rowHeight="106" id="u2Z-o1-y4O" customClass="ChatCurrentUserCell" customModule="SocialEase" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="163" width="600" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u2Z-o1-y4O" id="buK-DG-rHN">

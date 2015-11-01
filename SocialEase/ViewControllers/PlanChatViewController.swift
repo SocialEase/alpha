@@ -23,17 +23,17 @@ class PlanChatViewController: UIViewController, PlanViewControllerContext, UITab
         }
         set(newValue) {
             _plan = newValue
-            ChatEntry.getChatEntriesForPlan(plan.pfObject.objectId!, usersInPlan: _plan.users!) { (chatEntries, error) -> () in
-                if (chatEntries != nil) {
-                    self.chatEntries = chatEntries
-                } else {
-                    print("Error getting chat entries for plan")
-                }
-            }
+            updateChatsFromBackend()
         }
     }
     
-    var chatEntries: [ChatEntry]?
+    var chatEntries: [ChatEntry]? {
+        didSet {
+            onNewChats()
+        }
+    }
+    
+    var timer: NSTimer?
     
     // MARK: - Lifecylce methods
     override func viewDidLoad() {
@@ -47,11 +47,39 @@ class PlanChatViewController: UIViewController, PlanViewControllerContext, UITab
         tableView.estimatedRowHeight = 120
         tableView.rowHeight = UITableViewAutomaticDimension
         
+        // kick off timer to refresh chats periodically
+        // TODO: use push notifications to get chats
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "onTimer", userInfo: nil, repeats: true)
+        
         // observer for keyboard pop
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         
         enterChatTextField.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
-        takeToBottomOfTableView()
+        onNewChats()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        onNewChats()
+    }
+    
+    func updateChatsFromBackend() {
+        ChatEntry.getChatEntriesForPlan(plan.pfObject.objectId!, usersInPlan: _plan.users!) { (chatEntries, error) -> () in
+            if (chatEntries != nil) {
+                self.chatEntries = chatEntries
+            } else {
+                print("Error getting chat entries for plan")
+            }
+        }
+    }
+
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(true)
+        // stop timer
+        if (timer != nil) {
+            timer!.invalidate()
+            timer = nil
+        }
     }
     
     func styleSendButton() {
@@ -99,7 +127,7 @@ class PlanChatViewController: UIViewController, PlanViewControllerContext, UITab
     func takeToBottomOfTableView() {
         let chatEntriesCount = chatEntries?.count ?? 0
         if (chatEntriesCount > 0) {
-            tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: chatEntries!.count - 1, inSection: 0), atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
+            tableView?.scrollToRowAtIndexPath(NSIndexPath(forRow: chatEntries!.count - 1, inSection: 0), atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
         }
     }    
     
@@ -113,12 +141,22 @@ class PlanChatViewController: UIViewController, PlanViewControllerContext, UITab
         chatEntry.saveToParseInBackground()
         
         self.chatEntries?.append(chatEntry)
-        self.tableView.reloadData()
+        onNewChats()
         
         enterTextViewBottomConstraint.constant = 0
         enterChatTextField.resignFirstResponder()
         enterChatTextField.text = nil
         
         takeToBottomOfTableView()        
+    }
+    
+    
+    func onTimer() {
+        updateChatsFromBackend()
+    }
+    
+    func onNewChats() {
+        self.tableView?.reloadData()
+        takeToBottomOfTableView()
     }
 }
