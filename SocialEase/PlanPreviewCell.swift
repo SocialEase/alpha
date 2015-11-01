@@ -24,10 +24,9 @@ class PlanPreviewCell: UITableViewCell {
             planNameLabel.text = plan.name!
             planTimeLabel.text = DateUtils.getDisplayDate(plan.occuranceDateTime!)
 
-            plan.setImageOnUIImageView(planImageView)
-            planImageView.layer.masksToBounds = false
-            planImageView.layer.cornerRadius = 5
             planImageView.clipsToBounds = true
+            planImageView.contentMode = .ScaleAspectFill
+            plan.setImageOnUIImageView(planImageView)
 
             plan.getPlanUsersWithCompletion { (users: [User]?, error: NSError?) -> () in
                 if let users = users {
@@ -64,7 +63,7 @@ class PlanPreviewCell: UITableViewCell {
     func styleCell() {
         planNameLabel.textColor = UIColor.sea_lightLabelColor()
         planTimeLabel.textColor = UIColor.sea_lightLabelColor()
-        ViewTransformationUtils.addBlurToView(maskOverPhotoView, frame: contentView.frame, style: UIBlurEffectStyle.Light)
+        ViewTransformationUtils.addBlurToView(maskOverPhotoView, frame: planImageView.frame, style: UIBlurEffectStyle.Light)
     }
     
     override func awakeFromNib() {

@@ -80,6 +80,7 @@
 		AC59DB841BDBF1CA001281F5 /* UserPlans.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC59DB831BDBF1CA001281F5 /* UserPlans.swift */; };
 		AC59DB861BDBF3E6001281F5 /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC59DB851BDBF3E6001281F5 /* Plan.swift */; };
 		AC59DB881BDC6301001281F5 /* Plan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC59DB871BDC6301001281F5 /* Plan.storyboard */; };
+		AC64C12F1BE68949000F2DCF /* AppNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC64C12E1BE68949000F2DCF /* AppNotifications.swift */; };
 		AC976B521BDD329B00FBEC06 /* PlanInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC976B511BDD329B00FBEC06 /* PlanInformationViewController.swift */; };
 		AC976B541BDD32B100FBEC06 /* PlanChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC976B531BDD32B100FBEC06 /* PlanChatViewController.swift */; };
 		AC976B5C1BDDD7CE00FBEC06 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC976B5B1BDDD7CE00FBEC06 /* MapKit.framework */; };
@@ -178,6 +179,7 @@
 		AC59DB831BDBF1CA001281F5 /* UserPlans.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserPlans.swift; path = Models/UserPlans.swift; sourceTree = "<group>"; };
 		AC59DB851BDBF3E6001281F5 /* Plan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Plan.swift; path = Models/Plan.swift; sourceTree = "<group>"; };
 		AC59DB871BDC6301001281F5 /* Plan.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Plan.storyboard; path = Storyboards/Plan.storyboard; sourceTree = "<group>"; };
+		AC64C12E1BE68949000F2DCF /* AppNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppNotifications.swift; path = Utilities/AppNotifications.swift; sourceTree = "<group>"; };
 		AC976B511BDD329B00FBEC06 /* PlanInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlanInformationViewController.swift; path = ViewControllers/PlanInformationViewController.swift; sourceTree = "<group>"; };
 		AC976B531BDD32B100FBEC06 /* PlanChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlanChatViewController.swift; path = ViewControllers/PlanChatViewController.swift; sourceTree = "<group>"; };
 		AC976B5B1BDDD7CE00FBEC06 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -385,6 +387,7 @@
 				ACD342731BDB4E1B006ACA0C /* DisplayPlanVC.swift */,
 				ACCD19EF1BDD2FFD009F215D /* PlanViewControllerContext.swift */,
 				043570051BDD613700B22D1B /* ViewTransformationUtils.swift */,
+				AC64C12E1BE68949000F2DCF /* AppNotifications.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -601,6 +604,7 @@
 				ACD0E42C1BDB436400CE0558 /* HomeViewController.swift in Sources */,
 				59F0FA011BD242980041A149 /* AppDelegate.swift in Sources */,
 				AC03A72D1BE0906B00924488 /* UserGroupUser.swift in Sources */,
+				AC64C12F1BE68949000F2DCF /* AppNotifications.swift in Sources */,
 				04ABB6301BE5D5D100B52708 /* ChatFriendCell.swift in Sources */,
 				04ECB7711BD73F3D00819BA4 /* RegisterViewController.swift in Sources */,
 				04A578DA1BDB56870088858A /* OtherPreference.swift in Sources */,

@@ -96,6 +96,9 @@ class PlanInformationViewController: UIViewController, PlanViewControllerContext
     @IBAction func acceptButtonTapped(sender: UIButton) {
         UserPlans.updateUserPlanStatusForPlan(plan, withStatus: UserPlanStatus.Active) { (success: Bool, error: NSError?) -> () in
             if success {
+                // Update plan & call delegate method
+                self.postPlanUpdateNotificationForChangedPlan(self.plan, fromStatus: self.plan.currentUserStatus ?? UserPlanStatus.Pending, toStatus: .Active)
+                // Show active plan view
                 UIView.animateWithDuration(1.0) { () -> Void in
                     self.pendingPlanView.alpha = 0
                     self.plan.currentUserStatus = .Active
@@ -133,6 +136,16 @@ class PlanInformationViewController: UIViewController, PlanViewControllerContext
         } else {
             updateActivePlanViewUI(false)
         }
+    }
+
+    func postPlanUpdateNotificationForChangedPlan(plan: Plan, fromStatus: UserPlanStatus, toStatus: UserPlanStatus) {
+        plan.currentUserStatus = toStatus
+
+        var userInfo = [NSObject: AnyObject]()
+        userInfo[SEAPlanStatusDidChangeNotification.UserInfoKeys.PlanObject] = plan
+        userInfo[SEAPlanStatusDidChangeNotification.UserInfoKeys.FromStatus] = fromStatus.rawValue
+        userInfo[SEAPlanStatusDidChangeNotification.UserInfoKeys.ToStatus] = toStatus.rawValue
+        NSNotificationCenter.defaultCenter().postNotificationName(SEAPlanStatusDidChangeNotification.Name, object: nil, userInfo: userInfo)
     }
 
     // MARK: Active activity view update functions

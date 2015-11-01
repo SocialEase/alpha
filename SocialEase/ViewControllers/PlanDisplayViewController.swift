@@ -42,6 +42,8 @@ class PlanDisplayViewController: UIViewController, UITableViewDelegate, UITableV
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: "refreshPlanTable:", forControlEvents: UIControlEvents.ValueChanged)
         tableView.addSubview(refreshControl)
+
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "planStatusDidUpdate:", name: SEAPlanStatusDidChangeNotification.Name, object: nil)
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -51,11 +53,45 @@ class PlanDisplayViewController: UIViewController, UITableViewDelegate, UITableV
         viewActive = false
     }
 
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+
+    // MARK: - View Actions
     @IBAction func planDetailsTapped(sender: UIButton) {
         selectedPlanIndex = 0
         presentPlanTabbarControllerForSelectedPlan()
     }
 
+    // MARK: - Notification methods
+    func planStatusDidUpdate(notification: NSNotification) {
+
+        let fromStatus = notification.userInfo?[SEAPlanStatusDidChangeNotification.UserInfoKeys.FromStatus] as? Int
+        let toStatus = notification.userInfo?[SEAPlanStatusDidChangeNotification.UserInfoKeys.ToStatus] as? Int
+        let plan = notification.userInfo?[SEAPlanStatusDidChangeNotification.UserInfoKeys.PlanObject] as? Plan
+
+        if let fromStatus = fromStatus, let toStatus = toStatus, let plan = plan {
+            if planStatus?.rawValue == fromStatus || planStatus?.rawValue == toStatus {
+                if planStatus!.rawValue == fromStatus {
+                    // remove plan from plan list
+                    userPlanList = userPlanList?.filter { $0.id! != plan.id! }
+                } else {
+                    // add plan to plan list
+                    var newUserPlanList = [Plan]()
+                    if let userPlans = userPlanList {
+                        newUserPlanList = userPlans
+                        newUserPlanList.insert(plan, atIndex: 0)
+                    } else {
+                        userPlanList = [plan]
+                    }
+                    userPlanList = newUserPlanList.sort { $0.occuranceDateTime?.compare($1.occuranceDateTime!) == NSComparisonResult.OrderedAscending }
+                }
+            }
+        }
+
+    }
+
+    // MARK: - Helper methods
     private func fetchUserPlans(cached: Bool) {
         JTProgressHUD.showWithStyle(JTProgressHUDStyle.Gradient)
         UserPlans.getUserPlanForStatus(planStatus!, usingCache: cached) { (userPlans: [Plan]?, error: NSError?) -> () in
@@ -96,5 +132,6 @@ class PlanDisplayViewController: UIViewController, UITableViewDelegate, UITableV
     func refreshPlanTable(refreshControl: UIRefreshControl) {
         fetchUserPlans(false)
         refreshControl.endRefreshing()
-    }    
+    }
+
 }

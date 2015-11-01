@@ -96,14 +96,11 @@ class UserPlans: NSObject {
             userPlanQuery.findObjectsInBackgroundWithBlock { (userPlans: [PFObject]?, error: NSError?) -> Void in
                 var userPlanWithStatus: [Plan]?
                 if let userPlans = userPlans {
-                    for plan in userPlans {
-                        print(plan)
-                    }
                     userPlanWithStatus = userPlans.map { (userPlanObject) -> Plan in
                         let plan = Plan(planObject: userPlanObject.objectForKey(PlanObject) as! PFObject)
                         plan.currentUserStatus = status
                         return plan
-                    }
+                    }.sort { $0.occuranceDateTime?.compare($1.occuranceDateTime!) == NSComparisonResult.OrderedAscending }
                 }
 
                 completion(userPlanWithStatus , error)
