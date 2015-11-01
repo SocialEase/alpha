@@ -13,49 +13,62 @@
                 <rect key="frame" x="0.0" y="0.0" width="627" height="109.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Codepath Friends" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="285-jb-9n2">
-                        <rect key="frame" x="8" y="8" width="136.5" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(8)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bbh-FB-WPb">
-                        <rect key="frame" x="156.5" y="7" width="22" height="20.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fvw-mk-SMG">
-                        <rect key="frame" x="8" y="33" width="607" height="65"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WLk-e6-kcB">
+                        <rect key="frame" x="3" y="3" width="612" height="103.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 others..." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53l-Vf-rg1">
-                                <rect key="frame" x="521" y="23" width="70" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Codepath Friends" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="285-jb-9n2">
+                                <rect key="frame" x="8" y="8" width="136.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fvw-mk-SMG">
+                                <rect key="frame" x="8" y="31.5" width="596" height="65"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 others..." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53l-Vf-rg1">
+                                        <rect key="frame" x="510" y="23" width="70" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="9jm-1O-KkN"/>
+                                    <constraint firstAttribute="trailing" secondItem="53l-Vf-rg1" secondAttribute="trailing" constant="16" id="M5u-KJ-sP5"/>
+                                    <constraint firstItem="53l-Vf-rg1" firstAttribute="centerY" secondItem="fvw-mk-SMG" secondAttribute="centerY" id="kIS-g5-1pJ"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(8)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bbh-FB-WPb">
+                                <rect key="frame" x="152" y="8" width="22" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="65" id="9jm-1O-KkN"/>
-                            <constraint firstAttribute="trailing" secondItem="53l-Vf-rg1" secondAttribute="trailing" constant="16" id="M5u-KJ-sP5"/>
-                            <constraint firstItem="53l-Vf-rg1" firstAttribute="centerY" secondItem="fvw-mk-SMG" secondAttribute="centerY" id="kIS-g5-1pJ"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fvw-mk-SMG" secondAttribute="bottom" constant="3" id="1X7-sq-J4Z"/>
+                            <constraint firstItem="Bbh-FB-WPb" firstAttribute="centerY" secondItem="285-jb-9n2" secondAttribute="centerY" id="8BW-h1-dFa"/>
+                            <constraint firstItem="Bbh-FB-WPb" firstAttribute="leading" secondItem="285-jb-9n2" secondAttribute="trailing" constant="8" id="H4a-Z8-uh3"/>
+                            <constraint firstItem="fvw-mk-SMG" firstAttribute="leading" secondItem="WLk-e6-kcB" secondAttribute="leading" constant="8" id="IzF-Kq-ay4"/>
+                            <constraint firstAttribute="trailing" secondItem="fvw-mk-SMG" secondAttribute="trailing" constant="8" id="JJe-Ta-ODW"/>
+                            <constraint firstItem="fvw-mk-SMG" firstAttribute="top" secondItem="285-jb-9n2" secondAttribute="bottom" constant="3" id="R9o-XM-nbp"/>
+                            <constraint firstItem="285-jb-9n2" firstAttribute="leading" secondItem="WLk-e6-kcB" secondAttribute="leading" constant="8" id="Vvw-gH-ic2"/>
+                            <constraint firstItem="285-jb-9n2" firstAttribute="top" secondItem="WLk-e6-kcB" secondAttribute="top" constant="8" id="pN3-kL-lUQ"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fvw-mk-SMG" secondAttribute="bottom" constant="12" id="2yY-rK-cbI"/>
-                    <constraint firstItem="285-jb-9n2" firstAttribute="centerY" secondItem="Bbh-FB-WPb" secondAttribute="centerY" id="73w-2F-cB3"/>
-                    <constraint firstItem="fvw-mk-SMG" firstAttribute="leading" secondItem="285-jb-9n2" secondAttribute="leading" id="B6v-D7-iBq"/>
-                    <constraint firstItem="285-jb-9n2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="M9G-Vn-S1a"/>
-                    <constraint firstItem="fvw-mk-SMG" firstAttribute="top" secondItem="285-jb-9n2" secondAttribute="bottom" constant="8" id="VCG-6t-8Gt"/>
-                    <constraint firstItem="285-jb-9n2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="ZbC-in-ULv"/>
-                    <constraint firstItem="Bbh-FB-WPb" firstAttribute="leading" secondItem="285-jb-9n2" secondAttribute="trailing" constant="12" id="hR5-u0-QW0"/>
-                    <constraint firstAttribute="trailing" secondItem="fvw-mk-SMG" secondAttribute="trailing" constant="12" id="kgA-Aw-MPw"/>
+                    <constraint firstItem="WLk-e6-kcB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="IZ2-hp-fFp"/>
+                    <constraint firstItem="WLk-e6-kcB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="3" id="IkU-lo-2T4"/>
+                    <constraint firstAttribute="bottom" secondItem="WLk-e6-kcB" secondAttribute="bottom" constant="3" id="K3n-w6-lKW"/>
+                    <constraint firstAttribute="trailing" secondItem="WLk-e6-kcB" secondAttribute="trailing" constant="12" id="P3W-12-7GK"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="friendsContainerView" destination="fvw-mk-SMG" id="Zpd-fA-HcX"/>
                 <outlet property="groupCountLabel" destination="Bbh-FB-WPb" id="kCD-w6-al4"/>
+                <outlet property="insetContainerView" destination="WLk-e6-kcB" id="lmr-hI-xIi"/>
                 <outlet property="nameLabel" destination="285-jb-9n2" id="3V2-HN-MgO"/>
                 <outlet property="othersCountLabel" destination="53l-Vf-rg1" id="6vo-rd-GQC"/>
             </connections>

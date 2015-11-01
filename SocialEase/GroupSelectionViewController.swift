@@ -36,6 +36,7 @@ class GroupSelectionViewController: UIViewController {
         groupsTableView.registerNib(UINib(nibName: "GroupCell", bundle: nil), forCellReuseIdentifier: "GroupCell")
         groupsTableView.rowHeight = UITableViewAutomaticDimension
         groupsTableView.estimatedRowHeight = 140
+        groupsTableView.separatorColor = UIColor.clearColor()
 
         // So view doesn't hide behind navigation bar
         self.edgesForExtendedLayout = UIRectEdge.None

@@ -11,6 +11,7 @@ import AFNetworking
 
 class GroupCell: UITableViewCell {
 
+    @IBOutlet weak var insetContainerView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var groupCountLabel: UILabel!
     @IBOutlet weak var friendsContainerView: UIView!
@@ -66,6 +67,7 @@ class GroupCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         nameLabel.font = UIFont.boldSystemFontOfSize(17.0)
+        nameLabel.textColor = UIColor.sea_primaryLabelColor()
         
         groupCountLabel.textColor = UIColor.sea_secondaryHintColor()
         
@@ -75,6 +77,11 @@ class GroupCell: UITableViewCell {
         
         othersCountLabel.font = UIFont.systemFontOfSize(13)
         othersCountLabel.textColor = UIColor.sea_secondaryHintColor()
+        
+        self.insetContainerView.layer.shadowOffset = CGSizeMake(2.0, 2.0)
+        self.insetContainerView.layer.shadowOpacity = 0.7
+        self.insetContainerView.layer.shadowColor = UIColor.darkGrayColor().CGColor
+        self.insetContainerView.layer.shadowRadius = 2.0
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

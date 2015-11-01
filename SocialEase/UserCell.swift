@@ -23,7 +23,7 @@ class UserCell: UICollectionViewCell {
     
     let (unselectedBorderColor, selectedBorderColor) = (UIColor.sea_primaryLabelColor(), UIColor.sea_primaryColor())
     let (unselectedOverlayColor, selectedOverlayColor) = (UIColor.sea_primaryLightTextColor(), UIColor.clearColor())
-    let (unselectedLabelColor, selectedLabelColor) = (UIColor.sea_secondaryHintColor(), UIColor.sea_primaryColor())
+    let (unselectedLabelColor, selectedLabelColor) = (UIColor.sea_primaryLabelColor(), UIColor.sea_primaryColor())
     let (unselectedBorderWidth, selectedBorderWidth) = (1, 10)
     
     var cellSelected = false
