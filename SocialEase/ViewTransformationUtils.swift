@@ -14,8 +14,12 @@ class ViewTransformationUtils {
     static let BlurViewTag = 1000
 
     class func convertViewToCircle(myView: UIView, borderColor: UIColor, borderWidth: Int) {
+        roundEdges(myView, cornerRadius: myView.frame.size.height/2, borderColor: borderColor, borderWidth: borderWidth)
+    }
+    
+    class func roundEdges(myView: UIView, cornerRadius: CGFloat, borderColor: UIColor, borderWidth: Int) {
         myView.layer.masksToBounds = false
-        myView.layer.cornerRadius = myView.frame.size.height/2
+        myView.layer.cornerRadius = cornerRadius
         myView.clipsToBounds = true
         
         myView.layer.borderWidth = 1.0

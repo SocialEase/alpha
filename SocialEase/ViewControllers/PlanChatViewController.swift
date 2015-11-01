@@ -8,11 +8,11 @@
 
 import UIKit
 
-class PlanChatViewController: UIViewController, PlanViewControllerContext {
+class PlanChatViewController: UIViewController, PlanViewControllerContext, UITableViewDelegate, UITableViewDataSource {
 
-    // MARK: - Outlet Properties
-
-    // MARK: - variables
+    @IBOutlet weak var enterTextViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tableView: UITableView!
+    
     private var _plan: Plan!
 
     var plan: Plan {
@@ -21,14 +21,31 @@ class PlanChatViewController: UIViewController, PlanViewControllerContext {
         }
         set(newValue) {
             _plan = newValue
+            ChatEntry.getChatEntriesForPlan(plan.pfObject.objectId!, usersInPlan: _plan.users!) { (chatEntries, error) -> () in
+                if (chatEntries != nil) {
+                    self.chatEntries = chatEntries
+                } else {
+                    print("Error getting chat entries for plan")
+                }
+            }
+        }
+    }
+    
+    var chatEntries: [ChatEntry]? {
+        didSet {
+            
         }
     }
 
     // MARK: - Lifecylce methods
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // table view setup
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.estimatedRowHeight = 120
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,15 +53,23 @@ class PlanChatViewController: UIViewController, PlanViewControllerContext {
         // Dispose of any resources that can be recreated.
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // table view delegate
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return chatEntries?.count ?? 0
     }
-    */
-
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let chatEntry = chatEntries![indexPath.row]
+        let chatEntryUserId = chatEntry.user.pfUser!.objectId!
+        let currentUserId = User.currentUser!.pfUser!.objectId!
+        if (chatEntryUserId == currentUserId) {
+            let cell = tableView.dequeueReusableCellWithIdentifier("ChatCurrentUserCell") as! ChatCurrentUserCell
+            cell.chatEntry = chatEntry
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCellWithIdentifier("ChatFriendCell") as! ChatFriendCell
+            cell.chatEntry = chatEntry
+            return cell
+        }
+    }
 }

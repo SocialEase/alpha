@@ -79,7 +79,7 @@ class Plan: NSObject {
 
     var currentUserStatus: UserPlanStatus?
 
-    private var users: [User]?
+    var users: [User]?
     private var planOrganizer: User?
 
     // MARK: - Initializers
