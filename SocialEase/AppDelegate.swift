@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // set prase api keys
         Parse.setApplicationId("ZoRlR0MyiOwJcLH420YfdSZX4KkgM7m8BqhC7j2x", clientKey: "PTHMqglJowgpo9uy45chEBBbmiSzUuln3YDn3Vso")
         
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
         // register for push notifications
         // TODO: we should perhaps do this only after getting confirmation from user
         registerForPushNotifications(application, launchOptions: launchOptions)
