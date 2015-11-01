@@ -18,6 +18,7 @@ class ChatFriendCell: UITableViewCell {
         didSet {
             userName.text = chatEntry.user.name!
             chatText.text = chatEntry.chatText!
+            chatTimestamp.text = chatEntry.formattedTimeString()
         }
     }
 

@@ -16,6 +16,7 @@ class ChatCurrentUserCell: UITableViewCell {
     var chatEntry: ChatEntry! {
         didSet {
             chatText.text = chatEntry.chatText!
+            chatTimestamp.text = chatEntry.formattedTimeString()
         }
     }
 

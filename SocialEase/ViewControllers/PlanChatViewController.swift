@@ -12,7 +12,9 @@ class PlanChatViewController: UIViewController, PlanViewControllerContext, UITab
 
     @IBOutlet weak var enterTextViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var enterChatTextField: UITextField!
+    @IBOutlet weak var sendButton: UIButton!
+
     private var _plan: Plan!
 
     var plan: Plan {
@@ -31,21 +33,33 @@ class PlanChatViewController: UIViewController, PlanViewControllerContext, UITab
         }
     }
     
-    var chatEntries: [ChatEntry]? {
-        didSet {
-            
-        }
-    }
-
+    var chatEntries: [ChatEntry]?
+    
     // MARK: - Lifecylce methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        styleSendButton()
         
         // table view setup
         tableView.delegate = self
         tableView.dataSource = self
         tableView.estimatedRowHeight = 120
         tableView.rowHeight = UITableViewAutomaticDimension
+        
+        // observer for keyboard pop
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        
+        enterChatTextField.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        takeToBottomOfTableView()
+    }
+    
+    func styleSendButton() {
+        if enterChatTextField.text!.isEmpty {
+            sendButton.enabled = false
+        } else {
+            sendButton.enabled = true
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,5 +85,40 @@ class PlanChatViewController: UIViewController, PlanViewControllerContext, UITab
             cell.chatEntry = chatEntry
             return cell
         }
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        let frame = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+        enterTextViewBottomConstraint.constant = frame.height
+    }
+    
+    func textFieldDidChange(textField: UITextField) {
+        styleSendButton()
+    }
+    
+    func takeToBottomOfTableView() {
+        let chatEntriesCount = chatEntries?.count ?? 0
+        if (chatEntriesCount > 0) {
+            tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: chatEntries!.count - 1, inSection: 0), atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
+        }
+    }    
+    
+    @IBAction func didSendButtonTap(sender: AnyObject) {
+        let chatEntry = ChatEntry()
+        chatEntry.chatText = enterChatTextField.text
+        chatEntry.user = User.currentUser
+        chatEntry.planId = self.plan.pfObject.objectId!
+        chatEntry.chatTimeStamp = NSDate()
+        
+        chatEntry.saveToParseInBackground()
+        
+        self.chatEntries?.append(chatEntry)
+        self.tableView.reloadData()
+        
+        enterTextViewBottomConstraint.constant = 0
+        enterChatTextField.resignFirstResponder()
+        enterChatTextField.text = nil
+        
+        takeToBottomOfTableView()        
     }
 }
