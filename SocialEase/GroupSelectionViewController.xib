@@ -7,6 +7,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GroupSelectionViewController" customModule="SocialEase" customModuleProvider="target">
             <connections>
                 <outlet property="groupsTableView" destination="wCA-qt-KeR" id="jI9-Yn-7h3"/>
+                <outlet property="noGroupsContainerView" destination="ya9-Ys-Zez" id="ihD-Ss-I59"/>
+                <outlet property="noGroupsImageView" destination="O8b-uZ-UPB" id="JBr-OY-poX"/>
+                <outlet property="noGroupsImageViewTopConstraint" destination="ATJ-QC-y6c" id="och-Sw-WYk"/>
+                <outlet property="noGroupsLabel" destination="7t9-yl-HIj" id="Nbe-e0-DOv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,14 +23,45 @@
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ya9-Ys-Zez">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Looks like you don't have any groups Blah Blah" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7t9-yl-HIj">
+                            <rect key="frame" x="12" y="290" width="576" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="7t9-yl-HIj" firstAttribute="centerY" secondItem="ya9-Ys-Zez" secondAttribute="centerY" id="Van-m8-k5Q"/>
+                        <constraint firstItem="7t9-yl-HIj" firstAttribute="centerX" secondItem="ya9-Ys-Zez" secondAttribute="centerX" id="VuV-NJ-CHk"/>
+                        <constraint firstItem="7t9-yl-HIj" firstAttribute="leading" secondItem="ya9-Ys-Zez" secondAttribute="leading" constant="12" id="fHo-4u-m3n"/>
+                        <constraint firstAttribute="trailing" secondItem="7t9-yl-HIj" secondAttribute="trailing" constant="12" id="x3d-qH-N9N"/>
+                    </constraints>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O8b-uZ-UPB">
+                    <rect key="frame" x="474" y="50" width="120" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="3c1-S1-5vc"/>
+                        <constraint firstAttribute="width" constant="120" id="4VV-OD-lX2"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="wCA-qt-KeR" secondAttribute="trailing" id="2eY-sU-qY8"/>
+                <constraint firstAttribute="trailing" secondItem="ya9-Ys-Zez" secondAttribute="trailing" id="5Ds-3T-wrZ"/>
+                <constraint firstAttribute="trailing" secondItem="O8b-uZ-UPB" secondAttribute="trailing" constant="6" id="81Q-wf-NXx"/>
+                <constraint firstItem="O8b-uZ-UPB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="ATJ-QC-y6c"/>
                 <constraint firstAttribute="bottom" secondItem="wCA-qt-KeR" secondAttribute="bottom" id="Qpq-rm-Y4H"/>
                 <constraint firstItem="wCA-qt-KeR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Rc1-rk-Fsc"/>
+                <constraint firstItem="ya9-Ys-Zez" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="S4e-6L-yKd"/>
                 <constraint firstItem="wCA-qt-KeR" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="ccM-8J-V2Z"/>
+                <constraint firstAttribute="bottom" secondItem="ya9-Ys-Zez" secondAttribute="bottom" id="dIM-fg-GfS"/>
                 <constraint firstItem="wCA-qt-KeR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="fFh-Fa-hxG"/>
+                <constraint firstItem="ya9-Ys-Zez" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xo4-ln-3Uk"/>
                 <constraint firstItem="wCA-qt-KeR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="yG5-1L-Efi"/>
             </constraints>
         </view>

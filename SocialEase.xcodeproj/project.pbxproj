@@ -38,6 +38,7 @@
 		04ECB7781BD73F5500819BA4 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECB7741BD73F5500819BA4 /* CategoriesViewController.swift */; };
 		04ECB7791BD73F5500819BA4 /* PreferencesInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECB7751BD73F5500819BA4 /* PreferencesInfoViewController.swift */; };
 		04ECB77B1BD73FB500819BA4 /* CuisineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECB77A1BD73FB500819BA4 /* CuisineCell.swift */; };
+		590269CF1BE6E7E200361007 /* tap-here.png in Resources */ = {isa = PBXBuildFile; fileRef = 590269CE1BE6E7E200361007 /* tap-here.png */; };
 		59EBD3691BD76966002CB63B /* socialease-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 59EBD3681BD76966002CB63B /* socialease-logo.png */; };
 		59F0FA011BD242980041A149 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F0FA001BD242980041A149 /* AppDelegate.swift */; };
 		59F0FA081BD242980041A149 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59F0FA071BD242980041A149 /* Assets.xcassets */; };
@@ -133,6 +134,7 @@
 		04ECB7751BD73F5500819BA4 /* PreferencesInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesInfoViewController.swift; sourceTree = "<group>"; };
 		04ECB77A1BD73FB500819BA4 /* CuisineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CuisineCell.swift; sourceTree = "<group>"; };
 		0D8E4A11F2A9FD1D88A715F1 /* Pods-SocialEase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialEase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialEase/Pods-SocialEase.debug.xcconfig"; sourceTree = "<group>"; };
+		590269CE1BE6E7E200361007 /* tap-here.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tap-here.png"; path = "Images/tap-here.png"; sourceTree = "<group>"; };
 		59EBD3681BD76966002CB63B /* socialease-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "socialease-logo.png"; path = "Images/socialease-logo.png"; sourceTree = "<group>"; };
 		59F0F9FD1BD242980041A149 /* SocialEase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialEase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59F0FA001BD242980041A149 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 				59F321961BD4B817005AB36C /* amay-user-profile.png */,
 				59F321971BD4B817005AB36C /* uday-user-profile.png */,
 				59EBD3681BD76966002CB63B /* socialease-logo.png */,
+				590269CE1BE6E7E200361007 /* tap-here.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 				59F321901BD4A67F005AB36C /* default-user-profile.png in Resources */,
 				59F321981BD4B817005AB36C /* amay-user-profile.png in Resources */,
 				59F321991BD4B817005AB36C /* uday-user-profile.png in Resources */,
+				590269CF1BE6E7E200361007 /* tap-here.png in Resources */,
 				59F0FA081BD242980041A149 /* Assets.xcassets in Resources */,
 				AC30AF9A1BDA903C002A1A67 /* Home.storyboard in Resources */,
 			);

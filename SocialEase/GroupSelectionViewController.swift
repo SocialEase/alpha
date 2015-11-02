@@ -13,6 +13,10 @@ import Parse
 class GroupSelectionViewController: UIViewController {
     
     @IBOutlet weak var groupsTableView: UITableView!
+    @IBOutlet weak var noGroupsContainerView: UIView!
+    @IBOutlet weak var noGroupsLabel: UILabel!
+    @IBOutlet weak var noGroupsImageView: UIImageView!
+    @IBOutlet weak var noGroupsImageViewTopConstraint: NSLayoutConstraint!
     
     var completionCallback: ((group: UserGroup) -> ())?
     
@@ -28,7 +32,7 @@ class GroupSelectionViewController: UIViewController {
         // Do any additional setup after loading the view.
         navigationItem.title = "Select Group"
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "New Group", style: UIBarButtonItemStyle.Plain, target: self, action: "onNewGroupTap")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "+", style: UIBarButtonItemStyle.Plain, target: self, action: "onNewGroupTap")
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .Plain, target: self, action: "onCancel")
         
         groupsTableView.delegate = self
@@ -37,6 +41,28 @@ class GroupSelectionViewController: UIViewController {
         groupsTableView.rowHeight = UITableViewAutomaticDimension
         groupsTableView.estimatedRowHeight = 140
         groupsTableView.separatorColor = UIColor.clearColor()
+        
+        noGroupsContainerView.backgroundColor = UIColor.sea_primaryLabelColor()
+        noGroupsContainerView.alpha = 0.3
+        noGroupsContainerView.hidden = true
+        
+        noGroupsLabel.backgroundColor = UIColor.clearColor()
+        noGroupsLabel.font = UIFont.systemFontOfSize(22.0)
+        noGroupsLabel.numberOfLines = 0
+        noGroupsLabel.text = "Looks like you don't have any Groups. Tap '+' on the top right to create a new Group!"
+        noGroupsLabel.textColor = UIColor.sea_primaryLightTextColor()
+        noGroupsLabel.hidden = true
+        
+        noGroupsImageView.image = UIImage(named: "tap-here")
+        noGroupsImageView.contentMode = UIViewContentMode.Top
+        noGroupsImageView.hidden = true
+        
+        UIView.animateWithDuration(5.0, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+                self.noGroupsImageViewTopConstraint.constant = 0
+                self.noGroupsImageView.layoutIfNeeded()
+            }) { (value: Bool) -> Void in
+                
+        }
 
         // So view doesn't hide behind navigation bar
         self.edgesForExtendedLayout = UIRectEdge.None
@@ -77,6 +103,15 @@ class GroupSelectionViewController: UIViewController {
 extension GroupSelectionViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if groups.count == 0 {
+            noGroupsLabel.hidden = false
+            noGroupsImageView.hidden = false
+            noGroupsContainerView.hidden = false
+        } else {
+            noGroupsLabel.hidden = true
+            noGroupsImageView.hidden = true
+            noGroupsContainerView.hidden = true
+        }
         return groups.count
     }
     
