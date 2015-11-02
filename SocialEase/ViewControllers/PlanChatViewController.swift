@@ -104,17 +104,9 @@ class PlanChatViewController: UIViewController, PlanViewControllerContext, UITab
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let chatEntry = chatEntries![indexPath.row]
-        let chatEntryUserId = chatEntry.user.pfUser!.objectId!
-        let currentUserId = User.currentUser!.pfUser!.objectId!
-        if (chatEntryUserId == currentUserId) {
-            let cell = tableView.dequeueReusableCellWithIdentifier("ChatCurrentUserCell") as! ChatCurrentUserCell
-            cell.chatEntry = chatEntry
-            return cell
-        } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("ChatFriendCell") as! ChatFriendCell
             cell.chatEntry = chatEntry
             return cell
-        }
     }
     
     func keyboardWillShow(notification: NSNotification) {
