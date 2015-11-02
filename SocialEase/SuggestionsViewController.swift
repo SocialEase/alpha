@@ -197,13 +197,16 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
                 if let activities = activities {
                     // 2. Create/Save plan objects with associated activities object ids
                     Plan.createPlanWithName(self.activityTypeTextLabel.text!, atOccuranceTime: self.actvitiyDatePicker.date, forGroup: self.group, withActivities: activities) { (plan: Plan?, error: NSError?) -> () in
+
                         if let plan = plan {
-                            // 3. Create/Save UserPlans and UserActivities objects
+                            // 3.1 add new plan to active plans for the user without fetching from network
+                            self.sendPlanCreatedNotification(plan)
+
+                            // 3.2 Create/Save UserPlans and UserActivities objects
                             UsersPlanActivity.createPlanAndActivitiesForGroup(self.group, withPlan: plan, andActivities: activities, byOrganizer: PFUser.currentUser()!) { (success: Bool, error: NSError?) -> () in
                                 if success {
                                     // 4. @todo: Uday to add implementation for push notifications here
                                     self.sendPushNotifications(plan, users: self.group.users!)
-                                    print("Saved all the data on Parse... Ready for PUSH notifications")
                                 } else {
                                     print(error?.localizedDescription)
                                 }
@@ -215,6 +218,20 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
 
             dismissViewControllerAnimated(true, completion: nil)
         }
+    }
+
+
+    // MARK: - Internal helper methods
+
+    // method to send notification to various view controllers
+    func sendPlanCreatedNotification(plan: Plan) {
+        var userInfo = [NSObject: AnyObject]()
+        let currentUser = User(pfUser: PFUser.currentUser()!)
+        var groupUsers = self.group.users
+        groupUsers?.append(currentUser)
+        userInfo[SEAPlanCreatedNotification.UserInfoKeys.PlanObject] = Plan(planObject: plan.pfObject, status: .Active, organizer: currentUser, planUsers: groupUsers)
+        userInfo[SEAPlanCreatedNotification.UserInfoKeys.PlanStatus] = UserPlanStatus.Active.rawValue
+        NSNotificationCenter.defaultCenter().postNotificationName(SEAPlanCreatedNotification.Name, object: nil, userInfo: userInfo)
     }
 
     private func sendPushNotifications(plan: Plan?, users: [User]) {
@@ -235,8 +252,7 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
 
         }
     }
-    
-    // MARK: - Internal helper methods
+
     private func updateFilterDisplay(filterTextLabel: UILabel, arrowLabel: UILabel, filterState: Bool) {
         if filterState {
             filterTextLabel.textColor = UIColor(red: 255/255, green: 153/255, blue: 90/255, alpha: 1)

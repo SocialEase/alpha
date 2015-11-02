@@ -87,6 +87,13 @@ class Plan: NSObject {
         object = planObject
     }
 
+    convenience init(planObject: PFObject, status: UserPlanStatus, organizer: User, planUsers: [User]?) {
+        self.init(planObject: planObject)
+        currentUserStatus = .Active
+        users = planUsers
+        planOrganizer = organizer
+    }
+
     // MARK: - Methods
     func setImageOnUIImageView(view: UIImageView) {
         if let imageUrl = imageUrl {

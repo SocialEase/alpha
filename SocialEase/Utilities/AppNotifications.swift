@@ -17,3 +17,14 @@ struct SEAPlanStatusDidChangeNotification {
         static let ToStatus = "toStatus"
     }
 }
+
+
+
+struct SEAPlanCreatedNotification {
+    static let Name = "SEAPlanCreated"
+
+    struct UserInfoKeys {
+        static let PlanObject = "plan"
+        static let PlanStatus = "planStatus"
+    }
+}

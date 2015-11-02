@@ -44,6 +44,7 @@ class PlanDisplayViewController: UIViewController, UITableViewDelegate, UITableV
         tableView.addSubview(refreshControl)
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "planStatusDidUpdate:", name: SEAPlanStatusDidChangeNotification.Name, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "newPlanCreated:", name: SEAPlanCreatedNotification.Name, object: nil)
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -70,25 +71,40 @@ class PlanDisplayViewController: UIViewController, UITableViewDelegate, UITableV
         let toStatus = notification.userInfo?[SEAPlanStatusDidChangeNotification.UserInfoKeys.ToStatus] as? Int
         let plan = notification.userInfo?[SEAPlanStatusDidChangeNotification.UserInfoKeys.PlanObject] as? Plan
 
-        if let fromStatus = fromStatus, let toStatus = toStatus, let plan = plan {
-            if planStatus?.rawValue == fromStatus || planStatus?.rawValue == toStatus {
-                if planStatus!.rawValue == fromStatus {
-                    // remove plan from plan list
-                    userPlanList = userPlanList?.filter { $0.id! != plan.id! }
-                } else {
-                    // add plan to plan list
-                    var newUserPlanList = [Plan]()
-                    if let userPlans = userPlanList {
-                        newUserPlanList = userPlans
-                        newUserPlanList.insert(plan, atIndex: 0)
-                    } else {
-                        userPlanList = [plan]
-                    }
-                    userPlanList = newUserPlanList.sort { $0.occuranceDateTime?.compare($1.occuranceDateTime!) == NSComparisonResult.OrderedAscending }
-                }
+        if let fromStatus = fromStatus, let plan = plan {
+            if planStatus?.rawValue == fromStatus {
+                // remove plan from plan list
+                userPlanList = userPlanList?.filter { $0.id! != plan.id! }
             }
         }
 
+        if let toStatus = toStatus, let plan = plan {
+            if planStatus?.rawValue == toStatus {
+                addNewPlanToUserPlanList(plan)
+            }
+        }
+    }
+
+    func newPlanCreated(notification: NSNotification) {
+        let newplanStatus = notification.userInfo?[SEAPlanCreatedNotification.UserInfoKeys.PlanStatus] as? Int
+        let newPlan = notification.userInfo?[SEAPlanCreatedNotification.UserInfoKeys.PlanObject] as? Plan
+        if let newplanStatus = newplanStatus, let newPlan = newPlan {
+            if planStatus?.rawValue == newplanStatus {
+                addNewPlanToUserPlanList(newPlan)
+            }
+        }
+    }
+
+    func addNewPlanToUserPlanList(plan: Plan) {
+        // add plan to plan list
+        var newUserPlanList = [Plan]()
+        if let userPlans = userPlanList {
+            newUserPlanList = userPlans
+            newUserPlanList.insert(plan, atIndex: 0)
+        } else {
+            userPlanList = [plan]
+        }
+        userPlanList = newUserPlanList.sort { $0.occuranceDateTime?.compare($1.occuranceDateTime!) == NSComparisonResult.OrderedAscending }
     }
 
     // MARK: - Helper methods
