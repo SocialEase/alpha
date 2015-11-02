@@ -198,6 +198,7 @@
                     <navigationItem key="navigationItem" id="byS-Ob-ded"/>
                     <connections>
                         <outlet property="enterChatTextField" destination="dug-cB-2mT" id="5ms-DX-BiQ"/>
+                        <outlet property="enterChatView" destination="k4u-vp-jDh" id="kje-k3-fPM"/>
                         <outlet property="enterTextViewBottomConstraint" destination="BWR-w9-21i" id="Wjc-JV-P2J"/>
                         <outlet property="sendButton" destination="wVg-CN-zaO" id="Zdf-qD-Q3s"/>
                         <outlet property="tableView" destination="js8-B2-xS9" id="Rdb-xz-jUQ"/>

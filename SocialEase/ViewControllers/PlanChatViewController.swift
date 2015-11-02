@@ -14,6 +14,7 @@ class PlanChatViewController: UIViewController, PlanViewControllerContext, UITab
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var enterChatTextField: UITextField!
     @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var enterChatView: UIView!
 
     private var _plan: Plan!
 
@@ -39,6 +40,7 @@ class PlanChatViewController: UIViewController, PlanViewControllerContext, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        enterChatView.backgroundColor = UIColor.sea_primaryColor()
         styleSendButton()
         
         // table view setup
@@ -116,8 +118,8 @@ class PlanChatViewController: UIViewController, PlanViewControllerContext, UITab
     }
     
     func keyboardWillShow(notification: NSNotification) {
-        let frame = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
-        enterTextViewBottomConstraint.constant = frame.height
+        let rect = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+        enterTextViewBottomConstraint.constant = rect.height - self.navigationController!.navigationBar.frame.height
     }
     
     func textFieldDidChange(textField: UITextField) {
