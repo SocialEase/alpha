@@ -51,4 +51,20 @@ class DateUtils {
         DateUtils.DateFormatter.dateFormat = DateUtils.PraseDateStringFormat
         return DateUtils.DateFormatter.dateFromString(parseDateString)
     }
+
+    class func getDayGreeting(date: NSDate) -> String {
+        let comps = CurrentCalendar.components(NSCalendarUnit.Hour, fromDate: date)
+        let hour = comps.hour
+
+        var greeting = ""
+        switch hour {
+        case 0 ... 12:
+            greeting = "Good Morning"
+        case 13 ... 17:
+            greeting = "Good Afternoon"
+        default:
+            greeting = "Good Evening"
+        }
+        return greeting
+    }
 }

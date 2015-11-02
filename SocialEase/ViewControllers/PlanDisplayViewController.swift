@@ -13,6 +13,10 @@ import Parse
 class PlanDisplayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var noActivePlansView: UIView!
+    @IBOutlet weak var newPlanButtonView: UIView!
+    @IBOutlet weak var greetingLabel: UILabel!
+    @IBOutlet weak var bannerMessageLabel: UILabel!
     
     var pageIndex: Int!
     var pageTitle: String!
@@ -20,7 +24,13 @@ class PlanDisplayViewController: UIViewController, UITableViewDelegate, UITableV
     
     var userPlanList: [Plan]? {
         didSet {
-            tableView.reloadData()
+            if userPlanList?.count == 0 && planStatus == UserPlanStatus.Active {
+                noActivePlansView.alpha = 1
+                showSplashScreen()
+            } else {
+                noActivePlansView.alpha = 0
+                tableView.reloadData()
+            }
         }
     }
 
@@ -33,7 +43,8 @@ class PlanDisplayViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
 
         fetchUserPlans(false)
-        
+
+        // setup table
         tableView.delegate = self
         tableView.dataSource = self
         tableView.estimatedRowHeight = 130
@@ -42,6 +53,10 @@ class PlanDisplayViewController: UIViewController, UITableViewDelegate, UITableV
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: "refreshPlanTable:", forControlEvents: UIControlEvents.ValueChanged)
         tableView.addSubview(refreshControl)
+
+        // setup no plan view
+        newPlanButtonView.layer.cornerRadius = 5
+        newPlanButtonView.clipsToBounds = true
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "planStatusDidUpdate:", name: SEAPlanStatusDidChangeNotification.Name, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "newPlanCreated:", name: SEAPlanCreatedNotification.Name, object: nil)
@@ -59,11 +74,9 @@ class PlanDisplayViewController: UIViewController, UITableViewDelegate, UITableV
     }
 
     // MARK: - View Actions
-    @IBAction func planDetailsTapped(sender: UIButton) {
-        selectedPlanIndex = 0
-        presentPlanTabbarControllerForSelectedPlan()
+    @IBAction func createPlanTapped(sender: UITapGestureRecognizer) {
+        AppFlow().presentGroupSelection()
     }
-
     // MARK: - Notification methods
     func planStatusDidUpdate(notification: NSNotification) {
 
@@ -125,6 +138,10 @@ class PlanDisplayViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
 
+    private func showSplashScreen() {
+        greetingLabel?.text = AppUtilities.getGreetingDisplayText(User.currentUser?.name)
+    }
+
     // MARK: - table view delegates
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return userPlanList?.count ?? 0
@@ -137,8 +154,6 @@ class PlanDisplayViewController: UIViewController, UITableViewDelegate, UITableV
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("planDetailsTapped")
-
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         selectedPlanIndex = indexPath.row
         presentPlanTabbarControllerForSelectedPlan()

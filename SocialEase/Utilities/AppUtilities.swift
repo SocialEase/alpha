@@ -16,7 +16,6 @@ class AppUtilities: NSObject {
         navController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: textColor ?? UIColor.darkGrayColor()]
     }
 
-
     static func getRatingsTextFromRating(rating: Double, forTotalRating totalRating: Int = 5) -> String {
 
         let fullStarCount = Int(floor(rating))
@@ -34,5 +33,9 @@ class AppUtilities: NSObject {
                 UIApplication.sharedApplication().openURL(appleMapsUrl)
             }
         }
+    }
+
+    static func getGreetingDisplayText(name: String?) -> String {
+        return DateUtils.getDayGreeting(NSDate()) + " " + (name ?? "") + ","
     }
 }

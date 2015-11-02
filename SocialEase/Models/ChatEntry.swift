@@ -16,11 +16,11 @@ class ChatEntry: NSObject {
     var planId: String!
     var pfObject: PFObject!
     var imagePFFile: PFFile?
-    
+
     func formattedTimeString() -> String {
         return DateUtils.getSystemStyleDisplayDate(chatTimeStamp!, dateStyle: NSDateFormatterStyle.ShortStyle, timeStyle: NSDateFormatterStyle.ShortStyle, timezone: nil)
     }
-    
+
     class func getChatEntriesForPlan(planId: String, usersInPlan: [User], completion: ([ChatEntry]?, ErrorType?) -> ()) {
         let predicate = NSPredicate(format: "planId == '\(planId)'")
         let query = PFQuery(className: "ChatEntry", predicate: predicate)
@@ -37,7 +37,7 @@ class ChatEntry: NSObject {
                 for pfObject in chatEntries {
                     let chatText = pfObject["chatText"] as? String
                     let userId = pfObject["userId"] as! String
-                    let planId = pfObject["planId"] as! String
+                    let _ = pfObject["planId"] as! String
                     let pfFile = pfObject["media"] as? PFFile
                     
 
