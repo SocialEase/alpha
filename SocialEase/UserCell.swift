@@ -37,7 +37,7 @@ class UserCell: UICollectionViewCell {
             }
             
             if let imageUrl = user.profileImageUrl {
-                imageView.setImageWithURL(imageUrl)
+                imageView.setImageWithURLRequest(NSURLRequest(URL: imageUrl), placeholderImage: UIImage(named: "default-user-profile"), fadeInWithDuration: 0.5)
             } else if let imageBinName = user.profileImageBinName {
                 imageView.image = UIImage(named: imageBinName)
             }

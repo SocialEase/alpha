@@ -29,3 +29,16 @@ extension UIView {
         self.layer.addSublayer(border)
     }
 }
+
+extension UIImageView {
+    // Fades in image when it is set
+    func setImageWithURLRequest(urlRequest: NSURLRequest, placeholderImage: UIImage?, fadeInWithDuration duration: NSTimeInterval) {
+        self.setImageWithURLRequest(urlRequest, placeholderImage: placeholderImage, success: { (request: NSURLRequest, response: NSHTTPURLResponse?, image: UIImage) -> Void in
+            
+            UIView.transitionWithView(self, duration: duration, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () -> Void in
+                self.image = image
+                }, completion: nil)
+            }, failure: { (request: NSURLRequest, response: NSHTTPURLResponse?, error: NSError) -> Void in
+        })
+    }
+}

@@ -43,7 +43,7 @@ class GroupCell: UITableViewCell {
                     let defaultImage = UIImage(named: "default-user-profile")
 
                     if let profileImageUrl = user.profileImageUrl {
-                        imageView.setImageWithURL(profileImageUrl, placeholderImage: defaultImage)
+                        imageView.setImageWithURLRequest(NSURLRequest(URL: profileImageUrl), placeholderImage: defaultImage, fadeInWithDuration: 0.5)
                     } else {
                         imageView.image = defaultImage
                     }
