@@ -123,6 +123,65 @@
                                             <outlet property="userName" destination="Bqn-ag-m3G" id="hYK-JV-pSE"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatPhotoCell" rowHeight="305" id="1Qh-Ev-oLt" customClass="ChatPhotoCell" customModule="SocialEase" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="163" width="600" height="305"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Qh-Ev-oLt" id="NYn-SM-3kG">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="305"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rau-hN-91k">
+                                                    <rect key="frame" x="8" y="8" width="40" height="40"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="N0B-xz-hnI"/>
+                                                        <constraint firstAttribute="height" constant="40" id="UXC-pl-PaB"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BwU-VD-Hog">
+                                                    <rect key="frame" x="56" y="27" width="250" height="250"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="250" id="2Qa-dt-hPI"/>
+                                                        <constraint firstAttribute="height" constant="250" id="IlU-0k-pYY"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uday Mantripragada" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eho-W3-X5r">
+                                                    <rect key="frame" x="56" y="8" width="132" height="17"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9:30 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jC6-s0-WKM">
+                                                    <rect key="frame" x="196" y="10" width="44.5" height="13.5"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" red="0.45395171960000003" green="0.45395171960000003" blue="0.45395171960000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="BwU-VD-Hog" secondAttribute="bottom" constant="8" id="Ck9-yx-oXh"/>
+                                                <constraint firstItem="BwU-VD-Hog" firstAttribute="leading" secondItem="Rau-hN-91k" secondAttribute="trailing" constant="8" id="Eba-nJ-68E"/>
+                                                <constraint firstItem="jC6-s0-WKM" firstAttribute="centerY" secondItem="Eho-W3-X5r" secondAttribute="centerY" id="RvV-cx-GzB"/>
+                                                <constraint firstItem="Rau-hN-91k" firstAttribute="top" secondItem="NYn-SM-3kG" secondAttribute="topMargin" id="Vs2-VE-n3U"/>
+                                                <constraint firstItem="Eho-W3-X5r" firstAttribute="leading" secondItem="Rau-hN-91k" secondAttribute="trailing" constant="8" id="i5l-uL-7uf"/>
+                                                <constraint firstItem="BwU-VD-Hog" firstAttribute="top" secondItem="Eho-W3-X5r" secondAttribute="bottom" constant="2" id="iOz-bt-DAW"/>
+                                                <constraint firstItem="jC6-s0-WKM" firstAttribute="leading" secondItem="Eho-W3-X5r" secondAttribute="trailing" constant="8" id="mdy-M2-CiA"/>
+                                                <constraint firstItem="Eho-W3-X5r" firstAttribute="top" secondItem="NYn-SM-3kG" secondAttribute="topMargin" id="u4y-lo-2fH"/>
+                                                <constraint firstItem="Rau-hN-91k" firstAttribute="leading" secondItem="NYn-SM-3kG" secondAttribute="leadingMargin" id="v4k-DJ-KZp"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <connections>
+                                            <outlet property="chatImageView" destination="BwU-VD-Hog" id="ruM-9I-Y3J"/>
+                                            <outlet property="chatTimestamp" destination="jC6-s0-WKM" id="gzi-ik-MPb"/>
+                                            <outlet property="userImageView" destination="Rau-hN-91k" id="kUG-DQ-woN"/>
+                                            <outlet property="userName" destination="Eho-W3-X5r" id="aRW-Uh-Ggn"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
@@ -360,7 +419,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="600" height="143"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X5n-Xz-VTD" id="q9S-OU-GmJ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="142"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="142.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iBX-Nl-YYD">

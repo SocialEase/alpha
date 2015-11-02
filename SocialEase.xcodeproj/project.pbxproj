@@ -29,6 +29,7 @@
 		04ABB6301BE5D5D100B52708 /* ChatFriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ABB62F1BE5D5D100B52708 /* ChatFriendCell.swift */; };
 		04ABB6341BE5DBC400B52708 /* ChatCurrentUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ABB6331BE5DBC400B52708 /* ChatCurrentUserCell.swift */; };
 		04ABB6361BE5E3C400B52708 /* ChatEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ABB6351BE5E3C400B52708 /* ChatEntry.swift */; };
+		04ABB6381BE7386100B52708 /* ChatPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ABB6371BE7386100B52708 /* ChatPhotoCell.swift */; };
 		04C0DEBF1BD9FF8500CE1ABF /* OtherPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C0DEBE1BD9FF8500CE1ABF /* OtherPreferencesViewController.swift */; };
 		04C0DEC11BDA0C1F00CE1ABF /* PreferencesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C0DEC01BDA0C1F00CE1ABF /* PreferencesCell.swift */; };
 		04ECB76F1BD73EB300819BA4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04ECB76E1BD73EB300819BA4 /* Login.storyboard */; };
@@ -123,6 +124,7 @@
 		04ABB62F1BE5D5D100B52708 /* ChatFriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatFriendCell.swift; path = Views/ChatFriendCell.swift; sourceTree = "<group>"; };
 		04ABB6331BE5DBC400B52708 /* ChatCurrentUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatCurrentUserCell.swift; path = Views/ChatCurrentUserCell.swift; sourceTree = "<group>"; };
 		04ABB6351BE5E3C400B52708 /* ChatEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatEntry.swift; path = Models/ChatEntry.swift; sourceTree = "<group>"; };
+		04ABB6371BE7386100B52708 /* ChatPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatPhotoCell.swift; path = Views/ChatPhotoCell.swift; sourceTree = "<group>"; };
 		04C0DEBE1BD9FF8500CE1ABF /* OtherPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherPreferencesViewController.swift; sourceTree = "<group>"; };
 		04C0DEC01BDA0C1F00CE1ABF /* PreferencesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesCell.swift; sourceTree = "<group>"; };
 		04ECB76E1BD73EB300819BA4 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 				ACAB2B231BDF1696005EC804 /* ActivityViewCell.swift */,
 				04ABB62F1BE5D5D100B52708 /* ChatFriendCell.swift */,
 				04ABB6331BE5DBC400B52708 /* ChatCurrentUserCell.swift */,
+				04ABB6371BE7386100B52708 /* ChatPhotoCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -601,6 +604,7 @@
 				AC03A72D1BE0906B00924488 /* UserGroupUser.swift in Sources */,
 				AC64C12F1BE68949000F2DCF /* AppNotifications.swift in Sources */,
 				AC64C13B1BE6A78B000F2DCF /* BusinessPhoneTableViewCell.swift in Sources */,
+				04ABB6381BE7386100B52708 /* ChatPhotoCell.swift in Sources */,
 				04ABB6301BE5D5D100B52708 /* ChatFriendCell.swift in Sources */,
 				04ECB7711BD73F3D00819BA4 /* RegisterViewController.swift in Sources */,
 				AC64C1331BE6A709000F2DCF /* BusinessDetailsViewController.swift in Sources */,

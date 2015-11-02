@@ -104,9 +104,15 @@ class PlanChatViewController: UIViewController, PlanViewControllerContext, UITab
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let chatEntry = chatEntries![indexPath.row]
+        if let _ = chatEntry.imagePFFile {
+            let cell = tableView.dequeueReusableCellWithIdentifier("ChatPhotoCell") as! ChatPhotoCell
+            cell.chatEntry = chatEntry
+            return cell
+        } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("ChatFriendCell") as! ChatFriendCell
             cell.chatEntry = chatEntry
             return cell
+        }
     }
     
     func keyboardWillShow(notification: NSNotification) {
@@ -143,7 +149,6 @@ class PlanChatViewController: UIViewController, PlanViewControllerContext, UITab
         
         takeToBottomOfTableView()        
     }
-    
     
     func onTimer() {
         updateChatsFromBackend()

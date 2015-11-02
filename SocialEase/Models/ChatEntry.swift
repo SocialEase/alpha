@@ -15,6 +15,7 @@ class ChatEntry: NSObject {
     var chatTimeStamp: NSDate?
     var planId: String!
     var pfObject: PFObject!
+    var imagePFFile: PFFile?
     
     func formattedTimeString() -> String {
         return DateUtils.getSystemStyleDisplayDate(chatTimeStamp!, dateStyle: NSDateFormatterStyle.ShortStyle, timeStyle: NSDateFormatterStyle.ShortStyle, timezone: nil)
@@ -34,15 +35,18 @@ class ChatEntry: NSObject {
                 
                 var chatEntryArray = [ChatEntry]()
                 for pfObject in chatEntries {
-                    let chatText = pfObject["chatText"] as! String
+                    let chatText = pfObject["chatText"] as? String
                     let userId = pfObject["userId"] as! String
                     let planId = pfObject["planId"] as! String
+                    let pfFile = pfObject["media"] as? PFFile
                     
+
                     let chatEntry = ChatEntry()
                     chatEntry.pfObject = pfObject
                     chatEntry.user = userIdUserMap[userId]
                     chatEntry.chatText = chatText
                     chatEntry.chatTimeStamp = pfObject.createdAt
+                    chatEntry.imagePFFile = pfFile
                     
                     chatEntryArray.append(chatEntry)
                 }
