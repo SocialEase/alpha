@@ -11,7 +11,7 @@ import UIKit
 class BusinessPhoneTableViewCell: UITableViewCell {
 
     @IBOutlet weak var businessPhoneLabel: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

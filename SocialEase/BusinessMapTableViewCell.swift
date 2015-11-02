@@ -12,36 +12,23 @@ import CoreLocation
 
 class BusinessMapTableViewCell: UITableViewCell {
 
-    
     @IBOutlet weak var businessLocationMapView: MKMapView!
-    
-//    var businessLocation: CLLocation! {
-//        didSet {
-//            updateMapView()
-//        }
-//    }
-    
-    var location = CLLocation(
-        latitude: 37.3894,
-        longitude: 122.0819
-    )
-    
-        var businessLocation: String! {
-            didSet {
-                updateMapView()
-            }
+
+    var businessLocation: CLLocation! {
+        didSet {
+            updateMapView()
         }
-    
+    }
+
     let regionRadius: CLLocationDistance = 250
-    
+
+    func updateMapView() {
+        centerMapOnLocation(businessLocation)
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-    }
-    
-    func updateMapView() {
-        // hardcode lag , long
-        centerMapOnLocation(location)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -49,7 +36,8 @@ class BusinessMapTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
+    // MARK: - Helper Methods
     func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius, regionRadius)
         businessLocationMapView.setRegion(coordinateRegion, animated: true)
@@ -57,5 +45,4 @@ class BusinessMapTableViewCell: UITableViewCell {
         dropPin.coordinate = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
         businessLocationMapView.addAnnotation(dropPin)
     }
-
 }

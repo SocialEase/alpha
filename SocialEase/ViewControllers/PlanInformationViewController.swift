@@ -128,6 +128,9 @@ class PlanInformationViewController: UIViewController, PlanViewControllerContext
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
+        if let activity = userActivities?[indexPath.row].activity {
+            AppFlow().pushActivityDetailsView(activity)
+        }
     }
 
     // MARK: - Helper functions

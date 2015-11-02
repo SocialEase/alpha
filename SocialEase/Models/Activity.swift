@@ -33,6 +33,7 @@ class Activity: NSObject, MKAnnotation {
         static let City = "city"
         static let State = "state"
         static let Zipcode = "zipcode"
+        static let Phone = "phone"
     }
     static let MapAnnotationIdentifier = "activityAnnotation"
 
@@ -63,8 +64,8 @@ class Activity: NSObject, MKAnnotation {
         return object[Fields.Rating] as? Double
     }
 
-    var addressLine: String? {
-        return object[Fields.AddressLine1] as? String
+    var addressLine: String {
+        return object[Fields.AddressLine1] as? String ?? ""
     }
 
     var posterImageUrl: NSURL? {
@@ -74,16 +75,24 @@ class Activity: NSObject, MKAnnotation {
         return nil
     }
 
-    var city: String? {
-        return object[Fields.City] as? String
+    var city: String {
+        return object[Fields.City] as? String ?? ""
     }
 
-    var state: String? {
-        return object[Fields.State] as? String
+    var state: String {
+        return object[Fields.State] as? String ?? ""
     }
 
-    var zipcode: String? {
-        return object[Fields.Zipcode] as? String
+    var zipcode: String {
+        return object[Fields.Zipcode] as? String ?? ""
+    }
+
+    var displayAddress: [String] {
+        return [addressLine, city, state, zipcode]
+    }
+
+    var displayPhoneNumber: String {
+        return object[Fields.Phone] as? String ?? ""
     }
 
     var pfObject: PFObject {

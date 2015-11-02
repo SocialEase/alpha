@@ -9,14 +9,15 @@
 import UIKit
 
 class BusinessAddressTableViewCell: UITableViewCell {
-    
+
+    @IBOutlet weak var addressLabel: UILabel!
+
     var businessAddress: String! {
         didSet {
             addressLabel.text = businessAddress
         }
     }
 
-    @IBOutlet weak var addressLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

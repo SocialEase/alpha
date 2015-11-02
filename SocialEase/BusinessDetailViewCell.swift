@@ -7,39 +7,41 @@
 //
 
 import UIKit
+import AFNetworking
 
 class BusinessDetailViewCell: UITableViewCell {
 
     @IBOutlet weak var businessImageView: UIImageView!
-    
+    @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var businessNameLabel: UILabel!
-    
-    @IBOutlet weak var ratingsImageView: UIImageView!
-    @IBOutlet weak var distanceLabel: UILabel!
-    
     @IBOutlet weak var categoryLabel: UILabel!
-    @IBOutlet weak var reviewLabel: UILabel!
-    @IBOutlet weak var openLabel: UILabel!
-    
-    
-    var activity: SEAActivity! {
+
+    var activity: Activity! {
         didSet {
             updateBusinessDetailsInCell()
         }
     }
-    
+
     func updateBusinessDetailsInCell() {
         businessImageView.contentMode = .ScaleToFill
+        if let imageUrl = activity.posterImageUrl {
+            businessImageView.setImageWithURL(imageUrl)
+        }
+
         businessNameLabel.text = activity.name
-        businessImageView.setImageWithURL(activity.posterImageUrl!)
+        ratingLabel.text = AppUtilities.getRatingsTextFromRating(activity.rating!)
+        categoryLabel.text = activity.details
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
+        // Initialization code
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
     }
 
 }

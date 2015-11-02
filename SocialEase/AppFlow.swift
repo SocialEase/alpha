@@ -34,11 +34,10 @@ class AppFlow: NSObject {
     }
     
     
-    func presentBusinessDetail(activity :SEAActivity) {
-        if let rootViewControler = self.window.rootViewController as? UINavigationController {
-            let viewController = Storyboard.BusinessDetail.instantiateViewControllerWithIdentifier("BusinessDetailViewController") as! BusinessDetailViewController
-            viewController.activity = activity
-            rootViewControler.pushViewController(viewController, animated: true)
+    func pushActivityDetailsView(activity: Activity) {
+        if let rootViewControler = self.window.rootViewController as? UINavigationController, let activityDetailsVC = Storyboard.ActivityDetails.instantiateViewControllerWithIdentifier(Storyboard.BusinessDetailVCIdentifier) as? BusinessDetailsViewController {
+            activityDetailsVC.activity = activity
+            rootViewControler.pushViewController(activityDetailsVC, animated: true)
         }
     }
 

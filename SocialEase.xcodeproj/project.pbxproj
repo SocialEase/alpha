@@ -81,6 +81,12 @@
 		AC59DB861BDBF3E6001281F5 /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC59DB851BDBF3E6001281F5 /* Plan.swift */; };
 		AC59DB881BDC6301001281F5 /* Plan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC59DB871BDC6301001281F5 /* Plan.storyboard */; };
 		AC64C12F1BE68949000F2DCF /* AppNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC64C12E1BE68949000F2DCF /* AppNotifications.swift */; };
+		AC64C1311BE6A5A4000F2DCF /* ActivityDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC64C1301BE6A5A4000F2DCF /* ActivityDetails.storyboard */; };
+		AC64C1331BE6A709000F2DCF /* BusinessDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC64C1321BE6A709000F2DCF /* BusinessDetailsViewController.swift */; };
+		AC64C1381BE6A78B000F2DCF /* BusinessDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC64C1341BE6A78B000F2DCF /* BusinessDetailViewCell.swift */; };
+		AC64C1391BE6A78B000F2DCF /* BusinessMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC64C1351BE6A78B000F2DCF /* BusinessMapTableViewCell.swift */; };
+		AC64C13A1BE6A78B000F2DCF /* BusinessAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC64C1361BE6A78B000F2DCF /* BusinessAddressTableViewCell.swift */; };
+		AC64C13B1BE6A78B000F2DCF /* BusinessPhoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC64C1371BE6A78B000F2DCF /* BusinessPhoneTableViewCell.swift */; };
 		AC976B521BDD329B00FBEC06 /* PlanInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC976B511BDD329B00FBEC06 /* PlanInformationViewController.swift */; };
 		AC976B541BDD32B100FBEC06 /* PlanChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC976B531BDD32B100FBEC06 /* PlanChatViewController.swift */; };
 		AC976B5C1BDDD7CE00FBEC06 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC976B5B1BDDD7CE00FBEC06 /* MapKit.framework */; };
@@ -91,13 +97,6 @@
 		ACD0E42E1BDB463000CE0558 /* PlanDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD0E42D1BDB463000CE0558 /* PlanDisplayViewController.swift */; };
 		ACD342741BDB4E1B006ACA0C /* DisplayPlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD342731BDB4E1B006ACA0C /* DisplayPlanVC.swift */; };
 		ACEB7CBA1BDB365600B1A482 /* socialease.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACEB7CB91BDB365600B1A482 /* socialease.ttf */; };
-		BDEF38201BE1B96600CA6A56 /* BusinessDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDEF381F1BE1B96600CA6A56 /* BusinessDetail.storyboard */; };
-		BDEF38221BE1B97400CA6A56 /* BusinessDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF38211BE1B97400CA6A56 /* BusinessDetailViewController.swift */; };
-		BDEF38281BE1B98300CA6A56 /* BusinessTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF38231BE1B98300CA6A56 /* BusinessTableViewCell.swift */; };
-		BDEF38291BE1B98300CA6A56 /* BusinessMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF38241BE1B98300CA6A56 /* BusinessMapTableViewCell.swift */; };
-		BDEF382A1BE1B98300CA6A56 /* BusinessAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF38251BE1B98300CA6A56 /* BusinessAddressTableViewCell.swift */; };
-		BDEF382B1BE1B98300CA6A56 /* BusinessPhoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF38261BE1B98300CA6A56 /* BusinessPhoneTableViewCell.swift */; };
-		BDEF382C1BE1B98300CA6A56 /* BusinessDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF38271BE1B98300CA6A56 /* BusinessDetailViewCell.swift */; };
 		DB60B389636A8D1DFCB85A92 /* Pods_SocialEase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBBB717F537F177AEEECFB4 /* Pods_SocialEase.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -180,6 +179,12 @@
 		AC59DB851BDBF3E6001281F5 /* Plan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Plan.swift; path = Models/Plan.swift; sourceTree = "<group>"; };
 		AC59DB871BDC6301001281F5 /* Plan.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Plan.storyboard; path = Storyboards/Plan.storyboard; sourceTree = "<group>"; };
 		AC64C12E1BE68949000F2DCF /* AppNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppNotifications.swift; path = Utilities/AppNotifications.swift; sourceTree = "<group>"; };
+		AC64C1301BE6A5A4000F2DCF /* ActivityDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ActivityDetails.storyboard; sourceTree = "<group>"; };
+		AC64C1321BE6A709000F2DCF /* BusinessDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessDetailsViewController.swift; sourceTree = "<group>"; };
+		AC64C1341BE6A78B000F2DCF /* BusinessDetailViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessDetailViewCell.swift; sourceTree = "<group>"; };
+		AC64C1351BE6A78B000F2DCF /* BusinessMapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessMapTableViewCell.swift; sourceTree = "<group>"; };
+		AC64C1361BE6A78B000F2DCF /* BusinessAddressTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessAddressTableViewCell.swift; sourceTree = "<group>"; };
+		AC64C1371BE6A78B000F2DCF /* BusinessPhoneTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessPhoneTableViewCell.swift; sourceTree = "<group>"; };
 		AC976B511BDD329B00FBEC06 /* PlanInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlanInformationViewController.swift; path = ViewControllers/PlanInformationViewController.swift; sourceTree = "<group>"; };
 		AC976B531BDD32B100FBEC06 /* PlanChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlanChatViewController.swift; path = ViewControllers/PlanChatViewController.swift; sourceTree = "<group>"; };
 		AC976B5B1BDDD7CE00FBEC06 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -190,13 +195,6 @@
 		ACD0E42D1BDB463000CE0558 /* PlanDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlanDisplayViewController.swift; path = ViewControllers/PlanDisplayViewController.swift; sourceTree = "<group>"; };
 		ACD342731BDB4E1B006ACA0C /* DisplayPlanVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DisplayPlanVC.swift; path = Utilities/DisplayPlanVC.swift; sourceTree = "<group>"; };
 		ACEB7CB91BDB365600B1A482 /* socialease.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = socialease.ttf; sourceTree = "<group>"; };
-		BDEF381F1BE1B96600CA6A56 /* BusinessDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BusinessDetail.storyboard; sourceTree = "<group>"; };
-		BDEF38211BE1B97400CA6A56 /* BusinessDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessDetailViewController.swift; sourceTree = "<group>"; };
-		BDEF38231BE1B98300CA6A56 /* BusinessTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessTableViewCell.swift; sourceTree = "<group>"; };
-		BDEF38241BE1B98300CA6A56 /* BusinessMapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessMapTableViewCell.swift; sourceTree = "<group>"; };
-		BDEF38251BE1B98300CA6A56 /* BusinessAddressTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessAddressTableViewCell.swift; sourceTree = "<group>"; };
-		BDEF38261BE1B98300CA6A56 /* BusinessPhoneTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessPhoneTableViewCell.swift; sourceTree = "<group>"; };
-		BDEF38271BE1B98300CA6A56 /* BusinessDetailViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessDetailViewCell.swift; sourceTree = "<group>"; };
 		CEBBB717F537F177AEEECFB4 /* Pods_SocialEase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialEase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -302,11 +300,10 @@
 		59F321671BD32F38005AB36C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BDEF38231BE1B98300CA6A56 /* BusinessTableViewCell.swift */,
-				BDEF38241BE1B98300CA6A56 /* BusinessMapTableViewCell.swift */,
-				BDEF38251BE1B98300CA6A56 /* BusinessAddressTableViewCell.swift */,
-				BDEF38261BE1B98300CA6A56 /* BusinessPhoneTableViewCell.swift */,
-				BDEF38271BE1B98300CA6A56 /* BusinessDetailViewCell.swift */,
+				AC64C1341BE6A78B000F2DCF /* BusinessDetailViewCell.swift */,
+				AC64C1351BE6A78B000F2DCF /* BusinessMapTableViewCell.swift */,
+				AC64C1361BE6A78B000F2DCF /* BusinessAddressTableViewCell.swift */,
+				AC64C1371BE6A78B000F2DCF /* BusinessPhoneTableViewCell.swift */,
 				AC3114BA1BD8989C00ED6E80 /* FilterOptionViewCell.swift */,
 				AC3114BB1BD8989C00ED6E80 /* SuggestedPlaceViewCell.swift */,
 				04ECB77A1BD73FB500819BA4 /* CuisineCell.swift */,
@@ -326,7 +323,7 @@
 		59F321681BD32F3C005AB36C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BDEF38211BE1B97400CA6A56 /* BusinessDetailViewController.swift */,
+				AC64C1321BE6A709000F2DCF /* BusinessDetailsViewController.swift */,
 				04ECB7721BD73F5500819BA4 /* GroupsViewController.swift */,
 				04ECB7731BD73F5500819BA4 /* WelcomeViewController.swift */,
 				04ECB7741BD73F5500819BA4 /* CategoriesViewController.swift */,
@@ -352,7 +349,6 @@
 		59F321691BD32F4A005AB36C /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				BDEF381F1BE1B96600CA6A56 /* BusinessDetail.storyboard */,
 				59F0FA001BD242980041A149 /* AppDelegate.swift */,
 				59F321651BD32D8F005AB36C /* AppFlow.swift */,
 				AC3114C11BD8997F00ED6E80 /* Suggestions.storyboard */,
@@ -360,6 +356,7 @@
 				04ECB76E1BD73EB300819BA4 /* Login.storyboard */,
 				AC30AF991BDA903C002A1A67 /* Home.storyboard */,
 				AC59DB871BDC6301001281F5 /* Plan.storyboard */,
+				AC64C1301BE6A5A4000F2DCF /* ActivityDetails.storyboard */,
 			);
 			name = Application;
 			sourceTree = "<group>";
@@ -500,11 +497,11 @@
 				ACEB7CBA1BDB365600B1A482 /* socialease.ttf in Resources */,
 				AC230E381BE5217600629C9A /* enso.ttf in Resources */,
 				59F321851BD486DF005AB36C /* GroupCreateViewController.xib in Resources */,
-				BDEF38201BE1B96600CA6A56 /* BusinessDetail.storyboard in Resources */,
 				AC3114C21BD8997F00ED6E80 /* Suggestions.storyboard in Resources */,
 				59EBD3691BD76966002CB63B /* socialease-logo.png in Resources */,
 				59F321911BD4A67F005AB36C /* yuichi-user-profile.png in Resources */,
 				AC59DB881BDC6301001281F5 /* Plan.storyboard in Resources */,
+				AC64C1311BE6A5A4000F2DCF /* ActivityDetails.storyboard in Resources */,
 				04ECB76F1BD73EB300819BA4 /* Login.storyboard in Resources */,
 				59F3216D1BD33165005AB36C /* GroupSelectionViewController.xib in Resources */,
 				59F3217C1BD43C26005AB36C /* GroupCell.xib in Resources */,
@@ -572,32 +569,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				04A578DE1BDBFAEE0088858A /* Cuisine.swift in Sources */,
-				BDEF38291BE1B98300CA6A56 /* BusinessMapTableViewCell.swift in Sources */,
 				04C0DEC11BDA0C1F00CE1ABF /* PreferencesCell.swift in Sources */,
 				59F321931BD4A705005AB36C /* Group.swift in Sources */,
 				AC976B541BDD32B100FBEC06 /* PlanChatViewController.swift in Sources */,
 				04ABB6341BE5DBC400B52708 /* ChatCurrentUserCell.swift in Sources */,
 				AC3114B51BD8983300ED6E80 /* SuggestionsViewFilters.swift in Sources */,
-				BDEF38281BE1B98300CA6A56 /* BusinessTableViewCell.swift in Sources */,
 				AC3114B71BD8985E00ED6E80 /* SEAActivity.swift in Sources */,
 				04ECB7781BD73F5500819BA4 /* CategoriesViewController.swift in Sources */,
 				59F321701BD33224005AB36C /* LoginViewController.swift in Sources */,
 				AC3114B41BD8983300ED6E80 /* DateUtils.swift in Sources */,
-				BDEF38221BE1B97400CA6A56 /* BusinessDetailViewController.swift in Sources */,
 				AC59DB841BDBF1CA001281F5 /* UserPlans.swift in Sources */,
 				04ECB77B1BD73FB500819BA4 /* CuisineCell.swift in Sources */,
-				BDEF382B1BE1B98300CA6A56 /* BusinessPhoneTableViewCell.swift in Sources */,
 				ACD0E42E1BDB463000CE0558 /* PlanDisplayViewController.swift in Sources */,
 				043570041BDCCBE100B22D1B /* PlanPreviewCell.swift in Sources */,
 				59F3215D1BD2FD10005AB36C /* Colors.swift in Sources */,
+				AC64C1381BE6A78B000F2DCF /* BusinessDetailViewCell.swift in Sources */,
+				AC64C1391BE6A78B000F2DCF /* BusinessMapTableViewCell.swift in Sources */,
 				04A578E01BDBFB050088858A /* UserPreferences.swift in Sources */,
 				04ECB7761BD73F5500819BA4 /* GroupsViewController.swift in Sources */,
 				AC3114C41BD8B05D00ED6E80 /* AppUtilities.swift in Sources */,
+				AC64C13A1BE6A78B000F2DCF /* BusinessAddressTableViewCell.swift in Sources */,
 				AC3114C61BD8B07800ED6E80 /* AppConstants.swift in Sources */,
 				ACAB2B221BDE755A005EC804 /* UserActivity.swift in Sources */,
 				04ECB7771BD73F5500819BA4 /* WelcomeViewController.swift in Sources */,
 				AC3114BC1BD8989C00ED6E80 /* FilterOptionViewCell.swift in Sources */,
-				BDEF382C1BE1B98300CA6A56 /* BusinessDetailViewCell.swift in Sources */,
 				AC3114B01BD8981400ED6E80 /* SuggestionsViewController.swift in Sources */,
 				04ABB6361BE5E3C400B52708 /* ChatEntry.swift in Sources */,
 				59F321661BD32D8F005AB36C /* AppFlow.swift in Sources */,
@@ -605,8 +600,10 @@
 				59F0FA011BD242980041A149 /* AppDelegate.swift in Sources */,
 				AC03A72D1BE0906B00924488 /* UserGroupUser.swift in Sources */,
 				AC64C12F1BE68949000F2DCF /* AppNotifications.swift in Sources */,
+				AC64C13B1BE6A78B000F2DCF /* BusinessPhoneTableViewCell.swift in Sources */,
 				04ABB6301BE5D5D100B52708 /* ChatFriendCell.swift in Sources */,
 				04ECB7711BD73F3D00819BA4 /* RegisterViewController.swift in Sources */,
+				AC64C1331BE6A709000F2DCF /* BusinessDetailsViewController.swift in Sources */,
 				04A578DA1BDB56870088858A /* OtherPreference.swift in Sources */,
 				AC3114B91BD8988700ED6E80 /* AppExtensions.swift in Sources */,
 				59F321611BD3099C005AB36C /* ViewController.swift in Sources */,
@@ -618,7 +615,6 @@
 				59F321841BD486DF005AB36C /* GroupCreateViewController.swift in Sources */,
 				59F3216C1BD33165005AB36C /* GroupSelectionViewController.swift in Sources */,
 				ACD342741BDB4E1B006ACA0C /* DisplayPlanVC.swift in Sources */,
-				BDEF382A1BE1B98300CA6A56 /* BusinessAddressTableViewCell.swift in Sources */,
 				AC59DB861BDBF3E6001281F5 /* Plan.swift in Sources */,
 				AC03A72F1BE091D200924488 /* UserGroup.swift in Sources */,
 				59F321951BD4A710005AB36C /* User.swift in Sources */,
