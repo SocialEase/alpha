@@ -31,6 +31,7 @@ class PlanInformationViewController: UIViewController, PlanViewControllerContext
     @IBOutlet weak var actPlanNameLabel: UILabel!
     @IBOutlet weak var actDateTimeLabel: UILabel!
     @IBOutlet weak var actPlanOrganizerNameLabel: UILabel!
+    @IBOutlet weak var selectedActivityContainerView: UIView!
 
     // MARK: variables
     private var _plan: Plan! {
@@ -102,7 +103,7 @@ class PlanInformationViewController: UIViewController, PlanViewControllerContext
                 UIView.animateWithDuration(1.0) { () -> Void in
                     self.pendingPlanView.alpha = 0
                     self.plan.currentUserStatus = .Active
-                    self.updateActivePlanViewUI(true)
+                    self.updateActivePlanViewUIForVotingActivity(true)
                 }
             }
         }
@@ -136,9 +137,13 @@ class PlanInformationViewController: UIViewController, PlanViewControllerContext
     // MARK: - Helper functions
     private func updateUI() {
         if plan.currentUserStatus == .Pending {
+            activePlanView.alpha = 0
+            pendingPlanView.alpha = 1
             updatePendingPlanViewUI()
         } else {
-            updateActivePlanViewUI(false)
+            activePlanView.alpha = 1
+            pendingPlanView.alpha = 0
+            plan.votedActivityObjectId == nil ? updateActivePlanViewUIForVotingActivity(false) : updateActivePlanViewUIForVotedActivity()
         }
     }
 
@@ -152,11 +157,29 @@ class PlanInformationViewController: UIViewController, PlanViewControllerContext
         NSNotificationCenter.defaultCenter().postNotificationName(SEAPlanStatusDidChangeNotification.Name, object: nil, userInfo: userInfo)
     }
 
-    // MARK: Active activity view update functions
-    private func updateActivePlanViewUI(createUserActitivities: Bool) {
-        activePlanView.alpha = 1
-        pendingPlanView.alpha = 0
+    // MARK: Active activity view update functions for voted activity
+    private func updateActivePlanViewUIForVotedActivity() {
+        activitiesTableView.alpha = 0
 
+        Activity.getActivitiesForObjectIdList([plan.votedActivityObjectId!]) { (activities: [Activity]?, error: NSError?) -> () in
+            if let activities = activities, let activity = activities.first {
+                let activityDetailsVC = Storyboard.ActivityDetails.instantiateViewControllerWithIdentifier(Storyboard.BusinessDetailVCIdentifier) as!BusinessDetailsViewController
+                activityDetailsVC.activity = activity
+                activityDetailsVC.view.frame = CGRectMake(0, 0, self.selectedActivityContainerView.frame.size.width, self.selectedActivityContainerView.frame.size.height)
+                self.addChildViewController(activityDetailsVC)
+                self.selectedActivityContainerView.addSubview(activityDetailsVC.view)
+                activityDetailsVC.didMoveToParentViewController(self)
+            }
+        }
+
+        // set other outlets
+        actPlanNameLabel.text = plan.name
+        actDateTimeLabel.text = DateUtils.getSystemStyleDisplayDate(plan.occuranceDateTime!)
+    }
+
+
+    private func updateActivePlanViewUIForVotingActivity(createUserActitivities: Bool) {
+        activitiesTableView.alpha = 1
         if userActivities == nil {
             if createUserActitivities {
                 Activity.getActivitiesForObjectIdList(plan.activityIds!) { (activities: [Activity]?, error: NSError?) -> () in
@@ -192,9 +215,6 @@ class PlanInformationViewController: UIViewController, PlanViewControllerContext
 
     // MARK: Pending activity view update functions
     private func updatePendingPlanViewUI() {
-        activePlanView.alpha = 0
-        pendingPlanView.alpha = 1
-
         // set background
         setBackgroundImageView()
 

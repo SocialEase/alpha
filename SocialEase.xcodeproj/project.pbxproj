@@ -84,7 +84,6 @@
 		AC64C12F1BE68949000F2DCF /* AppNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC64C12E1BE68949000F2DCF /* AppNotifications.swift */; };
 		AC64C1311BE6A5A4000F2DCF /* ActivityDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC64C1301BE6A5A4000F2DCF /* ActivityDetails.storyboard */; };
 		AC64C1331BE6A709000F2DCF /* BusinessDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC64C1321BE6A709000F2DCF /* BusinessDetailsViewController.swift */; };
-		AC64C1381BE6A78B000F2DCF /* BusinessDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC64C1341BE6A78B000F2DCF /* BusinessDetailViewCell.swift */; };
 		AC64C1391BE6A78B000F2DCF /* BusinessMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC64C1351BE6A78B000F2DCF /* BusinessMapTableViewCell.swift */; };
 		AC64C13A1BE6A78B000F2DCF /* BusinessAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC64C1361BE6A78B000F2DCF /* BusinessAddressTableViewCell.swift */; };
 		AC64C13B1BE6A78B000F2DCF /* BusinessPhoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC64C1371BE6A78B000F2DCF /* BusinessPhoneTableViewCell.swift */; };
@@ -183,7 +182,6 @@
 		AC64C12E1BE68949000F2DCF /* AppNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppNotifications.swift; path = Utilities/AppNotifications.swift; sourceTree = "<group>"; };
 		AC64C1301BE6A5A4000F2DCF /* ActivityDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ActivityDetails.storyboard; sourceTree = "<group>"; };
 		AC64C1321BE6A709000F2DCF /* BusinessDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessDetailsViewController.swift; sourceTree = "<group>"; };
-		AC64C1341BE6A78B000F2DCF /* BusinessDetailViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessDetailViewCell.swift; sourceTree = "<group>"; };
 		AC64C1351BE6A78B000F2DCF /* BusinessMapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessMapTableViewCell.swift; sourceTree = "<group>"; };
 		AC64C1361BE6A78B000F2DCF /* BusinessAddressTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessAddressTableViewCell.swift; sourceTree = "<group>"; };
 		AC64C1371BE6A78B000F2DCF /* BusinessPhoneTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessPhoneTableViewCell.swift; sourceTree = "<group>"; };
@@ -302,7 +300,6 @@
 		59F321671BD32F38005AB36C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AC64C1341BE6A78B000F2DCF /* BusinessDetailViewCell.swift */,
 				AC64C1351BE6A78B000F2DCF /* BusinessMapTableViewCell.swift */,
 				AC64C1361BE6A78B000F2DCF /* BusinessAddressTableViewCell.swift */,
 				AC64C1371BE6A78B000F2DCF /* BusinessPhoneTableViewCell.swift */,
@@ -587,7 +584,6 @@
 				ACD0E42E1BDB463000CE0558 /* PlanDisplayViewController.swift in Sources */,
 				043570041BDCCBE100B22D1B /* PlanPreviewCell.swift in Sources */,
 				59F3215D1BD2FD10005AB36C /* Colors.swift in Sources */,
-				AC64C1381BE6A78B000F2DCF /* BusinessDetailViewCell.swift in Sources */,
 				AC64C1391BE6A78B000F2DCF /* BusinessMapTableViewCell.swift in Sources */,
 				04A578E01BDBFB050088858A /* UserPreferences.swift in Sources */,
 				04ECB7761BD73F5500819BA4 /* GroupsViewController.swift in Sources */,

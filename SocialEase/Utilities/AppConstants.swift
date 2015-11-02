@@ -40,7 +40,7 @@ struct Storyboard {
 }
 
 enum BusinessDetailVCCellIdentifiers: String {
-        case BusinessDetailViewCell, BusinessMapTableViewCell, BusinessAddressTableViewCell, BusinessPhoneTableViewCell
+        case BusinessMapTableViewCell, BusinessAddressTableViewCell, BusinessPhoneTableViewCell
 }
 
 

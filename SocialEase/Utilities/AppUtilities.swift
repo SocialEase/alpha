@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class AppUtilities: NSObject {
 
@@ -23,5 +24,15 @@ class AppUtilities: NSObject {
         let emptyStarCount = totalRating - Int(ceil(rating))
 
         return String(count: fullStarCount, repeatedValue: SocialEaseIconsType.FilledStar.rawValue) + String(count: halfStarCount, repeatedValue: SocialEaseIconsType.HalfFilledStar.rawValue) + String(count: emptyStarCount, repeatedValue: SocialEaseIconsType.EmptyStar.rawValue)
+    }
+
+    static func launchDirections(addressStrings: [String]) {
+        if let escapedAddress = addressStrings.joinWithSeparator(" ").stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet()) {
+            let appleMapsUrl = NSURL(string: "http://maps.apple.com/?daddr=\(escapedAddress)&dirflg=d&t=h")!
+
+            if UIApplication.sharedApplication().canOpenURL(appleMapsUrl) {
+                UIApplication.sharedApplication().openURL(appleMapsUrl)
+            }
+        }
     }
 }

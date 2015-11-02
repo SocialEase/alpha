@@ -40,6 +40,7 @@ class Plan: NSObject {
         static let Comment = "comment"
         static let GroupObjectId = "groupObjectId"
         static let ActivityObjectIdList = "activityObjectIdList"
+        static let VotedActivityObjectId = "votedActivityObjectId"
     }
 
     // MARK: Stored
@@ -68,6 +69,10 @@ class Plan: NSObject {
 
     var activityIds: [String]? {
         return object[Fields.ActivityObjectIdList] as? [String]
+    }
+
+    var votedActivityObjectId: String? {
+        return object[Fields.VotedActivityObjectId] as? String
     }
 
     var imageUrl: NSURL? {

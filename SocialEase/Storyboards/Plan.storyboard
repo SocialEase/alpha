@@ -86,7 +86,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9:30 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRN-B4-VWO">
-                                                    <rect key="frame" x="196" y="10" width="44.5" height="13.5"/>
+                                                    <rect key="frame" x="196" y="10" width="45" height="14"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" red="0.45395171960000003" green="0.45395171960000003" blue="0.45395171960000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -346,6 +346,11 @@
                                             <constraint firstItem="ets-Uf-0bM" firstAttribute="leading" secondItem="qOz-Kf-1Cd" secondAttribute="leading" constant="8" id="zTc-uI-egf"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hRT-k0-As9">
+                                        <rect key="frame" x="0.0" y="100" width="600" height="436"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="143" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EvE-l4-wOf">
                                         <rect key="frame" x="0.0" y="100" width="600" height="436"/>
                                         <animations/>
@@ -355,7 +360,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="600" height="143"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X5n-Xz-VTD" id="q9S-OU-GmJ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="142.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="142"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iBX-Nl-YYD">
@@ -537,20 +542,26 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="hRT-k0-As9" firstAttribute="top" secondItem="qOz-Kf-1Cd" secondAttribute="bottom" id="0cm-0B-F2w"/>
                                     <constraint firstAttribute="trailing" secondItem="qOz-Kf-1Cd" secondAttribute="trailing" id="9GV-Fq-V3T"/>
+                                    <constraint firstItem="hRT-k0-As9" firstAttribute="leading" secondItem="qOz-Kf-1Cd" secondAttribute="trailing" constant="-600" id="D9E-ya-xVU"/>
                                     <constraint firstItem="qOz-Kf-1Cd" firstAttribute="leading" secondItem="8JB-ov-cXm" secondAttribute="leading" id="MIZ-Mu-w9b"/>
+                                    <constraint firstItem="hRT-k0-As9" firstAttribute="leading" secondItem="8JB-ov-cXm" secondAttribute="leading" id="RPC-Ec-zB3"/>
                                     <constraint firstItem="EvE-l4-wOf" firstAttribute="top" secondItem="8JB-ov-cXm" secondAttribute="top" id="XTW-2r-Y2U"/>
+                                    <constraint firstAttribute="trailing" secondItem="hRT-k0-As9" secondAttribute="trailing" id="YGF-gv-3Wd"/>
                                     <constraint firstAttribute="bottom" secondItem="EvE-l4-wOf" secondAttribute="bottom" id="dMF-TC-dfn"/>
                                     <constraint firstItem="EvE-l4-wOf" firstAttribute="top" secondItem="qOz-Kf-1Cd" secondAttribute="bottom" id="eCf-ok-zvV"/>
                                     <constraint firstItem="EvE-l4-wOf" firstAttribute="leading" secondItem="8JB-ov-cXm" secondAttribute="leading" id="iZJ-7b-a3i"/>
                                     <constraint firstItem="qOz-Kf-1Cd" firstAttribute="top" secondItem="8JB-ov-cXm" secondAttribute="top" constant="-10" id="oOd-ma-BID"/>
                                     <constraint firstAttribute="trailing" secondItem="EvE-l4-wOf" secondAttribute="trailing" id="rkW-al-fqE"/>
                                     <constraint firstItem="qOz-Kf-1Cd" firstAttribute="top" secondItem="8JB-ov-cXm" secondAttribute="top" id="ryI-k2-mY8"/>
+                                    <constraint firstAttribute="bottom" secondItem="hRT-k0-As9" secondAttribute="bottom" id="uzF-7T-bHc"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="oOd-ma-BID"/>
                                         <exclude reference="XTW-2r-Y2U"/>
+                                        <exclude reference="D9E-ya-xVU"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -591,6 +602,7 @@
                         <outlet property="planDateLabel" destination="2XP-au-gK9" id="wCS-5X-mJ3"/>
                         <outlet property="planImageView" destination="2OC-rA-vz5" id="Nmu-mv-4ir"/>
                         <outlet property="planNameLabel" destination="Ubu-Cn-Swd" id="T9T-9d-QEf"/>
+                        <outlet property="selectedActivityContainerView" destination="hRT-k0-As9" id="jaH-j8-mES"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F8l-zd-Jl4" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -19,7 +19,7 @@ class BusinessDetailsViewController: UIViewController, UITableViewDelegate, UITa
     var activity: Activity!
 
     struct ViewConstants {
-        static let DetailsTableViewCells: [BusinessDetailVCCellIdentifiers] = [.BusinessDetailViewCell, .BusinessMapTableViewCell, .BusinessAddressTableViewCell, .BusinessPhoneTableViewCell]
+        static let DetailsTableViewCells: [BusinessDetailVCCellIdentifiers] = [.BusinessMapTableViewCell, .BusinessAddressTableViewCell, .BusinessPhoneTableViewCell]
         static let EstimatedRowHeight = CGFloat(100)
     }
 
@@ -37,13 +37,9 @@ class BusinessDetailsViewController: UIViewController, UITableViewDelegate, UITa
     // MARK: - Table view delegate and  datasource methods
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         switch ViewConstants.DetailsTableViewCells[indexPath.row] {
-        case .BusinessDetailViewCell:
-            let cell = businessInfoTableView.dequeueReusableCellWithIdentifier(BusinessDetailVCCellIdentifiers.BusinessDetailViewCell.rawValue, forIndexPath: indexPath) as! BusinessDetailViewCell
-            cell.activity = activity
-            return cell
         case .BusinessMapTableViewCell:
             let cell = businessInfoTableView.dequeueReusableCellWithIdentifier(BusinessDetailVCCellIdentifiers.BusinessMapTableViewCell.rawValue, forIndexPath: indexPath) as! BusinessMapTableViewCell
-            cell.businessLocation = CLLocation(latitude: activity.coordinate.latitude, longitude: activity.coordinate.longitude)
+            cell.activity = activity
             return cell
         case .BusinessAddressTableViewCell:
             let cell = businessInfoTableView.dequeueReusableCellWithIdentifier(BusinessDetailVCCellIdentifiers.BusinessAddressTableViewCell.rawValue, forIndexPath: indexPath) as! BusinessAddressTableViewCell
@@ -65,6 +61,8 @@ class BusinessDetailsViewController: UIViewController, UITableViewDelegate, UITa
         businessInfoTableView.deselectRowAtIndexPath(indexPath, animated: true)
         if let _ = businessInfoTableView.cellForRowAtIndexPath(indexPath) as? BusinessPhoneTableViewCell {
             UIApplication.sharedApplication().openURL(NSURL(string: "tel:\(activity.displayPhoneNumber)")!)
+        } else if let _ = businessInfoTableView.cellForRowAtIndexPath(indexPath) as? BusinessAddressTableViewCell {
+            AppUtilities.launchDirections(activity.displayAddress)
         }
     }
 
