@@ -47,15 +47,15 @@ class PlanPreviewCell: UITableViewCell {
             
             if (profileImageUrls.count >= 1) {
                 userImageView1.setImageWithURL(profileImageUrls[0])
-                ViewTransformationUtils.convertViewToCircle(userImageView1, borderColor: UIColor.sea_primaryLabelColor(), borderWidth: 1)
+                ViewTransformationUtils.convertViewToCircle(userImageView1, borderColor: UIColor.whiteColor(), borderWidth: 1)
             }
             if (profileImageUrls.count >= 2) {
                 userImageView2.setImageWithURL(profileImageUrls[1])
-                ViewTransformationUtils.convertViewToCircle(userImageView2, borderColor: UIColor.sea_primaryLabelColor(), borderWidth: 1)
+                ViewTransformationUtils.convertViewToCircle(userImageView2, borderColor: UIColor.whiteColor(), borderWidth: 1)
             }
             if (profileImageUrls.count >= 3) {
                 userImageView3.setImageWithURL(profileImageUrls[2])
-                ViewTransformationUtils.convertViewToCircle(userImageView3, borderColor: UIColor.sea_primaryLabelColor(), borderWidth: 1)
+                ViewTransformationUtils.convertViewToCircle(userImageView3, borderColor: UIColor.whiteColor(), borderWidth: 1)
             }
         }
     }
@@ -63,7 +63,11 @@ class PlanPreviewCell: UITableViewCell {
     func styleCell() {
         planNameLabel.textColor = UIColor.sea_lightLabelColor()
         planTimeLabel.textColor = UIColor.sea_lightLabelColor()
-        ViewTransformationUtils.addBlurToView(maskOverPhotoView, frame: planImageView.frame, style: UIBlurEffectStyle.Light)
+        
+        maskOverPhotoView.backgroundColor = UIColor.blackColor()
+        maskOverPhotoView.alpha = 0.4
+        
+//        ViewTransformationUtils.addBlurToView(maskOverPhotoView, frame: planImageView.frame, style: UIBlurEffectStyle.Light)
     }
     
     override func awakeFromNib() {
