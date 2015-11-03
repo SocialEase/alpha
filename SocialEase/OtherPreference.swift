@@ -41,8 +41,8 @@ class OtherPreference: NSObject {
     
     class func getAllPreferences() -> [(String, [OtherPreference])] {
         return [
-            ("How far do you like to travel for an event?", getDistancePrefrences()),
-            ("How often do you like to try something new?", getTryNewPrefrences())
+            ("How far do you like to travel?", getDistancePrefrences()),
+            ("Try something new?", getTryNewPrefrences())
         ]
     }
 }

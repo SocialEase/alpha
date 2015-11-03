@@ -29,7 +29,8 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
         cuisinesCollectionView.dataSource = self
         // more auto sizing
         
-        performSegueWithIdentifier("preferencesInfoModal", sender: self)
+        // not showing the preferences info modal anymore
+        // performSegueWithIdentifier("preferencesInfoModal", sender: self)
     }
     
     override func viewDidLayoutSubviews() {
@@ -68,7 +69,6 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
     
     func openGroupsController() {
         performSegueWithIdentifier("otherPreferencesViewSegue", sender: self)
-//        nextAction()
     }
     
     func nextAction() {

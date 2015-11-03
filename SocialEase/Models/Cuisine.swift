@@ -23,6 +23,7 @@ class Cuisine: NSObject {
     // get all cuisines from parse
     class func getCuisines(completion: ([Cuisine]?, NSError?) -> ()) {
         let query = PFQuery(className: "Cuisine")
+        query.addAscendingOrder("cuisineName")
         query.findObjectsInBackgroundWithBlock { (pfObjects, error) -> Void in
             if (error != nil) {
                 completion(nil, error)
