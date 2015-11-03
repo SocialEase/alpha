@@ -36,6 +36,6 @@ class AppUtilities: NSObject {
     }
 
     static func getGreetingDisplayText(name: String?) -> String {
-        return DateUtils.getDayGreeting(NSDate()) + " " + (name ?? "") + ","
+        return DateUtils.getDayGreeting(NSDate()) + " " + (name ?? "") + "!"
     }
 }

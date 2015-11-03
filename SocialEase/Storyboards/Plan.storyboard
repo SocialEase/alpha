@@ -154,7 +154,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9:30 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jC6-s0-WKM">
-                                                    <rect key="frame" x="196" y="10" width="44.5" height="13.5"/>
+                                                    <rect key="frame" x="196" y="10" width="45" height="14"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" red="0.45395171960000003" green="0.45395171960000003" blue="0.45395171960000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -419,7 +419,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="600" height="143"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X5n-Xz-VTD" id="q9S-OU-GmJ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="142.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="142"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iBX-Nl-YYD">
