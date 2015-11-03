@@ -14,6 +14,7 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
     
     var cuisines: [Cuisine]?
     @IBOutlet weak var cuisinesCollectionView: UICollectionView!
+    @IBOutlet weak var skipSetupButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +40,8 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
     
     func styleView() {
         view.backgroundColor = UIColor.whiteColor()
+        skipSetupButton.backgroundColor = UIColor.sea_primaryColor()
+        skipSetupButton.titleLabel?.textColor = UIColor.whiteColor()
     }
 
     
@@ -76,6 +79,10 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
             completionCallback()
         }
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func didSkipStepButtonTap(sender: AnyObject) {
+        AppFlow().presentHomePageViewController()
     }
     
     @IBAction func didCancel(sender: AnyObject) {

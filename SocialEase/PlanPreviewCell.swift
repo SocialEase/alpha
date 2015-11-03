@@ -2,8 +2,8 @@
 //  PlanPreviewCell.swift
 //  SocialEase
 //
-//  Created by Soumya on 10/25/15.
-//  Copyright © 2015 Yuichi Kuroda. All rights reserved.
+//  Created by Uday on 10/25/15.
+//  Copyright © 2015 udaymitra. All rights reserved.
 //
 
 import UIKit
@@ -65,7 +65,7 @@ class PlanPreviewCell: UITableViewCell {
         planTimeLabel.textColor = UIColor.sea_lightLabelColor()
         
         maskOverPhotoView.backgroundColor = UIColor.blackColor()
-        maskOverPhotoView.alpha = 0.4
+        maskOverPhotoView.alpha = 0.3
         
 //        ViewTransformationUtils.addBlurToView(maskOverPhotoView, frame: planImageView.frame, style: UIBlurEffectStyle.Light)
     }
