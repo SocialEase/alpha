@@ -55,8 +55,8 @@ class CuisineCell: UICollectionViewCell {
     }
     
     func showTappedStateForCell() {
-        let endColor = cellSelected ? UIColor.sea_primaryColor() : UIColor.whiteColor()
-        let labelColor = cellSelected ? UIColor.lightTextColor() : UIColor.sea_primaryLabelColor()
+        let endColor = cellSelected ? UIColor.sea_primaryColor() : UIColor.clearColor()
+        let labelColor = cellSelected ? UIColor.sea_primaryColor() : UIColor.sea_primaryLabelColor()
 
         self.cuisineNameLabel.textColor = labelColor
         UIView.animateWithDuration(0.15, animations: {

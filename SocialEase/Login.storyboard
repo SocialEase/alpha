@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -192,40 +192,40 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="z8w-Jy-QS6">
-                                    <size key="itemSize" width="90" height="90"/>
+                                    <size key="itemSize" width="103" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="10"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CuisineCell" id="Kcq-fH-jhH" customClass="CuisineCell" customModule="SocialEase" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="10" width="90" height="90"/>
+                                        <rect key="frame" x="0.0" y="10" width="103" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="103" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aFH-8x-mzu">
-                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                    <rect key="frame" x="11" y="0.0" width="80" height="80"/>
                                                     <animations/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="90" id="Moa-Id-Rqx"/>
-                                                        <constraint firstAttribute="height" constant="90" id="YR5-sV-QFq"/>
+                                                        <constraint firstAttribute="width" constant="80" id="Moa-Id-Rqx"/>
+                                                        <constraint firstAttribute="height" constant="80" id="YR5-sV-QFq"/>
                                                     </constraints>
                                                 </imageView>
-                                                <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cDe-4c-hXo" userLabel="Overlay View">
-                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                <view alpha="0.34999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cDe-4c-hXo" userLabel="Overlay View">
+                                                    <rect key="frame" x="11" y="0.0" width="80" height="80"/>
                                                     <animations/>
                                                     <color key="backgroundColor" red="0.27450980390000002" green="0.60392156860000001" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="90" id="6yX-bh-iCh"/>
-                                                        <constraint firstAttribute="height" constant="90" id="tHk-ni-hHR"/>
+                                                        <constraint firstAttribute="width" constant="80" id="6yX-bh-iCh"/>
+                                                        <constraint firstAttribute="height" constant="80" id="tHk-ni-hHR"/>
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meditteranean" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Aqh-hI-5bN">
-                                                    <rect key="frame" x="8" y="34" width="74" height="23"/>
+                                                    <rect key="frame" x="13.5" y="84" width="76" height="12"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -235,18 +235,19 @@
                                         </view>
                                         <animations/>
                                         <constraints>
-                                            <constraint firstItem="Aqh-hI-5bN" firstAttribute="leading" secondItem="Kcq-fH-jhH" secondAttribute="leadingMargin" id="18s-f9-f2W"/>
-                                            <constraint firstItem="cDe-4c-hXo" firstAttribute="centerX" secondItem="Kcq-fH-jhH" secondAttribute="centerX" id="CWv-CZ-8dD"/>
-                                            <constraint firstItem="cDe-4c-hXo" firstAttribute="centerY" secondItem="Kcq-fH-jhH" secondAttribute="centerY" id="E8D-sp-U23"/>
-                                            <constraint firstItem="aFH-8x-mzu" firstAttribute="centerX" secondItem="Kcq-fH-jhH" secondAttribute="centerX" id="HzV-x7-xed"/>
-                                            <constraint firstItem="aFH-8x-mzu" firstAttribute="centerY" secondItem="Kcq-fH-jhH" secondAttribute="centerY" id="Tfv-mq-MNs"/>
-                                            <constraint firstItem="aFH-8x-mzu" firstAttribute="centerY" secondItem="Kcq-fH-jhH" secondAttribute="centerY" id="WX6-PH-Plq"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="Aqh-hI-5bN" secondAttribute="trailing" id="jBa-uI-3uu"/>
-                                            <constraint firstItem="Aqh-hI-5bN" firstAttribute="centerX" secondItem="Kcq-fH-jhH" secondAttribute="centerX" id="km4-8i-y9f"/>
-                                            <constraint firstItem="Aqh-hI-5bN" firstAttribute="centerY" secondItem="Kcq-fH-jhH" secondAttribute="centerY" id="q0V-ZB-gIP"/>
-                                            <constraint firstItem="aFH-8x-mzu" firstAttribute="centerX" secondItem="Kcq-fH-jhH" secondAttribute="centerX" id="sOv-4A-xj1"/>
+                                            <constraint firstItem="Aqh-hI-5bN" firstAttribute="top" secondItem="cDe-4c-hXo" secondAttribute="bottom" constant="4" id="Lbo-gU-2pD"/>
+                                            <constraint firstItem="Aqh-hI-5bN" firstAttribute="bottom" secondItem="Kcq-fH-jhH" secondAttribute="bottomMargin" constant="4" id="UL1-qL-Zex"/>
+                                            <constraint firstItem="cDe-4c-hXo" firstAttribute="centerX" secondItem="Kcq-fH-jhH" secondAttribute="centerX" id="VIx-79-Gbb"/>
+                                            <constraint firstItem="cDe-4c-hXo" firstAttribute="top" secondItem="Kcq-fH-jhH" secondAttribute="top" id="aYb-vY-1ri"/>
+                                            <constraint firstItem="Aqh-hI-5bN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Kcq-fH-jhH" secondAttribute="leadingMargin" id="bwx-wV-NR4"/>
+                                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Aqh-hI-5bN" secondAttribute="trailing" id="d9H-Ib-xkU"/>
+                                            <constraint firstItem="cDe-4c-hXo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Kcq-fH-jhH" secondAttribute="leadingMargin" id="lBe-wq-6bh"/>
+                                            <constraint firstItem="aFH-8x-mzu" firstAttribute="top" secondItem="Kcq-fH-jhH" secondAttribute="top" id="mE6-NO-cuP"/>
+                                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="cDe-4c-hXo" secondAttribute="trailing" id="qts-w9-v6a"/>
+                                            <constraint firstItem="aFH-8x-mzu" firstAttribute="centerX" secondItem="Kcq-fH-jhH" secondAttribute="centerX" id="wzJ-6H-z6J"/>
+                                            <constraint firstItem="Aqh-hI-5bN" firstAttribute="centerX" secondItem="Kcq-fH-jhH" secondAttribute="centerX" id="zaz-MP-4Bt"/>
                                         </constraints>
-                                        <size key="customSize" width="90" height="90"/>
+                                        <size key="customSize" width="103" height="100"/>
                                         <connections>
                                             <outlet property="cuisineImageView" destination="aFH-8x-mzu" id="rTu-K5-nAF"/>
                                             <outlet property="cuisineNameLabel" destination="Aqh-hI-5bN" id="ABx-ge-ns4"/>
