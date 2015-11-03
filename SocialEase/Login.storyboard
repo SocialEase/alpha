@@ -15,6 +15,7 @@
             <string>socialease</string>
             <string>socialease</string>
             <string>socialease</string>
+            <string>socialease</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -223,12 +224,30 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meditteranean" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Aqh-hI-5bN">
-                                                    <rect key="frame" x="13.5" y="84" width="76" height="12"/>
+                                                    <rect key="frame" x="13" y="84" width="76" height="12"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oL4-t9-nSU" userLabel="Check Mark View">
+                                                    <rect key="frame" x="11" y="0.0" width="80" height="80"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="l" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q2n-lR-d29">
+                                                            <rect key="frame" x="64" y="0.0" width="16" height="16"/>
+                                                            <animations/>
+                                                            <fontDescription key="fontDescription" name="socialease" family="socialease" pointSize="16"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <animations/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="q2n-lR-d29" firstAttribute="top" secondItem="oL4-t9-nSU" secondAttribute="top" id="8bl-ZP-V3q"/>
+                                                        <constraint firstAttribute="trailing" secondItem="q2n-lR-d29" secondAttribute="trailing" id="SDe-0K-NBM"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -236,19 +255,24 @@
                                         <animations/>
                                         <constraints>
                                             <constraint firstItem="Aqh-hI-5bN" firstAttribute="top" secondItem="cDe-4c-hXo" secondAttribute="bottom" constant="4" id="Lbo-gU-2pD"/>
+                                            <constraint firstItem="oL4-t9-nSU" firstAttribute="bottom" secondItem="cDe-4c-hXo" secondAttribute="bottom" id="PAw-fb-D1R"/>
+                                            <constraint firstItem="oL4-t9-nSU" firstAttribute="trailing" secondItem="cDe-4c-hXo" secondAttribute="trailing" id="SGG-7p-Uz3"/>
                                             <constraint firstItem="Aqh-hI-5bN" firstAttribute="bottom" secondItem="Kcq-fH-jhH" secondAttribute="bottomMargin" constant="4" id="UL1-qL-Zex"/>
                                             <constraint firstItem="cDe-4c-hXo" firstAttribute="centerX" secondItem="Kcq-fH-jhH" secondAttribute="centerX" id="VIx-79-Gbb"/>
                                             <constraint firstItem="cDe-4c-hXo" firstAttribute="top" secondItem="Kcq-fH-jhH" secondAttribute="top" id="aYb-vY-1ri"/>
                                             <constraint firstItem="Aqh-hI-5bN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Kcq-fH-jhH" secondAttribute="leadingMargin" id="bwx-wV-NR4"/>
                                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Aqh-hI-5bN" secondAttribute="trailing" id="d9H-Ib-xkU"/>
+                                            <constraint firstItem="oL4-t9-nSU" firstAttribute="leading" secondItem="cDe-4c-hXo" secondAttribute="leading" id="ffI-jJ-2DX"/>
                                             <constraint firstItem="cDe-4c-hXo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Kcq-fH-jhH" secondAttribute="leadingMargin" id="lBe-wq-6bh"/>
                                             <constraint firstItem="aFH-8x-mzu" firstAttribute="top" secondItem="Kcq-fH-jhH" secondAttribute="top" id="mE6-NO-cuP"/>
                                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="cDe-4c-hXo" secondAttribute="trailing" id="qts-w9-v6a"/>
                                             <constraint firstItem="aFH-8x-mzu" firstAttribute="centerX" secondItem="Kcq-fH-jhH" secondAttribute="centerX" id="wzJ-6H-z6J"/>
                                             <constraint firstItem="Aqh-hI-5bN" firstAttribute="centerX" secondItem="Kcq-fH-jhH" secondAttribute="centerX" id="zaz-MP-4Bt"/>
+                                            <constraint firstItem="oL4-t9-nSU" firstAttribute="top" secondItem="cDe-4c-hXo" secondAttribute="top" id="zcB-yE-3bu"/>
                                         </constraints>
                                         <size key="customSize" width="103" height="100"/>
                                         <connections>
+                                            <outlet property="checkMarkLabel" destination="q2n-lR-d29" id="VU3-lY-Mba"/>
                                             <outlet property="cuisineImageView" destination="aFH-8x-mzu" id="rTu-K5-nAF"/>
                                             <outlet property="cuisineNameLabel" destination="Aqh-hI-5bN" id="ABx-ge-ns4"/>
                                             <outlet property="overlayView" destination="cDe-4c-hXo" id="LTg-9b-QTQ"/>

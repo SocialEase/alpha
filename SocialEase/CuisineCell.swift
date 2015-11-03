@@ -13,7 +13,8 @@ class CuisineCell: UICollectionViewCell {
     @IBOutlet weak var cuisineImageView: UIImageView!
     @IBOutlet weak var cuisineNameLabel: UILabel!
     @IBOutlet weak var overlayView: UIView!
-
+    @IBOutlet weak var checkMarkLabel: UILabel!
+    
     var cellSelected = false
     
     var cuisine: Cuisine! {
@@ -42,6 +43,8 @@ class CuisineCell: UICollectionViewCell {
         cuisineNameLabel.minimumScaleFactor = 0.2;
         cuisineNameLabel.adjustsFontSizeToFitWidth = true;
         
+        checkMarkLabel.textColor = UIColor.sea_primaryColor()
+        
         ViewTransformationUtils.convertViewToCircle(cuisineImageView, borderColor: UIColor.sea_primaryLabelColor(), borderWidth: 1)
         ViewTransformationUtils.convertViewToCircle(overlayView, borderColor: UIColor.sea_primaryLabelColor(), borderWidth: 1)
         
@@ -55,7 +58,8 @@ class CuisineCell: UICollectionViewCell {
     }
     
     func showTappedStateForCell() {
-        let endColor = cellSelected ? UIColor.sea_primaryColor() : UIColor.clearColor()
+        let endColor = UIColor.clearColor()
+        // cellSelected ? UIColor.sea_primaryColor() : UIColor.clearColor()
         let labelColor = cellSelected ? UIColor.sea_primaryColor() : UIColor.sea_primaryLabelColor()
 
         self.cuisineNameLabel.textColor = labelColor
@@ -69,6 +73,7 @@ class CuisineCell: UICollectionViewCell {
                 self.cuisineNameLabel.hidden = false
                 self.cuisineImageView.transform = CGAffineTransformMakeScale(1, 1)
                 self.overlayView.transform = CGAffineTransformMakeScale(1, 1)
+                self.checkMarkLabel.hidden = !self.cellSelected
                 })
         })
     }
