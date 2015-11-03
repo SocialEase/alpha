@@ -58,9 +58,9 @@ class DateUtils {
 
         var greeting = ""
         switch hour {
-        case 0 ... 12:
+        case 0 ... 11:
             greeting = "Good Morning"
-        case 13 ... 17:
+        case 12 ... 17:
             greeting = "Good Afternoon"
         default:
             greeting = "Good Evening"

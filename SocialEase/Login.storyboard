@@ -233,11 +233,11 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oL4-t9-nSU" userLabel="Check Mark View">
                                                     <rect key="frame" x="11" y="0.0" width="80" height="80"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="l" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q2n-lR-d29">
-                                                            <rect key="frame" x="64" y="0.0" width="16" height="16"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="t" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q2n-lR-d29">
+                                                            <rect key="frame" x="64" y="64" width="16" height="16"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" name="socialease" family="socialease" pointSize="16"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -246,7 +246,13 @@
                                                     <constraints>
                                                         <constraint firstItem="q2n-lR-d29" firstAttribute="top" secondItem="oL4-t9-nSU" secondAttribute="top" id="8bl-ZP-V3q"/>
                                                         <constraint firstAttribute="trailing" secondItem="q2n-lR-d29" secondAttribute="trailing" id="SDe-0K-NBM"/>
+                                                        <constraint firstAttribute="bottom" secondItem="q2n-lR-d29" secondAttribute="bottom" id="xzB-qf-et1"/>
                                                     </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="8bl-ZP-V3q"/>
+                                                        </mask>
+                                                    </variation>
                                                 </view>
                                             </subviews>
                                             <animations/>
@@ -289,7 +295,7 @@
                                 <rect key="frame" x="0.0" y="564" width="600" height="36"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Skip this step"/>
+                                <state key="normal" title="SKIP"/>
                                 <connections>
                                     <action selector="didSkipStepButtonTap:" destination="vbk-fn-MWo" eventType="touchUpInside" id="z0m-X4-l3z"/>
                                 </connections>
@@ -342,11 +348,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYv-4j-NF1">
-                                <rect key="frame" x="70" y="226" width="460" height="149"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYv-4j-NF1">
+                                <rect key="frame" x="70" y="252" width="460" height="96"/>
                                 <animations/>
-                                <string key="text">In order to provide you with relevant recommendations, we ask you for a one time setup to let us know what you like. You can also change it later by going to app settings.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <string key="text">In order to provide you with relevant recommendations, we ask you for a one time setup to let us know what you like.You can also change it later by going to app settings.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
