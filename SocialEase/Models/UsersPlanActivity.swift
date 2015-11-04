@@ -38,7 +38,7 @@ class UsersPlanActivity: NSObject {
             userActivityObject[UserActivity.Fields.PlanId] = plan.id!
             userActivityObject[UserActivity.Fields.ActivityId] = activity.id!
             userActivityObject[UserActivity.Fields.Activity] = activity.pfObject
-            userActivityObject[UserActivity.Fields.Vote] = UserActivityVote.None.rawValue
+            userActivityObject[UserActivity.Fields.Vote] = UserActivityVote.Like.rawValue
 
             userPlanActivityObjects.append(userActivityObject)
         }
@@ -46,6 +46,18 @@ class UsersPlanActivity: NSObject {
         // save parse objects
         PFObject.saveAllInBackground(userPlanActivityObjects) { (success: Bool, error: NSError?) -> Void in
             completion(success, error)
+        }
+    }
+
+    class func updateAndFetchVotingStatusForPlan(plan: Plan, withCompletion completion: ((NSDictionary?, NSError?) -> ())?) {
+
+        PFCloud.callFunctionInBackground("plan__update_voting_status", withParameters: ["planId": plan.id!]) { (response: AnyObject?, error: NSError?) -> Void in
+            if let response = response as? NSDictionary {
+                print(response)
+                completion?(response, error)
+            } else {
+                completion?(nil, error)
+            }
         }
     }
 }

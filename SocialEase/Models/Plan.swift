@@ -72,7 +72,12 @@ class Plan: NSObject {
     }
 
     var votedActivityObjectId: String? {
-        return object[Fields.VotedActivityObjectId] as? String
+        get {
+            return object[Fields.VotedActivityObjectId] as? String
+        }
+        set(newValue) {
+            object[Fields.VotedActivityObjectId] = newValue
+        }
     }
 
     var imageUrl: NSURL? {

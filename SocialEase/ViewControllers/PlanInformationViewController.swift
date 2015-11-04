@@ -28,6 +28,7 @@ class PlanInformationViewController: UIViewController, PlanViewControllerContext
     @IBOutlet weak var activePlanView: UIView!
     @IBOutlet weak var activitiesTableView: UITableView!
 
+    @IBOutlet weak var planSummaryView: UIView!
     @IBOutlet weak var actPlanNameLabel: UILabel!
     @IBOutlet weak var actDateTimeLabel: UILabel!
     @IBOutlet weak var actPlanOrganizerNameLabel: UILabel!
@@ -68,6 +69,7 @@ class PlanInformationViewController: UIViewController, PlanViewControllerContext
         static let LeftCalloutFrame = CGRect(x: 0, y: 0, width: 50, height: 50)
     }
 
+    var votedActivityViewShowing = false
     // MARK: - Lifecylce methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,10 +89,12 @@ class PlanInformationViewController: UIViewController, PlanViewControllerContext
         plan.getPlanOganizerWithCompletion{ (user: User?, error: NSError?) -> () in
             self.planOrganizer = user
         }
+
+        planSummaryView.addBorderToViewAtPosition(.Bottom, color: UIColor.lightGrayColor(), andThickness: 1)
     }
 
     override func viewWillDisappear(animated: Bool) {
-        UserActivity.saveObjectsInBackground(userActivities, withCompletion: nil)
+        saveUserActivitiesObjectsAndFetchPlanStatus()
     }
 
     // MARK: - View Actions
@@ -160,9 +164,8 @@ class PlanInformationViewController: UIViewController, PlanViewControllerContext
     }
 
     // MARK: Active activity view update functions for voted activity
-    private func updateActivePlanViewUIForVotedActivity() {
-        activitiesTableView.alpha = 0
-
+    private func updateActivePlanViewUIForVotedActivity(animated: Bool = false) {
+        votedActivityViewShowing = true
         Activity.getActivitiesForObjectIdList([plan.votedActivityObjectId!]) { (activities: [Activity]?, error: NSError?) -> () in
             if let activities = activities, let activity = activities.first {
                 let activityDetailsVC = Storyboard.ActivityDetails.instantiateViewControllerWithIdentifier(Storyboard.BusinessDetailVCIdentifier) as!BusinessDetailsViewController
@@ -177,8 +180,16 @@ class PlanInformationViewController: UIViewController, PlanViewControllerContext
         // set other outlets
         actPlanNameLabel.text = plan.name
         actDateTimeLabel.text = DateUtils.getSystemStyleDisplayDate(plan.occuranceDateTime!)
-    }
 
+        // display activity view
+        if !animated {
+            activitiesTableView.alpha = 0
+        } else {
+            UIView.animateWithDuration(0.5) { () -> Void in
+                self.activitiesTableView.alpha = 0
+            }
+        }
+    }
 
     private func updateActivePlanViewUIForVotingActivity(createUserActitivities: Bool) {
         activitiesTableView.alpha = 1
@@ -187,6 +198,7 @@ class PlanInformationViewController: UIViewController, PlanViewControllerContext
                 Activity.getActivitiesForObjectIdList(plan.activityIds!) { (activities: [Activity]?, error: NSError?) -> () in
                     if let activities = activities {
                         self.userActivities = activities.map { UserActivity(userId: (PFUser.currentUser()?.objectId!)!, planId: self.plan.id!, activity: $0) }
+                        self.saveUserActivitiesObjectsAndFetchPlanStatus()
                     }
                 }
             } else {
@@ -207,12 +219,6 @@ class PlanInformationViewController: UIViewController, PlanViewControllerContext
         if let _ = userActivities {
             activitiesTableView.reloadData()
         }
-    }
-
-    // MARK: - Activity view cell delegate
-    func activityViewCell(activityViewCell: UITableViewCell, didUpdateActivityVoteToVote vote: UserActivityVote, atIndexPath indexpath: NSIndexPath) {
-        userActivities?[indexpath.row].vote = vote
-        activitiesTableView.reloadRowsAtIndexPaths([indexpath], withRowAnimation: .None)
     }
 
     // MARK: Pending activity view update functions
@@ -250,6 +256,27 @@ class PlanInformationViewController: UIViewController, PlanViewControllerContext
         activitiesTableView.tableFooterView = UIView(frame: CGRectZero)
         activitiesTableView.separatorStyle = UITableViewCellSeparatorStyle.None
     }
+
+    func saveUserActivitiesObjectsAndFetchPlanStatus() {
+        UserActivity.saveObjectsInBackground(self.userActivities) { (success, error) -> Void in
+            if success {
+                UsersPlanActivity.updateAndFetchVotingStatusForPlan(self.plan) { (planStatusResults: NSDictionary?, error: NSError?) -> () in
+                    if let planStatusResults = planStatusResults {
+                        // @todo: update trending here
+                    } else {
+                        print(error?.localizedDescription)
+                    }
+                }
+            }
+        }
+    }
+    // MARK: - Activity view cell delegate
+    func activityViewCell(activityViewCell: UITableViewCell, didUpdateActivityVoteToVote vote: UserActivityVote, atIndexPath indexpath: NSIndexPath) {
+        userActivities?[indexpath.row].vote = vote
+        activitiesTableView.reloadRowsAtIndexPaths([indexpath], withRowAnimation: .None)
+        saveUserActivitiesObjectsAndFetchPlanStatus()
+    }
+
     /*
     // MARK: - Navigation
 

@@ -85,6 +85,7 @@ class UserActivity: NSObject {
                 if let _ = error {
                     print(error?.localizedDescription)
                 }
+                completion?(success, error)
             }
 
         }

@@ -400,7 +400,7 @@
                                         </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hRT-k0-As9">
-                                        <rect key="frame" x="0.0" y="125" width="600" height="411"/>
+                                        <rect key="frame" x="0.0" y="130" width="600" height="406"/>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
@@ -416,7 +416,7 @@
                                                     <rect key="frame" x="218" y="11" width="165" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -670,7 +670,7 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="hRT-k0-As9" firstAttribute="top" secondItem="qOz-Kf-1Cd" secondAttribute="bottom" id="0cm-0B-F2w"/>
+                                    <constraint firstItem="hRT-k0-As9" firstAttribute="top" secondItem="qOz-Kf-1Cd" secondAttribute="bottom" constant="5" id="0cm-0B-F2w"/>
                                     <constraint firstAttribute="trailing" secondItem="qOz-Kf-1Cd" secondAttribute="trailing" id="9GV-Fq-V3T"/>
                                     <constraint firstItem="hRT-k0-As9" firstAttribute="leading" secondItem="qOz-Kf-1Cd" secondAttribute="trailing" constant="-600" id="D9E-ya-xVU"/>
                                     <constraint firstItem="qOz-Kf-1Cd" firstAttribute="leading" secondItem="8JB-ov-cXm" secondAttribute="leading" id="MIZ-Mu-w9b"/>
@@ -730,6 +730,7 @@
                         <outlet property="planDateLabel" destination="2XP-au-gK9" id="wCS-5X-mJ3"/>
                         <outlet property="planImageView" destination="2OC-rA-vz5" id="Nmu-mv-4ir"/>
                         <outlet property="planNameLabel" destination="Ubu-Cn-Swd" id="T9T-9d-QEf"/>
+                        <outlet property="planSummaryView" destination="qOz-Kf-1Cd" id="ZoX-3N-s05"/>
                         <outlet property="selectedActivityContainerView" destination="hRT-k0-As9" id="jaH-j8-mES"/>
                     </connections>
                 </viewController>

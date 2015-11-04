@@ -30,7 +30,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="138" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c7R-HO-Sj4">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BusinessMapTableViewCell" rowHeight="317" id="wIu-yh-cP9" customClass="BusinessMapTableViewCell" customModule="SocialEase" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="317"/>
@@ -49,7 +49,7 @@
                                                                     <rect key="frame" x="8" y="37" width="469" height="18"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kkkji" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fFd-Er-kVV">
@@ -63,12 +63,11 @@
                                                                     <rect key="frame" x="8" y="5" width="454" height="23"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                             <animations/>
-                                                            <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="trailing" secondItem="Deg-JQ-yjI" secondAttribute="trailing" constant="112" id="EV6-Do-eAX"/>
                                                                 <constraint firstItem="PCN-cO-ye8" firstAttribute="top" secondItem="Deg-JQ-yjI" secondAttribute="bottom" constant="9" id="HEd-WF-t0n"/>
@@ -111,7 +110,6 @@
                                                         </imageView>
                                                     </subviews>
                                                     <animations/>
-                                                    <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="OpU-br-ghx" firstAttribute="leading" secondItem="eQH-Yx-ZDu" secondAttribute="leading" constant="30" id="D8D-Jo-MLp"/>
                                                         <constraint firstAttribute="bottom" secondItem="uAR-sL-S8Q" secondAttribute="bottom" id="FeP-AF-vNl"/>
@@ -155,7 +153,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
-                                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="businessDetailsLabel" destination="PCN-cO-ye8" id="Bfn-FH-zdB"/>
                                             <outlet property="businessImageView" destination="OpU-br-ghx" id="p73-9A-YSO"/>
@@ -228,7 +225,6 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <animations/>
-                                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="addressLabel" destination="aQw-yW-2yb" id="Nph-da-Wuu"/>
                                         </connections>
@@ -285,7 +281,6 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <animations/>
-                                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="businessPhoneLabel" destination="yEQ-FJ-1Nc" id="1d0-R8-a6a"/>
                                         </connections>

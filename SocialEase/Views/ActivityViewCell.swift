@@ -51,7 +51,7 @@ class ActivityViewCell: UITableViewCell {
         static let UnselectedLikeButtonBgkColor = UIColor(red: 0, green: 128/255, blue: 0, alpha: 0.7)
         static let SelectedDislikeButtonBgkColor = UIColor(red: 187/255, green: 26/255, blue: 0/255, alpha: 0.9)
         static let UnselectedDislikeButtonBgkColor = UIColor(red: 187/255, green: 26/255, blue: 0/255, alpha: 0.7)
-        static let SelectedButtonBorderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+        static let SelectedButtonBorderColor = UIColor(red: 64/255, green: 148/255, blue: 1, alpha: 1)
         static let UnselectedButtonBorderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
 
         static let CenterConstraintDeltaScale: CGFloat = 0.5
@@ -66,8 +66,8 @@ class ActivityViewCell: UITableViewCell {
         // Initialization code
         activityImageView.contentMode = .ScaleAspectFill
         activityImageView.clipsToBounds = true
-        ViewTransformationUtils.convertViewToCircle(dislikeButton, borderColor: UIColor.whiteColor(), borderWidth: 0)
-        ViewTransformationUtils.convertViewToCircle(likeButton, borderColor: UIColor.whiteColor(), borderWidth: 0)
+        ViewTransformationUtils.convertViewToCircle(dislikeButton, borderColor: UIColor.whiteColor(), borderWidth: 3)
+        ViewTransformationUtils.convertViewToCircle(likeButton, borderColor: UIColor.whiteColor(), borderWidth: 3)
         activityLocationMapView.scrollEnabled = false
 
         // add gradient
