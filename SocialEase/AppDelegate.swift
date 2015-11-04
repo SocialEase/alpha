@@ -61,7 +61,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             ? String(planId!)
             : nil
     }
-    
+
+    func getAlertFromNotificationPayload(notificationPayload : NSDictionary) -> String? {
+        let alert = notificationPayload["alert"] as? NSString
+        return (alert != nil)
+            ? String(alert!)
+            : nil
+    }
+
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
@@ -146,10 +153,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if application.applicationState == UIApplicationState.Inactive {
             PFAnalytics.trackAppOpenedWithRemoteNotificationPayload(userInfo)
         }
-        if let planId = getPlanIdFromNotificationPayload(userInfo) {
-            let appFlow = AppFlow()
-            appFlow.presentPlanViewControllerByFetchingPlanId(planId)
-        }
+
+        //1. Create the alert controller.
+        let alert = UIAlertController(title: getAlertFromNotificationPayload(userInfo), message: "View plan?", preferredStyle: .Alert)
+
+        //2. Grab the value from the text field, and print it when the user clicks OK.
+        alert.addAction(UIAlertAction(title: "Sure", style: .Default, handler: { (action) -> Void in
+            if let planId = self.getPlanIdFromNotificationPayload(userInfo) {
+                let appFlow = AppFlow()
+                appFlow.presentPlanViewControllerByFetchingPlanId(planId)
+            }
+        }))
+
+        alert.addAction(UIAlertAction(title: "Later", style: .Default, handler: nil))
+
+        //3. Present the alert.
+        window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
+
+
     }
     
     func logout() {
