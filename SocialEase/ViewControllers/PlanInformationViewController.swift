@@ -100,8 +100,10 @@ class PlanInformationViewController: UIViewController, PlanViewControllerContext
                 // Update plan & call delegate method
                 self.postPlanUpdateNotificationForChangedPlan(self.plan, fromStatus: self.plan.currentUserStatus ?? UserPlanStatus.Pending, toStatus: .Active)
                 // Show active plan view
+
                 UIView.animateWithDuration(1.0) { () -> Void in
                     self.pendingPlanView.alpha = 0
+                    self.activePlanView.alpha = 1
                     self.plan.currentUserStatus = .Active
                     self.updateActivePlanViewUIForVotingActivity(true)
                 }
