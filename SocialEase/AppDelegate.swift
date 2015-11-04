@@ -180,7 +180,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         alert.addAction(UIAlertAction(title: "Later", style: .Default, handler: nil))
 
         //3. Present the alert.
-        window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
+        //window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
 
 
     }

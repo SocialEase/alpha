@@ -233,7 +233,8 @@ class PlanInformationViewController: UIViewController, PlanViewControllerContext
         // set other outlets
         planNameLabel.text = plan.name
         planDateLabel.text = DateUtils.getSystemStyleDisplayDate(plan.occuranceDateTime!)
-        planCommentLabel.text = plan.comment
+
+        planCommentLabel.text = plan.comment!
     }
 
     private func setBackgroundImageView() {

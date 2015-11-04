@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="socialease.ttf">
@@ -27,6 +28,7 @@
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wCA-qt-KeR">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ya9-Ys-Zez">
@@ -34,12 +36,14 @@
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Looks like you don't have any groups Blah Blah" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7t9-yl-HIj">
                             <rect key="frame" x="12" y="270" width="576" height="20.5"/>
+                            <animations/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Bj-Wg-kvA" userLabel="Center View">
                             <rect key="frame" x="180" y="299" width="240" height="1"/>
+                            <animations/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="LIl-FM-Pk9"/>
@@ -47,21 +51,24 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MqE-1U-cGe">
-                            <rect key="frame" x="120" y="308" width="360" height="45"/>
+                            <rect key="frame" x="150" y="308" width="300" height="45"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEW GROUP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOO-wF-9cY">
-                                    <rect key="frame" x="131" y="12" width="97.5" height="19.5"/>
+                                    <rect key="frame" x="101" y="12" width="97.5" height="19.5"/>
+                                    <animations/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="g" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSM-aT-4Ia">
-                                    <rect key="frame" x="101" y="12" width="19" height="19"/>
+                                    <rect key="frame" x="71.5" y="12" width="19" height="19"/>
+                                    <animations/>
                                     <fontDescription key="fontDescription" name="socialease" family="socialease" pointSize="19"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
+                            <animations/>
                             <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
                             <gestureRecognizers/>
                             <constraints>
@@ -72,8 +79,14 @@
                                 <constraint firstItem="gOO-wF-9cY" firstAttribute="leading" secondItem="LSM-aT-4Ia" secondAttribute="trailing" constant="11" id="b2R-Mp-aO7"/>
                                 <constraint firstItem="gOO-wF-9cY" firstAttribute="centerX" secondItem="MqE-1U-cGe" secondAttribute="centerX" id="w7B-fW-YWy"/>
                             </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="Qvc-jI-coY"/>
+                                </mask>
+                            </variation>
                         </view>
                     </subviews>
+                    <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="3Bj-Wg-kvA" firstAttribute="centerY" secondItem="ya9-Ys-Zez" secondAttribute="centerY" id="ACS-mj-w3R"/>
@@ -84,16 +97,19 @@
                         <constraint firstItem="7t9-yl-HIj" firstAttribute="leading" secondItem="ya9-Ys-Zez" secondAttribute="leading" constant="12" id="fHo-4u-m3n"/>
                         <constraint firstItem="3Bj-Wg-kvA" firstAttribute="centerX" secondItem="ya9-Ys-Zez" secondAttribute="centerX" id="kxN-FN-aK1"/>
                         <constraint firstAttribute="trailing" secondItem="7t9-yl-HIj" secondAttribute="trailing" constant="12" id="x3d-qH-N9N"/>
+                        <constraint firstItem="MqE-1U-cGe" firstAttribute="width" secondItem="ya9-Ys-Zez" secondAttribute="width" multiplier="1:2" id="zZy-W7-KLG"/>
                     </constraints>
                 </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O8b-uZ-UPB">
                     <rect key="frame" x="474" y="50" width="120" height="80"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="80" id="3c1-S1-5vc"/>
                         <constraint firstAttribute="width" constant="120" id="4VV-OD-lX2"/>
                     </constraints>
                 </imageView>
             </subviews>
+            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="wCA-qt-KeR" secondAttribute="trailing" id="2eY-sU-qY8"/>

@@ -464,7 +464,7 @@
                                                 <rect key="frame" x="0.0" y="72" width="600" height="172"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X5n-Xz-VTD" id="q9S-OU-GmJ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="171"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="171.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iBX-Nl-YYD">
@@ -513,15 +513,15 @@
                                                                                 <action selector="dislikeButtonTapped:" destination="X5n-Xz-VTD" eventType="touchUpInside" id="30b-Oo-zfZ"/>
                                                                             </connections>
                                                                         </button>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LEP-AF-QCv">
-                                                                            <rect key="frame" x="509" y="48" width="19" height="17"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LEP-AF-QCv">
+                                                                            <rect key="frame" x="514" y="48" width="9.5" height="17"/>
                                                                             <animations/>
                                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tI0-bh-N59">
-                                                                            <rect key="frame" x="565" y="48" width="14" height="17"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tI0-bh-N59">
+                                                                            <rect key="frame" x="567.5" y="48" width="9.5" height="17"/>
                                                                             <animations/>
                                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -551,7 +551,7 @@
                                                                     <rect key="frame" x="0.0" y="103" width="600" height="68"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="252" horizontalCompressionResistancePriority="740" text="Mountain View, CA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XVr-Gn-cAI">
-                                                                            <rect key="frame" x="15" y="32" width="524" height="15"/>
+                                                                            <rect key="frame" x="15" y="32" width="524" height="14.5"/>
                                                                             <animations/>
                                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -565,21 +565,21 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kkkji" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qG-Mw-lVl">
-                                                                            <rect key="frame" x="527" y="48" width="65" height="13"/>
+                                                                            <rect key="frame" x="527" y="47.5" width="65" height="13"/>
                                                                             <animations/>
                                                                             <fontDescription key="fontDescription" name="socialease" family="socialease" pointSize="13"/>
                                                                             <color key="textColor" red="1" green="0.68051200787871413" blue="0.13531526784197589" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="251" horizontalCompressionResistancePriority="740" text="Indian" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwx-kj-CAS">
-                                                                            <rect key="frame" x="15" y="47" width="504" height="15"/>
+                                                                            <rect key="frame" x="15" y="46.5" width="504" height="14.5"/>
                                                                             <animations/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOH-Uc-7qL">
-                                                                            <rect key="frame" x="547" y="17" width="45" height="30"/>
+                                                                            <rect key="frame" x="547" y="16.5" width="45" height="30"/>
                                                                             <animations/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="30" id="gIE-xP-3yL"/>
@@ -779,6 +779,7 @@
                         <outlet property="organizersProfileImage" destination="OKo-Hu-MFe" id="BHw-eI-MAg"/>
                         <outlet property="pendingPlanInfoView" destination="qde-UE-vSL" id="hqe-Yf-hNp"/>
                         <outlet property="pendingPlanView" destination="DT1-Jd-IJl" id="Dc3-Gl-yCt"/>
+                        <outlet property="planCommentLabel" destination="O0X-48-OG8" id="my0-Lp-Opb"/>
                         <outlet property="planDateLabel" destination="2XP-au-gK9" id="wCS-5X-mJ3"/>
                         <outlet property="planImageView" destination="2OC-rA-vz5" id="Nmu-mv-4ir"/>
                         <outlet property="planNameLabel" destination="Ubu-Cn-Swd" id="T9T-9d-QEf"/>
