@@ -24,7 +24,11 @@ class PlanChatViewController: UIViewController, PlanViewControllerContext, UITab
         }
         set(newValue) {
             _plan = newValue
-            updateChatsFromBackend()
+            if (_plan != nil) {
+                _plan.getPlanUsersWithCompletion({ (users, error) -> () in
+                    self.updateChatsFromBackend()
+                })
+            }
         }
     }
     
