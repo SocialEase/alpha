@@ -77,11 +77,6 @@ class GroupCell: UITableViewCell {
         
         othersCountLabel.font = UIFont.systemFontOfSize(13)
         othersCountLabel.textColor = UIColor.sea_secondaryHintColor()
-        
-        self.insetContainerView.layer.shadowOffset = CGSizeMake(2.0, 2.0)
-        self.insetContainerView.layer.shadowOpacity = 0.7
-        self.insetContainerView.layer.shadowColor = UIColor.darkGrayColor().CGColor
-        self.insetContainerView.layer.shadowRadius = 2.0
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
