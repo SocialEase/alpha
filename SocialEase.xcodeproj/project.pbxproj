@@ -23,6 +23,8 @@
 		0435701E1BDDBA6C00B22D1B /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0435701D1BDDBA6C00B22D1B /* libsqlite3.tbd */; };
 		043570201BDDBA8000B22D1B /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0435701F1BDDBA8000B22D1B /* Accounts.framework */; };
 		043570221BDDBA8900B22D1B /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 043570211BDDBA8900B22D1B /* Social.framework */; };
+		0457F3321BEA9C350069AEDC /* BusinessGetUberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0457F3311BEA9C350069AEDC /* BusinessGetUberCell.swift */; };
+		0457F3341BEAA0C20069AEDC /* Uber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0457F3331BEAA0C20069AEDC /* Uber.swift */; };
 		04A578DA1BDB56870088858A /* OtherPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A578D91BDB56870088858A /* OtherPreference.swift */; };
 		04A578DE1BDBFAEE0088858A /* Cuisine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A578DD1BDBFAEE0088858A /* Cuisine.swift */; };
 		04A578E01BDBFB050088858A /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A578DF1BDBFB050088858A /* UserPreferences.swift */; };
@@ -98,7 +100,7 @@
 		ACD0E42E1BDB463000CE0558 /* PlanDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD0E42D1BDB463000CE0558 /* PlanDisplayViewController.swift */; };
 		ACD342741BDB4E1B006ACA0C /* DisplayPlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD342731BDB4E1B006ACA0C /* DisplayPlanVC.swift */; };
 		ACEB7CBA1BDB365600B1A482 /* socialease.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACEB7CB91BDB365600B1A482 /* socialease.ttf */; };
-		DB60B389636A8D1DFCB85A92 /* Pods_SocialEase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBBB717F537F177AEEECFB4 /* Pods_SocialEase.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		DB60B389636A8D1DFCB85A92 /* Pods_SocialEase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBBB717F537F177AEEECFB4 /* Pods_SocialEase.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,6 +120,8 @@
 		0435701D1BDDBA6C00B22D1B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		0435701F1BDDBA8000B22D1B /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		043570211BDDBA8900B22D1B /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		0457F3311BEA9C350069AEDC /* BusinessGetUberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusinessGetUberCell.swift; path = Views/BusinessGetUberCell.swift; sourceTree = "<group>"; };
+		0457F3331BEAA0C20069AEDC /* Uber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Uber.swift; sourceTree = "<group>"; };
 		04A578D91BDB56870088858A /* OtherPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherPreference.swift; sourceTree = "<group>"; };
 		04A578DD1BDBFAEE0088858A /* Cuisine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cuisine.swift; path = Models/Cuisine.swift; sourceTree = "<group>"; };
 		04A578DF1BDBFB050088858A /* UserPreferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserPreferences.swift; path = Models/UserPreferences.swift; sourceTree = "<group>"; };
@@ -205,6 +209,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				043570121BDDBA3100B22D1B /* CoreLocation.framework in Frameworks */,
 				AC976B5C1BDDD7CE00FBEC06 /* MapKit.framework in Frameworks */,
 				043570221BDDBA8900B22D1B /* Social.framework in Frameworks */,
 				043570201BDDBA8000B22D1B /* Accounts.framework in Frameworks */,
@@ -214,7 +219,6 @@
 				043570181BDDBA4C00B22D1B /* StoreKit.framework in Frameworks */,
 				043570161BDDBA4300B22D1B /* Security.framework in Frameworks */,
 				043570141BDDBA3A00B22D1B /* QuartzCore.framework in Frameworks */,
-				043570121BDDBA3100B22D1B /* CoreLocation.framework in Frameworks */,
 				043570101BDDBA2400B22D1B /* CFNetwork.framework in Frameworks */,
 				0435700E1BDDBA1100B22D1B /* CoreGraphics.framework in Frameworks */,
 				0435700C1BDDBA0000B22D1B /* AudioToolbox.framework in Frameworks */,
@@ -295,6 +299,7 @@
 		59F321631BD30CBB005AB36C /* API */ = {
 			isa = PBXGroup;
 			children = (
+				0457F3331BEAA0C20069AEDC /* Uber.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -318,6 +323,7 @@
 				04ABB62F1BE5D5D100B52708 /* ChatFriendCell.swift */,
 				04ABB6331BE5DBC400B52708 /* ChatCurrentUserCell.swift */,
 				04ABB6371BE7386100B52708 /* ChatPhotoCell.swift */,
+				0457F3311BEA9C350069AEDC /* BusinessGetUberCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -625,8 +631,10 @@
 				59F3218C1BD49A01005AB36C /* UserCell.swift in Sources */,
 				04ECB7791BD73F5500819BA4 /* PreferencesInfoViewController.swift in Sources */,
 				AC3114BD1BD8989C00ED6E80 /* SuggestedPlaceViewCell.swift in Sources */,
+				0457F3341BEAA0C20069AEDC /* Uber.swift in Sources */,
 				043570061BDD613700B22D1B /* ViewTransformationUtils.swift in Sources */,
 				04C0DEBF1BD9FF8500CE1ABF /* OtherPreferencesViewController.swift in Sources */,
+				0457F3321BEA9C350069AEDC /* BusinessGetUberCell.swift in Sources */,
 				59F3217B1BD43C26005AB36C /* GroupCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

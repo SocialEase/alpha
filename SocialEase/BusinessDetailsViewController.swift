@@ -19,7 +19,7 @@ class BusinessDetailsViewController: UIViewController, UITableViewDelegate, UITa
     var activity: Activity!
 
     struct ViewConstants {
-        static let DetailsTableViewCells: [BusinessDetailVCCellIdentifiers] = [.BusinessMapTableViewCell, .BusinessAddressTableViewCell, .BusinessPhoneTableViewCell]
+        static let DetailsTableViewCells: [BusinessDetailVCCellIdentifiers] = [.BusinessMapTableViewCell, .BusinessAddressTableViewCell, .BusinessPhoneTableViewCell, .BusinessGetUberCell]
         static let EstimatedRowHeight = CGFloat(100)
     }
 
@@ -48,6 +48,11 @@ class BusinessDetailsViewController: UIViewController, UITableViewDelegate, UITa
         case .BusinessPhoneTableViewCell:
             let cell = businessInfoTableView.dequeueReusableCellWithIdentifier(BusinessDetailVCCellIdentifiers.BusinessPhoneTableViewCell.rawValue, forIndexPath: indexPath) as! BusinessPhoneTableViewCell
             cell.businessPhoneLabel.text = activity.displayPhoneNumber
+            return cell
+        case .BusinessGetUberCell:
+            let cell = businessInfoTableView.dequeueReusableCellWithIdentifier(BusinessDetailVCCellIdentifiers.BusinessGetUberCell.rawValue, forIndexPath: indexPath) as! BusinessGetUberCell
+            cell.activityName = activity.name
+            cell.activityCoordinate = activity.coordinate
             return cell
         }
     }

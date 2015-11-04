@@ -8,12 +8,15 @@
 
 import UIKit
 import Parse
+import CoreLocation
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
     
     var window: UIWindow?
+    var locationManager: CLLocationManager! = CLLocationManager()
     var deviceTokenForPush: NSData? = nil
+    var deviceLocation: CLLocation? = nil
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // set prase api keys
@@ -24,6 +27,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // register for push notifications
         // TODO: we should perhaps do this only after getting confirmation from user
         registerForPushNotifications(application, launchOptions: launchOptions)
+        
+        // initialize Location Manager
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager.requestLocation()
+        
+//        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
 
         // Override point for customization after application launch.
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
@@ -171,6 +183,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
 
 
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        var location = locations[0]
+        deviceLocation = location
+    }
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print(error)
     }
     
     func logout() {
