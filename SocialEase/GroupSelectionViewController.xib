@@ -3,10 +3,16 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="socialease.ttf">
+            <string>socialease</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GroupSelectionViewController" customModule="SocialEase" customModuleProvider="target">
             <connections>
                 <outlet property="groupsTableView" destination="wCA-qt-KeR" id="jI9-Yn-7h3"/>
+                <outlet property="newGroupButtonView" destination="MqE-1U-cGe" id="GgF-BP-LOy"/>
                 <outlet property="noGroupsContainerView" destination="ya9-Ys-Zez" id="ihD-Ss-I59"/>
                 <outlet property="noGroupsImageView" destination="O8b-uZ-UPB" id="JBr-OY-poX"/>
                 <outlet property="noGroupsImageViewTopConstraint" destination="ATJ-QC-y6c" id="och-Sw-WYk"/>
@@ -27,17 +33,56 @@
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Looks like you don't have any groups Blah Blah" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7t9-yl-HIj">
-                            <rect key="frame" x="12" y="290" width="576" height="20.5"/>
+                            <rect key="frame" x="12" y="270" width="576" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Bj-Wg-kvA" userLabel="Center View">
+                            <rect key="frame" x="180" y="299" width="240" height="1"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="LIl-FM-Pk9"/>
+                                <constraint firstAttribute="width" constant="240" id="eR0-J8-0Cl"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MqE-1U-cGe">
+                            <rect key="frame" x="120" y="308" width="360" height="45"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEW GROUP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOO-wF-9cY">
+                                    <rect key="frame" x="131" y="12" width="97.5" height="19.5"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="g" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSM-aT-4Ia">
+                                    <rect key="frame" x="101" y="12" width="19" height="19"/>
+                                    <fontDescription key="fontDescription" name="socialease" family="socialease" pointSize="19"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <gestureRecognizers/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="Eoa-Vu-MLk"/>
+                                <constraint firstItem="gOO-wF-9cY" firstAttribute="centerY" secondItem="MqE-1U-cGe" secondAttribute="centerY" id="Feb-VS-60e"/>
+                                <constraint firstAttribute="width" constant="360" id="Qvc-jI-coY"/>
+                                <constraint firstItem="LSM-aT-4Ia" firstAttribute="centerY" secondItem="gOO-wF-9cY" secondAttribute="centerY" id="ar5-fm-zjt"/>
+                                <constraint firstItem="gOO-wF-9cY" firstAttribute="leading" secondItem="LSM-aT-4Ia" secondAttribute="trailing" constant="11" id="b2R-Mp-aO7"/>
+                                <constraint firstItem="gOO-wF-9cY" firstAttribute="centerX" secondItem="MqE-1U-cGe" secondAttribute="centerX" id="w7B-fW-YWy"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="7t9-yl-HIj" firstAttribute="centerY" secondItem="ya9-Ys-Zez" secondAttribute="centerY" id="Van-m8-k5Q"/>
+                        <constraint firstItem="3Bj-Wg-kvA" firstAttribute="centerY" secondItem="ya9-Ys-Zez" secondAttribute="centerY" id="ACS-mj-w3R"/>
+                        <constraint firstItem="MqE-1U-cGe" firstAttribute="centerX" secondItem="ya9-Ys-Zez" secondAttribute="centerX" id="CUh-Af-Knm"/>
+                        <constraint firstItem="3Bj-Wg-kvA" firstAttribute="top" secondItem="7t9-yl-HIj" secondAttribute="bottom" constant="8" id="Dwz-70-gWg"/>
+                        <constraint firstItem="MqE-1U-cGe" firstAttribute="top" secondItem="3Bj-Wg-kvA" secondAttribute="bottom" constant="8" id="Hjc-Im-D4t"/>
                         <constraint firstItem="7t9-yl-HIj" firstAttribute="centerX" secondItem="ya9-Ys-Zez" secondAttribute="centerX" id="VuV-NJ-CHk"/>
                         <constraint firstItem="7t9-yl-HIj" firstAttribute="leading" secondItem="ya9-Ys-Zez" secondAttribute="leading" constant="12" id="fHo-4u-m3n"/>
+                        <constraint firstItem="3Bj-Wg-kvA" firstAttribute="centerX" secondItem="ya9-Ys-Zez" secondAttribute="centerX" id="kxN-FN-aK1"/>
                         <constraint firstAttribute="trailing" secondItem="7t9-yl-HIj" secondAttribute="trailing" constant="12" id="x3d-qH-N9N"/>
                     </constraints>
                 </view>

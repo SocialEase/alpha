@@ -47,14 +47,17 @@ class PlanPreviewCell: UITableViewCell {
             
             if (profileImageUrls.count >= 1) {
                 userImageView1.setImageWithURL(profileImageUrls[0])
+                userImageView1.contentMode = .ScaleAspectFill
                 ViewTransformationUtils.convertViewToCircle(userImageView1, borderColor: UIColor.whiteColor(), borderWidth: 1)
             }
             if (profileImageUrls.count >= 2) {
                 userImageView2.setImageWithURL(profileImageUrls[1])
+                userImageView2.contentMode = .ScaleAspectFill
                 ViewTransformationUtils.convertViewToCircle(userImageView2, borderColor: UIColor.whiteColor(), borderWidth: 1)
             }
             if (profileImageUrls.count >= 3) {
                 userImageView3.setImageWithURL(profileImageUrls[2])
+                userImageView3.contentMode = .ScaleAspectFill
                 ViewTransformationUtils.convertViewToCircle(userImageView3, borderColor: UIColor.whiteColor(), borderWidth: 1)
             }
         }

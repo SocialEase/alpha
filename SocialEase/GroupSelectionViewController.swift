@@ -17,6 +17,7 @@ class GroupSelectionViewController: UIViewController {
     @IBOutlet weak var noGroupsLabel: UILabel!
     @IBOutlet weak var noGroupsImageView: UIImageView!
     @IBOutlet weak var noGroupsImageViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var newGroupButtonView: UIView!
     
     var completionCallback: ((group: UserGroup) -> ())?
     
@@ -42,20 +43,25 @@ class GroupSelectionViewController: UIViewController {
         groupsTableView.estimatedRowHeight = 140
         groupsTableView.separatorColor = UIColor.clearColor()
         
-        noGroupsContainerView.backgroundColor = UIColor.sea_primaryLabelColor()
-        noGroupsContainerView.alpha = 0.3
+        noGroupsContainerView.backgroundColor = UIColor.clearColor()
+        noGroupsContainerView.alpha = 1.0
         noGroupsContainerView.hidden = true
         
         noGroupsLabel.backgroundColor = UIColor.clearColor()
         noGroupsLabel.font = UIFont.systemFontOfSize(22.0)
         noGroupsLabel.numberOfLines = 0
-        noGroupsLabel.text = "Looks like you don't have any Groups. Tap '+' on the top right to create a new Group!"
-        noGroupsLabel.textColor = UIColor.sea_primaryLightTextColor()
+        noGroupsLabel.text = "You currently have no groups."
+        noGroupsLabel.textColor = UIColor.sea_primaryColor()
         noGroupsLabel.hidden = true
         
         noGroupsImageView.image = UIImage(named: "tap-here")
         noGroupsImageView.contentMode = UIViewContentMode.Top
         noGroupsImageView.hidden = true
+        
+        let newGroupButtonTap = UITapGestureRecognizer(target: self, action: "onNewGroupTap")
+        newGroupButtonView.addGestureRecognizer(newGroupButtonTap)
+        newGroupButtonView.backgroundColor = UIColor.sea_primaryColor()
+        newGroupButtonView.layer.cornerRadius = 5
         
         UIView.animateWithDuration(5.0, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
                 self.noGroupsImageViewTopConstraint.constant = 0
@@ -144,7 +150,7 @@ extension GroupSelectionViewController: UITableViewDelegate, UITableViewDataSour
             
             self.groups.removeAtIndex(indexPath.row)
         }
-        modifyAction.backgroundColor = UIColor.sea_primaryHighlightColor()
+        modifyAction.backgroundColor = UIColor.sea_primaryColor()
         return [modifyAction]
     }
     
