@@ -33,6 +33,7 @@ class PlanInformationViewController: UIViewController, PlanViewControllerContext
     @IBOutlet weak var actDateTimeLabel: UILabel!
     @IBOutlet weak var actPlanOrganizerNameLabel: UILabel!
     @IBOutlet weak var selectedActivityContainerView: UIView!
+    @IBOutlet weak var actPlanCommentLabel: UILabel!
 
     // MARK: variables
     private var _plan: Plan! {
@@ -149,6 +150,7 @@ class PlanInformationViewController: UIViewController, PlanViewControllerContext
         } else {
             activePlanView.alpha = 1
             pendingPlanView.alpha = 0
+            actPlanCommentLabel?.text = plan.comment
             plan.votedActivityObjectId == nil ? updateActivePlanViewUIForVotingActivity(false) : updateActivePlanViewUIForVotedActivity()
         }
     }
@@ -243,8 +245,11 @@ class PlanInformationViewController: UIViewController, PlanViewControllerContext
             organizersProfileImage.setImageWithURL(profileImgUrl)
         }
 
-        organizersNameLabel.text = planOrganizer?.name
-        actPlanOrganizerNameLabel.text = planOrganizer?.name
+        if let name = planOrganizer?.name {
+            let displayName = "- " + name
+            organizersNameLabel.text = displayName
+            actPlanOrganizerNameLabel.text = displayName
+        }
     }
 
     // MARK: Other methods
@@ -263,6 +268,9 @@ class PlanInformationViewController: UIViewController, PlanViewControllerContext
                 UsersPlanActivity.updateAndFetchVotingStatusForPlan(self.plan) { (planStatusResults: NSDictionary?, error: NSError?) -> () in
                     if let planStatusResults = planStatusResults {
                         // @todo: update trending here
+                        if let votedActivity = planStatusResults["maxVoteActivity"] as? String {
+                             self.plan.votedActivityObjectId = votedActivity
+                        }
                     } else {
                         print(error?.localizedDescription)
                     }
