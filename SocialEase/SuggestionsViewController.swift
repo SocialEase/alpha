@@ -154,15 +154,6 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
         } else {  // select action on cell for suggestions table (as that is the only other table on this view)
             suggestedActivities?[indexPath.row].selected = !(suggestedActivities?[indexPath.row].selected)!
             tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .None)
-            
-            // TODO: kevin go to detail view
-            //let appFlow = AppFlow()
-            
-            //let activity = suggestedActivities?[indexPath.row].activity
-            
-            //appFlow.presentBusinessDetail(activity!)
-            
-            // kevin done
         }
 
     }
@@ -192,36 +183,57 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
                     self.updateSendButtonActiveState()
             }
         } else {
-            // 1. Save activity objects
-            Activity.saveActivities(suggestedActivities?.filter( { $0.selected }).map({ $0.activity })) { (activities: [Activity]?, error: NSError?) -> () in
-                if let activities = activities {
-                    // 2. Create/Save plan objects with associated activities object ids
-                    Plan.createPlanWithName(self.activityTypeTextLabel.text!, atOccuranceTime: self.actvitiyDatePicker.date, forGroup: self.group, withActivities: activities) { (plan: Plan?, error: NSError?) -> () in
+            //1. Create the alert controller.
+            let alert = UIAlertController(title: "Send Invitation", message: "Add a message", preferredStyle: .Alert)
 
-                        if let plan = plan {
-                            // 3.1 add new plan to active plans for the user without fetching from network
-                            self.sendPlanCreatedNotification(plan)
+            //2. Add the text field. You can configure it however you need.
+            alert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
+                textField.text = ""
+                textField.autocapitalizationType = UITextAutocapitalizationType.Sentences
+            })
 
-                            // 3.2 Create/Save UserPlans and UserActivities objects
-                            UsersPlanActivity.createPlanAndActivitiesForGroup(self.group, withPlan: plan, andActivities: activities, byOrganizer: PFUser.currentUser()!) { (success: Bool, error: NSError?) -> () in
-                                if success {
-                                    // 4. @todo: Uday to add implementation for push notifications here
-                                    self.sendPushNotifications(plan, users: self.group.users!)
-                                } else {
-                                    print(error?.localizedDescription)
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+            //3. Grab the value from the text field, and print it when the user clicks OK.
+            alert.addAction(UIAlertAction(title: "Send", style: .Default, handler: { (action) -> Void in
+                let textField = alert.textFields![0]
+                self.sendConfirmedWithMessage(textField.text)
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: nil))
 
-            dismissViewControllerAnimated(true, completion: nil)
+            // 4. Present the alert.
+            self.presentViewController(alert, animated: true, completion: nil)
         }
     }
 
 
     // MARK: - Internal helper methods
+
+    func sendConfirmedWithMessage(message: String?) {
+        // 1. Save activity objects
+        Activity.saveActivities(suggestedActivities?.filter( { $0.selected }).map({ $0.activity })) { (activities: [Activity]?, error: NSError?) -> () in
+            if let activities = activities {
+                // 2. Create/Save plan objects with associated activities object ids
+                Plan.createPlanWithName(self.activityTypeTextLabel.text!, withMessage:message, atOccuranceTime: self.actvitiyDatePicker.date, forGroup: self.group, withActivities: activities) { (plan: Plan?, error: NSError?) -> () in
+
+                    if let plan = plan {
+                        // 3.1 add new plan to active plans for the user without fetching from network
+                        self.sendPlanCreatedNotification(plan)
+
+                        // 3.2 Create/Save UserPlans and UserActivities objects
+                        UsersPlanActivity.createPlanAndActivitiesForGroup(self.group, withPlan: plan, andActivities: activities, byOrganizer: PFUser.currentUser()!) { (success: Bool, error: NSError?) -> () in
+                            if success {
+                                // 4. @todo: Uday to add implementation for push notifications here
+                                self.sendPushNotifications(plan, users: self.group.users!)
+                            } else {
+                                print(error?.localizedDescription)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 
     // method to send notification to various view controllers
     func sendPlanCreatedNotification(plan: Plan) {
@@ -286,8 +298,8 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
 
     private func updateSendButtonActiveState() {
         if selectedAcitivitiesCount > 0 {
-            sendButton.textColor = UIColor(red: 255/255, green: 204/255, blue: 102/255, alpha: 1)
-            sendButtonFooterView.backgroundColor = UIColor(red: 0/255, green: 114/255, blue: 187/255, alpha: 0.95)
+            sendButton.textColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
+            sendButtonFooterView.backgroundColor = UIColor(red: 255/255, green: 171/255, blue: 64/255, alpha: 0.95)
         } else {
             sendButton.textColor = UIColor.darkGrayColor()
             sendButtonFooterView.backgroundColor = UIColor(red: 153/255, green: 153/255, blue: 153/255, alpha: 0.95)

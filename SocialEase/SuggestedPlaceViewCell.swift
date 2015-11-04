@@ -28,7 +28,11 @@ class SuggestedPlaceViewCell: UITableViewCell {
     }
     var cellSelected: Bool! {
         didSet {
-            activityDetailsView?.backgroundColor = cellSelected! ? UIColor(red: 0/255, green: 114/255, blue: 187/255, alpha: 0.9) : UIColor(red: 127/255, green: 127/255, blue: 127/255, alpha: 0.9)
+            activityDetailsView?.backgroundColor = cellSelected! ? UIColor(red: 0/255, green: 114/255, blue: 187/255, alpha: 0.9) : UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.8)
+            let textColor = cellSelected! ? UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1) : UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
+            nameLabel?.textColor = textColor
+            locationLabel?.textColor = textColor
+
         }
 
     }

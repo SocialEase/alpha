@@ -143,12 +143,16 @@ class Plan: NSObject {
         }
     }
 
-    class func createPlanWithName(name: String, atOccuranceTime time: NSDate, forGroup group: UserGroup, withActivities activities: [Activity], withCompletion completion: ((Plan?, NSError?) -> ())) {
+    class func createPlanWithName(name: String, withMessage message: String?, atOccuranceTime time: NSDate, forGroup group: UserGroup, withActivities activities: [Activity], withCompletion completion: ((Plan?, NSError?) -> ())) {
         let planObject = PFObject(className: ObjectName)
         planObject[Fields.Name] = name
         planObject[Fields.OccurrenceDate] = time
         planObject[Fields.GroupObjectId] = group.groupId!
         planObject[Fields.ActivityObjectIdList] = activities.map { $0.id! }
+
+        if let message = message {
+            planObject[Fields.Comment] = message
+        }
 
         if let url = activities.first?.posterImageUrl?.absoluteString {
             planObject[Fields.ImageUrl] = url
