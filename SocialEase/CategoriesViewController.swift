@@ -19,9 +19,19 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        var usersFavoriteCuisinesSet = NSMutableSet()
+        if let usersFavorites = User.currentUser?.userPreferences?.favoriteCuisines {
+            usersFavoriteCuisinesSet = NSMutableSet(array: usersFavorites)
+        }
+        
         Cuisine.getCuisines { (cuisines, error) -> () in
             if (error == nil) {
                 self.cuisines = cuisines
+                
+                for cuisine in self.cuisines! {
+                    cuisine.userSelected = usersFavoriteCuisinesSet.containsObject(cuisine.cuisineName)
+                }
+                
                 self.cuisinesCollectionView.reloadData()
             }
         }
