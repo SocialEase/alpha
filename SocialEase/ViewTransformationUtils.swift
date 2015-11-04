@@ -22,7 +22,7 @@ class ViewTransformationUtils {
         myView.layer.cornerRadius = cornerRadius
         myView.clipsToBounds = true
         
-        myView.layer.borderWidth = 1.0
+        myView.layer.borderWidth = CGFloat(borderWidth)
         myView.layer.borderColor = borderColor.CGColor
     }
 

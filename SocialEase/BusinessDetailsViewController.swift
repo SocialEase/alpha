@@ -19,10 +19,11 @@ class BusinessDetailsViewController: UIViewController, UITableViewDelegate, UITa
     var activity: Activity!
 
     struct ViewConstants {
-        static let DetailsTableViewCells: [BusinessDetailVCCellIdentifiers] = [.BusinessMapTableViewCell, .BusinessAddressTableViewCell, .BusinessPhoneTableViewCell, .BusinessGetUberCell]
         static let EstimatedRowHeight = CGFloat(100)
     }
 
+    var detailsTableViewCells: [BusinessDetailVCCellIdentifiers] = [.BusinessMapTableViewCell, .BusinessAddressTableViewCell, .BusinessPhoneTableViewCell]
+    var showUberRideCell = false
     // MARK: - Life cycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,13 +31,13 @@ class BusinessDetailsViewController: UIViewController, UITableViewDelegate, UITa
         // Do any additional setup after loading the view.
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         title = activity.name
-
+        showUberRideCell ? detailsTableViewCells.append(.BusinessGetUberCell) : ()
         setUpBusinessTableConfig()
     }
 
     // MARK: - Table view delegate and  datasource methods
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        switch ViewConstants.DetailsTableViewCells[indexPath.row] {
+        switch detailsTableViewCells[indexPath.row] {
         case .BusinessMapTableViewCell:
             let cell = businessInfoTableView.dequeueReusableCellWithIdentifier(BusinessDetailVCCellIdentifiers.BusinessMapTableViewCell.rawValue, forIndexPath: indexPath) as! BusinessMapTableViewCell
             cell.activity = activity
@@ -58,7 +59,7 @@ class BusinessDetailsViewController: UIViewController, UITableViewDelegate, UITa
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ViewConstants.DetailsTableViewCells.count
+        return detailsTableViewCells.count ?? 0
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

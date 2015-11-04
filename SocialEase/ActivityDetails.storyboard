@@ -295,7 +295,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJ0-Oc-XYh">
                                                     <rect key="frame" x="8" y="8" width="584" height="44"/>
                                                     <animations/>
-                                                    <state key="normal" image="UBER_API_RIDE BY UBER Badges_1x BLACK_28px"/>
+                                                    <state key="normal" image="uber_28"/>
                                                     <connections>
                                                         <action selector="didGetUber:" destination="9Ua-aM-qIM" eventType="touchUpInside" id="2rm-mV-Q5v"/>
                                                     </connections>
@@ -339,6 +339,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="UBER_API_RIDE BY UBER Badges_1x BLACK_28px" width="214" height="28"/>
+        <image name="uber_28" width="214" height="28"/>
     </resources>
 </document>

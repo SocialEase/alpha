@@ -41,6 +41,7 @@ class Plan: NSObject {
         static let GroupObjectId = "groupObjectId"
         static let ActivityObjectIdList = "activityObjectIdList"
         static let VotedActivityObjectId = "votedActivityObjectId"
+        static let ActivityVotingObject = "activityVotingObject"
     }
 
     // MARK: Stored
@@ -78,6 +79,10 @@ class Plan: NSObject {
         set(newValue) {
             object[Fields.VotedActivityObjectId] = newValue
         }
+    }
+
+    var activityVotingObject: NSDictionary? {
+        return object[Fields.ActivityVotingObject] as? NSDictionary
     }
 
     var imageUrl: NSURL? {
@@ -138,6 +143,7 @@ class Plan: NSObject {
     // MARK: - Class methods
     class func fetchPlanId(id: String, withCompletion completion: ((PFObject?, NSError?) -> ())?) {
         let query = PFQuery(className: ObjectName)
+        query.includeKey(Fields.ActivityVotingObject)
         query.getObjectInBackgroundWithId(id) { (planObject: PFObject?, error: NSError?) -> Void in
             completion?(planObject, error)
         }

@@ -172,6 +172,7 @@ class PlanInformationViewController: UIViewController, PlanViewControllerContext
             if let activities = activities, let activity = activities.first {
                 let activityDetailsVC = Storyboard.ActivityDetails.instantiateViewControllerWithIdentifier(Storyboard.BusinessDetailVCIdentifier) as!BusinessDetailsViewController
                 activityDetailsVC.activity = activity
+                activityDetailsVC.showUberRideCell = true
                 activityDetailsVC.view.frame = CGRectMake(0, 0, self.selectedActivityContainerView.frame.size.width, self.selectedActivityContainerView.frame.size.height)
                 self.addChildViewController(activityDetailsVC)
                 self.selectedActivityContainerView.addSubview(activityDetailsVC.view)
@@ -207,6 +208,7 @@ class PlanInformationViewController: UIViewController, PlanViewControllerContext
                 UserActivity.fetchActivitiesForUser(PFUser.currentUser()!, inPlan: plan) { (userActivities: [UserActivity]?, error: NSError?) -> Void in
                     if let userActivities = userActivities {
                         self.userActivities = userActivities
+                        self.updateActivitiesVotingStatus(self.plan.activityVotingObject)
                     }
                 }
             }
@@ -268,9 +270,7 @@ class PlanInformationViewController: UIViewController, PlanViewControllerContext
                 UsersPlanActivity.updateAndFetchVotingStatusForPlan(self.plan) { (planStatusResults: NSDictionary?, error: NSError?) -> () in
                     if let planStatusResults = planStatusResults {
                         // @todo: update trending here
-                        if let votedActivity = planStatusResults["maxVoteActivity"] as? String {
-                             self.plan.votedActivityObjectId = votedActivity
-                        }
+                        self.updateActivitiesVotingStatus(planStatusResults["activityVotingDict"] as? NSDictionary)
                     } else {
                         print(error?.localizedDescription)
                     }
@@ -278,6 +278,19 @@ class PlanInformationViewController: UIViewController, PlanViewControllerContext
             }
         }
     }
+
+    func updateActivitiesVotingStatus(activityVoting: NSDictionary?) {
+        var updatedUserActivities = [UserActivity]()
+        if let activityVoting = activityVoting {
+            for userActivity in self.userActivities! {
+                userActivity.activity?.upVoteUsersList = activityVoting[(userActivity.activity?.id)!]?["upVotedBy"] as? [String]
+                userActivity.activity?.downVoteUsersList = activityVoting[(userActivity.activity?.id)!]?["downVotedBy"] as? [String]
+                updatedUserActivities.append(userActivity)
+            }
+            self.userActivities = updatedUserActivities
+        }
+    }
+
     // MARK: - Activity view cell delegate
     func activityViewCell(activityViewCell: UITableViewCell, didUpdateActivityVoteToVote vote: UserActivityVote, atIndexPath indexpath: NSIndexPath) {
         userActivities?[indexpath.row].vote = vote

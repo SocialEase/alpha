@@ -34,6 +34,8 @@ class ActivityViewCell: UITableViewCell {
     @IBOutlet weak var activityInfoContainerView: UIView!
     @IBOutlet weak var activityDetailsViewCenterConstraint: NSLayoutConstraint!
     @IBOutlet weak var detailsContainerView: UIView!
+    @IBOutlet weak var upVoteCountLabel: UILabel!
+    @IBOutlet weak var downVoteCountLabel: UILabel!
 
     var cellIndexPath: NSIndexPath!
 
@@ -51,7 +53,8 @@ class ActivityViewCell: UITableViewCell {
         static let UnselectedLikeButtonBgkColor = UIColor(red: 0, green: 128/255, blue: 0, alpha: 0.7)
         static let SelectedDislikeButtonBgkColor = UIColor(red: 187/255, green: 26/255, blue: 0/255, alpha: 0.9)
         static let UnselectedDislikeButtonBgkColor = UIColor(red: 187/255, green: 26/255, blue: 0/255, alpha: 0.7)
-        static let SelectedButtonBorderColor = UIColor(red: 64/255, green: 148/255, blue: 1, alpha: 1)
+        static let SelectedLikeButtonBorderColor = UIColor(red: 64/255, green: 255/255, blue: 171/255, alpha: 1)
+        static let SelectedDislikeButtonBorderColor = UIColor(red: 255/255, green: 75/255, blue: 64/255, alpha: 1)
         static let UnselectedButtonBorderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
 
         static let CenterConstraintDeltaScale: CGFloat = 0.5
@@ -70,9 +73,11 @@ class ActivityViewCell: UITableViewCell {
         ViewTransformationUtils.convertViewToCircle(likeButton, borderColor: UIColor.whiteColor(), borderWidth: 3)
         activityLocationMapView.scrollEnabled = false
 
+        upVoteCountLabel.textColor = CellConstants.SelectedLikeButtonBorderColor
+        downVoteCountLabel.textColor = CellConstants.SelectedDislikeButtonBorderColor
         // add gradient
         activityImageView.layer.addSublayer(getGradientForCellForView(activityImageView))
-        activityLocationMapView.layer.addSublayer(getGradientForCellForView(activityLocationMapView))
+
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -114,19 +119,26 @@ class ActivityViewCell: UITableViewCell {
         switch usrActivity.vote {
         case .Like:
             likeButton.backgroundColor = CellConstants.SelectedLikeButtonBgkColor
-            likeButton.layer.borderColor = CellConstants.SelectedButtonBorderColor.CGColor
+            likeButton.layer.borderColor = CellConstants.SelectedLikeButtonBorderColor.CGColor
             dislikeButton.backgroundColor = CellConstants.UnselectedDislikeButtonBgkColor
             dislikeButton.layer.borderColor = CellConstants.UnselectedButtonBorderColor.CGColor
         case .Dislike:
             likeButton.backgroundColor = CellConstants.UnselectedLikeButtonBgkColor
             likeButton.layer.borderColor = CellConstants.UnselectedButtonBorderColor.CGColor
             dislikeButton.backgroundColor = CellConstants.SelectedDislikeButtonBgkColor
-            dislikeButton.layer.borderColor = CellConstants.SelectedButtonBorderColor.CGColor
+            dislikeButton.layer.borderColor = CellConstants.SelectedDislikeButtonBorderColor.CGColor
         case .None:
             likeButton.backgroundColor = CellConstants.UnselectedLikeButtonBgkColor
             likeButton.layer.borderColor = CellConstants.UnselectedButtonBorderColor.CGColor
             dislikeButton.backgroundColor = CellConstants.UnselectedDislikeButtonBgkColor
             dislikeButton.layer.borderColor = CellConstants.UnselectedButtonBorderColor.CGColor
+        }
+
+        if let activity = usrActivity.activity {
+            let activityUpCount = activity.upVoteUsersList?.count ?? 0
+            let activityDownCount = activity.downVoteUsersList?.count ?? 0
+            upVoteCountLabel.text = (activityUpCount > 0 ? "+" : "") + "\(activityUpCount)"
+            downVoteCountLabel.text = (activityDownCount > 0 ? "-" : "") + "\(activityDownCount)"
         }
     }
 

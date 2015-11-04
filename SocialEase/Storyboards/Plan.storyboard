@@ -513,15 +513,33 @@
                                                                                 <action selector="dislikeButtonTapped:" destination="X5n-Xz-VTD" eventType="touchUpInside" id="30b-Oo-zfZ"/>
                                                                             </connections>
                                                                         </button>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LEP-AF-QCv">
+                                                                            <rect key="frame" x="509" y="48" width="19" height="17"/>
+                                                                            <animations/>
+                                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tI0-bh-N59">
+                                                                            <rect key="frame" x="565" y="48" width="14" height="17"/>
+                                                                            <animations/>
+                                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
                                                                     </subviews>
                                                                     <animations/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                     <constraints>
+                                                                        <constraint firstItem="tI0-bh-N59" firstAttribute="top" secondItem="Ql7-7j-IhV" secondAttribute="bottom" id="09w-nw-K7e"/>
                                                                         <constraint firstItem="Ql7-7j-IhV" firstAttribute="leading" secondItem="bM4-ZQ-QVV" secondAttribute="trailing" constant="14" id="2Hr-Um-IVi"/>
                                                                         <constraint firstItem="Ql7-7j-IhV" firstAttribute="top" secondItem="WYY-U3-kE3" secondAttribute="top" constant="8" id="7Ha-H8-rJJ"/>
                                                                         <constraint firstAttribute="trailing" secondItem="Ql7-7j-IhV" secondAttribute="trailing" constant="8" id="EAz-SN-ijv"/>
+                                                                        <constraint firstItem="tI0-bh-N59" firstAttribute="centerX" secondItem="Ql7-7j-IhV" secondAttribute="centerX" id="It9-qN-PYX"/>
+                                                                        <constraint firstItem="LEP-AF-QCv" firstAttribute="centerX" secondItem="bM4-ZQ-QVV" secondAttribute="centerX" id="QiO-13-C0a"/>
                                                                         <constraint firstItem="bM4-ZQ-QVV" firstAttribute="centerY" secondItem="Ql7-7j-IhV" secondAttribute="centerY" id="TTx-eA-12W"/>
                                                                         <constraint firstAttribute="bottom" secondItem="Ql7-7j-IhV" secondAttribute="bottom" constant="6" id="XuI-LX-hza"/>
+                                                                        <constraint firstItem="LEP-AF-QCv" firstAttribute="top" secondItem="bM4-ZQ-QVV" secondAttribute="bottom" id="iAO-Cb-jqj"/>
                                                                     </constraints>
                                                                     <variation key="default">
                                                                         <mask key="constraints">
@@ -546,21 +564,21 @@
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="kkkji" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qG-Mw-lVl">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kkkji" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qG-Mw-lVl">
                                                                             <rect key="frame" x="527" y="48" width="65" height="13"/>
                                                                             <animations/>
                                                                             <fontDescription key="fontDescription" name="socialease" family="socialease" pointSize="13"/>
                                                                             <color key="textColor" red="1" green="0.68051200787871413" blue="0.13531526784197589" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="251" horizontalCompressionResistancePriority="740" misplaced="YES" text="Indian" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwx-kj-CAS">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="251" horizontalCompressionResistancePriority="740" text="Indian" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwx-kj-CAS">
                                                                             <rect key="frame" x="15" y="47" width="504" height="15"/>
                                                                             <animations/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOH-Uc-7qL">
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOH-Uc-7qL">
                                                                             <rect key="frame" x="547" y="17" width="45" height="30"/>
                                                                             <animations/>
                                                                             <constraints>
@@ -693,7 +711,9 @@
                                                     <outlet property="cellHeaderView" destination="imi-n3-FBp" id="y5U-jd-s6l"/>
                                                     <outlet property="detailsContainerView" destination="WYY-U3-kE3" id="z05-7u-3HJ"/>
                                                     <outlet property="dislikeButton" destination="Ql7-7j-IhV" id="nRQ-wU-m7a"/>
+                                                    <outlet property="downVoteCountLabel" destination="tI0-bh-N59" id="YVh-gs-42V"/>
                                                     <outlet property="likeButton" destination="bM4-ZQ-QVV" id="0pU-s8-NFl"/>
+                                                    <outlet property="upVoteCountLabel" destination="LEP-AF-QCv" id="vSf-R5-0Lo"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>

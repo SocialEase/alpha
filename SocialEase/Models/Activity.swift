@@ -99,6 +99,9 @@ class Activity: NSObject, MKAnnotation {
         return object
     }
 
+    var upVoteUsersList: [String]?
+    var downVoteUsersList: [String]?
+
     // MARK: - Confirmation to MKAnnotation protocol
     var title: String? {
         return name
