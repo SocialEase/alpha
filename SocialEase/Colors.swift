@@ -10,7 +10,7 @@ import UIKit
 
 extension UIColor {
     static func sea_primaryColor() -> UIColor { // #0072bb
-        return UIColor(red: 0.0/255.0, green: 114.0/255.0, blue: 187.0/255.0, alpha: 1.0)
+        return UIColor(red: 248.0/255.0, green: 148.0/255.0, blue: 56.0/255.0, alpha: 1.0)
     }
     static func sea_primaryBackgroundColor() -> UIColor {
         return UIColor.whiteColor()

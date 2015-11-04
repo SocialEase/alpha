@@ -32,10 +32,8 @@ class ActivityViewCell: UITableViewCell {
     @IBOutlet weak var dislikeButton: UIButton!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var activityInfoContainerView: UIView!
-    @IBOutlet weak var activityMapViewCenterConstraint: NSLayoutConstraint!
     @IBOutlet weak var activityDetailsViewCenterConstraint: NSLayoutConstraint!
     @IBOutlet weak var detailsContainerView: UIView!
-    @IBOutlet weak var pageControl: UIPageControl!
 
     var cellIndexPath: NSIndexPath!
 
@@ -50,9 +48,12 @@ class ActivityViewCell: UITableViewCell {
 
     struct CellConstants {
         static let SelectedLikeButtonBgkColor = UIColor(red: 0, green: 128/255, blue: 0, alpha: 0.9)
-        static let UnselectedLikeButtonBgkColor = UIColor(red: 0, green: 128/255, blue: 0, alpha: 0.5)
-        static let SelectedDislikeButtonBgkColor = UIColor(red: 1, green: 102/255, blue: 102/255, alpha: 0.9)
-        static let UnselectedDislikeButtonBgkColor = UIColor(red: 1, green: 102/255, blue: 102/255, alpha: 0.5)
+        static let UnselectedLikeButtonBgkColor = UIColor(red: 0, green: 128/255, blue: 0, alpha: 0.7)
+        static let SelectedDislikeButtonBgkColor = UIColor(red: 187/255, green: 26/255, blue: 0/255, alpha: 0.9)
+        static let UnselectedDislikeButtonBgkColor = UIColor(red: 187/255, green: 26/255, blue: 0/255, alpha: 0.7)
+        static let SelectedButtonBorderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+        static let UnselectedButtonBorderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
+
         static let CenterConstraintDeltaScale: CGFloat = 0.5
     }
 
@@ -65,22 +66,14 @@ class ActivityViewCell: UITableViewCell {
         // Initialization code
         activityImageView.contentMode = .ScaleAspectFill
         activityImageView.clipsToBounds = true
-        ViewTransformationUtils.convertViewToCircle(activityImageView, borderColor: UIColor.whiteColor(), borderWidth: 5)
         ViewTransformationUtils.convertViewToCircle(dislikeButton, borderColor: UIColor.whiteColor(), borderWidth: 0)
         ViewTransformationUtils.convertViewToCircle(likeButton, borderColor: UIColor.whiteColor(), borderWidth: 0)
         activityLocationMapView.scrollEnabled = false
 
-        // set initial offset
-        activityMapViewCenterConstraint.constant = CellConstants.CenterConstraintDeltaScale * self.bounds.width + CellConstants.CenterConstraintDeltaScale * self.activityLocationMapView.bounds.width
-
-        // add ui gesture
-        let detailsPanGesture = UIPanGestureRecognizer(target: self, action: "snippentViewPanned:")
-        detailsContainerView.addGestureRecognizer(detailsPanGesture)
-
-        let mapPanGesture = UIPanGestureRecognizer(target: self, action: "snippentViewPanned:")
-        activityLocationMapView.addGestureRecognizer(mapPanGesture)
+        // add gradient
+        activityImageView.layer.addSublayer(getGradientForCellForView(activityImageView))
+        activityLocationMapView.layer.addSublayer(getGradientForCellForView(activityLocationMapView))
     }
-
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -89,25 +82,6 @@ class ActivityViewCell: UITableViewCell {
     }
 
     // MARK: - Actions methods
-    func snippentViewPanned(sender: UIPanGestureRecognizer) {
-        let translation = sender.translationInView(contentView)
-        let velocity = sender.velocityInView(contentView)
-
-        if sender.state == UIGestureRecognizerState.Began {
-            originalDetailsCenterConstraint = activityDetailsViewCenterConstraint.constant
-            originalMapCenterConstraint = activityMapViewCenterConstraint.constant
-        } else if sender.state == UIGestureRecognizerState.Changed {
-            activityDetailsViewCenterConstraint.constant = originalDetailsCenterConstraint + translation.x
-            activityMapViewCenterConstraint.constant = originalMapCenterConstraint + translation.x
-        } else if sender.state == UIGestureRecognizerState.Ended {
-            UIView.animateWithDuration(0.2) {
-                self.activityDetailsViewCenterConstraint.constant = velocity.x > 0 ? 0 : -1 * CellConstants.CenterConstraintDeltaScale * self.bounds.width - CellConstants.CenterConstraintDeltaScale * self.activityInfoContainerView.bounds.width
-                self.activityMapViewCenterConstraint.constant = velocity.x > 0 ? CellConstants.CenterConstraintDeltaScale * self.bounds.width + CellConstants.CenterConstraintDeltaScale * self.activityLocationMapView.bounds.width : 0
-                self.pageControl.currentPage = velocity.x > 0 ? ActivityCellPageViews.Details.rawValue : ActivityCellPageViews.Map.rawValue
-                self.layoutIfNeeded()
-            }
-        }
-    }
 
     @IBAction func likeButtonTapped(sender: UIButton) {
         let vote = UserActivityVote.Like != usrActivity.vote ? UserActivityVote.Like : UserActivityVote.None
@@ -117,6 +91,14 @@ class ActivityViewCell: UITableViewCell {
     @IBAction func dislikeButtonTapped(sender: UIButton) {
         let vote = UserActivityVote.Dislike != usrActivity.vote ? UserActivityVote.Dislike : UserActivityVote.None
         delegate?.activityViewCell(self, didUpdateActivityVoteToVote: vote, atIndexPath: cellIndexPath)
+    }
+
+    @IBAction func mapButtonTouchBegin(sender: UIButton) {
+        activityImageView.alpha = 0
+    }
+
+    @IBAction func mapButtonTouchEnd(sender: UIButton) {
+        activityImageView.alpha = 1
     }
 
     // MARK: - Helper methods
@@ -132,13 +114,19 @@ class ActivityViewCell: UITableViewCell {
         switch usrActivity.vote {
         case .Like:
             likeButton.backgroundColor = CellConstants.SelectedLikeButtonBgkColor
+            likeButton.layer.borderColor = CellConstants.SelectedButtonBorderColor.CGColor
             dislikeButton.backgroundColor = CellConstants.UnselectedDislikeButtonBgkColor
+            dislikeButton.layer.borderColor = CellConstants.UnselectedButtonBorderColor.CGColor
         case .Dislike:
             likeButton.backgroundColor = CellConstants.UnselectedLikeButtonBgkColor
+            likeButton.layer.borderColor = CellConstants.UnselectedButtonBorderColor.CGColor
             dislikeButton.backgroundColor = CellConstants.SelectedDislikeButtonBgkColor
+            dislikeButton.layer.borderColor = CellConstants.SelectedButtonBorderColor.CGColor
         case .None:
             likeButton.backgroundColor = CellConstants.UnselectedLikeButtonBgkColor
+            likeButton.layer.borderColor = CellConstants.UnselectedButtonBorderColor.CGColor
             dislikeButton.backgroundColor = CellConstants.UnselectedDislikeButtonBgkColor
+            dislikeButton.layer.borderColor = CellConstants.UnselectedButtonBorderColor.CGColor
         }
     }
 
@@ -148,5 +136,19 @@ class ActivityViewCell: UITableViewCell {
             annotation.coordinate = activity.coordinate
             activityLocationMapView.showAnnotations([annotation], animated: false)
         }
+    }
+
+    private func getGradientForCellForView(view: UIView) -> CAGradientLayer {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = view.bounds
+
+        // set colors
+        let color1 = UIColor(red: 0, green: 0, blue: 0, alpha: 0).CGColor as CGColorRef
+        let color2 = UIColor(red: 0, green: 0, blue: 0, alpha: 1.0).CGColor as CGColorRef
+        gradientLayer.colors = [color1, color2]
+
+        // set range
+        gradientLayer.locations = [0.0, 1.0]
+        return gradientLayer
     }
 }
