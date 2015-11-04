@@ -36,7 +36,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="317"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wIu-yh-cP9" id="jHH-zy-VUu">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="316.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="316"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQH-Yx-ZDu">
@@ -165,7 +165,7 @@
                                         <rect key="frame" x="0.0" y="345" width="600" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hao-Q5-dsR" id="Q6e-TI-tsC">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="49.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="q" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHr-FR-CbB">
@@ -233,7 +233,7 @@
                                         <rect key="frame" x="0.0" y="395" width="600" height="49"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0ol-H8-HLI" id="r9d-Xc-lDU">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="48.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="n" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ai2-rq-k2B">
@@ -289,13 +289,13 @@
                                         <rect key="frame" x="0.0" y="444" width="600" height="61"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Ua-aM-qIM" id="j61-wy-a52">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="60.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJ0-Oc-XYh">
-                                                    <rect key="frame" x="8" y="8" width="63" height="44.5"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJ0-Oc-XYh">
+                                                    <rect key="frame" x="8" y="8" width="584" height="44"/>
                                                     <animations/>
-                                                    <state key="normal" title="Get Uber"/>
+                                                    <state key="normal" image="UBER_API_RIDE BY UBER Badges_1x BLACK_28px"/>
                                                     <connections>
                                                         <action selector="didGetUber:" destination="9Ua-aM-qIM" eventType="touchUpInside" id="2rm-mV-Q5v"/>
                                                     </connections>
@@ -305,9 +305,15 @@
                                             <constraints>
                                                 <constraint firstItem="iJ0-Oc-XYh" firstAttribute="top" secondItem="j61-wy-a52" secondAttribute="top" constant="8" id="Sid-z9-KtE"/>
                                                 <constraint firstAttribute="bottom" secondItem="iJ0-Oc-XYh" secondAttribute="bottom" constant="8" id="nBF-4W-a5h"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="iJ0-Oc-XYh" secondAttribute="trailing" id="rgP-He-Jov"/>
                                                 <constraint firstItem="iJ0-Oc-XYh" firstAttribute="leading" secondItem="j61-wy-a52" secondAttribute="leading" constant="8" id="seu-iH-2dZ"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iJ0-Oc-XYh" secondAttribute="trailing" constant="8" id="vxs-aP-eyd"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="vxs-aP-eyd"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -332,4 +338,7 @@
             <point key="canvasLocation" x="2207" y="130"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="UBER_API_RIDE BY UBER Badges_1x BLACK_28px" width="214" height="28"/>
+    </resources>
 </document>
