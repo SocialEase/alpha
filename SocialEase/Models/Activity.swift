@@ -115,13 +115,9 @@ class Activity: NSObject, MKAnnotation {
 
     // MARK: - Instance methods
     func setImageOnUIImageView(view: UIImageView) {
-        if let imageFile = object[Fields.Image] as? PFFile {
-            imageFile.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
-                if let imageData = imageData {
-                    view.image = UIImage(data: imageData)
-                    view.contentMode = UIViewContentMode.ScaleToFill;
-                }
-            }
+        if let imageUrl = posterImageUrl {
+            view.contentMode = UIViewContentMode.ScaleToFill
+            view.setImageWithURL(imageUrl)
         }
     }
 
