@@ -112,8 +112,15 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource, UITabl
         initActivityTypeFilter()
         setupFilterViews()
         fetchSuggestionsWithActivityType(nil, forDateTime: nil)
-
+        
+        // HACK FOR DEMO
+        let dateString = "2015-11-05 12:00"
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        let date = formatter.dateFromString(dateString)!
+        
         actvitiyDatePicker.minimumDate = NSDate()
+        actvitiyDatePicker.date = date
         dateTimeTextLabel.text = DateUtils.getSystemStyleDisplayDate(actvitiyDatePicker.date, dateStyle: .MediumStyle)
     }
 
